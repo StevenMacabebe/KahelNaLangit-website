@@ -16,6 +16,7 @@ class WishlistItem extends Model
         'description',
         'quantity_needed',
         'quantity_received',
+        'image',
         'status',
         'created_by',
     ];
