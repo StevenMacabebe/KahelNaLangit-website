@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partnerships - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="resources/css/app.css">
     <style>
         .navbar { background: #2c3e50 !important; }
         .page-header { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 50px 0; margin-bottom: 30px; }
@@ -20,6 +19,12 @@
             object-fit: cover;
             border: 3px solid #e67e22;
             padding: 3px;
+        }
+        .partner-banner {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
         }
         body {
             background:
@@ -84,9 +89,21 @@
         @if($partnerships->count() > 0)
             <div class="row">
                 @foreach($partnerships as $partnership)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="card h-100 shadow-sm">
+                            <!-- Banner Image -->
+                            @if($partnership->banner_image)
+                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}" 
+                                     alt="{{ $partnership->name }}" 
+                                     class="partner-banner">
+                            @else
+                                <div style="height: 150px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
+                                    🤝 Partnership
+                                </div>
+                            @endif
+
                             <div class="card-body text-center">
+                                <!-- Logo -->
                                 @if($partnership->logo)
                                     <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}" 
                                          alt="{{ $partnership->name }}" 
@@ -94,8 +111,10 @@
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
+
                                 <h5 class="card-title">{{ $partnership->name }}</h5>
                                 <p class="card-text text-muted">{{ $partnership->description ?? 'No description available.' }}</p>
+                                
                                 @if($partnership->website)
                                     <a href="{{ $partnership->website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
                                 @endif
