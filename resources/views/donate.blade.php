@@ -5,25 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <style>
         .navbar { background: #2c3e50 !important; }
         .page-header { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 50px 0; margin-bottom: 30px; }
         footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
         .qr-image { max-width: 200px; }
-
         body {
             background:
                 radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
                 radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
                 radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-                linear-gradient(
-                    135deg,
-                    #d96a14 0%,
-                    #e67e22 40%,
-                    #f39c12 70%,
-                    #ffb347 100%
-                );
+                linear-gradient(135deg, #d96a14 0%, #e67e22 40%, #f39c12 70%, #ffb347 100%);
             min-height: 100vh;
             background-attachment: fixed;
         }
@@ -31,19 +23,14 @@
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow:
-                0 0 0 4px #d97706,
-                0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow:
-                0 0 0 5px #ffffff,
-                0 12px 25px rgba(0,0,0,.25) !important;
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
-        
     </style>
 </head>
 <body>
@@ -108,18 +95,21 @@
                                 @if($donation->gcash_number)
                                     <p><strong>GCash Number:</strong> {{ $donation->gcash_number }}</p>
                                 @endif
-                                
-                               <!-- GCash QR Code -->
-@if($donation && $donation->gcash_qr)
-    <div class="text-center mt-3">
-        <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}" 
-             alt="GCash QR Code" 
-             style="max-width: 200px; border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
-        <p class="text-muted small mt-2">Scan to donate via GCash</p>
-    </div>
-@else
-    <p class="text-muted">No QR code uploaded yet.</p>
-@endif
+                                @if($donation->gcash_qr)
+                                    <div class="text-center mt-2">
+                                        <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}" 
+                                             alt="GCash QR Code" 
+                                             class="qr-image img-fluid">
+                                        <p class="text-muted small">Scan to donate via GCash</p>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endif
+                @else
+                    <div class="alert alert-info">Donation details coming soon!</div>
+                @endif
+            </div>
 
             <!-- Guidelines -->
             <div class="col-md-6">
