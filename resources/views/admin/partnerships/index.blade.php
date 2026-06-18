@@ -11,6 +11,7 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
+        .logo-thumb { max-width: 60px; max-height: 60px; border-radius: 5px; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -51,6 +52,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Logo</th>
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -59,6 +61,15 @@
                             <tbody>
                                 @foreach($partnerships as $partnership)
                                     <tr>
+                                        <td>
+                                            @if($partnership->logo)
+                                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}" 
+                                                     alt="{{ $partnership->name }}" 
+                                                     class="logo-thumb">
+                                            @else
+                                                <span class="text-muted">No logo</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $partnership->name }}</td>
                                         <td>
                                             <span class="badge bg-{{ $partnership->status === 'current' ? 'success' : 'secondary' }}">
