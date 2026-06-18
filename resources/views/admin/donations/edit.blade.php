@@ -181,7 +181,7 @@
                                 @if(isset($donation) && $donation->gcash_qr)
                                     <div class="mb-2">
                                         <p class="current-image-label">✅ Current QR Code:</p>
-                                        <img src="{{ asset('images/uploads/donations/' . $donation->gcash_qr) }}" 
+                                        <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}" 
                                              alt="GCash QR" 
                                              class="preview-image">
                                         <p class="upload-hint">Upload a new image to replace the current QR code.</p>
