@@ -15,9 +15,10 @@
             max-width: 200px; 
             max-height: 200px; 
             margin-top: 10px;
-            border: 2px solid #e67e22;
+            border: 3px solid #e67e22;
             border-radius: 10px;
             padding: 5px;
+            background: white;
         }
         .current-image-label {
             font-weight: bold;
@@ -26,6 +27,34 @@
         .upload-hint {
             color: #7f8c8d;
             font-size: 12px;
+        }
+        .file-input-wrapper {
+            position: relative;
+            margin-top: 10px;
+        }
+        .file-input-wrapper input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #e67e22;
+            border-radius: 10px;
+            background: #fef9e7;
+            width: 100%;
+        }
+        .file-input-wrapper input[type="file"]:hover {
+            background: #fdebd0;
+        }
+        .image-preview-container {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .no-image-placeholder {
+            color: #bdc3c7;
+            font-size: 14px;
+            padding: 20px;
+            border: 2px dashed #bdc3c7;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -58,14 +87,22 @@
 
                         @if(session('success'))
                             <div class="alert alert-success alert-dismissible fade show">
-                                {{ session('success') }}
+                                <strong>✅ Success!</strong> {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        @endif
+
+                        @if(session('error'))
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                <strong>❌ Error!</strong> {{ session('error') }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
                         @endif
 
                         @if($errors->any())
                             <div class="alert alert-danger">
-                                <ul class="mb-0">
+                                <strong>❌ Please fix the following errors:</strong>
+                                <ul class="mb-0 mt-2">
                                     @foreach($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach
@@ -139,20 +176,34 @@
                             <!-- QR Code Upload -->
                             <h4 class="mt-3 border-bottom pb-2">📸 GCash QR Code</h4>
                             <div class="mb-3">
-                                <label for="gcash_qr" class="form-label">Upload QR Code</label>
+                                <label class="form-label">QR Code Image</label>
                                 
+                                <!-- Current QR Display -->
                                 @if(isset($donation) && $donation->gcash_qr)
-                                    <div class="mb-2">
-                                        <p class="current-image-label">Current QR Code:</p>
+                                    <div class="image-preview-container">
+                                        <p class="current-image-label">✅ Current QR Code:</p>
                                         <img src="{{ asset('storage/' . $donation->gcash_qr) }}" alt="GCash QR" class="preview-image">
-                                        <p class="upload-hint">Upload a new image to replace the current QR code.</p>
+                                        <p class="upload-hint mt-2">Upload a new image below to replace the current QR code.</p>
                                     </div>
                                 @else
-                                    <p class="text-muted">No QR code uploaded yet.</p>
+                                    <div class="no-image-placeholder">
+                                        <p>📷 No QR code uploaded yet.</p>
+                                        <p class="upload-hint">Upload a QR code image below.</p>
+                                    </div>
                                 @endif
                                 
-                                <input type="file" class="form-control" id="gcash_qr" name="gcash_qr" accept="image/*">
-                                <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
+                                <!-- File Input -->
+                                <div class="file-input-wrapper">
+                                    <input type="file" class="form-control" id="gcash_qr" name="gcash_qr" accept="image/*" onchange="previewImage(event)">
+                                    <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
+                                </div>
+                                
+                                <!-- Image Preview (new upload) -->
+                                <div id="new-image-preview" style="display: none;" class="mt-2">
+                                    <p class="current-image-label">📸 New Image Preview:</p>
+                                    <img id="new-image-preview-img" src="#" alt="Preview" class="preview-image">
+                                    <p class="upload-hint">This is your new image. Click Save to confirm.</p>
+                                </div>
                             </div>
 
                             <!-- Donation Guidelines -->
@@ -165,19 +216,52 @@
 
                             <!-- Buttons -->
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-lg">
                                     💾 Save Donation Details
                                 </button>
-                                <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">
+                                <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary btn-lg">
                                     ← Back to Dashboard
                                 </a>
                             </div>
                         </form>
                     </div>
                 </div>
+
+                <!-- Info Card -->
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5>📌 Quick Tips</h5>
+                        <ul class="mb-0">
+                            <li>QR codes should be square (e.g., 500x500 pixels)</li>
+                            <li>Max file size: 2MB</li>
+                            <li>Supported formats: JPG, PNG, GIF, WebP</li>
+                            <li>The QR code will appear on the <a href="/donate" target="_blank">public donate page</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Preview image before upload
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('new-image-preview');
+            const previewImg = document.getElementById('new-image-preview-img');
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
