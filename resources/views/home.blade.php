@@ -19,7 +19,7 @@
         .progress { height: 10px; }
         .update-card { border-left: 4px solid #e67e22; }
         
-        <!-- test -->
+       
         body {
     background:
         radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
@@ -52,7 +52,7 @@
         0 0 0 5px #ffffff,
         0 12px 25px rgba(0,0,0,.25) !important;
 }
-        <!-- test -->
+    
         
     </style>
 </head>
