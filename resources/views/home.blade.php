@@ -108,7 +108,7 @@
         .hero {
             background: 
                 linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.85)),
-                url('{{ asset("images/background/hero.png") }}') center/cover no-repeat;
+                url('{{ asset("images/hero.png") }}') center/cover no-repeat;
             color: white;
             padding: 120px 0;
             text-align: center;
