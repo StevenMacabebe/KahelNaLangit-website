@@ -102,43 +102,45 @@
             }
         }
 
-        /* ============================================
-           HERO SECTION - WITH BACKGROUND IMAGE
-           ============================================ */
-        .hero {
-            background: 
-                linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.85)),
-                url('{{ asset("/public/images/hero.png") }}') center/cover no-repeat;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-        }
+      /* ============================================
+   HERO SECTION - NO OVERLAY, NO GLASS
+   ============================================ */
+.hero {
+    background: url('{{ asset("public/images/hero.png") }}') center/cover no-repeat;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
 
-        .hero .container {
-            background: rgba(0,0,0,0.2);
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-        }
+.hero .container {
+    /* No background, no blur */
+    padding: 20px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #fff;
-        }
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
 
-        .hero h1 span {
-            color: #ff6c27;
-        }
+.hero h1 span {
+    color: #ff6c27;
+}
 
-        .hero .lead {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
+.hero .lead {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
         /* ============================================
            BUTTONS
