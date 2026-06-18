@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
     <style>
-body { background: #f8f9fa; }
+        body { background: #f8f9fa; }
         .navbar { background: #6e3708 !important; }
         .hero { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 100px 0; text-align: center; }
         footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
@@ -18,25 +18,39 @@ body { background: #f8f9fa; }
         .section-title { color: #e67e22; margin-bottom: 30px; }
         .progress { height: 10px; }
         .update-card { border-left: 4px solid #e67e22; }
-
+        .wishlist-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .wishlist-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            border-radius: 10px 10px 0 0;
+        }
         .card {
-    background: #f8f4ed !important;
-    border: 3px solid #ffffff !important;
-    border-radius: 18px !important;
-    box-shadow:
-        0 0 0 4px #d97706,
-        0 8px 20px rgba(0,0,0,0.15) !important;
-
-    overflow: hidden;
-    transition: all .3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 0 0 5px #ffffff,
-        0 12px 25px rgba(0,0,0,.25) !important;
-}
-        
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow:
+                0 0 0 4px #d97706,
+                0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 0 0 5px #ffffff,
+                0 12px 25px rgba(0,0,0,.25) !important;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +88,7 @@ body { background: #f8f9fa; }
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1 style="font-size: 48px;">Kahel na Langit</h1>
+            <h1 style="font-size: 48px;">🌅 Kahel na Langit</h1>
             <p class="lead" style="font-size: 24px;">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <a href="/donate" class="btn btn-warning btn-lg text-white">Donate Now</a>
@@ -147,6 +161,15 @@ body { background: #f8f9fa; }
                 @foreach($wishlist as $item)
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm">
+                            <!-- Wishlist Image -->
+                            @if($item->image)
+                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
+                                     alt="{{ $item->item_name }}" 
+                                     class="wishlist-image">
+                            @else
+                                <div class="wishlist-placeholder">📦</div>
+                            @endif
+                            
                             <div class="card-body">
                                 <h5>{{ $item->item_name }}</h5>
                                 <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
@@ -177,7 +200,13 @@ body { background: #f8f9fa; }
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 text-center shadow-sm">
                             <div class="card-body">
-                                <div style="font-size: 48px;">🤝</div>
+                                @if($partner->logo)
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
+                                         alt="{{ $partner->name }}" 
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #e67e22; padding: 3px;">
+                                @else
+                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                                @endif
                                 <h5>{{ $partner->name }}</h5>
                                 <p class="text-muted">{{ Str::limit($partner->description, 80) }}</p>
                                 @if($partner->website)
@@ -192,34 +221,34 @@ body { background: #f8f9fa; }
     @endif
 
     <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>🌅 Kahel na Langit</h5>
-                <p>Empowering Communities, Building Hope</p>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>🌅 Kahel na Langit</h5>
+                    <p>Empowering Communities, Building Hope</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="/about" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="/partnerships" class="text-white text-decoration-none">Partnerships</a></li>
+                        <li><a href="/donate" class="text-white text-decoration-none">Donate</a></li>
+                        <li><a href="/contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Admin Access</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/admin/login" class="text-warning text-decoration-none">🔑 Admin Login</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/" class="text-white text-decoration-none">Home</a></li>
-                    <li><a href="/about" class="text-white text-decoration-none">About</a></li>
-                    <li><a href="/partnerships" class="text-white text-decoration-none">Partnerships</a></li>
-                    <li><a href="/donate" class="text-white text-decoration-none">Donate</a></li>
-                    <li><a href="/contact" class="text-white text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Admin Access</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/admin/login" class="text-warning text-decoration-none">🔑 Admin Login</a></li>
-                </ul>
-            </div>
+            <hr class="border-light">
+            <p class="text-center">© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
-        <hr class="border-light">
-        <p class="text-center">© 2026 Kahel na Langit. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
