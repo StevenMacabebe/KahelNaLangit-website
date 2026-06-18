@@ -54,7 +54,7 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1 style="font-size: 48px;">🌅 Kahel na Langit</h1>
+            <h1 style="font-size: 48px;">Kahel na Langit</h1>
             <p class="lead" style="font-size: 24px;">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <a href="/donate" class="btn btn-warning btn-lg text-white">Donate Now</a>
