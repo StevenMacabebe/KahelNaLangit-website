@@ -18,6 +18,24 @@ body { background: #f8f9fa; }
         .section-title { color: #e67e22; margin-bottom: 30px; }
         .progress { height: 10px; }
         .update-card { border-left: 4px solid #e67e22; }
+
+        .card {
+    background: #f8f4ed !important;
+    border: 3px solid #ffffff !important;
+    border-radius: 18px !important;
+    box-shadow:
+        0 0 0 4px #d97706,
+        0 8px 20px rgba(0,0,0,0.15) !important;
+
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 0 5px #ffffff,
+        0 12px 25px rgba(0,0,0,.25) !important;
+}
         
     </style>
 </head>
