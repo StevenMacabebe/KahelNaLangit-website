@@ -35,6 +35,12 @@
             font-size: 48px;
             border-radius: 10px 10px 0 0;
         }
+        .update-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
         .card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -137,6 +143,11 @@
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm update-card">
+                            @if($update->image)
+                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
+                                     alt="{{ $update->title }}" 
+                                     class="update-image">
+                            @endif
                             <div class="card-body">
                                 <span class="badge bg-{{ $update->category === 'announcement' ? 'warning' : 'info' }} mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
