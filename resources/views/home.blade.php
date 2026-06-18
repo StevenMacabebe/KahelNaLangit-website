@@ -102,65 +102,47 @@
             }
         }
 
-<!-- ============================================
-   HERO SECTION - CLEAN BACKGROUND IMAGE
-   ============================================ -->
-<section class="hero" style="
-    background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;
-    color: white;
-    padding: 120px 0;
-    text-align: center;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-">
-    <div class="container">
-        <h1 style="
+        /* ============================================
+           HERO SECTION - WITH BACKGROUND IMAGE
+           ============================================ */
+        .hero {
+            background: url('{{ asset("public/images/hero.png") }}') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
             font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        ">
-            🌅 <span style="color: #ff6c27;">Kahel na Langit</span>
-        </h1>
-        <p class="lead" style="
+        }
+
+        .hero h1 span {
+            color: #ff6c27;
+        }
+
+        .hero .lead {
             font-size: 24px;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-        ">
-            Empowering Communities, Building Hope
-        </p>
-        <p style="text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
-            A community-driven initiative dedicated to uplifting vulnerable communities.
-        </p>
-        <div class="mt-4">
-            <a href="/donate" class="btn btn-primary btn-lg" style="
-                background: #ff6c27;
-                border: none;
-                padding: 12px 35px;
-                font-weight: 600;
-                border-radius: 8px;
-                color: white;
-                text-decoration: none;
-                display: inline-block;
-            ">
-                Donate Now
-            </a>
-            <a href="/about" class="btn btn-outline-light btn-lg ms-2" style="
-                border: 2px solid white;
-                padding: 12px 35px;
-                font-weight: 600;
-                border-radius: 8px;
-                color: white;
-                text-decoration: none;
-                display: inline-block;
-            ">
-                Learn More
-            </a>
-        </div>
-    </div>
-</section>
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-size: 18px;
+        }
 
         /* ============================================
            BUTTONS
@@ -171,6 +153,8 @@
             padding: 12px 35px;
             font-weight: 600;
             transition: all 0.3s ease;
+            border-radius: 8px;
+            color: white !important;
         }
 
         .btn-primary:hover {
@@ -184,6 +168,9 @@
             padding: 12px 35px;
             font-weight: 600;
             transition: all 0.3s ease;
+            border-radius: 8px;
+            color: white !important;
+            background: transparent;
         }
 
         .btn-outline-light:hover {
@@ -343,9 +330,6 @@
             .hero .lead {
                 font-size: 18px;
             }
-            .hero .container {
-                padding: 30px;
-            }
             .btn-primary, .btn-outline-light {
                 padding: 10px 25px;
                 font-size: 14px;
@@ -359,15 +343,12 @@
             .hero .lead {
                 font-size: 16px;
             }
-            .hero .container {
-                padding: 20px;
-            }
         }
     </style>
 </head>
 <body>
     <!-- ============================================
-         NAVIGATION
+         NAVIGATION - FULLY RESPONSIVE
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -403,19 +384,27 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - WITH BACKGROUND IMAGE
+         HERO SECTION - CLEAN BACKGROUND IMAGE
          ============================================ -->
-<section class="hero">
-    <div class="container">
-        <h1>🌅 <span>Kahel na Langit</span></h1>
-        <p class="lead">Empowering Communities, Building Hope</p>
-        <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
-        <div class="mt-4">
-            <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
-            <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+    <section class="hero" style="
+        background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+    ">
+        <div class="container">
+            <h1>🌅 <span>Kahel na Langit</span></h1>
+            <p class="lead">Empowering Communities, Building Hope</p>
+            <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
+            <div class="mt-4">
+                <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
+                <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ============================================
          FEATURES SECTION
