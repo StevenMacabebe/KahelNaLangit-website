@@ -12,40 +12,46 @@
         footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
         .card { transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
+        .partner-logo { 
+            max-width: 100px; 
+            max-height: 100px; 
+            border-radius: 50%; 
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 3px solid #e67e22;
+            padding: 3px;
+        }
         body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-        radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-        linear-gradient(
-            135deg,
-            #d96a14 0%,
-            #e67e22 40%,
-            #f39c12 70%,
-            #ffb347 100%
-        );
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-.card {
-    background: #f8f4ed !important;
-    border: 3px solid #ffffff !important;
-    border-radius: 18px !important;
-    box-shadow:
-        0 0 0 4px #d97706,
-        0 8px 20px rgba(0,0,0,0.15) !important;
-
-    overflow: hidden;
-    transition: all .3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 0 0 5px #ffffff,
-        0 12px 25px rgba(0,0,0,.25) !important;
-}
-        
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
+                radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
+                radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
+                linear-gradient(
+                    135deg,
+                    #d96a14 0%,
+                    #e67e22 40%,
+                    #f39c12 70%,
+                    #ffb347 100%
+                );
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow:
+                0 0 0 4px #d97706,
+                0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 0 0 5px #ffffff,
+                0 12px 25px rgba(0,0,0,.25) !important;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +87,13 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                                @if($partnership->logo)
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}" 
+                                         alt="{{ $partnership->name }}" 
+                                         class="partner-logo">
+                                @else
+                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                                @endif
                                 <h5 class="card-title">{{ $partnership->name }}</h5>
                                 <p class="card-text text-muted">{{ $partnership->description ?? 'No description available.' }}</p>
                                 @if($partnership->website)
