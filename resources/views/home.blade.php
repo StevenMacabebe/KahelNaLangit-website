@@ -102,45 +102,65 @@
             }
         }
 
-      /* ============================================
-   HERO SECTION - NO OVERLAY, NO GLASS
-   ============================================ */
-.hero {
-    background: url('{{ asset("public/images/hero.png") }}') center/cover no-repeat;
+<!-- ============================================
+   HERO SECTION - CLEAN BACKGROUND IMAGE
+   ============================================ -->
+<section class="hero" style="
+    background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;
     color: white;
     padding: 120px 0;
     text-align: center;
     min-height: 500px;
     display: flex;
     align-items: center;
-}
-
-.hero .container {
-    /* No background, no blur */
-    padding: 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero h1 span {
-    color: #ff6c27;
-}
-
-.hero .lead {
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-.hero p {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
+">
+    <div class="container">
+        <h1 style="
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        ">
+            🌅 <span style="color: #ff6c27;">Kahel na Langit</span>
+        </h1>
+        <p class="lead" style="
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+        ">
+            Empowering Communities, Building Hope
+        </p>
+        <p style="text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
+            A community-driven initiative dedicated to uplifting vulnerable communities.
+        </p>
+        <div class="mt-4">
+            <a href="/donate" class="btn btn-primary btn-lg" style="
+                background: #ff6c27;
+                border: none;
+                padding: 12px 35px;
+                font-weight: 600;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                display: inline-block;
+            ">
+                Donate Now
+            </a>
+            <a href="/about" class="btn btn-outline-light btn-lg ms-2" style="
+                border: 2px solid white;
+                padding: 12px 35px;
+                font-weight: 600;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                display: inline-block;
+            ">
+                Learn More
+            </a>
+        </div>
+    </div>
+</section>
 
         /* ============================================
            BUTTONS
