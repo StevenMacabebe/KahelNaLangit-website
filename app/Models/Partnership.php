@@ -13,6 +13,7 @@ class Partnership extends Model
         'name',
         'description',
         'logo',
+        'banner_image',
         'website',
         'start_date',
         'end_date',
