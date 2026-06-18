@@ -110,10 +110,9 @@
                                 @endif
                                 <!-- QR Code - USING DIRECT URL PATH -->
                                 <div class="text-center mt-3">
-                                    <img src="/storage/donation_qr/gcash_qr.png" 
+                                    <img src="/images/gcash_qr.png" 
                                          alt="GCash QR Code" 
-                                         class="qr-image img-fluid"
-                                         style="border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
+                                         style="max-width: 200px; border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
                                     <p class="text-muted small mt-2">Scan to donate via GCash</p>
                                 </div>
                             </div>
