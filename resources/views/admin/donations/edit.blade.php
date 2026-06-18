@@ -174,29 +174,22 @@
                             </div>
 
                             <!-- QR Code Upload -->
-                            <h4 class="mt-3 border-bottom pb-2">📸 GCash QR Code</h4>
-                            <div class="mb-3">
-                                <label class="form-label">QR Code Image</label>
-                                
-                                <!-- Current QR Display -->
-                                @if(isset($donation) && $donation->gcash_qr)
-                                    <div class="image-preview-container">
-                                        <p class="current-image-label">✅ Current QR Code:</p>
-                                        <img src="{{ asset('storage/' . $donation->gcash_qr) }}" alt="GCash QR" class="preview-image">
-                                        <p class="upload-hint mt-2">Upload a new image below to replace the current QR code.</p>
-                                    </div>
-                                @else
-                                    <div class="no-image-placeholder">
-                                        <p>📷 No QR code uploaded yet.</p>
-                                        <p class="upload-hint">Upload a QR code image below.</p>
-                                    </div>
-                                @endif
-                                
-                                <!-- File Input -->
-                                <div class="file-input-wrapper">
-                                    <input type="file" class="form-control" id="gcash_qr" name="gcash_qr" accept="image/*" onchange="previewImage(event)">
-                                    <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
-                                </div>
+<div class="mb-3">
+    <label for="gcash_qr" class="form-label">GCash QR Code</label>
+    
+    @if(isset($donation) && $donation->gcash_qr)
+        <div class="mb-2">
+            <img src="{{ asset('images/uploads/donations/' . $donation->gcash_qr) }}" 
+                 alt="GCash QR" 
+                 style="max-width: 200px; border: 2px solid #e67e22; border-radius: 10px; padding: 5px;">
+        </div>
+    @else
+        <p class="text-muted">No QR code uploaded yet.</p>
+    @endif
+    
+    <input type="file" class="form-control" id="gcash_qr" name="gcash_qr" accept="image/*">
+    <small class="text-muted">Accepted formats: JPG, PNG. Max size: 2MB.</small>
+</div>
                                 
                                 <!-- Image Preview (new upload) -->
                                 <div id="new-image-preview" style="display: none;" class="mt-2">
