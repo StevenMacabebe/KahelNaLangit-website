@@ -109,24 +109,17 @@
                                     <p><strong>GCash Number:</strong> {{ $donation->gcash_number }}</p>
                                 @endif
                                 
-                                <!-- QR Code - NEW SYSTEM -->
-                                @if($donation && $donation->gcash_qr)
-                                    <div class="text-center mt-3">
-                                        <img src="{{ asset('images/uploads/donations/' . $donation->gcash_qr) }}" 
-                                             alt="GCash QR Code" 
-                                             style="max-width: 200px; border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
-                                        <p class="text-muted small mt-2">Scan to donate via GCash</p>
-                                    </div>
-                                @else
-                                    <p class="text-muted">No QR code uploaded yet.</p>
-                                @endif
-                            </div>
-                        </div>
-                    @endif
-                @else
-                    <div class="alert alert-info">Donation details coming soon!</div>
-                @endif
-            </div>
+                               <!-- GCash QR Code -->
+@if($donation && $donation->gcash_qr)
+    <div class="text-center mt-3">
+        <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}" 
+             alt="GCash QR Code" 
+             style="max-width: 200px; border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
+        <p class="text-muted small mt-2">Scan to donate via GCash</p>
+    </div>
+@else
+    <p class="text-muted">No QR code uploaded yet.</p>
+@endif
 
             <!-- Guidelines -->
             <div class="col-md-6">
