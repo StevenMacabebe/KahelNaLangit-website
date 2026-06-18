@@ -39,6 +39,8 @@ class DonationController extends Controller
             if ($donation && $donation->gcash_qr) {
                 Storage::disk('public')->delete($donation->gcash_qr);
             }
+            
+            // Store new QR
             $path = $request->file('gcash_qr')->store('donation_qr', 'public');
             $data['gcash_qr'] = $path;
         }
