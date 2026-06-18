@@ -11,6 +11,7 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
+        .item-thumb { max-width: 60px; max-height: 60px; border-radius: 10px; object-fit: cover; border: 2px solid #e67e22; padding: 2px; }
     </style>
 </head>
 <body>
@@ -32,11 +33,10 @@
                 </form>
             </div>
 
-            <!-- Main Content -->
             <div class="col-md-9 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Manage Wishlist</h2>
-                    <a href="{{ route('admin.wishlist.create') }}" class="btn btn-primary">➕ Add Wishlist Item</a>
+                    <a href="{{ route('admin.wishlist.create') }}" class="btn btn-primary">➕ Add Item</a>
                 </div>
 
                 @if(session('success'))
@@ -48,6 +48,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Image</th>
                                     <th>Item</th>
                                     <th>Needed</th>
                                     <th>Received</th>
@@ -58,6 +59,15 @@
                             <tbody>
                                 @foreach($wishlist as $item)
                                     <tr>
+                                        <td>
+                                            @if($item->image)
+                                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
+                                                     alt="{{ $item->item_name }}" 
+                                                     class="item-thumb">
+                                            @else
+                                                <span class="text-muted">No image</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $item->item_name }}</td>
                                         <td>{{ $item->quantity_needed }}</td>
                                         <td>{{ $item->quantity_received }}</td>
