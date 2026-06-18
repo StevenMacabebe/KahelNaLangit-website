@@ -16,40 +16,8 @@ body {
     background-attachment: fixed;
 }
 
-.navbar {
-    background: #2c3e50 !important;
-}
-
-.page-header {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-    color: white;
-    padding: 50px 0;
-    margin-bottom: 30px;
-}
-
-footer {
-    background: #2c3e50;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.team-card {
-    transition: transform 0.3s;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-}
-
-.sdg-badge {
-    font-size: 48px;
-    text-align: center;
-    padding: 20px;
-}
-
 .card {
+
     background: #f8f4ed !important;
 
     border: 3px solid #ffffff !important;
@@ -58,15 +26,18 @@ footer {
 
     box-shadow:
         0 0 0 4px #d97706,
-        0 8px 20px rgba(0,0,0,0.15);
+        0 8px 20px rgba(0,0,0,0.15) !important;
+
+    overflow: hidden;
 
     transition: all .3s ease;
 }
 
 .card:hover {
+
     transform: translateY(-5px);
 
     box-shadow:
         0 0 0 5px #ffffff,
-        0 12px 25px rgba(0,0,0,0.25);
+        0 12px 25px rgba(0,0,0,.25) !important;
 }
