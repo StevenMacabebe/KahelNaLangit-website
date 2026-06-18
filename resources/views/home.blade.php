@@ -19,21 +19,6 @@
         .progress { height: 10px; }
         .update-card { border-left: 4px solid #e67e22; }
 
-        body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-        radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-        linear-gradient(
-            135deg,
-            #d96a14 0%,
-            #e67e22 40%,
-            #f39c12 70%,
-            #ffb347 100%
-        );
-    min-height: 100vh;
-    background-attachment: fixed;
-}
 .card {
     background: #f8f4ed !important;
     border: 3px solid #ffffff !important;
