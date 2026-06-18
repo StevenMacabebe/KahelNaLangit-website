@@ -12,7 +12,6 @@
         footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
         .card { transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .partner-logo { width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -31,6 +30,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Page Header -->
     <div class="page-header">
         <div class="container">
@@ -38,6 +38,7 @@
             <p class="lead">Collaborating with organizations to create lasting impact</p>
         </div>
     </div>
+
     <!-- Partnerships Grid -->
     <div class="container">
         @if($partnerships->count() > 0)
@@ -46,11 +47,7 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                @if($partnership->logo)
-                                    <img src="{{ asset('storage/' . $partnership->logo) }}" alt="{{ $partnership->name }}" class="partner-logo">
-                                @else
-                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
-                                @endif
+                                <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 <h5 class="card-title">{{ $partnership->name }}</h5>
                                 <p class="card-text text-muted">{{ $partnership->description ?? 'No description available.' }}</p>
                                 @if($partnership->website)
@@ -60,9 +57,6 @@
                                 <span class="badge bg-{{ $partnership->status === 'current' ? 'success' : 'secondary' }}">
                                     {{ ucfirst($partnership->status) }}
                                 </span>
-                                @if($partnership->year_started)
-                                    <span class="badge bg-light text-dark border">Since {{ $partnership->year_started }}</span>
-                                @endif
                             </div>
                         </div>
                     </div>
@@ -75,12 +69,14 @@
             </div>
         @endif
     </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
