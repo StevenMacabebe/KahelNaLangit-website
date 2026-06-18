@@ -11,7 +11,8 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
-        .preview-image { max-width: 100px; max-height: 100px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
+        .preview-image { max-width: 150px; max-height: 150px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
+        .preview-banner { max-width: 100%; max-height: 200px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
         .current-image-label { font-weight: bold; color: #e67e22; }
         .upload-hint { color: #7f8c8d; font-size: 12px; }
     </style>
@@ -78,15 +79,25 @@
                             <!-- Logo Upload -->
                             <div class="mb-3">
                                 <label for="logo" class="form-label">Partnership Logo</label>
-                                <input type="file" class="form-control" id="logo" name="logo" accept="image/*" onchange="previewImage(event)">
-                                <small class="upload-hint">Accepted formats: JPG, PNG. Max size: 2MB.</small>
+                                <input type="file" class="form-control" id="logo" name="logo" accept="image/*" onchange="previewLogo(event)">
+                                <small class="upload-hint">Accepted formats: JPG, PNG. Max size: 2MB. Square image recommended.</small>
                             </div>
 
-                            <!-- Image Preview -->
-                            <div id="new-image-preview" style="display: none;" class="mb-3">
-                                <p class="current-image-label">📸 Image Preview:</p>
-                                <img id="new-image-preview-img" src="#" alt="Preview" class="preview-image">
-                                <p class="upload-hint">This is your new image. Click Save to confirm.</p>
+                            <div id="logo-preview" style="display: none;" class="mb-3">
+                                <p class="current-image-label">📸 Logo Preview:</p>
+                                <img id="logo-preview-img" src="#" alt="Logo Preview" class="preview-image">
+                            </div>
+
+                            <!-- Banner Image Upload -->
+                            <div class="mb-3">
+                                <label for="banner_image" class="form-label">Banner Image (Landscape)</label>
+                                <input type="file" class="form-control" id="banner_image" name="banner_image" accept="image/*" onchange="previewBanner(event)">
+                                <small class="upload-hint">Accepted formats: JPG, PNG. Max size: 5MB. Recommended size: 1200x600px.</small>
+                            </div>
+
+                            <div id="banner-preview" style="display: none;" class="mb-3">
+                                <p class="current-image-label">📸 Banner Preview:</p>
+                                <img id="banner-preview-img" src="#" alt="Banner Preview" class="preview-banner">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Save Partnership</button>
@@ -99,10 +110,27 @@
     </div>
 
     <script>
-        function previewImage(event) {
+        function previewLogo(event) {
             const input = event.target;
-            const preview = document.getElementById('new-image-preview');
-            const previewImg = document.getElementById('new-image-preview-img');
+            const preview = document.getElementById('logo-preview');
+            const previewImg = document.getElementById('logo-preview-img');
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+
+        function previewBanner(event) {
+            const input = event.target;
+            const preview = document.getElementById('banner-preview');
+            const previewImg = document.getElementById('banner-preview-img');
             
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
