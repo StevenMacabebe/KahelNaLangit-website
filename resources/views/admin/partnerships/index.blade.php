@@ -11,7 +11,8 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
-        .logo-thumb { max-width: 60px; max-height: 60px; border-radius: 5px; object-fit: cover; }
+        .logo-thumb { max-width: 50px; max-height: 50px; border-radius: 50%; object-fit: cover; }
+        .banner-thumb { max-width: 100px; max-height: 50px; object-fit: cover; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -53,6 +54,7 @@
                             <thead>
                                 <tr>
                                     <th>Logo</th>
+                                    <th>Banner</th>
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -68,6 +70,15 @@
                                                      class="logo-thumb">
                                             @else
                                                 <span class="text-muted">No logo</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($partnership->banner_image)
+                                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}" 
+                                                     alt="{{ $partnership->name }}" 
+                                                     class="banner-thumb">
+                                            @else
+                                                <span class="text-muted">No banner</span>
                                             @endif
                                         </td>
                                         <td>{{ $partnership->name }}</td>
