@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DonationChannel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class DonationController extends Controller
 {
@@ -31,18 +31,22 @@ class DonationController extends Controller
         ]);
 
         $donation = DonationChannel::first();
-
         $data = $request->except('gcash_qr');
 
         if ($request->hasFile('gcash_qr')) {
-            // Delete old QR if exists
+            // Delete old image if exists
             if ($donation && $donation->gcash_qr) {
-                Storage::disk('public')->delete($donation->gcash_qr);
+                $oldPath = public_path('images/uploads/donations/' . $donation->gcash_qr);
+                if (File::exists($oldPath)) {
+                    File::delete($oldPath);
+                }
             }
-            
-            // Store new QR
-            $path = $request->file('gcash_qr')->store('donation_qr', 'public');
-            $data['gcash_qr'] = $path;
+
+            // Upload new image
+            $file = $request->file('gcash_qr');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/uploads/donations'), $filename);
+            $data['gcash_qr'] = $filename;
         }
 
         if ($donation) {
@@ -52,6 +56,6 @@ class DonationController extends Controller
             DonationChannel::create($data);
         }
 
-        return redirect()->route('admin.donations.edit')->with('success', 'Donation details updated successfully!');
+        return redirect()->route('admin.donations.edit')->with('success', 'Donation details updated!');
     }
 }
