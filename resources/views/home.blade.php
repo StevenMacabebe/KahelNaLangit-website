@@ -383,17 +383,17 @@
     <!-- ============================================
          HERO SECTION - WITH BACKGROUND IMAGE
          ============================================ -->
-    <section class="hero">
-        <div class="container">
-            <h1>🌅 <span>Kahel na Langit</span></h1>
-            <p class="lead">Empowering Communities, Building Hope</p>
-            <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
-            <div class="mt-4">
-                <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
-                <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
-            </div>
+<section class="hero">
+    <div class="container">
+        <h1>🌅 <span>Kahel na Langit</span></h1>
+        <p class="lead">Empowering Communities, Building Hope</p>
+        <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
+        <div class="mt-4">
+            <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
+            <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ============================================
          FEATURES SECTION
