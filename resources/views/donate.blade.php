@@ -13,37 +13,36 @@
         .qr-image { max-width: 200px; }
 
         body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-        radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-        linear-gradient(
-            135deg,
-            #d96a14 0%,
-            #e67e22 40%,
-            #f39c12 70%,
-            #ffb347 100%
-        );
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-.card {
-    background: #f8f4ed !important;
-    border: 3px solid #ffffff !important;
-    border-radius: 18px !important;
-    box-shadow:
-        0 0 0 4px #d97706,
-        0 8px 20px rgba(0,0,0,0.15) !important;
-
-    overflow: hidden;
-    transition: all .3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 0 0 5px #ffffff,
-        0 12px 25px rgba(0,0,0,.25) !important;
-}
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
+                radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
+                radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
+                linear-gradient(
+                    135deg,
+                    #d96a14 0%,
+                    #e67e22 40%,
+                    #f39c12 70%,
+                    #ffb347 100%
+                );
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow:
+                0 0 0 4px #d97706,
+                0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 0 0 5px #ffffff,
+                0 12px 25px rgba(0,0,0,.25) !important;
+        }
         
     </style>
 </head>
@@ -109,12 +108,14 @@
                                 @if($donation->gcash_number)
                                     <p><strong>GCash Number:</strong> {{ $donation->gcash_number }}</p>
                                 @endif
-                                @if($donation->gcash_qr)
-                                    <div class="text-center mt-2">
-                                        <img src="{{ asset('storage/' . $donation->gcash_qr) }}" alt="GCash QR Code" class="qr-image img-fluid">
-                                        <p class="text-muted small">Scan to donate via GCash</p>
-                                    </div>
-                                @endif
+                                <!-- QR Code - USING DIRECT URL PATH -->
+                                <div class="text-center mt-3">
+                                    <img src="/storage/donation_qr/gcash_qr.png" 
+                                         alt="GCash QR Code" 
+                                         class="qr-image img-fluid"
+                                         style="border: 2px solid #ddd; border-radius: 10px; padding: 10px; background: white;">
+                                    <p class="text-muted small mt-2">Scan to donate via GCash</p>
+                                </div>
                             </div>
                         </div>
                     @endif
@@ -146,5 +147,7 @@
             <p>© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
