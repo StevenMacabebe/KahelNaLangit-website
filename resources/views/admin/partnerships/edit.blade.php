@@ -11,7 +11,8 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
-        .preview-image { max-width: 100px; max-height: 100px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
+        .preview-image { max-width: 150px; max-height: 150px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
+        .preview-banner { max-width: 100%; max-height: 200px; border-radius: 10px; border: 2px solid #e67e22; padding: 5px; }
         .current-image-label { font-weight: bold; color: #e67e22; }
         .upload-hint { color: #7f8c8d; font-size: 12px; }
     </style>
@@ -90,21 +91,38 @@
                                         <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}" 
                                              alt="Logo" 
                                              class="preview-image">
-                                        <p class="upload-hint">Upload a new image to replace the current logo.</p>
                                     </div>
-                                @else
-                                    <p class="text-muted">📷 No logo uploaded yet.</p>
                                 @endif
                                 
-                                <input type="file" class="form-control" id="logo" name="logo" accept="image/*" onchange="previewImage(event)">
-                                <small class="upload-hint">Accepted formats: JPG, PNG. Max size: 2MB.</small>
+                                <input type="file" class="form-control" id="logo" name="logo" accept="image/*" onchange="previewLogo(event)">
+                                <small class="upload-hint">Upload a new logo to replace the current one. Max 2MB.</small>
                             </div>
 
-                            <!-- Image Preview -->
-                            <div id="new-image-preview" style="display: none;" class="mb-3">
-                                <p class="current-image-label">📸 New Image Preview:</p>
-                                <img id="new-image-preview-img" src="#" alt="Preview" class="preview-image">
-                                <p class="upload-hint">This is your new image. Click Update to confirm.</p>
+                            <div id="logo-preview" style="display: none;" class="mb-3">
+                                <p class="current-image-label">📸 New Logo Preview:</p>
+                                <img id="logo-preview-img" src="#" alt="Logo Preview" class="preview-image">
+                            </div>
+
+                            <!-- Banner Image Upload -->
+                            <div class="mb-3">
+                                <label for="banner_image" class="form-label">Banner Image (Landscape)</label>
+                                
+                                @if($partnership->banner_image)
+                                    <div class="mb-2">
+                                        <p class="current-image-label">✅ Current Banner:</p>
+                                        <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}" 
+                                             alt="Banner" 
+                                             class="preview-banner">
+                                    </div>
+                                @endif
+                                
+                                <input type="file" class="form-control" id="banner_image" name="banner_image" accept="image/*" onchange="previewBanner(event)">
+                                <small class="upload-hint">Upload a new banner to replace the current one. Max 5MB. Recommended: 1200x600px.</small>
+                            </div>
+
+                            <div id="banner-preview" style="display: none;" class="mb-3">
+                                <p class="current-image-label">📸 New Banner Preview:</p>
+                                <img id="banner-preview-img" src="#" alt="Banner Preview" class="preview-banner">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Update Partnership</button>
@@ -117,10 +135,27 @@
     </div>
 
     <script>
-        function previewImage(event) {
+        function previewLogo(event) {
             const input = event.target;
-            const preview = document.getElementById('new-image-preview');
-            const previewImg = document.getElementById('new-image-preview-img');
+            const preview = document.getElementById('logo-preview');
+            const previewImg = document.getElementById('logo-preview-img');
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+
+        function previewBanner(event) {
+            const input = event.target;
+            const preview = document.getElementById('banner-preview');
+            const previewImg = document.getElementById('banner-preview-img');
             
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
