@@ -56,6 +56,6 @@ class DonationController extends Controller
             DonationChannel::create($data);
         }
 
-        return redirect()->route('admin.donations.edit')->with('success', 'Donation details updated!');
+        return redirect()->route('admin.donations.edit')->with('success', 'Donation details updated successfully! QR code saved.');
     }
 }
