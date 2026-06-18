@@ -11,6 +11,7 @@
         .sidebar a:hover { background: #2c3e50; }
         .sidebar .active { background: #e67e22; }
         .navbar { background: #2c3e50 !important; }
+        .update-thumb { max-width: 100px; max-height: 60px; object-fit: cover; border-radius: 5px; border: 2px solid #e67e22; padding: 2px; }
     </style>
 </head>
 <body>
@@ -18,10 +19,7 @@
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 sidebar p-0">
-                <div class="p-3">
-                    <h4 class="text-white">🌅 Kahel na Langit</h4>
-                    <hr class="border-light">
-                </div>
+                <div class="p-3"><h4 class="text-white">🌅 Kahel na Langit</h4><hr class="border-light"></div>
                 <a href="{{ route('admin.dashboard') }}">📊 Dashboard</a>
                 <a href="{{ route('admin.updates.index') }}" class="active">📝 Updates</a>
                 <a href="{{ route('admin.partnerships.index') }}">🤝 Partnerships</a>
@@ -35,7 +33,6 @@
                 </form>
             </div>
 
-            <!-- Main Content -->
             <div class="col-md-9 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Manage Updates</h2>
@@ -51,6 +48,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Image</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Event Date</th>
@@ -60,6 +58,15 @@
                             <tbody>
                                 @foreach($updates as $update)
                                     <tr>
+                                        <td>
+                                            @if($update->image)
+                                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
+                                                     alt="{{ $update->title }}" 
+                                                     class="update-thumb">
+                                            @else
+                                                <span class="text-muted">No image</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $update->title }}</td>
                                         <td>
                                             <span class="badge bg-{{ $update->category === 'announcement' ? 'warning' : 'info' }}">
