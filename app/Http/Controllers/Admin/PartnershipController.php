@@ -28,15 +28,25 @@ class PartnershipController extends Controller
             'website' => 'nullable|string',
             'status' => 'required|in:current,past',
             'logo' => 'nullable|image|max:2048',
+            'banner_image' => 'nullable|image|max:5120',
         ]);
 
-        $data = $request->except('logo');
+        $data = $request->except('logo', 'banner_image');
 
+        // Upload Logo
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $filename = time() . '_logo_' . $file->getClientOriginalName();
             $file->move(public_path('images/uploads/partnerships'), $filename);
             $data['logo'] = $filename;
+        }
+
+        // Upload Banner Image
+        if ($request->hasFile('banner_image')) {
+            $file = $request->file('banner_image');
+            $filename = time() . '_banner_' . $file->getClientOriginalName();
+            $file->move(public_path('images/uploads/partnerships'), $filename);
+            $data['banner_image'] = $filename;
         }
 
         $data['created_by'] = auth()->guard('admin')->id();
@@ -61,24 +71,37 @@ class PartnershipController extends Controller
             'website' => 'nullable|string',
             'status' => 'required|in:current,past',
             'logo' => 'nullable|image|max:2048',
+            'banner_image' => 'nullable|image|max:5120',
         ]);
 
-        $data = $request->except('logo');
+        $data = $request->except('logo', 'banner_image');
 
+        // Upload Logo
         if ($request->hasFile('logo')) {
-            // Delete old logo if exists
             if ($partnership->logo) {
                 $oldPath = public_path('images/uploads/partnerships/' . $partnership->logo);
                 if (File::exists($oldPath)) {
                     File::delete($oldPath);
                 }
             }
-
-            // Upload new logo
             $file = $request->file('logo');
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $filename = time() . '_logo_' . $file->getClientOriginalName();
             $file->move(public_path('images/uploads/partnerships'), $filename);
             $data['logo'] = $filename;
+        }
+
+        // Upload Banner Image
+        if ($request->hasFile('banner_image')) {
+            if ($partnership->banner_image) {
+                $oldPath = public_path('images/uploads/partnerships/' . $partnership->banner_image);
+                if (File::exists($oldPath)) {
+                    File::delete($oldPath);
+                }
+            }
+            $file = $request->file('banner_image');
+            $filename = time() . '_banner_' . $file->getClientOriginalName();
+            $file->move(public_path('images/uploads/partnerships'), $filename);
+            $data['banner_image'] = $filename;
         }
 
         $partnership->update($data);
@@ -89,15 +112,23 @@ class PartnershipController extends Controller
     public function destroy($id)
     {
         $partnership = Partnership::findOrFail($id);
-        
-        // Delete logo file if exists
+
+        // Delete logo
         if ($partnership->logo) {
             $oldPath = public_path('images/uploads/partnerships/' . $partnership->logo);
             if (File::exists($oldPath)) {
                 File::delete($oldPath);
             }
         }
-        
+
+        // Delete banner image
+        if ($partnership->banner_image) {
+            $oldPath = public_path('images/uploads/partnerships/' . $partnership->banner_image);
+            if (File::exists($oldPath)) {
+                File::delete($oldPath);
+            }
+        }
+
         $partnership->delete();
 
         return redirect()->route('admin.partnerships.index')->with('success', 'Partnership deleted successfully!');
