@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\UpdatePost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class UpdateController extends Controller
 {
@@ -26,15 +27,21 @@ class UpdateController extends Controller
             'content' => 'required',
             'category' => 'required|in:announcement,project_update',
             'event_date' => 'nullable|date',
+            'image' => 'nullable|image|max:2048',
         ]);
 
-        UpdatePost::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'category' => $request->category,
-            'event_date' => $request->event_date,
-            'created_by' => auth()->guard('admin')->id(),
-        ]);
+        $data = $request->except('image');
+
+        // Upload Image
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/uploads/updates'), $filename);
+            $data['image'] = $filename;
+        }
+
+        $data['created_by'] = auth()->guard('admin')->id();
+        UpdatePost::create($data);
 
         return redirect()->route('admin.updates.index')->with('success', 'Update created successfully!');
     }
@@ -54,15 +61,28 @@ class UpdateController extends Controller
             'content' => 'required',
             'category' => 'required|in:announcement,project_update',
             'event_date' => 'nullable|date',
+            'image' => 'nullable|image|max:2048',
         ]);
 
-        $update->update([
-            'title' => $request->title,
-            'content' => $request->content,
-            'category' => $request->category,
-            'event_date' => $request->event_date,
-            'updated_by' => auth()->guard('admin')->id(),
-        ]);
+        $data = $request->except('image');
+
+        // Upload Image
+        if ($request->hasFile('image')) {
+            // Delete old image
+            if ($update->image) {
+                $oldPath = public_path('images/uploads/updates/' . $update->image);
+                if (File::exists($oldPath)) {
+                    File::delete($oldPath);
+                }
+            }
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/uploads/updates'), $filename);
+            $data['image'] = $filename;
+        }
+
+        $data['updated_by'] = auth()->guard('admin')->id();
+        $update->update($data);
 
         return redirect()->route('admin.updates.index')->with('success', 'Update updated successfully!');
     }
@@ -70,6 +90,15 @@ class UpdateController extends Controller
     public function destroy($id)
     {
         $update = UpdatePost::findOrFail($id);
+
+        // Delete image
+        if ($update->image) {
+            $oldPath = public_path('images/uploads/updates/' . $update->image);
+            if (File::exists($oldPath)) {
+                File::delete($oldPath);
+            }
+        }
+
         $update->delete();
 
         return redirect()->route('admin.updates.index')->with('success', 'Update deleted successfully!');
