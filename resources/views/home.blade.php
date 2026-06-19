@@ -212,7 +212,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>🌅 Kahel na Langit</h5>
+                    <h5>Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
