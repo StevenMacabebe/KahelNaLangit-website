@@ -11,7 +11,7 @@
 <body>
 
     <!-- ============================================
-         NAVIGATION
+         NAVIGATION - FIXED LAYOUT
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
