@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('resources/views/css/home.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
 
     <!-- ============================================
-         NAVIGATION - BRAND LEFT, LINKS RIGHT
+         NAVIGATION - GRADIENT BACKGROUND + WHITE TEXT
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
 
-            <!-- LEFT: Brand -->
-            <a class="navbar-brand" href="/">Kahel na Langit</a>
+            <!-- LEFT: Brand with logo -->
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Kahel na Langit Logo" class="brand-logo">
+                <span class="brand-name">Kahel na Langit</span>
+            </a>
 
             <!-- Toggler for mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,7 +39,7 @@
 
             <!-- RIGHT: All nav links -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
@@ -53,58 +65,50 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - WITH LOOPING BACKGROUND VIDEO
+         HERO SECTION - EXACTLY AS YOUR IMAGE
          ============================================ -->
-    <section class="hero">
-        <!-- Video Background -->
-        <video class="hero-video" autoplay muted loop playsinline poster="{{ asset('public/images/hero-fallback.jpg') }}">
-            <source src="{{ asset('public/videos/your-video-file.mp4') }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <!-- Overlay Content -->
-        <div class="hero-overlay">
-            <div class="container">
-                <h1>🌅 <span>Kahel na Langit</span></h1>
-                <p class="lead">Empowering Communities, Building Hope</p>
-                <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
-                <div class="mt-4">
-                    <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
-                    <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
-                </div>
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">Kahel na Langit</h1>
+            <p class="hero-subtitle">Empowering Communities, Building Hope</p>
+            <p class="hero-description">
+                A community-driven initiative dedicated to uplifting vulnerable communities.
+            </p>
+            <div class="hero-buttons">
+                <a href="/donate" class="btn-donate">Donate Now</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-         FEATURES SECTION
+         FEATURES / CARDS SECTION
          ============================================ -->
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center">
                     <div class="card-body">
-                        <h2 style="font-size: 48px;">🏠</h2>
-                        <h5>Community Development</h5>
-                        <p class="text-muted">Supporting housing and infrastructure initiatives for vulnerable communities.</p>
+                        <div class="feature-icon">🏗️</div>
+                        <h5 class="feature-title">Community Development</h5>
+                        <p class="feature-text">Supporting housing and infrastructure initiatives for vulnerable communities.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center">
                     <div class="card-body">
-                        <h2 style="font-size: 48px;">🤝</h2>
-                        <h5>Fundraising</h5>
-                        <p class="text-muted">Community-based fundraising campaigns to support sustainable programs.</p>
+                        <div class="feature-icon">🎯</div>
+                        <h5 class="feature-title">Fundraising</h5>
+                        <p class="feature-text">Community-based fundraising campaigns to support sustainable programs.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center">
                     <div class="card-body">
-                        <h2 style="font-size: 48px;">🌱</h2>
-                        <h5>Community Engagement</h5>
-                        <p class="text-muted">Awareness campaigns promoting resilience and social responsibility.</p>
+                        <div class="feature-icon">🤝</div>
+                        <h5 class="feature-title">Community Engagement</h5>
+                        <p class="feature-text">Awareness campaigns promoting resilience and social responsibility.</p>
                     </div>
                 </div>
             </div>
@@ -114,15 +118,15 @@
     <!-- ============================================
          UPDATES SECTION
          ============================================ -->
-    @if($updates->count() > 0)
+    @if(isset($updates) && $updates->count() > 0)
         <div class="container mt-5">
             <h2 class="section-title text-center">📢 Latest Updates</h2>
-            <div class="row">
+            <div class="row g-4">
                 @foreach($updates as $update)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4">
                         <div class="card h-100 shadow-sm update-card">
                             @if($update->image)
-                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}"
+                                <img src="{{ asset('images/uploads/updates/' . $update->image) }}"
                                      alt="{{ $update->title }}"
                                      class="update-image">
                             @endif
@@ -144,16 +148,16 @@
     <!-- ============================================
          WISHLIST SECTION
          ============================================ -->
-    @if($wishlist->count() > 0)
+    @if(isset($wishlist) && $wishlist->count() > 0)
         <div class="container mt-5">
             <h2 class="section-title text-center">📋 Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
-            <div class="row">
+            <div class="row g-4">
                 @foreach($wishlist as $item)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4">
                         <div class="card h-100 shadow-sm">
                             @if($item->image)
-                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
+                                <img src="{{ asset('images/uploads/wishlist/' . $item->image) }}"
                                      alt="{{ $item->item_name }}"
                                      class="wishlist-image">
                             @else
@@ -183,22 +187,22 @@
     <!-- ============================================
          PARTNERSHIPS SECTION
          ============================================ -->
-    @if($partnerships->count() > 0)
+    @if(isset($partnerships) && $partnerships->count() > 0)
         <div class="container mt-5">
             <h2 class="section-title text-center">🤝 Our Partners</h2>
-            <div class="row">
+            <div class="row g-4">
                 @foreach($partnerships as $partner)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4">
                         <div class="card h-100 text-center shadow-sm">
                             <div class="card-body">
                                 @if($partner->logo)
-                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}"
+                                    <img src="{{ asset('images/uploads/partnerships/' . $partner->logo) }}"
                                          alt="{{ $partner->name }}"
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
+                                         class="partner-logo">
                                 @else
-                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                                    <div class="partner-placeholder">🤝</div>
                                 @endif
-                                <h5>{{ $partner->name }}</h5>
+                                <h5 class="mt-2">{{ $partner->name }}</h5>
                                 <p class="text-muted">{{ Str::limit($partner->description, 80) }}</p>
                                 @if($partner->website)
                                     <a href="{{ $partner->website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
@@ -214,7 +218,7 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -244,6 +248,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
