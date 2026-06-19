@@ -4,54 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('resources/views/css/home.css') }}">
 </head>
 <body>
-
     <!-- ============================================
-         NAVIGATION
+         NAVIGATION - ORANGE GRADIENT + GLASS EFFECT
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-
-            <!-- LEFT: Brand -->
-            <a class="navbar-brand" href="/">Kahel na Langit</a>
-
-            <!-- Toggler for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="/">🌅 Kahel na Langit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- CENTER: Nav links + RIGHT: Login -->
             <div class="collapse navbar-collapse" id="navbarNav">
-
-                <!-- CENTER links -->
                 <ul class="navbar-nav">
+                    <!-- Left side -->
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
-                </ul>
-
-                <!-- RIGHT: Auth -->
-                <div class="nav-right">
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    
+                    <!-- Right side -->
                     @auth
-                        <div class="d-flex align-items-center gap-2">
-                            <a class="btn-login" href="/profile">Profile</a>
-                            <form method="POST" action="/logout" class="d-inline m-0">
+                        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                        <li class="nav-item">
+                            <form method="POST" action="/logout" class="d-inline">
                                 @csrf
-                                <button type="submit" class="btn-logout">Logout</button>
+                                <button type="submit" class="btn btn-link nav-link">Logout</button>
                             </form>
-                        </div>
+                        </li>
                     @else
-                        <a class="btn-login" href="/login">Login/Register</a>
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                     @endauth
-                </div>
-
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/admin/login">🔑 Admin</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -59,7 +50,15 @@
     <!-- ============================================
          HERO SECTION
          ============================================ -->
-    <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
+    <section class="hero" style="
+        background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+    ">
         <div class="container">
             <h1>🌅 <span>Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
@@ -117,8 +116,8 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm update-card">
                             @if($update->image)
-                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}"
-                                     alt="{{ $update->title }}"
+                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
+                                     alt="{{ $update->title }}" 
                                      class="update-image">
                             @endif
                             <div class="card-body">
@@ -148,8 +147,8 @@
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm">
                             @if($item->image)
-                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
-                                     alt="{{ $item->item_name }}"
+                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
+                                     alt="{{ $item->item_name }}" 
                                      class="wishlist-image">
                             @else
                                 <div class="wishlist-placeholder">📦</div>
@@ -187,9 +186,9 @@
                         <div class="card h-100 text-center shadow-sm">
                             <div class="card-body">
                                 @if($partner->logo)
-                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}"
-                                         alt="{{ $partner->name }}"
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
+                                         alt="{{ $partner->name }}" 
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #ff6c27; padding: 3px;">
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
@@ -242,3 +241,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
