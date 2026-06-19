@@ -9,9 +9,9 @@
 </head>
 <body>
     <!-- ============================================
-         NAVIGATION - FULLY RESPONSIVE
+         NAVIGATION - ORANGE GRADIENT
          ============================================ -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="/">🌅 Kahel na Langit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
