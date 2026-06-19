@@ -47,19 +47,17 @@
         /* ── Cards ── */
         .card {
             background: #faf7e5 !important;
-            border: 2.5px solid #ffffff !important;
+            border: 2px solid #658107 !important;
             border-radius: 14px !important;
-            box-shadow:
-                0 0 0 3px #eab000,
-                0 6px 18px rgba(0,0,0,0.13) !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.25s, box-shadow 0.25s;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             box-shadow:
-                0 0 0 4px #ffffff,
-                0 12px 28px rgba(0,0,0,0.22) !important;
+                0 0 0 3px #658107,
+                0 14px 28px rgba(0,0,0,0.18) !important;
         }
 
         /* ── Banner image ── */
@@ -87,7 +85,7 @@
             height: 64px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2.5px solid #eab000;
+            border: 2px solid #658107;
             background: #faf7e5;
             margin: -32px auto 12px;
             display: block;
@@ -98,7 +96,7 @@
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            border: 2.5px solid #eab000;
+            border: 2px solid #658107;
             background: #faf7e5;
             margin: -32px auto 12px;
             display: flex;
