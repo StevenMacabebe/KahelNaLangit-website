@@ -5,72 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partnerships - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .navbar { background: #2c3e50 !important; }
-        .page-header { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 50px 0; margin-bottom: 30px; }
-        footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
-        .card { transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .partner-logo { 
-            max-width: 100px; 
-            max-height: 100px; 
-            border-radius: 50%; 
-            margin-bottom: 15px;
-            object-fit: cover;
-            border: 3px solid #e67e22;
-            padding: 3px;
-        }
-        .partner-banner {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
+        /* ── Base ── */
         body {
-            background:
-                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-                radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-                radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-                linear-gradient(
-                    135deg,
-                    #d96a14 0%,
-                    #e67e22 40%,
-                    #f39c12 70%,
-                    #ffb347 100%
-                );
+            font-family: 'Poppins', sans-serif;
+            background: #faf7e5;
             min-height: 100vh;
-            background-attachment: fixed;
         }
+
+        /* ── Navbar ── */
+        .navbar {
+            background: #c25328 !important;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #faf7e5 !important;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        .nav-link.btn-login {
+            background: #faf7e5;
+            color: #c25328 !important;
+            border-radius: 20px;
+            padding: 4px 14px !important;
+            font-weight: 700;
+        }
+
+        /* ── Page header ── */
+        .page-header {
+            background: #658107;
+            color: #faf7e5;
+            padding: 40px 0 32px;
+            margin-bottom: 24px;
+        }
+        .page-header h1 { font-weight: 700; }
+        .page-header .lead { opacity: 0.85; font-size: 15px; }
+
+        /* ── Cards ── */
         .card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
+            background: #faf7e5 !important;
+            border: 2.5px solid #ffffff !important;
+            border-radius: 14px !important;
             box-shadow:
-                0 0 0 4px #d97706,
-                0 8px 20px rgba(0,0,0,0.15) !important;
+                0 0 0 3px #eab000,
+                0 6px 18px rgba(0,0,0,0.13) !important;
             overflow: hidden;
-            transition: all .3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow:
-                0 0 0 5px #ffffff,
-                0 12px 25px rgba(0,0,0,.25) !important;
+                0 0 0 4px #ffffff,
+                0 12px 28px rgba(0,0,0,0.22) !important;
+        }
+
+        /* ── Banner image ── */
+        .partner-banner {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .partner-banner-placeholder {
+            height: 140px;
+            background: linear-gradient(135deg, #c25328, #eab000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #faf7e5;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ── Logo ── */
+        .partner-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2.5px solid #eab000;
+            background: #faf7e5;
+            margin: -32px auto 12px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        .partner-logo-placeholder {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2.5px solid #eab000;
+            background: #faf7e5;
+            margin: -32px auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Card body ── */
+        .card-body {
+            text-align: center;
+            padding: 0 16px 20px;
+        }
+        .card-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #365fa9;
+            margin-bottom: 8px;
+        }
+        .card-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ── Buttons & badges ── */
+        .btn-visit {
+            border: 1.5px solid #365fa9;
+            color: #365fa9;
+            background: transparent;
+            border-radius: 6px;
+            padding: 4px 16px;
+            font-size: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-visit:hover {
+            background: #365fa9;
+            color: #faf7e5;
+        }
+        .badge-current {
+            background: #658107;
+            color: #faf7e5;
+            border-radius: 4px;
+            padding: 3px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .badge-past {
+            background: #888;
+            color: #faf7e5;
+            border-radius: 4px;
+            padding: 3px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* ── Empty state ── */
+        .alert-info {
+            background: #fff8e1;
+            border: 1.5px solid #eab000;
+            color: #555;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #c25328;
+            color: #faf7e5;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">🌅 Kahel na Langit</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
+            <a class="navbar-brand fw-bold" href="/">
+                <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
+                Kahel na Langit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                 </ul>
             </div>
         </div>
@@ -84,53 +214,59 @@
         </div>
     </div>
 
-    <!-- Partnerships Grid -->
+    <!-- Partnerships Grid — 3 columns -->
     <div class="container">
         @if($partnerships->count() > 0)
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach($partnerships as $partnership)
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100 shadow-sm">
+                    <div class="col">
+                        <div class="card h-100">
+
                             <!-- Banner Image -->
                             @if($partnership->banner_image)
-                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}" 
-                                     alt="{{ $partnership->name }}" 
+                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}"
+                                     alt="{{ $partnership->name }}"
                                      class="partner-banner">
                             @else
-                                <div style="height: 150px; background: linear-gradient(135deg, #f39c12, #e67e22); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
+                                <div class="partner-banner-placeholder">
                                     🤝 Partnership
                                 </div>
                             @endif
 
-                            <div class="card-body text-center">
+                            <div class="card-body">
+
                                 <!-- Logo -->
                                 @if($partnership->logo)
-                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}" 
-                                         alt="{{ $partnership->name }}" 
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}"
+                                         alt="{{ $partnership->name }}"
                                          class="partner-logo">
                                 @else
-                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                                    <div class="partner-logo-placeholder">🤝</div>
                                 @endif
 
                                 <h5 class="card-title">{{ $partnership->name }}</h5>
-                                <p class="card-text text-muted">{{ $partnership->description ?? 'No description available.' }}</p>
-                                
-                                @if($partnership->website)
-                                    <a href="{{ $partnership->website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
-                                @endif
-                                <br><br>
-                                <span class="badge bg-{{ $partnership->status === 'current' ? 'success' : 'secondary' }}">
-                                    {{ ucfirst($partnership->status) }}
-                                </span>
+                                <p class="card-text">{{ $partnership->description ?? 'No description available.' }}</p>
+
+                                <div class="d-flex flex-column align-items-center gap-2 mt-3">
+                                    @if($partnership->website)
+                                        <a href="{{ $partnership->website }}" target="_blank" class="btn-visit">
+                                            Visit Website
+                                        </a>
+                                    @endif
+                                    <span class="{{ $partnership->status === 'current' ? 'badge-current' : 'badge-past' }}">
+                                        {{ ucfirst($partnership->status) }}
+                                    </span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
         @else
-            <div class="alert alert-info text-center">
+            <div class="alert alert-info text-center mt-4">
                 <h4>No partnerships yet</h4>
-                <p>Check back soon for updates on our partners!</p>
+                <p class="mb-0">Check back soon for updates on our partners!</p>
             </div>
         @endif
     </div>
@@ -138,7 +274,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Kahel na Langit. All rights reserved.</p>
+            <p class="mb-0">© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
     </footer>
 
