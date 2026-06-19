@@ -144,7 +144,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <img src="{{ asset('/images/climate.png') }}" alt="Goal 13">
+                    url('{{ asset('public/images/climate.png?v=2') }}') center/cover no-repeat;
                     <h5>Goal 13</h5>
                     <p>Climate Action</p>
                 </div>
