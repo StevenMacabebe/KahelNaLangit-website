@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('resources/views/css/home.css') }}">
 </head>
@@ -35,10 +36,9 @@
                                 <button type="submit" class="btn btn-link nav-link">Logout</button>
                             </form>
                         </li>
-                    @else
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                    @endauth
+                        @else
+                            <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
+                        @endauth
                     <li class="nav-item">
                         <a class="nav-link text-warning" href="/admin/login">🔑 Admin</a>
                     </li>
