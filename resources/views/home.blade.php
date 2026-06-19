@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Kahel na Langit</title>
+    <title>Kahel na Langit - Home</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +14,413 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Your Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <!-- ===== ALL CSS EMBEDDED HERE ===== -->
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* ============================================
+           NAVBAR – Gradient with WHITE text
+           ============================================ */
+        .navbar-custom {
+            background: linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #fcd34d 100%);
+            padding: 12px 40px;
+            border-radius: 50px;
+            margin: 20px 30px 0;
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+        }
+
+        .navbar-custom .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff4e6;
+            padding: 3px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .brand-name {
+            font-family: 'Schoolbell', cursive;
+            font-size: 28px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.20);
+            white-space: nowrap;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover,
+        .navbar-custom .navbar-nav .nav-link.active {
+            border-bottom-color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Login/Register button */
+        .nav-link-login {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            background: #1e1b1a;
+            color: #fcd34d !important;
+            padding: 8px 20px !important;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .nav-link-login:hover {
+            background: #000000;
+            color: #fbbf24 !important;
+            transform: scale(1.03);
+        }
+
+        /* Logout button */
+        .btn-logout-nav {
+            background: #1e1b1a;
+            color: #fcd34d;
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-logout-nav:hover {
+            background: #000000;
+            color: #fbbf24;
+            transform: scale(1.03);
+        }
+
+        /* Navbar toggler (mobile) */
+        .navbar-custom .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* ============================================
+           HERO SECTION – matching your image
+           ============================================ */
+        .hero-section {
+            padding: 60px 20px 40px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Schoolbell', cursive;
+            font-size: 56px;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .hero-description {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: #000000;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .btn-donate {
+            display: inline-block;
+            background: #f97316;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 16px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-donate:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(249, 115, 22, 0.45);
+            color: #ffffff;
+        }
+
+        /* ============================================
+           FEATURE CARDS
+           ============================================ */
+        .feature-card {
+            border-radius: 20px;
+            padding: 8px 0;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: #f9fafb;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .feature-icon {
+            font-size: 44px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: #000000;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           SECTION TITLES
+           ============================================ */
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            color: #000000;
+            margin-bottom: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ============================================
+           UPDATES, WISHLIST, PARTNERSHIPS
+           ============================================ */
+        .update-image,
+        .wishlist-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .wishlist-placeholder,
+        .partner-placeholder {
+            font-size: 60px;
+            text-align: center;
+            padding: 30px 0;
+            background: #f3f4f6;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .partner-logo {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f97316;
+            padding: 3px;
+        }
+
+        .update-card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .update-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: #1e1b1a;
+            color: #ffffff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: #fcd34d;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer a:hover {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+
+        .footer hr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 992px) {
+            .navbar-custom {
+                margin: 12px 16px 0;
+                padding: 12px 20px;
+                border-radius: 30px;
+            }
+
+            .brand-name {
+                font-size: 22px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+            .hero-subtitle {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-custom {
+                margin: 8px 10px 0;
+                padding: 10px 16px;
+                border-radius: 24px;
+            }
+
+            .brand-logo {
+                width: 36px;
+                height: 36px;
+            }
+            .brand-name {
+                font-size: 20px;
+            }
+
+            .navbar-custom .navbar-nav .nav-link {
+                font-size: 14px;
+                padding: 6px 12px;
+                color: #ffffff !important;
+            }
+
+            .nav-link-login,
+            .btn-logout-nav {
+                font-size: 14px;
+                padding: 6px 16px;
+            }
+
+            .hero-section {
+                padding: 40px 16px 30px;
+            }
+            .hero-title {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            .hero-description {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+            .btn-donate {
+                font-size: 18px;
+                padding: 14px 36px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-custom {
+                margin: 6px 6px 0;
+                padding: 8px 12px;
+                border-radius: 18px;
+            }
+
+            .brand-logo {
+                width: 30px;
+                height: 30px;
+            }
+            .brand-name {
+                font-size: 17px;
+            }
+
+            .navbar-custom .navbar-nav .nav-link {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
+
+            .hero-title {
+                font-size: 26px;
+            }
+            .hero-subtitle {
+                font-size: 17px;
+            }
+            .hero-description {
+                font-size: 14px;
+            }
+            .btn-donate {
+                font-size: 15px;
+                padding: 12px 28px;
+            }
+
+            .feature-title {
+                font-size: 17px;
+            }
+            .feature-text {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -116,7 +521,7 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION
+         UPDATES SECTION (if data exists)
          ============================================ -->
     @if(isset($updates) && $updates->count() > 0)
         <div class="container mt-5">
@@ -146,7 +551,7 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION
+         WISHLIST SECTION (if data exists)
          ============================================ -->
     @if(isset($wishlist) && $wishlist->count() > 0)
         <div class="container mt-5">
@@ -185,7 +590,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION
+         PARTNERSHIPS SECTION (if data exists)
          ============================================ -->
     @if(isset($partnerships) && $partnerships->count() > 0)
         <div class="container mt-5">
