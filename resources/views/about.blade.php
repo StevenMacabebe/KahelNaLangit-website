@@ -13,40 +13,39 @@
         .team-card { transition: transform 0.3s; }
         .team-card:hover { transform: translateY(-5px); }
         .sdg-badge { font-size: 48px; text-align: center; padding: 20px; }
+        .sdg-badge img { max-width: 48px; max-height: 48px; margin-bottom: 5px; }
         
         body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-        radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-        linear-gradient(
-            135deg,
-            #d96a14 0%,
-            #e67e22 40%,
-            #f39c12 70%,
-            #ffb347 100%
-        );
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-.card {
-    background: #f8f4ed !important;
-    border: 3px solid #ffffff !important;
-    border-radius: 18px !important;
-    box-shadow:
-        0 0 0 4px #d97706,
-        0 8px 20px rgba(0,0,0,0.15) !important;
-
-    overflow: hidden;
-    transition: all .3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 0 0 5px #ffffff,
-        0 12px 25px rgba(0,0,0,.25) !important;
-}
-        
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
+                radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
+                radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
+                linear-gradient(
+                    135deg,
+                    #d96a14 0%,
+                    #e67e22 40%,
+                    #f39c12 70%,
+                    #ffb347 100%
+                );
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow:
+                0 0 0 4px #d97706,
+                0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 0 0 5px #ffffff,
+                0 12px 25px rgba(0,0,0,.25) !important;
+        }
     </style>
 </head>
 <body>
@@ -144,7 +143,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <img src="{{ asset('images/climate.png') }}" alt="Goal 13">
+                    <img src="{{ asset('public/images/climate.png') }}" alt="Goal 13">
                     <h5>Goal 13</h5>
                     <p>Climate Action</p>
                 </div>
