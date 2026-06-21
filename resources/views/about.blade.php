@@ -141,10 +141,19 @@
 
         <span class="sec-eye">The Concept</span>
         <div class="card mb-5">
-            <div class="card-body">
-                <div class="icon-badge"><i class="ti ti-sun" aria-hidden="true"></i></div>
-                <h3>The Story Behind the Name</h3>
-                <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="{{ asset('public/images/concept.jpg') }}"
+                        alt="Kahel na Langit Concept"
+                        style="width:100%; height:100%; object-fit:cover; border-radius:12px 0 0 12px;">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
+                        <div class="icon-badge mb-3"><i class="ti ti-sun" aria-hidden="true"></i></div>
+                        <h3>The Story Behind the Name</h3>
+                        <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
