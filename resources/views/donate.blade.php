@@ -6,7 +6,12 @@
     <title>Donate - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar { background: #2c3e50 !important; }
+        .navbar           { background: #c25328 !important; }
+        .navbar-brand,
+        .nav-link         { color: #faf7e5 !important; font-weight: 500; }
+        .nav-link:hover   { opacity: 0.8; }
+        .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
+        
         .page-header { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 50px 0; margin-bottom: 30px; }
         footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
         .qr-image { max-width: 200px; }
