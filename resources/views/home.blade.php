@@ -105,36 +105,36 @@
         }
 
         /* ============================================
-           HERO SECTION
+           HERO SECTION WITH VIDEO
            ============================================ */
-        .hero {
-            background: url('{{ asset("public/images/hero.png") }}') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        .hero-video-wrapper {
+            position: relative;
+            overflow: hidden;
             min-height: 500px;
             display: flex;
             align-items: center;
-            position: relative;
         }
 
-        .hero::before {
-            content: '';
+        .hero-video-wrapper video {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
-        .hero .container {
+        .hero-video-wrapper .hero-overlay {
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            width: 100%;
+            padding: 100px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.45);
         }
 
-        .hero h1 {
+        .hero-video-wrapper .hero-overlay h1 {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -142,8 +142,7 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
 
-        /* SCHOOLBELL FONT FOR "KAHEL NA LANGIT" - BRIGHT AND CLEAR */
-        .hero h1 .brand-name {
+        .hero-video-wrapper .hero-overlay h1 .brand-name {
             font-family: 'Schoolbell', cursive;
             color: #ffa003;
             font-weight: 400;
@@ -151,15 +150,50 @@
             opacity: 1 !important;
         }
 
-        .hero .lead {
+        .hero-video-wrapper .hero-overlay .lead {
             font-size: 22px;
             margin-bottom: 15px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
 
-        .hero p {
+        .hero-video-wrapper .hero-overlay p {
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             font-size: 18px;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn-primary {
+            background: #c25328 !important;
+            border: none !important;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #9e3d18 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(194, 83, 40, 0.4);
+        }
+
+        .btn-outline-light {
+            border: 2px solid white !important;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white !important;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            background: white !important;
+            color: #c25328 !important;
+            transform: translateY(-2px);
         }
 
         /* ============================================
@@ -200,41 +234,6 @@
         }
 
         /* ============================================
-           BUTTONS
-           ============================================ */
-        .btn-primary {
-            background: #c25328 !important;
-            border: none !important;
-            padding: 12px 35px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: white !important;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: #9e3d18 !important;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(194, 83, 40, 0.4);
-        }
-
-        .btn-outline-light {
-            border: 2px solid white !important;
-            padding: 12px 35px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: white !important;
-            background: transparent;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-light:hover {
-            background: white !important;
-            color: #c25328 !important;
-            transform: translateY(-2px);
-        }
-
-        /* ============================================
            SECTION TITLES
            ============================================ */
         .section-title {
@@ -253,7 +252,7 @@
         }
 
         /* ============================================
-           FEATURES CARDS (Default - Orange)
+           FEATURES CARDS
            ============================================ */
         .feature-card {
             background: #f8f4ed !important;
@@ -453,14 +452,16 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0;
+            .hero-video-wrapper {
                 min-height: 400px;
             }
-            .hero h1 {
+            .hero-video-wrapper .hero-overlay {
+                padding: 80px 0;
+            }
+            .hero-video-wrapper .hero-overlay h1 {
                 font-size: 32px;
             }
-            .hero .lead {
+            .hero-video-wrapper .hero-overlay .lead {
                 font-size: 18px;
             }
             .btn-primary, .btn-outline-light {
@@ -473,10 +474,10 @@
         }
 
         @media (max-width: 576px) {
-            .hero h1 {
+            .hero-video-wrapper .hero-overlay h1 {
                 font-size: 26px;
             }
-            .hero .lead {
+            .hero-video-wrapper .hero-overlay .lead {
                 font-size: 16px;
             }
         }
@@ -521,16 +522,25 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - SCHOOLBELL FONT (BRIGHT)
+         HERO SECTION - WITH LOOPING VIDEO
          ============================================ -->
-    <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
-        <div class="container">
-            <h1><span class="brand-name">Kahel na Langit</span></h1>
-            <p class="lead">Empowering Communities, Building Hope</p>
-            <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
-            <div class="mt-4">
-                <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
-                <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
+    <section class="hero-video-wrapper">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('public/videos/hero-video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay Content -->
+        <div class="hero-overlay">
+            <div class="container">
+                <h1><span class="brand-name">Kahel na Langit</span></h1>
+                <p class="lead">Empowering Communities, Building Hope</p>
+                <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
+                <div class="mt-4">
+                    <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
+                    <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -598,7 +608,7 @@
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -667,7 +677,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">Our Partners</h2>
+            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -700,7 +710,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>🌅 Kahel na Langit</h5>
+                    <h5>Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
