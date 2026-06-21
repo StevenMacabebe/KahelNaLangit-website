@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
@@ -142,8 +142,11 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .hero h1 span {
+        /* SCHOOLBELL FONT FOR KAHEL NA LANGIT */
+        .hero h1 .brand-name {
+            font-family: 'Schoolbell', cursive;
             color: #ffa003;
+            font-weight: 400;
         }
 
         .hero .lead {
@@ -196,7 +199,6 @@
            SECTION TITLES
            ============================================ */
         .section-title {
-            color: #c25328;
             margin-bottom: 30px;
             font-weight: 700;
             position: relative;
@@ -207,13 +209,41 @@
             display: block;
             width: 60px;
             height: 4px;
-            background: #c25328;
             margin: 10px auto 0;
             border-radius: 2px;
         }
 
+        /* UPDATES - #930000 */
+        .updates-title {
+            color: #930000;
+        }
+        .updates-title:after {
+            background: #930000;
+        }
+
+        .update-card {
+            border-left: 4px solid #930000 !important;
+        }
+
+        /* WISHLIST - #365fa9 */
+        .wishlist-title {
+            color: #365fa9;
+        }
+        .wishlist-title:after {
+            background: #365fa9;
+        }
+
+        .wishlist-card {
+            border: 3px solid #ffffff !important;
+            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0,0,0,0.15) !important;
+        }
+
+        .wishlist-card:hover {
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
         /* ============================================
-           CARDS - SAME AS ABOUT PAGE
+           CARDS - DEFAULT (Features)
            ============================================ */
         .card {
             background: #f8f4ed !important;
@@ -232,10 +262,6 @@
         /* ============================================
            UPDATES
            ============================================ */
-        .update-card {
-            border-left: 4px solid #c25328 !important;
-        }
-
         .update-image {
             width: 100%;
             height: 200px;
@@ -256,7 +282,7 @@
         .wishlist-placeholder {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #c25328, #9e3d18);
+            background: linear-gradient(135deg, #365fa9, #1a3a6b);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -266,17 +292,17 @@
         }
 
         /* ============================================
-           PROGRESS BAR
+           PROGRESS BAR - WISHLIST
            ============================================ */
-        .progress-bar {
-            background: #c25328 !important;
+        .wishlist-progress .progress-bar {
+            background: #365fa9 !important;
         }
 
         /* ============================================
            BADGES
            ============================================ */
         .badge.bg-warning {
-            background: #c25328 !important;
+            background: #930000 !important;
             color: white !important;
         }
 
@@ -294,7 +320,7 @@
         }
 
         /* ============================================
-           PARTNERSHIP CARD - GREEN (#658107) THEME
+           PARTNERSHIP CARD - GREEN (#658107)
            ============================================ */
         .partner-card {
             background: #f8f4ed !important;
@@ -335,14 +361,6 @@
             background: #658107 !important;
             color: white !important;
             transform: translateY(-2px);
-        }
-
-        .partner-card .badge-partner {
-            background: #658107 !important;
-            color: white !important;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 600;
         }
 
         /* ============================================
@@ -444,11 +462,11 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION
+         HERO SECTION - SCHOOLBELL FONT
          ============================================ -->
     <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
         <div class="container">
-            <h1>🌅 <span>Kahel na Langit</span></h1>
+            <h1><span class="brand-name">Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <div class="mt-4">
@@ -494,11 +512,11 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION
+         UPDATES SECTION - #930000
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -524,16 +542,16 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION
+         WISHLIST SECTION - #365fa9
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm wishlist-card">
                             @if($item->image)
                                 <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
                                      alt="{{ $item->item_name }}" 
@@ -544,7 +562,7 @@
                             <div class="card-body">
                                 <h5>{{ $item->item_name }}</h5>
                                 <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
-                                <div class="progress">
+                                <div class="progress wishlist-progress">
                                     <div class="progress-bar" style="width: {{ $item->quantity_needed > 0 ? ($item->quantity_received / $item->quantity_needed) * 100 : 0 }}%">
                                         {{ $item->quantity_received }}/{{ $item->quantity_needed }}
                                     </div>
@@ -563,11 +581,11 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - GREEN (#658107) THEME
+         PARTNERSHIPS SECTION - #658107
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title text-center" style="color: #658107;">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -629,8 +647,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
 
 
 
