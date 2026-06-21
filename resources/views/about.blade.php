@@ -86,7 +86,7 @@
     <div class="page-header">
         <div class="container">
             <h1>About Kahel na Langit</h1>
-            <p>Empowering Communities, Building Hope</p>
+            <p class="lead">Empowering Communities, Building Hope</p>
         </div>
     </div>
 
