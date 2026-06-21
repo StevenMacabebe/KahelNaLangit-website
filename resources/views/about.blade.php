@@ -11,7 +11,6 @@
     <style>
         /* BASE */
         body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
-        h1    { font-size: 32px; font-weight: 700; }
         h2    { font-size: 26px; font-weight: 700; }
         h3    { font-size: 18px; font-weight: 700; }
         h5    { font-size: 15px; font-weight: 700; }
@@ -26,7 +25,7 @@
 
         /* HEADER */
         .page-header      { background: #365fa9; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; }
-        .page-header h1 { font-weight: 700; }
+        .page-header h1 { font-weight: 700; font-size: 2.5rem; }
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* SECTION LABELS */
