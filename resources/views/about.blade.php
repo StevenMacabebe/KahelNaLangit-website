@@ -45,6 +45,16 @@
         .sdg-badge img    { width: 56px; height: 56px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
         .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; }
 
+        /* MISSION & VISION (MV) CARDS */
+        .mv-card          { background: #faf7e5; border: 2px solid #365fa9; border-radius: 14px; overflow: hidden; transition: transform .25s; height: 100%; }
+        .mv-card:hover    { transform: translateY(-5px); box-shadow: 0 0 0 3px #365fa9, 0 14px 28px rgba(0,0,0,.12); }
+        .mv-card h3       { color: #c25328; margin-bottom: 8px; }
+        .mv-photo         { width: 100%; height: 170px; object-fit: cover; display: block; }
+        .mv-icon-row      { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .mv-icon          { width: 38px; height: 38px; background: #dce8fc; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .mv-icon i        { font-size: 18px; color: #365fa9; }
+        .mv-body          { padding: 20px 22px 24px; }
+
         /* TEAM */
         .team-card        { transition: transform 0.3s; }
         .team-card:hover  { transform: translateY(-5px); }
@@ -91,23 +101,33 @@
 
     <div class="container">
 
-        <span class="sec-eye">Who We Are</span>
-        <h2 class="mb-4" style="color:#365fa9;">Our Mission &amp; Vision</h2>
-        <div class="row mb-5">
-            <div class="col-md-6 mb-3 mb-md-0">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <div class="icon-badge"><i class="ti ti-target" aria-hidden="true"></i></div>
-                        <h3>Our Mission</h3>
+        <span class="sec-eye text-center d-block">Who We Are</span>
+        <h2 class="sec-head text-center">Our Mission &amp; Vision</h2>
+        <div class="row g-3 mb-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="mv-card">
+                    <img src="{{ asset('public/images/mission.png') }}"
+                        alt="Damayan Community"
+                        class="mv-photo">
+                    <div class="mv-body">
+                        <div class="mv-icon-row">
+                            <div class="mv-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
+                            <h3>Our Mission</h3>
+                        </div>
                         <p>Kahel na Langit is a community-driven initiative dedicated to empowering and uplifting vulnerable communities through sustainable development programs, fundraising activities, and community engagement efforts.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
-                        <h3>Our Vision</h3>
+            <div class="col-md-5">
+                <div class="mv-card">
+                    <img src="{{ asset('public/images/vision.jpg') }}"
+                        alt="Community Vision"
+                        class="mv-photo">
+                    <div class="mv-body">
+                        <div class="mv-icon-row">
+                            <div class="mv-icon"><i class="ti ti-eye" aria-hidden="true"></i></div>
+                            <h3>Our Vision</h3>
+                        </div>
                         <p>To create a world where communities thrive through collective action and shared responsibility, fostering a culture of hope, cooperation, and long-term sustainability.</p>
                     </div>
                 </div>
