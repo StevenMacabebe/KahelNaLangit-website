@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
@@ -142,8 +142,13 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .hero h1 span {
+        /* SCHOOLBELL FONT FOR "KAHEL NA LANGIT" - BRIGHT AND CLEAR */
+        .hero h1 .brand-name {
+            font-family: 'Schoolbell', cursive;
             color: #ffa003;
+            font-weight: 400;
+            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 8px rgba(0,0,0,0.3);
+            opacity: 1 !important;
         }
 
         .hero .lead {
@@ -155,6 +160,43 @@
         .hero p {
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             font-size: 18px;
+        }
+
+        /* ============================================
+           DAMAYAN MODEL HOUSE CARD
+           ============================================ */
+        .damayan-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .damayan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
+        .damayan-card .damayan-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .damayan-card .damayan-title {
+            color: #c25328;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .damayan-card .damayan-text {
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.8;
         }
 
         /* ============================================
@@ -196,7 +238,6 @@
            SECTION TITLES
            ============================================ */
         .section-title {
-            color: #c25328;
             margin-bottom: 30px;
             font-weight: 700;
             position: relative;
@@ -207,15 +248,14 @@
             display: block;
             width: 60px;
             height: 4px;
-            background: #c25328;
             margin: 10px auto 0;
             border-radius: 2px;
         }
 
         /* ============================================
-           CARDS - SAME AS ABOUT PAGE
+           FEATURES CARDS (Default - Orange)
            ============================================ */
-        .card {
+        .feature-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
@@ -224,16 +264,33 @@
             transition: all .3s ease;
         }
 
-        .card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
         /* ============================================
-           UPDATES
+           UPDATES - #ac1a1a
            ============================================ */
+        .updates-title {
+            color: #ac1a1a;
+        }
+        .updates-title:after {
+            background: #ac1a1a;
+        }
+
         .update-card {
-            border-left: 4px solid #c25328 !important;
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .update-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
         .update-image {
@@ -244,8 +301,29 @@
         }
 
         /* ============================================
-           WISHLIST
+           WISHLIST - #365fa9
            ============================================ */
+        .wishlist-title {
+            color: #365fa9;
+        }
+        .wishlist-title:after {
+            background: #365fa9;
+        }
+
+        .wishlist-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .wishlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
         .wishlist-image {
             width: 100%;
             height: 200px;
@@ -256,7 +334,7 @@
         .wishlist-placeholder {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #c25328, #9e3d18);
+            background: linear-gradient(135deg, #365fa9, #1a3a6b);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -265,37 +343,20 @@
             border-radius: 10px 10px 0 0;
         }
 
-        /* ============================================
-           PROGRESS BAR
-           ============================================ */
-        .progress-bar {
-            background: #c25328 !important;
+        .wishlist-progress .progress-bar {
+            background: #365fa9 !important;
         }
 
         /* ============================================
-           BADGES
+           PARTNERS - #658107
            ============================================ */
-        .badge.bg-warning {
-            background: #c25328 !important;
-            color: white !important;
+        .partners-title {
+            color: #658107;
+        }
+        .partners-title:after {
+            background: #658107;
         }
 
-        .badge.bg-info {
-            background: #e07a50 !important;
-            color: white !important;
-        }
-
-        .badge.bg-success {
-            background: #27ae60 !important;
-        }
-
-        .badge.bg-secondary {
-            background: #95a5a6 !important;
-        }
-
-        /* ============================================
-           PARTNERSHIP CARD - GREEN (#658107) THEME
-           ============================================ */
         .partner-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -337,16 +398,29 @@
             transform: translateY(-2px);
         }
 
-        .partner-card .badge-partner {
-            background: #658107 !important;
+        /* ============================================
+           BADGES
+           ============================================ */
+        .badge.bg-warning {
+            background: #ac1a1a !important;
             color: white !important;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 600;
+        }
+
+        .badge.bg-info {
+            background: #e07a50 !important;
+            color: white !important;
+        }
+
+        .badge.bg-success {
+            background: #27ae60 !important;
+        }
+
+        .badge.bg-secondary {
+            background: #95a5a6 !important;
         }
 
         /* ============================================
-           FOOTER - SAME AS ABOUT PAGE
+           FOOTER
            ============================================ */
         footer {
             background: #c25328;
@@ -393,6 +467,9 @@
                 padding: 10px 25px;
                 font-size: 14px;
             }
+            .damayan-card .damayan-image {
+                min-height: 200px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -408,7 +485,7 @@
 <body>
 
     <!-- ============================================
-         NAVIGATION - EXACT COPY FROM ABOUT PAGE
+         NAVIGATION
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -444,27 +521,50 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION
+         HERO SECTION - SCHOOLBELL FONT (BRIGHT)
          ============================================ -->
     <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
         <div class="container">
-            <h1>🌅 <span>Kahel na Langit</span></h1>
+            <h1><span class="brand-name">Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <div class="mt-4">
-                <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
-                <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+                <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
+                <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-         FEATURES SECTION
+         DAMAYAN MODEL HOUSE CARD SECTION
+         ============================================ -->
+    <div class="container mt-5">
+        <div class="card damayan-card">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="{{ asset('public/images/damayan-house.jpg') }}" 
+                         alt="Damayan Model House" 
+                         class="damayan-image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body p-4">
+                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
+                        <p class="damayan-text">
+                            We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         FEATURES SECTION - ORANGE CARDS
          ============================================ -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🏠</h2>
                         <h5>Community Development</h5>
@@ -473,7 +573,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🤝</h2>
                         <h5>Fundraising</h5>
@@ -482,7 +582,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🌱</h2>
                         <h5>Community Engagement</h5>
@@ -494,11 +594,11 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION
+         UPDATES SECTION - #ac1a1a CARDS
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -509,7 +609,7 @@
                                      class="update-image">
                             @endif
                             <div class="card-body">
-                                <span class="badge bg-{{ $update->category === 'announcement' ? 'warning' : 'info' }} mb-2">
+                                <span class="badge bg-warning mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
                                 </span>
                                 <h5>{{ $update->title }}</h5>
@@ -524,16 +624,16 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION
+         WISHLIST SECTION - #365fa9 CARDS
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm wishlist-card">
                             @if($item->image)
                                 <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
                                      alt="{{ $item->item_name }}" 
@@ -544,7 +644,7 @@
                             <div class="card-body">
                                 <h5>{{ $item->item_name }}</h5>
                                 <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
-                                <div class="progress">
+                                <div class="progress wishlist-progress">
                                     <div class="progress-bar" style="width: {{ $item->quantity_needed > 0 ? ($item->quantity_received / $item->quantity_needed) * 100 : 0 }}%">
                                         {{ $item->quantity_received }}/{{ $item->quantity_needed }}
                                     </div>
@@ -563,11 +663,11 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - GREEN (#658107) THEME
+         PARTNERSHIPS SECTION - #658107 CARDS
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title partners-title text-center">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -594,7 +694,7 @@
     @endif
 
     <!-- ============================================
-         FOOTER - SAME AS ABOUT PAGE
+         FOOTER
          ============================================ -->
     <footer>
         <div class="container">
@@ -629,8 +729,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-
