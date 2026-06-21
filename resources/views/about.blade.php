@@ -156,42 +156,42 @@
         <div class="row mb-5">
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div> </div>
+                    <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
                     <h5>Goal 1</h5>
                     <p>No Poverty</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div>🏗️</div>
+                    <img src="{{ asset('public/images/sdg9.png') }}" alt="Goal 9">
                     <h5>Goal 9</h5>
                     <p>Industry, Innovation & Infrastructure</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div>⚖️</div>
+                    <img src="{{ asset('public/images/sdg10.png') }}" alt="Goal 10">
                     <h5>Goal 10</h5>
                     <p>Reduced Inequalities</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div>🏙️</div>
+                    <img src="{{ asset('public/images/sdg11.png') }}" alt="Goal 11">
                     <h5>Goal 11</h5>
                     <p>Sustainable Cities & Communities</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <img src="{{ asset('public/images/climate.png') }}" alt="Goal 13">
+                    <img src="{{ asset('public/images/sdg13.png') }}" alt="Goal 13">
                     <h5>Goal 13</h5>
                     <p>Climate Action</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div>🤝</div>
+                    <img src="{{ asset('public/images/sdg17.png') }}" alt="Goal 17">
                     <h5>Goal 17</h5>
                     <p>Partnerships for the Goals</p>
                 </div>
