@@ -47,8 +47,11 @@
 
         /* MISSION & VISION (MV) CARDS */
         .mv-photo         { width: 100%; height: 340px; object-fit: cover; display: block; }
-        .icon-badge       { width: 42px; height: 42px; background: #dce8fc; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+        .mv-icon-row      { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .icon-badge       { width: 42px; height: 42px; background: #dce8fc; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .icon-badge i     { font-size: 20px; color: #365fa9; }
+        .card-body h3     { color: #c25328; margin-bottom: 6px; }
+        .card-body p      { color: #555 !important; }
 
         /* TEAM */
         .team-card        { transition: transform 0.3s; }
@@ -101,20 +104,24 @@
         <div class="row mb-5 justify-content-center">
             <div class="col-md-5 mb-3 mb-md-0">
                 <div class="card h-100">
-                    <img src="{{ asset('public/images/mission.png') }}" alt="Our Mission" class="mv-photo">
+                    <img src="{{ asset('public/images/mission.jpg') }}" alt="Our Mission" class="mv-photo">
                     <div class="card-body">
-                        <div class="icon-badge"><i class="ti ti-target" aria-hidden="true"></i></div>
-                        <h3>Our Mission</h3>
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-target" aria-hidden="true"></i></div>
+                            <h3>Our Mission</h3>
+                        </div>
                         <p>Kahel na Langit is a community-driven initiative dedicated to empowering and uplifting vulnerable communities through sustainable development programs, fundraising activities, and community engagement efforts.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="card h-100">
-                    <img src="{{ asset('public/images/vision.png') }}" alt="Our Vision" class="mv-photo">
+                    <img src="{{ asset('public/images/vision.jpg') }}" alt="Our Vision" class="mv-photo">
                     <div class="card-body">
-                        <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
-                        <h3>Our Vision</h3>
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
+                            <h3>Our Vision</h3>
+                        </div>
                         <p>To create a world where communities thrive through collective action and shared responsibility, fostering a culture of hope, cooperation, and long-term sustainability.</p>
                     </div>
                 </div>
