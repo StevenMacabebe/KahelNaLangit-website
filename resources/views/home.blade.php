@@ -163,6 +163,43 @@
         }
 
         /* ============================================
+           DAMAYAN MODEL HOUSE CARD
+           ============================================ */
+        .damayan-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .damayan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
+        .damayan-card .damayan-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .damayan-card .damayan-title {
+            color: #c25328;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .damayan-card .damayan-text {
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* ============================================
            BUTTONS
            ============================================ */
         .btn-primary {
@@ -430,6 +467,9 @@
                 padding: 10px 25px;
                 font-size: 14px;
             }
+            .damayan-card .damayan-image {
+                min-height: 200px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -494,6 +534,29 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================
+         DAMAYAN MODEL HOUSE CARD SECTION
+         ============================================ -->
+    <div class="container mt-5">
+        <div class="card damayan-card">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="{{ asset('public/images/damayan-house.jpg') }}" 
+                         alt="Damayan Model House" 
+                         class="damayan-image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body p-4">
+                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
+                        <p class="damayan-text">
+                            We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================
          FEATURES SECTION - ORANGE CARDS
@@ -565,7 +628,7 @@
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
@@ -637,7 +700,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Kahel na Langit</h5>
+                    <h5>🌅 Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
