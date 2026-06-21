@@ -105,59 +105,67 @@
         }
 
         /* ============================================
-           HERO SECTION WITH VIDEO
+           HERO SECTION - VIDEO ONLY (NO OVERLAY)
            ============================================ */
         .hero-video-wrapper {
             position: relative;
             overflow: hidden;
+            width: 100%;
+            height: 800px;
+            max-height: 100vh;
             min-height: 500px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .hero-video-wrapper video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
             z-index: 0;
+            object-fit: cover;
         }
 
-        .hero-video-wrapper .hero-overlay {
+        .hero-video-wrapper .hero-content {
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 100px 0;
+            padding: 60px 0;
             text-align: center;
-            background: rgba(0, 0, 0, 0.45);
         }
 
-        .hero-video-wrapper .hero-overlay h1 {
+        .hero-video-wrapper .hero-content h1 {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
             color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
         }
 
-        .hero-video-wrapper .hero-overlay h1 .brand-name {
+        .hero-video-wrapper .hero-content h1 .brand-name {
             font-family: 'Schoolbell', cursive;
             color: #ffa003;
             font-weight: 400;
-            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 10px rgba(0,0,0,0.5);
             opacity: 1 !important;
         }
 
-        .hero-video-wrapper .hero-overlay .lead {
+        .hero-video-wrapper .hero-content .lead {
             font-size: 22px;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
-        .hero-video-wrapper .hero-overlay p {
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        .hero-video-wrapper .hero-content p {
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
             font-size: 18px;
         }
 
@@ -172,6 +180,8 @@
             border-radius: 8px;
             color: white !important;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -188,6 +198,8 @@
             color: white !important;
             background: transparent;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-outline-light:hover {
@@ -389,6 +401,8 @@
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .partner-card .btn-outline-partner:hover {
@@ -453,16 +467,17 @@
            ============================================ */
         @media (max-width: 768px) {
             .hero-video-wrapper {
+                height: 600px;
                 min-height: 400px;
             }
-            .hero-video-wrapper .hero-overlay {
-                padding: 80px 0;
-            }
-            .hero-video-wrapper .hero-overlay h1 {
+            .hero-video-wrapper .hero-content h1 {
                 font-size: 32px;
             }
-            .hero-video-wrapper .hero-overlay .lead {
+            .hero-video-wrapper .hero-content .lead {
                 font-size: 18px;
+            }
+            .hero-video-wrapper .hero-content {
+                padding: 40px 0;
             }
             .btn-primary, .btn-outline-light {
                 padding: 10px 25px;
@@ -474,10 +489,14 @@
         }
 
         @media (max-width: 576px) {
-            .hero-video-wrapper .hero-overlay h1 {
+            .hero-video-wrapper {
+                height: 500px;
+                min-height: 350px;
+            }
+            .hero-video-wrapper .hero-content h1 {
                 font-size: 26px;
             }
-            .hero-video-wrapper .hero-overlay .lead {
+            .hero-video-wrapper .hero-content .lead {
                 font-size: 16px;
             }
         }
@@ -522,17 +541,17 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - WITH LOOPING VIDEO
+         HERO SECTION - VIDEO ONLY (NO OVERLAY)
          ============================================ -->
     <section class="hero-video-wrapper">
         <!-- Video Background -->
         <video autoplay muted loop playsinline>
-            <source src="{{ asset('public/videos/hero-video.mp4') }}" type="video/mp4">
+            <source src="{{ asset('public/images/hero-video.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
-        <!-- Overlay Content -->
-        <div class="hero-overlay">
+        <!-- Content -->
+        <div class="hero-content">
             <div class="container">
                 <h1><span class="brand-name">Kahel na Langit</span></h1>
                 <p class="lead">Empowering Communities, Building Hope</p>
@@ -608,7 +627,7 @@
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -677,7 +696,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title partners-title text-center">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
