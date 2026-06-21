@@ -142,7 +142,6 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
 
-        /* SCHOOLBELL FONT FOR KAHEL NA LANGIT */
         .hero h1 .brand-name {
             font-family: 'Schoolbell', cursive;
             color: #ffa003;
@@ -213,39 +212,10 @@
             border-radius: 2px;
         }
 
-        /* UPDATES - #930000 */
-        .updates-title {
-            color: #930000;
-        }
-        .updates-title:after {
-            background: #930000;
-        }
-
-        .update-card {
-            border-left: 4px solid #930000 !important;
-        }
-
-        /* WISHLIST - #365fa9 */
-        .wishlist-title {
-            color: #365fa9;
-        }
-        .wishlist-title:after {
-            background: #365fa9;
-        }
-
-        .wishlist-card {
-            border: 3px solid #ffffff !important;
-            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0,0,0,0.15) !important;
-        }
-
-        .wishlist-card:hover {
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
-        }
-
         /* ============================================
-           CARDS - DEFAULT (Features)
+           FEATURES CARDS (Default - Orange)
            ============================================ */
-        .card {
+        .feature-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
@@ -254,14 +224,35 @@
             transition: all .3s ease;
         }
 
-        .card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
         /* ============================================
-           UPDATES
+           UPDATES - #930000
            ============================================ */
+        .updates-title {
+            color: #930000;
+        }
+        .updates-title:after {
+            background: #930000;
+        }
+
+        .update-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #930000, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .update-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
         .update-image {
             width: 100%;
             height: 200px;
@@ -270,8 +261,29 @@
         }
 
         /* ============================================
-           WISHLIST
+           WISHLIST - #365fa9
            ============================================ */
+        .wishlist-title {
+            color: #365fa9;
+        }
+        .wishlist-title:after {
+            background: #365fa9;
+        }
+
+        .wishlist-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .wishlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
         .wishlist-image {
             width: 100%;
             height: 200px;
@@ -291,37 +303,20 @@
             border-radius: 10px 10px 0 0;
         }
 
-        /* ============================================
-           PROGRESS BAR - WISHLIST
-           ============================================ */
         .wishlist-progress .progress-bar {
             background: #365fa9 !important;
         }
 
         /* ============================================
-           BADGES
+           PARTNERS - #658107
            ============================================ */
-        .badge.bg-warning {
-            background: #930000 !important;
-            color: white !important;
+        .partners-title {
+            color: #658107;
+        }
+        .partners-title:after {
+            background: #658107;
         }
 
-        .badge.bg-info {
-            background: #e07a50 !important;
-            color: white !important;
-        }
-
-        .badge.bg-success {
-            background: #27ae60 !important;
-        }
-
-        .badge.bg-secondary {
-            background: #95a5a6 !important;
-        }
-
-        /* ============================================
-           PARTNERSHIP CARD - GREEN (#658107)
-           ============================================ */
         .partner-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -364,7 +359,28 @@
         }
 
         /* ============================================
-           FOOTER - SAME AS ABOUT PAGE
+           BADGES
+           ============================================ */
+        .badge.bg-warning {
+            background: #930000 !important;
+            color: white !important;
+        }
+
+        .badge.bg-info {
+            background: #e07a50 !important;
+            color: white !important;
+        }
+
+        .badge.bg-success {
+            background: #27ae60 !important;
+        }
+
+        .badge.bg-secondary {
+            background: #95a5a6 !important;
+        }
+
+        /* ============================================
+           FOOTER
            ============================================ */
         footer {
             background: #c25328;
@@ -426,7 +442,7 @@
 <body>
 
     <!-- ============================================
-         NAVIGATION - EXACT COPY FROM ABOUT PAGE
+         NAVIGATION
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -466,23 +482,23 @@
          ============================================ -->
     <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
         <div class="container">
-            <h1><span class="brand-name">Kahel na Langit</span></h1>
+            <h1>🌅 <span class="brand-name">Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <div class="mt-4">
-                <a href="/donate" class="btn btn-primary btn-lg">Donate Now</a>
-                <a href="/about" class="btn btn-outline-light btn-lg ms-2">Learn More</a>
+                <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
+                <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-         FEATURES SECTION
+         FEATURES SECTION - ORANGE CARDS
          ============================================ -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🏠</h2>
                         <h5>Community Development</h5>
@@ -491,7 +507,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🤝</h2>
                         <h5>Fundraising</h5>
@@ -500,7 +516,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm">
+                <div class="card h-100 text-center shadow-sm feature-card">
                     <div class="card-body">
                         <h2 style="font-size: 48px;">🌱</h2>
                         <h5>Community Engagement</h5>
@@ -512,11 +528,11 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - #930000
+         UPDATES SECTION - #930000 CARDS
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -527,7 +543,7 @@
                                      class="update-image">
                             @endif
                             <div class="card-body">
-                                <span class="badge bg-{{ $update->category === 'announcement' ? 'warning' : 'info' }} mb-2">
+                                <span class="badge bg-warning mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
                                 </span>
                                 <h5>{{ $update->title }}</h5>
@@ -542,11 +558,11 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9
+         WISHLIST SECTION - #365fa9 CARDS
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
@@ -581,11 +597,11 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - #658107
+         PARTNERSHIPS SECTION - #658107 CARDS
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title text-center" style="color: #658107;">Our Partners</h2>
+            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -612,13 +628,13 @@
     @endif
 
     <!-- ============================================
-         FOOTER - SAME AS ABOUT PAGE
+         FOOTER
          ============================================ -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>🌅 Kahel na Langit</h5>
+                    <h5>Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
@@ -647,6 +663,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
 
