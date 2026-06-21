@@ -26,7 +26,8 @@
 
         /* HEADER */
         .page-header      { background: #365fa9; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; }
-        .page-header p    { color: #faf7e5; opacity: 0.85; }
+        .page-header h1 { font-weight: 700; }
+        .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* SECTION LABELS */
         .sec-eye          { font-size: 11px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
