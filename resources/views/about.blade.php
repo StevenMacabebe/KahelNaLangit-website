@@ -104,7 +104,7 @@
         <div class="row mb-5 justify-content-center">
             <div class="col-md-5 mb-3 mb-md-0">
                 <div class="card h-100">
-                    <img src="{{ asset('public/images/mission.jpg') }}" alt="Our Mission" class="mv-photo">
+                    <img src="{{ asset('public/images/mission.png') }}" alt="Our Mission" class="mv-photo">
                     <div class="card-body">
                         <div class="mv-icon-row">
                             <div class="icon-badge"><i class="ti ti-target" aria-hidden="true"></i></div>
@@ -116,7 +116,7 @@
             </div>
             <div class="col-md-5">
                 <div class="card h-100">
-                    <img src="{{ asset('public/images/vision.jpg') }}" alt="Our Vision" class="mv-photo">
+                    <img src="{{ asset('public/images/vision.png') }}" alt="Our Vision" class="mv-photo">
                     <div class="card-body">
                         <div class="mv-icon-row">
                             <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
