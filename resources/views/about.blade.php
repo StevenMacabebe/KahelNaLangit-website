@@ -64,22 +64,22 @@
         .sdg-badge img { max-width: 48px; max-height: 48px; margin-bottom: 5px; }
         
     
+        /* ── Cards ── */
         .card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
-            box-shadow:
-                0 0 0 4px #d97706,
-                0 8px 20px rgba(0,0,0,0.15) !important;
+            background: #faf7e5 !important;
+            border: 2px solid #365fa9 !important;
+            border-radius: 14px !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important;
             overflow: hidden;
-            transition: all .3s ease;
+            transition: transform 0.25s, box-shadow 0.25s;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             box-shadow:
-                0 0 0 5px #ffffff,
-                0 12px 25px rgba(0,0,0,.25) !important;
+                0 0 0 3px #365fa9,
+                0 14px 28px rgba(0,0,0,0.18) !important;
         }
+
     </style>
 </head>
 <body>
