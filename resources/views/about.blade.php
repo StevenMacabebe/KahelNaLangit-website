@@ -120,7 +120,7 @@
             <div class="col-md-6">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h3>🎯 Our Mission</h3>
+                        <h3>Our Mission</h3>
                         <p>Kahel na Langit is a community-driven initiative dedicated to empowering and uplifting vulnerable communities through sustainable development programs, fundraising activities, and community engagement efforts.</p>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
             <div class="col-md-6">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h3>👁️ Our Vision</h3>
+                        <h3> Our Vision</h3>
                         <p>To create a world where communities thrive through collective action and shared responsibility, fostering a culture of hope, cooperation, and long-term sustainability.</p>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
         <!-- The Story -->
         <div class="card shadow-sm mb-5">
             <div class="card-body">
-                <h3>🌅 The Story Behind the Name</h3>
+                <h3>The Story Behind the Name</h3>
                 <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
             </div>
         </div>
@@ -146,7 +146,7 @@
         <!-- Damayan Community -->
         <div class="card shadow-sm mb-5">
             <div class="card-body">
-                <h3>🏘️ The Damayan Community</h3>
+                <h3> The Damayan Community</h3>
                 <p>We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
             </div>
         </div>
@@ -156,7 +156,7 @@
         <div class="row mb-5">
             <div class="col-md-4 mb-3">
                 <div class="card text-center h-100 shadow-sm sdg-badge">
-                    <div>🏠</div>
+                    <div> </div>
                     <h5>Goal 1</h5>
                     <p>No Poverty</p>
                 </div>
