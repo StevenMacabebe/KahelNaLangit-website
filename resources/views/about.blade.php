@@ -53,6 +53,15 @@
         .card-body h3     { color: #c25328; margin-bottom: 6px; }
         .card-body p      { color: #555 !important; }
 
+        /* SDG MODAL */
+        .sdg-overlay      { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:999; align-items:center; justify-content:center; }
+        .sdg-overlay.show { display:flex; }
+        .sdg-popup        { background:#faf7e5; border:2px solid #365fa9; border-radius:14px; padding:28px; max-width:380px; width:90%; text-align:center; position:relative; }
+        .sdg-popup img    { width:64px; height:64px; object-fit:contain; margin-bottom:12px; }
+        .sdg-popup h5     { color:#365fa9; font-size:16px; font-weight:700; margin-bottom:8px; }
+        .sdg-popup p      { color:#555; font-size:13px; line-height:1.7; margin:0; }
+        .sdg-close        { position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#888; cursor:pointer; }
+
         /* TEAM */
         .team-card        { transition: transform 0.3s; }
         .team-card:hover  { transform: translateY(-5px); }
@@ -156,42 +165,48 @@
         <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
         <div class="row mb-5">
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg1.png') }}','Goal 1 — No Poverty','KNL helps the Damayan Community overcome economic instability through fundraising, livelihood programs, and sustainable housing support.')">
                     <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
                     <h5>Goal 1</h5>
                     <p>No Poverty</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg9.png') }}','Goal 9 — Industry, Innovation &amp; Infrastructure','The Damayan Model House demonstrates innovative, flood-resilient construction that brings lasting infrastructure to vulnerable communities.')">
                     <img src="{{ asset('public/images/sdg9.png') }}" alt="Goal 9">
                     <h5>Goal 9</h5>
                     <p>Industry, Innovation &amp; Infrastructure</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg10.png') }}','Goal 10 — Reduced Inequalities','We work to bridge gaps in access to resources, opportunities, and safety for marginalized communities in Floodway, Taytay, Rizal.')">
                     <img src="{{ asset('public/images/sdg10.png') }}" alt="Goal 10">
                     <h5>Goal 10</h5>
                     <p>Reduced Inequalities</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg11.png') }}','Goal 11 — Sustainable Cities &amp; Communities','Our community engagement programs help build safer, more inclusive, and resilient settlements for flood-prone urban communities.')">
                     <img src="{{ asset('public/images/sdg11.png') }}" alt="Goal 11">
                     <h5>Goal 11</h5>
                     <p>Sustainable Cities &amp; Communities</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg13.png') }}','Goal 13 — Climate Action','By transforming flood-prone areas into stable environments, KNL directly addresses the impact of climate change on vulnerable communities.')">
                     <img src="{{ asset('public/images/sdg13.png') }}" alt="Goal 13">
                     <h5>Goal 13</h5>
                     <p>Climate Action</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg17.png') }}','Goal 17 — Partnerships for the Goals','KNL collaborates with organizations, donors, and volunteers to amplify impact and create lasting change for the Damayan Community.')">
                     <img src="{{ asset('public/images/sdg17.png') }}" alt="Goal 17">
                     <h5>Goal 17</h5>
                     <p>Partnerships for the Goals</p>
@@ -262,12 +277,39 @@
 
     </div>
 
+    <div class="sdg-overlay" id="sdgOverlay">
+    <div class="sdg-popup">
+        <button class="sdg-close" onclick="closeSdg()">✕</button>
+        <img id="sdgImg" src="" alt="">
+        <h5 id="sdgTitle"></h5>
+        <p id="sdgDesc"></p>
+    </div>
+    </div>
+
     <footer>
         <div class="container">
             <p class="mb-0">© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> 
+        
+        /* SDG MODAL LOGIC */
+ 
+        function openSdg(img, title, desc) {
+        document.getElementById('sdgImg').src = img;
+        document.getElementById('sdgTitle').innerHTML = title;
+        document.getElementById('sdgDesc').innerHTML = desc;
+        document.getElementById('sdgOverlay').classList.add('show');
+    }
+    function closeSdg() {
+        document.getElementById('sdgOverlay').classList.remove('show');
+    }
+    document.getElementById('sdgOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeSdg();
+    });
+
+    </script>   
+
 </body>
 </html>
