@@ -527,7 +527,7 @@
     <section class="hero-video-wrapper">
         <!-- Video Background -->
         <video autoplay muted loop playsinline>
-            <source src="{{ asset('public/videos/hero-video.mp4') }}" type="video/mp4">
+            <source src="{{ asset('public/hero-video.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -608,7 +608,7 @@
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -638,7 +638,7 @@
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
@@ -677,7 +677,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title partners-title text-center">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
