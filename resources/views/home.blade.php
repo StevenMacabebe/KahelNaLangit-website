@@ -294,6 +294,58 @@
         }
 
         /* ============================================
+           PARTNERSHIP CARD - GREEN (#658107) THEME
+           ============================================ */
+        .partner-card {
+            background: #f8f4ed !important;
+            border: 3px solid #ffffff !important;
+            border-radius: 18px !important;
+            box-shadow: 0 0 0 4px #658107, 0 8px 20px rgba(0,0,0,0.15) !important;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+        }
+
+        .partner-card .partner-name {
+            color: #658107;
+            font-weight: 700;
+        }
+
+        .partner-card .partner-desc {
+            color: #4a5e05;
+            font-weight: 500;
+        }
+
+        .partner-card .btn-outline-partner {
+            border: 2px solid #658107 !important;
+            color: #658107 !important;
+            background: transparent;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-card .btn-outline-partner:hover {
+            background: #658107 !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .partner-card .badge-partner {
+            background: #658107 !important;
+            color: white !important;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* ============================================
            FOOTER - SAME AS ABOUT PAGE
            ============================================ */
         footer {
@@ -511,7 +563,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION
+         PARTNERSHIPS SECTION - GREEN (#658107) THEME
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
@@ -519,19 +571,19 @@
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 text-center shadow-sm">
+                        <div class="card h-100 text-center shadow-sm partner-card">
                             <div class="card-body">
                                 @if($partner->logo)
                                     <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
                                          alt="{{ $partner->name }}" 
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #658107; padding: 3px;">
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
-                                <h5>{{ $partner->name }}</h5>
-                                <p class="text-muted">{{ Str::limit($partner->description, 80) }}</p>
+                                <h5 class="partner-name">{{ $partner->name }}</h5>
+                                <p class="partner-desc">{{ Str::limit($partner->description, 80) }}</p>
                                 @if($partner->website)
-                                    <a href="{{ $partner->website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
+                                    <a href="{{ $partner->website }}" target="_blank" class="btn btn-outline-partner">Visit Website</a>
                                 @endif
                             </div>
                         </div>
