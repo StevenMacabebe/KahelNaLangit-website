@@ -142,10 +142,13 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
 
+        /* SCHOOLBELL FONT FOR "KAHEL NA LANGIT" - BRIGHT AND CLEAR */
         .hero h1 .brand-name {
             font-family: 'Schoolbell', cursive;
             color: #ffa003;
             font-weight: 400;
+            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 8px rgba(0,0,0,0.3);
+            opacity: 1 !important;
         }
 
         .hero .lead {
@@ -230,20 +233,20 @@
         }
 
         /* ============================================
-           UPDATES - #930000
+           UPDATES - #ac1a1a
            ============================================ */
         .updates-title {
-            color: #930000;
+            color: #ac1a1a;
         }
         .updates-title:after {
-            background: #930000;
+            background: #ac1a1a;
         }
 
         .update-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #930000, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
@@ -362,7 +365,7 @@
            BADGES
            ============================================ */
         .badge.bg-warning {
-            background: #930000 !important;
+            background: #ac1a1a !important;
             color: white !important;
         }
 
@@ -478,11 +481,11 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - SCHOOLBELL FONT
+         HERO SECTION - SCHOOLBELL FONT (BRIGHT)
          ============================================ -->
     <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
         <div class="container">
-            <h1>🌅 <span class="brand-name">Kahel na Langit</span></h1>
+            <h1><span class="brand-name">Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
             <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
             <div class="mt-4">
@@ -528,11 +531,11 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - #930000 CARDS
+         UPDATES SECTION - #ac1a1a CARDS
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -562,7 +565,7 @@
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
@@ -601,7 +604,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title partners-title text-center">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -663,5 +666,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
