@@ -143,9 +143,7 @@
         <div class="card mb-5">
             <div class="row g-0">
                 <div class="col-md-5">
-                    <img src="{{ asset('public/images/concept.jpg') }}"
-                        alt="Kahel na Langit Concept"
-                        style="width:100%; height:100%; object-fit:cover; border-radius:12px 0 0 12px;">
+                    <img src="{{ asset('public/images/concept1.png') }}" alt="The Concept" class="img-fluid h-100" style="object-fit:cover;">
                 </div>
                 <div class="col-md-7">
                     <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
