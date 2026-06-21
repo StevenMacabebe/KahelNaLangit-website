@@ -11,11 +11,11 @@
     <style>
         /* BASE */
         body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
-        h1    { font-size: 28px; font-weight: 700; }
-        h2    { font-size: 22px; font-weight: 700; }
-        h3    { font-size: 16px; font-weight: 700; }
-        h5    { font-size: 13px; font-weight: 700; }
-        p     { font-size: 14px; color: #555; line-height: 1.8; margin: 0; }
+        h1    { font-size: 32px; font-weight: 700; }
+        h2    { font-size: 26px; font-weight: 700; }
+        h3    { font-size: 18px; font-weight: 700; }
+        h5    { font-size: 15px; font-weight: 700; }
+        p     { font-size: 15px; color: #555; line-height: 1.8; margin: 0; }    
 
         /* NAVBAR */
         .navbar           { background: #c25328 !important; }
@@ -60,10 +60,11 @@
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
-                <span style="width:14px;height:14px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
+                <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
                 Kahel na Langit
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -71,11 +72,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-center gap-1">
-                    <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'fw-bold' : '' }}" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->is('about') ? 'fw-bold' : '' }}" href="/about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->is('partnerships') ? 'fw-bold' : '' }}" href="/partnerships">Partnerships</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->is('contact') ? 'fw-bold' : '' }}" href="/contact">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->is('donate') ? 'fw-bold' : '' }}" href="/donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
                     <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                 </ul>
             </div>
