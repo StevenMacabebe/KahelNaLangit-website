@@ -5,43 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('resources/views/css/home.css') }}">
 </head>
 <body>
+
     <!-- ============================================
-         NAVIGATION - ORANGE GRADIENT + GLASS EFFECT
+         NAVIGATION - SAME AS ABOUT PAGE
          ============================================ -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">🌅 Kahel na Langit</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
+                Kahel na Langit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Left side -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-                    
-                    <!-- Right side -->
+
                     @auth
                         <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                         <li class="nav-item">
                             <form method="POST" action="/logout" class="d-inline">
                                 @csrf
-                                <button type="submit" class="btn btn-link nav-link">Logout</button>
+                                <button type="submit" class="btn-logout-nav">Logout</button>
                             </form>
                         </li>
                     @else
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                     @endauth
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" href="/admin/login">🔑 Admin</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -50,15 +49,7 @@
     <!-- ============================================
          HERO SECTION
          ============================================ -->
-    <section class="hero" style="
-        background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;
-        color: white;
-        padding: 120px 0;
-        text-align: center;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-    ">
+    <section class="hero" style="background: url('{{ asset('public/images/hero.png') }}') center/cover no-repeat;">
         <div class="container">
             <h1>🌅 <span>Kahel na Langit</span></h1>
             <p class="lead">Empowering Communities, Building Hope</p>
@@ -106,7 +97,7 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION
+         UPDATES SECTION (UNCHANGED CONTENT)
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
@@ -136,7 +127,7 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION
+         WISHLIST SECTION (UNCHANGED CONTENT)
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
@@ -175,7 +166,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION
+         PARTNERSHIPS SECTION (UNCHANGED CONTENT)
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
@@ -188,7 +179,7 @@
                                 @if($partner->logo)
                                     <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
                                          alt="{{ $partner->name }}" 
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #ff6c27; padding: 3px;">
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
@@ -206,13 +197,13 @@
     @endif
 
     <!-- ============================================
-         FOOTER
+         FOOTER - SAME AS ABOUT PAGE
          ============================================ -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Kahel na Langit</h5>
+                    <h5>🌅 Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
@@ -241,7 +232,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
 
 
