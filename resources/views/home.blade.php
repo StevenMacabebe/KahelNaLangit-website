@@ -527,7 +527,7 @@
     <section class="hero-video-wrapper">
         <!-- Video Background -->
         <video autoplay muted loop playsinline>
-            <source src="{{ asset('public/hero-video.mp4') }}" type="video/mp4">
+            <source src="{{ asset('public/images/hero-video.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
