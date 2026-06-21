@@ -13,8 +13,7 @@
         body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
         h2    { font-size: 26px; font-weight: 700; }
         h3    { font-size: 18px; font-weight: 700; }
-        h5    { font-size: 15px; font-weight: 700; }
-        p     { font-size: 15px; color: #555; line-height: 1.8; margin: 0; }    
+        h5    { font-size: 15px; font-weight: 700; }  
 
         /* NAVBAR */
         .navbar           { background: #c25328 !important; }
