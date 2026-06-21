@@ -101,8 +101,8 @@
 
         <span class="sec-eye">Who We Are</span>
         <h2 class="mb-4" style="color:#365fa9;">Our Mission &amp; Vision</h2>
-        <div class="row mb-5 justify-content-center">
-            <div class="col-md-5 mb-3 mb-md-0">
+        <div class="row mb-5">
+            <div class="col-12 mb-3">
                 <div class="card h-100">
                     <img src="{{ asset('public/images/mission1.png') }}" alt="Our Mission" class="mv-photo">
                     <div class="card-body">
@@ -114,9 +114,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+
+            <div class="col-12">
                 <div class="card h-100">
-                    <img src="{{ asset('public/images/vision2.png') }}" alt="Our Vision" class="mv-photo">
+                    <img src="{{ asset('public/images/vision1.png') }}" alt="Our Vision" class="mv-photo">
                     <div class="card-body">
                         <div class="mv-icon-row">
                             <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
