@@ -238,6 +238,7 @@
             box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
+            cursor: pointer;
         }
 
         .damayan-card:hover {
@@ -328,7 +329,7 @@
         }
 
         /* ============================================
-           MODAL STYLES
+           MODAL STYLES (Updates)
            ============================================ */
         .modal-content {
             border-radius: 18px;
@@ -396,6 +397,25 @@
                 height: 100%;
                 min-height: 300px;
             }
+        }
+
+        /* ============================================
+           DAMAYAN CAROUSEL MODAL - SIMPLE (10 IMAGES)
+           ============================================ */
+        .damayan-carousel-modal .modal-dialog {
+            max-width: 900px;
+        }
+        .damayan-carousel-modal .carousel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            background: #faf7e5;
+        }
+        .damayan-carousel-modal .carousel-control-prev,
+        .damayan-carousel-modal .carousel-control-next {
+            width: 10%;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
         }
 
         /* ============================================
@@ -572,6 +592,9 @@
             .damayan-card .damayan-image {
                 min-height: 200px;
             }
+            .damayan-carousel-modal .carousel-item img {
+                height: 300px;
+            }
             .update-card .card-title {
                 font-size: 1rem;
             }
@@ -643,15 +666,16 @@
     </section>
 
     <!-- ============================================
-         DAMAYAN MODEL HOUSE CARD
+         DAMAYAN MODEL HOUSE CARD (CLICKABLE IMAGE)
          ============================================ -->
     <div class="container mt-5">
-        <div class="card damayan-card">
+        <div class="card damayan-card" data-bs-toggle="modal" data-bs-target="#damayanCarouselModal">
             <div class="row g-0">
                 <div class="col-md-6">
                     <img src="{{ asset('public/images/damayan-house.jpg') }}" 
                          alt="Damayan Model House" 
-                         class="damayan-image">
+                         class="damayan-image" 
+                         style="cursor: pointer;">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
@@ -659,7 +683,62 @@
                         <p class="damayan-text">
                             We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
                         </p>
+                        <p class="text-muted small mt-2">
+                            <i class="ti ti-click"></i> Click the photo to see more images
+                        </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         DAMAYAN CAROUSEL MODAL - 10 IMAGES, SIMPLE CONTROLS
+         ============================================ -->
+    <div class="modal fade damayan-carousel-modal" id="damayanCarouselModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: #c25328; font-weight: 700;">Damayan Model House Gallery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="damayanCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Slides (only 10 images) -->
+                        <div class="carousel-inner">
+                            @for($i = 1; $i <= 10; $i++)
+                                @php
+                                    $jpgPath = "public/images/hm{$i}.jpg";
+                                    $pngPath = "public/images/hm{$i}.png";
+                                    $imageExists = file_exists(public_path("images/hm{$i}.jpg")) || file_exists(public_path("images/hm{$i}.png"));
+                                @endphp
+                                <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
+                                    @if($imageExists)
+                                        <img src="{{ asset(file_exists(public_path("images/hm{$i}.jpg")) ? $jpgPath : $pngPath) }}" 
+                                             class="d-block w-100" 
+                                             alt="Damayan House {{ $i }}">
+                                    @else
+                                        <div class="d-flex align-items-center justify-content-center" style="height:400px; background:#e9ecef; color:#6c757d; font-size:1.2rem; border-radius:12px;">
+                                            📷 Image hm{{ $i }} not available
+                                        </div>
+                                    @endif
+                                </div>
+                            @endfor
+                        </div>
+
+                        <!-- Simple Prev / Next buttons (no indicators) -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#damayanCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#damayanCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
