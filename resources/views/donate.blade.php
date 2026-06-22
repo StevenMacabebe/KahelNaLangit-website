@@ -33,9 +33,8 @@
         .sec-divider      { border: none; border-top: 2px dashed rgba(212,160,23,.3); margin: 8px 0 20px; }
 
         /* HOPE STRIP */
-        .hope-strip       { background: #d4a017; border-radius: 14px; padding: 22px 26px; text-align: center; margin-bottom: 20px; }
-        .hope-strip h2    { color: #faf7e5; margin-bottom: 6px; }
-        .hope-strip p     { color: rgba(250,247,229,.88); max-width: 500px; margin: 0 auto; }
+        .hope-banner { width: 100%; border-radius: 14px; display: block; margin-bottom: 20px; border: none !important; transition: transform .25s, box-shadow .25s; cursor: pointer; }
+        .hope-banner:hover { transform: translateY(-4px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,.15); border-radius: 14px; }
 
         /* CARDS */
         .card             { background: #faf7e5 !important; border: 2px solid #d4a017 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
@@ -129,12 +128,10 @@
 
     <div class="container py-4">
 
-        {{-- Hope Strip --}}
-        <div class="hope-strip">
-            <img src="{{ asset('public/images/hope.png') }}"
-            alt="Help us bring Hope to Life"
-            style="width:100%; border-radius:14px; display:block; margin-bottom:20px;">
-        </div>
+        {{-- Hope Banner Image --}}
+        <img src="{{ asset('public/images/hope.png') }}"
+             alt="Help us bring Hope to Life"
+             class="hope-banner">
 
         {{-- Ways to Give --}}
         <span class="sec-eye">Ways to Give</span>
