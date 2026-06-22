@@ -95,7 +95,7 @@
         .dept-sponsor      { background: #6b4fa9; }
 
         /* COMMITTEE CARDS */
-        .ccard             { border-radius: 14px; padding: 18px 12px; text-align: center; border-width: 2px; border-style: solid; height: 100%; }
+        .ccard             { border-radius: 14px; padding: 18px 12px; text-align: center; border-width: 2px; border-style: solid; height: 100%; transition: transform .2s, box-shadow .2s; }
         .ccard i           { font-size: 32px; margin-bottom: 10px; display: block; }
         .ccard h5          { font-size: 12px; font-weight: 700; margin-bottom: 5px; line-height: 1.4; }
         .ccard span        { font-size: 10px; font-weight: 700; }
@@ -104,26 +104,31 @@
         .ccard.exec i      { color: #365fa9; }
         .ccard.exec h5     { color: #365fa9; }
         .ccard.exec span   { color: #1a3d6e; }
+        .ccard.exec:hover  { transform: translateY(-5px); box-shadow: 0 0 0 3px #365fa9, 0 10px 20px rgba(54,95,169,.2); }
 
         .ccard.secret      { background: #fde8df; border-color: #c25328; }
         .ccard.secret i    { color: #c25328; }
         .ccard.secret h5   { color: #c25328; }
         .ccard.secret span { color: #8a3010; }
+        .ccard.secret:hover { transform: translateY(-5px); box-shadow: 0 0 0 3px #c25328, 0 10px 20px rgba(194,83,40,.2); }
 
         .ccard.creative    { background: #fdf3d5; border-color: #eab000; }
         .ccard.creative i  { color: #eab000; }
         .ccard.creative h5 { color: #8a6600; }
         .ccard.creative span { color: #c49a00; }
+        .ccard.creative:hover { transform: translateY(-5px); box-shadow: 0 0 0 3px #eab000, 0 10px 20px rgba(234,176,0,.2); }
 
         .ccard.construct   { background: #e4f0dc; border-color: #658107; }
         .ccard.construct i { color: #658107; }
         .ccard.construct h5 { color: #658107; }
         .ccard.construct span { color: #3d4f04; }
+        .ccard.construct:hover { transform: translateY(-5px); box-shadow: 0 0 0 3px #658107, 0 10px 20px rgba(101,129,7,.2); }
 
         .ccard.sponsor     { background: #ede8fc; border-color: #6b4fa9; }
         .ccard.sponsor i   { color: #6b4fa9; }
         .ccard.sponsor h5  { color: #6b4fa9; }
         .ccard.sponsor span { color: #3d2a7a; }
+        .ccard.sponsor:hover { transform: translateY(-5px); box-shadow: 0 0 0 3px #6b4fa9, 0 10px 20px rgba(107,79,169,.2); }
 
         /* FOOTER */
         footer            { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
