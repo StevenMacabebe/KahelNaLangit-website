@@ -400,7 +400,7 @@
         }
 
         /* ============================================
-           DAMAYAN CAROUSEL MODAL
+           DAMAYAN CAROUSEL MODAL - SIMPLE (10 IMAGES)
            ============================================ */
         .damayan-carousel-modal .modal-dialog {
             max-width: 900px;
@@ -416,16 +416,6 @@
             width: 10%;
             background: rgba(0,0,0,0.3);
             border-radius: 50%;
-        }
-        .damayan-carousel-modal .carousel-indicators button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: none;
-            background: #c25328;
-        }
-        .damayan-carousel-modal .carousel-indicators .active {
-            background: #8b7ad1;
         }
 
         /* ============================================
@@ -703,7 +693,7 @@
     </div>
 
     <!-- ============================================
-         DAMAYAN CAROUSEL MODAL
+         DAMAYAN CAROUSEL MODAL - 10 IMAGES, SIMPLE CONTROLS
          ============================================ -->
     <div class="modal fade damayan-carousel-modal" id="damayanCarouselModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -714,36 +704,29 @@
                 </div>
                 <div class="modal-body">
                     <div id="damayanCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Indicators -->
-                        <div class="carousel-indicators">
-                            @for($i = 1; $i <= 15; $i++)
-                                <button type="button" data-bs-target="#damayanCarousel" data-bs-slide-to="{{ $i-1 }}" class="{{ $i == 1 ? 'active' : '' }}" aria-label="Slide {{ $i }}"></button>
-                            @endfor
-                        </div>
-
-                        <!-- Slides -->
+                        <!-- Slides (only 10 images) -->
                         <div class="carousel-inner">
-                            @for($i = 1; $i <= 15; $i++)
+                            @for($i = 1; $i <= 10; $i++)
                                 @php
-                                    $imagePath = "public/images/hm{$i}.jpg";
-                                    $fallback = "public/images/hm{$i}.png";
+                                    $jpgPath = "public/images/hm{$i}.jpg";
+                                    $pngPath = "public/images/hm{$i}.png";
+                                    $imageExists = file_exists(public_path("images/hm{$i}.jpg")) || file_exists(public_path("images/hm{$i}.png"));
                                 @endphp
-                                @if(file_exists(public_path("images/hm{$i}.jpg")) || file_exists(public_path("images/hm{$i}.png")))
-                                    <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
-                                        <img src="{{ asset(file_exists(public_path("images/hm{$i}.jpg")) ? $imagePath : $fallback) }}" class="d-block w-100" alt="Damayan House {{ $i }}">
-                                    </div>
-                                @else
-                                    <!-- fallback if image missing: show a placeholder -->
-                                    <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
-                                        <div class="d-flex align-items-center justify-content-center" style="height:500px; background:#e9ecef; color:#6c757d; font-size:1.2rem;">
-                                            Image hm{{ $i }} not available
+                                <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
+                                    @if($imageExists)
+                                        <img src="{{ asset(file_exists(public_path("images/hm{$i}.jpg")) ? $jpgPath : $pngPath) }}" 
+                                             class="d-block w-100" 
+                                             alt="Damayan House {{ $i }}">
+                                    @else
+                                        <div class="d-flex align-items-center justify-content-center" style="height:400px; background:#e9ecef; color:#6c757d; font-size:1.2rem; border-radius:12px;">
+                                            📷 Image hm{{ $i }} not available
                                         </div>
-                                    </div>
-                                @endif
+                                    @endif
+                                </div>
                             @endfor
                         </div>
 
-                        <!-- Controls -->
+                        <!-- Simple Prev / Next buttons (no indicators) -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#damayanCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
