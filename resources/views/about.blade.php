@@ -292,65 +292,175 @@
         <hr class="sec-divider">
 
         <span class="sec-eye text-center d-block">The People</span>
-        <h2 class="text-center mb-4" style="color:#365fa9;">Meet Our Team</h2>
-        <div class="row mb-5">
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👩</div>
-                        <h5>Marian Nicole Acosta</h5>
-                        <span class="role-pill">Project Lead</span>
-                    </div>
+        <h2 class="text-center mb-2" style="color:#365fa9;">Exhibit Class Committee</h2>
+        <p class="text-center mb-4" style="font-size:13px; color:#888;">Mapúa Interior Design · Third Term 2025–2026</p>
+
+        {{-- Group Photo + Description --}}
+        <div class="card mb-4">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="{{ asset('public/images/exhibit-team.jpg') }}"
+                        alt="Exhibit Class Committee"
+                        style="width:100%; height:100%; object-fit:cover; object-position:top; border-radius:12px 0 0 12px; min-height:260px;">
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👩</div>
-                        <h5>Darlene Avenir</h5>
-                        <span class="role-pill">UI/UX Designer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👨</div>
-                        <h5>Jose Luis Garcia</h5>
-                        <span class="role-pill">Backend Developer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👨</div>
-                        <h5>Steven John Macabebe</h5>
-                        <span class="role-pill">Full Stack Developer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👨</div>
-                        <h5>Mark Benedict Manundo</h5>
-                        <span class="role-pill">Database Administrator</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="card-body">
-                        <div class="team-avatar">👩</div>
-                        <h5>Rosalie Joy Vicente</h5>
-                        <span class="role-pill">Quality Assurance</span>
+                <div class="col-md-7" style="border-left:2px solid #365fa9;">
+                    <div class="card-body p-4 d-flex flex-column justify-content-center">
+                        <h3 style="color:#c25328; margin-bottom:10px;">About Us</h3>
+                        <p class="mb-3"><strong>Kahel na Langit</strong> is a collective of <strong>11 Graduating Interior Design Students</strong> from Mapúa University, currently spearheading a community renovation project as part of our Graduation Exhibit for the 3rd Term, SY 2025–2026.</p>
+                        <p>Driven by the belief that design is a powerful tool for social impact, our group is dedicated to transforming spaces into environments that foster healing, growth, and community well-being. With a focus on inclusive and evidence-based design, we aim to go beyond aesthetics to address the functional and emotional needs of the individuals who utilize these spaces every day.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+        {{-- Executive --}}
+        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Executive &amp; Project Management</p>
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Ralph Tuazon</h5><span class="role-pill">Exhibit Class Manager</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Anthony Madrigal</h5><span class="role-pill">Asst. Exhibit Class Lead</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Ana Pillas &amp; Krystelle Pisigan</h5><span class="role-pill">Finance Directors</span></div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Secretariat --}}
+        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Secretariat Committee</p>
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Zia Lambatin</h5><span class="role-pill">Secretariat Lead</span></div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Krystelle Pisigan</h5><span class="role-pill">Secretariat Co-Lead</span></div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Creatives --}}
+        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Creatives &amp; Design</p>
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Berna Alvaran</h5><span class="role-pill">Creatives Team Lead</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Juliana Oane</h5><span class="role-pill">Creatives Co-Head</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Czarina Pascual</h5><span class="role-pill">Creatives Co-Head</span></div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Construction --}}
+        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Construction &amp; Operations</p>
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Anthony Madrigal</h5><span class="role-pill">Construction Manager</span></div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Juliana Rosauro</h5><span class="role-pill">Logistics Officer</span></div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Sponsorship --}}
+        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Sponsorship &amp; Marketing</p>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px;">
+            <div class="card text-center team-card">
+                <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                <div class="team-info"><h5>Kian Angeles &amp; Francia Cabiling</h5><span class="role-pill">Sponsorship &amp; Partnership</span></div>
+            </div>
+            <div class="card text-center team-card">
+                <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                <div class="team-info"><h5>Berna Alvaran</h5><span class="role-pill">Marketing Manager</span></div>
+            </div>
+            <div class="card text-center team-card">
+                <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                <div class="team-info"><h5>Juliana Oane</h5><span class="role-pill">Social Media</span></div>
+            </div>
+            <div class="card text-center team-card">
+                <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                <div class="team-info"><h5>Czarina Pasual &amp; Juliana Oane</h5><span class="role-pill">Documentation Lead</span></div>
+            </div>
+        </div>
+
+        <hr class="sec-divider">
+
+        {{-- Dev Team --}}
+        <span class="sec-eye text-center d-block">Web Development Team</span>
+        <h2 class="text-center mb-4" style="color:#365fa9;">Meet Our Dev Team</h2>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Steven John Macabebe</h5><span class="role-pill">Full Stack Developer</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Darlene Avenir</h5><span class="role-pill">UI/UX Designer</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Jose Luis Garcia</h5><span class="role-pill">Backend Developer</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Marian Nicole Acosta</h5><span class="role-pill">Project Lead</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Mark Benedict Manundo</h5><span class="role-pill">Database Administrator</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+                    <div class="team-info"><h5>Rosalie Joy Vicente</h5><span class="role-pill">Quality Assurance</span></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>   
+
+
 
     <div class="sdg-overlay" id="sdgOverlay">
     <div class="sdg-popup">
