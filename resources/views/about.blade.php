@@ -115,6 +115,7 @@
         </div>
     </nav>
 
+    <!-- Page Header -->
     <div class="page-header">
         <div class="container">
             <h1>About Kahel na Langit</h1>
