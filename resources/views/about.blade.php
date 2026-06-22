@@ -179,7 +179,12 @@
         <span class="sec-eye">The Community</span>
         <div class="card mb-5">
             <div class="row g-0">
-
+                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
+                    <img src="{{ asset('public/images/community.jpg') }}"
+                        alt="Damayan Community"
+                        class="damayan-photo"
+                        style="border-radius:12px 0 0 12px;">
+                </div>
                 <div class="col-md-7" style="border-left: 2px solid #365fa9;">
                     <div class="card-body p-4">
                         <div class="location-tag">Floodway, Taytay, Rizal</div>
@@ -222,14 +227,6 @@
 
                     </div>
                 </div>
-
-                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
-                    <img src="{{ asset('public/images/community.jpg') }}"
-                        alt="Damayan Community"
-                        class="damayan-photo"
-                        style="border-radius:12px 0 0 12px;">
-                </div>
-
             </div>
         </div>
 
