@@ -18,65 +18,25 @@
         }
 
         /* ============================================
-           NAVBAR - THIN version (matches About/Partnerships)
+           NAVBAR – EXACT COPY OF PARTNERSHIPS
            ============================================ */
         .navbar {
             background: #c25328 !important;
-            padding: 12px 0;
         }
-
         .navbar-brand,
         .nav-link {
             color: #faf7e5 !important;
             font-weight: 500;
         }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 20px;
-        }
-
         .nav-link:hover {
             opacity: 0.8;
         }
-
-        .btn-login {
+        .nav-link.btn-login {
             background: #faf7e5;
             color: #c25328 !important;
             border-radius: 20px;
             padding: 4px 14px !important;
             font-weight: 700;
-            border: none;
-        }
-
-        .btn-login:hover {
-            background: #e8e0d0;
-            opacity: 1;
-        }
-
-        .navbar-toggler {
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            padding: 4px 10px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-
-        @media (max-width: 991px) {
-            .navbar-nav {
-                margin-top: 10px;
-                padding-top: 10px;
-                border-top: 1px solid rgba(255, 255, 255, 0.15);
-            }
-            .btn-login {
-                text-align: center;
-                width: 100%;
-            }
         }
 
         /* ============================================
@@ -699,7 +659,7 @@
 <body>
 
     <!-- ============================================
-         NAVIGATION – THIN (matches About/Partnerships)
+         NAVIGATION – EXACT COPY OF PARTNERSHIPS
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
