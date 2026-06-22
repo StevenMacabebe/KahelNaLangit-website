@@ -41,10 +41,10 @@
         .card h3          { color: #c25328; margin-bottom: 8px; }
 
         /* SDG */
-        .sdg-badge        { text-align: center; padding: 16px 10px; cursor: pointer; }
-        .sdg-badge img    { width: 80px; height: 80px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
-        .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; font-size: 12px; }
-        .sdg-badge p      { font-size: 11px; color: #555; }
+        .sdg-badge        { text-align: center; padding: 20px 12px; cursor: pointer; }
+        .sdg-badge img    { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 10px; display: block; }
+        .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; font-size: 13px; }
+        .sdg-badge p      { font-size: 12px; color: #555; }
 
         /* MISSION & VISION (MV) CARDS */
         .mv-photo         { width: 100%; height: 340px; object-fit: cover; display: block; }
@@ -194,7 +194,7 @@
                         <div class="location-tag">Floodway, Taytay, Rizal</div>
                         <h3>People-Led. Resilience-Rooted.</h3>
                         <p class="mt-2 mb-4">The Damayan Community in Taytay, Rizal is a people-led community rooted in resilience, hope, and community. What began as a small group of determined individuals has grown into a movement that uplifts seamstresses, vendors, and families, creating sustainable livelihoods and renewed hope for the future.</p>
-                        <p class="mt-2 mb-4">Through collective effort and perseverance, the community built their Model House from the ground up — a powerful symbol of their journey. With the guidance of dedicated professionals, their once flood-prone environment has been transformed into a safe and stable space.</p>
+                        <p class="mt-2 mb-4">Through collective effort, they are building their Model House from the ground up — a powerful symbol of their journey. With the guidance of dedicated professionals, their flood-prone environment is being transformed into a safe and stable space for their community.</p>
 
 
                         {{-- Damayan Model House --}}
@@ -238,12 +238,13 @@
 
         <hr class="sec-divider">
         <span class="sec-eye text-center d-block">Global Commitments</span>
-        <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
-        <div class="row row-cols-2 row-cols-md-6 g-3 mb-5">
+        <h2 class="text-center mb-2" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
+        <p class="text-center mb-4" style="font-size:13px; color:#888;">Click any card to learn more</p>
+        <div class="row row-cols-2 row-cols-md-6 g-3 mb-5 mx-0">
             <div class="col">
                 <div class="card text-center h-100 sdg-badge"
                     onclick="openSdg('{{ asset('public/images/sdg1.png') }}','Goal 1 — No Poverty','KNL helps the Damayan Community overcome economic instability through fundraising, livelihood programs, and sustainable housing support.')">
-                    <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
+                  <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
                     <h5>Goal 1</h5>
                     <p>No Poverty</p>
                 </div>
