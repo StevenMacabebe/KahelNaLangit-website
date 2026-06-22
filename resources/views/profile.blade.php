@@ -108,10 +108,10 @@
         }
 
         /* ============================================
-           PAGE HEADER - ORANGE BANNER
+           PAGE HEADER - #8b7ad1
            ============================================ */
         .page-header {
-            background: #c25328;
+            background: #8b7ad1;
             color: #faf7e5;
             padding: 40px 0 32px;
             margin-bottom: 24px;
@@ -130,16 +130,15 @@
         }
 
         /* ============================================
-           CARDS - ORANGE OUTLINE 
+           CARDS - #8b7ad1 OUTLINE
            ============================================ */
         .card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #8b7ad1, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
-            height: 100%;
         }
 
         .card:hover {
@@ -148,7 +147,7 @@
         }
 
         .card h4 {
-            color: #c25328;
+            color: #8b7ad1;
             font-weight: 700;
         }
 
@@ -159,7 +158,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: #c25328;
+            background: #8b7ad1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,7 +168,7 @@
         }
 
         .profile-name {
-            color: #c25328;
+            color: #8b7ad1;
             font-weight: 700;
             font-size: 20px;
         }
@@ -246,7 +245,7 @@
     </nav>
 
     <!-- ============================================
-         PAGE HEADER - ORANGE BANNER
+         PAGE HEADER - #8b7ad1
          ============================================ -->
     <div class="page-header">
         <div class="container">
@@ -256,27 +255,24 @@
     </div>
 
     <!-- ============================================
-         PROFILE CONTENT
+         PROFILE CONTENT - VERTICAL LAYOUT
          ============================================ -->
     <div class="container mt-4">
         <div class="row">
-
-            <!-- LEFT: Profile Card -->
-            <div class="col-md-4">
+            <div class="col-lg-6 mx-auto">
                 <div class="card shadow-sm text-center">
                     <div class="card-body">
+                        <!-- Avatar -->
                         <div class="profile-avatar">👤</div>
+
+                        <!-- Name & Email at the top -->
                         <h5 class="profile-name">{{ $user->name }}</h5>
                         <p class="profile-email">{{ $user->email }}</p>
                         <span class="badge bg-success">Verified User</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- RIGHT: Account Information -->
-            <div class="col-md-8">
-                <div class="card shadow-sm">
-                    <div class="card-body">
+                        <hr>
+
+                        <!-- Account Information below -->
                         <h4>Account Information</h4>
                         <hr>
                         <p><strong>Name:</strong> {{ $user->name }}</p>
@@ -288,7 +284,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
