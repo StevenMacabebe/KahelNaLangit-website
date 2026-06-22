@@ -111,10 +111,10 @@
         }
 
         /* ============================================
-           PAGE HEADER - #89479a (SAME SIZE AS ABOUT)
+           PAGE HEADER - NOW #ac1a1a (RED)
            ============================================ */
         .page-header {
-            background: #89479a;
+            background: #ac1a1a;
             color: #faf7e5;
             padding: 40px 0 32px;
             margin-bottom: 24px;
@@ -234,7 +234,7 @@
         </nav>
 
         <!-- ============================================
-             PAGE HEADER - MATCHES ABOUT PAGE SIZE
+             PAGE HEADER - NOW RED (#ac1a1a)
              ============================================ -->
         <div class="page-header">
             <div class="container">
