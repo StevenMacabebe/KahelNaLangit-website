@@ -164,8 +164,10 @@
                 </div>
                 <div class="col-md-7">
                     <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
-                        <div class="icon-badge mb-3"><i class="ti ti-sun" aria-hidden="true"></i></div>
-                        <h3>The Story Behind the Name</h3>
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-sun" aria-hidden="true"></i></div>
+                            <h3>The Story Behind the Name</h3>
+                        </div>
                         <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
                     </div>
                 </div>
