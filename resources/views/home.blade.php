@@ -136,16 +136,15 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 40px 20px;
+            padding: 10px 20px 40px;  /* reduced top padding to shift everything up */
             text-align: center;
         }
 
         .hero-video-wrapper .hero-content .hero-logo {
-            max-width: 80%;
+            max-width: 90%;            /* made larger */
             height: auto;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: inline-block;
-            /* ensure it's centered inline */
         }
 
         .hero-video-wrapper .hero-content .tagline {
@@ -171,10 +170,10 @@
                 min-height: 350px;
             }
             .hero-video-wrapper .hero-content {
-                padding: 20px 15px;
+                padding: 8px 15px 30px;
             }
             .hero-video-wrapper .hero-content .hero-logo {
-                max-width: 90%;
+                max-width: 92%;
             }
         }
 
@@ -182,6 +181,9 @@
             .hero-video-wrapper {
                 height: 50vh;
                 min-height: 300px;
+            }
+            .hero-video-wrapper .hero-content {
+                padding: 5px 12px 25px;
             }
             .hero-video-wrapper .hero-content .tagline {
                 font-size: 1rem;
@@ -756,7 +758,7 @@
     </nav>
 
     <!-- ============================================
-    HERO SECTION - RESPONSIVE with LOGO
+    HERO SECTION - RESPONSIVE with LOGO (larger & shifted up)
     ============================================ -->
     <section class="hero-video-wrapper">
         <video autoplay muted loop playsinline>
@@ -765,7 +767,6 @@
         </video>
         <div class="hero-content">
             <div class="container">
-                <!-- Logo image instead of text -->
                 <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="hero-logo">
                 <p class="tagline">A space of Resiliency, Hope, and Community.</p>
                 <div class="btn-group">
