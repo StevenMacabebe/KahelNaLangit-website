@@ -138,7 +138,7 @@
                     <div class="card-body">
                         <h4>📋 Donation Guidelines</h4>
                         <hr>
-                        <p>{{ $donation->guidelines ?? 'Please check back for donation guidelines.' }}</p>
+                        {!! nl2br(e($donation->guidelines ?? 'Please check back for donation guidelines.')) !!}
                         <div class="alert alert-success mt-3">
                             <h5>💚 Thank You!</h5>
                             <p>Your generosity helps us continue our mission of empowering communities.</p>
