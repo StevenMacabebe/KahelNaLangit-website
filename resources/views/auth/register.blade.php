@@ -7,51 +7,96 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #ffb437, #ffa003, #ff6c27, #d88531);
+            background-image: url('{{ asset("public/images/authbg.png") }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
         .register-card {
             max-width: 400px;
             width: 100%;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 35px 30px;
+            background: #faf7e5;
+            border-radius: 18px;
+            box-shadow: 0 0 0 4px #658107, 0 8px 30px rgba(0,0,0,0.15);
+            border: 3px solid #ffffff;
+        }
+        .register-card .logo {
+            display: block;
+            max-width: 160px;
+            margin: 0 auto 20px;
+        }
+        .register-card h2 {
+            color: #658107;   /* green heading */
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        .form-label {
+            color: #658107;
+            font-weight: 500;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 2px solid #e0d6c8;
+            background: #fff;
+            padding: 10px 14px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #658107;
+            box-shadow: 0 0 0 3px rgba(101, 129, 7, 0.25);
         }
         .btn-primary {
-            background: #e67e22;
-            border: none;
+            background: #658107 !important;
+            border: none !important;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: white;
         }
         .btn-primary:hover {
-            background: #d35400;
-        }
-        .logo-text {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #e67e22;
-        }
-        h2 {
-            color: #e67e22;
-            text-align: center;
-            margin-bottom: 30px;
+            background: #3f5a04 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(101, 129, 7, 0.4);
         }
         a {
-            color: #e67e22;
+            color: #658107;
+            text-decoration: none;
+            font-weight: 500;
         }
         a:hover {
-            color: #d35400;
+            color: #3f5a04;
+            text-decoration: underline;
+        }
+        .alert-danger {
+            background: #fde8e8;
+            border-color: #f5c6cb;
+            color: #721c24;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+        }
+        .alert-danger ul {
+            padding-left: 18px;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <div class="register-card">
-        <div class="logo-text">🌅 Kahel na Langit</div>
+        <!-- Logo image – upload your logo.png to public/images/ -->
+        <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="logo">
+
         <h2>Create Account</h2>
 
         @if ($errors->any())
