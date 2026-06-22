@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
 
+        /* BASE */
+        body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
+
         /* NAVBAR */
         .navbar           { background: #c25328 !important; }
         .navbar-brand,
@@ -19,29 +22,18 @@
         .page-header h1 { font-weight: 700; font-size: 2.5rem; }
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
-        footer { background: #2c3e50; color: white; padding: 20px 0; text-align: center; margin-top: 50px; }
+        /* CARDS */
+        .card             { background: #faf7e5 !important; border: 2px solid #365fa9 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #365fa9, 0 14px 28px rgba(0,0,0,0.18) !important; }
+        .card h3          { color: #c25328; margin-bottom: 8px; }
+
+        /* FOOTER */
+        footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
+        footer p { color: #faf7e5; font-size: 13px; }
+
         .qr-image { max-width: 200px; }
-        body {
-            background:
-                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 20%),
-                radial-gradient(circle at 85% 15%, rgba(255,220,150,0.25), transparent 22%),
-                radial-gradient(circle at 75% 80%, rgba(255,140,0,0.20), transparent 25%),
-                linear-gradient(135deg, #d96a14 0%, #e67e22 40%, #f39c12 70%, #ffb347 100%);
-            min-height: 100vh;
-            background-attachment: fixed;
-        }
-        .card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
-            overflow: hidden;
-            transition: all .3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
-        }
+
+
     </style>
 </head>
 <body>
