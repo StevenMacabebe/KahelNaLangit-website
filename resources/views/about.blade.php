@@ -63,10 +63,10 @@
         .sdg-close        { position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#888; cursor:pointer; }
 
         /* DAMAYAN COMMUNITY */
-        .damayan-photo    { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
+        .damayan-photo    { width: 100%; height: 280px; object-fit: cover; object-position: top; display: block; }
         .ba-strip         { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
         .ba-strip-label   { font-size: 12px; font-weight: 700; color: #faf7e5; background: #365fa9; padding: 6px 16px; display: block; border-top: 2px solid #365fa9; }
-        .ba-photo         { height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+        .ba-photo         { height: 160px; overflow: hidden; }
         .ba-photo img     { width: 100%; height: 100%; object-fit: cover; display: block; }
         .ba-existing      { background: #e8e0d4; }
         .ba-proposed      { background: #dce8fc; }
@@ -171,14 +171,14 @@
 
             {{-- Top: photo left + text right --}}
             <div class="row g-0" style="border-bottom: 2px solid #365fa9;">
-                <div class="col-md-5">
-                    <img src="{{ asset('public/images/community.jpg') }}"
-                        alt="Damayan Community"
-                        class="damayan-photo"
-                        style="border-radius: 12px 0 0 0;">
-                </div>
-                <div class="col-md-7">
-                    <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
+                        <div class="col-md-5" style="max-height:280px; overflow:hidden;">
+                            <img src="{{ asset('public/images/community.jpg') }}"
+                                alt="Damayan Community"
+                                class="damayan-photo"
+                                style="border-radius: 12px 0 0 0;">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body d-flex flex-column justify-content-center p-4" style="min-height:280px;">
                         <div class="icon-badge mb-3">
                             <i class="ti ti-building-community" aria-hidden="true"></i>
                         </div>
