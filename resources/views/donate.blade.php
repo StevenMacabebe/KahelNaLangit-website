@@ -269,7 +269,7 @@
             <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-heart" aria-hidden="true"></i><p>Community Programs</p></div></div>
         </div>
 
-        <img src="{{ asset('public/images/poem.jpg') }}"
+        <img src="{{ asset('public/images/poem.png') }}"
          alt="Kahel na Langit Poem"
          style="width:100%; border-radius:14px; display:block; margin-bottom:20px;">
 
