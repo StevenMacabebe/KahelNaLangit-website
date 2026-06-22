@@ -269,6 +269,10 @@
             <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-heart" aria-hidden="true"></i><p>Community Programs</p></div></div>
         </div>
 
+        <img src="{{ asset('public/images/poem.jpg') }}"
+         alt="Kahel na Langit Poem"
+         style="width:100%; border-radius:14px; display:block; margin-bottom:20px;">
+
         {{-- Thank You --}}
         <div class="thank-banner mb-4">
             <h3>Thank You for Your Generosity</h3>
