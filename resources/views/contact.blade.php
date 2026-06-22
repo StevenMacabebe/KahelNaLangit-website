@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Kahel na Langit</title>
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tabler Icons (for vector icons) -->
     <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
 
     <style>
-        /* ----- BASE STYLES ----- */
         body {
             font-family: 'Poppins', sans-serif;
             background: #faf7e5;
@@ -22,13 +18,10 @@
         }
         .wrapper { flex: 1; }
 
-        /* ----- NAVBAR - identical to About page ----- */
+        /* ── NAVBAR – THIN (matches About/Partnerships) ── */
         .navbar {
             background: #c25328 !important;
             padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         .navbar-brand,
         .nav-link {
@@ -73,7 +66,7 @@
             }
         }
 
-        /* ----- PAGE HEADER - PINK BANNER ----- */
+        /* ── PAGE HEADER ── */
         .page-header {
             background: #d771ab;
             color: #faf7e5;
@@ -91,7 +84,7 @@
             color: #faf7e5;
         }
 
-        /* ----- CARDS (pink outline) ----- */
+        /* ── CARDS ── */
         .card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -120,7 +113,7 @@
             color: white !important;
         }
 
-        /* ----- CONTACT INFO ICONS (pink) ----- */
+        /* ── CONTACT INFO ICONS ── */
         .contact-icon {
             width: 40px;
             height: 40px;
@@ -149,7 +142,7 @@
             color: #c25328;
         }
 
-        /* ----- SOCIAL MEDIA - ICONS + LABELS ----- */
+        /* ── SOCIAL MEDIA ── */
         .social-item {
             display: flex;
             align-items: center;
@@ -167,12 +160,8 @@
             color: white;
             font-size: 20px;
         }
-        .social-icon.facebook {
-            background: #1877f2;
-        }
-        .social-icon.instagram {
-            background: #e4405f;
-        }
+        .social-icon.facebook { background: #1877f2; }
+        .social-icon.instagram { background: #e4405f; }
         .social-label {
             font-weight: 600;
             color: #c25328;
@@ -188,22 +177,18 @@
             color: #1a1a1a;
             text-decoration: none;
         }
-        .social-handle a:hover {
-            color: #c25328;
-        }
+        .social-handle a:hover { color: #c25328; }
 
-        /* ----- LOGIN/REGISTER ALERT - POWDER PINK ----- */
+        /* ── ALERT ── */
         .alert-pink {
             background: #fce4ec;
             color: #7a3a5a;
             border: 2px solid #d771ab;
             border-radius: 12px;
         }
-        .alert-pink strong {
-            color: #5a2a3a;
-        }
+        .alert-pink strong { color: #5a2a3a; }
 
-        /* ----- MAP CONTAINER ----- */
+        /* ── MAP ── */
         .map-container {
             border-radius: 18px;
             overflow: hidden;
@@ -217,7 +202,7 @@
             border: 0;
         }
 
-        /* ----- FOOTER ----- */
+        /* ── FOOTER ── */
         footer {
             background: #c25328;
             color: #faf7e5;
@@ -232,7 +217,6 @@
             margin: 0;
         }
 
-        /* ----- Responsive ----- */
         @media (max-width: 768px) {
             .page-header h1 { font-size: 2rem; }
             .map-container iframe { height: 250px; }
@@ -244,7 +228,7 @@
 <div class="wrapper">
 
     <!-- ============================================
-         NAVIGATION - identical to About page
+         NAVIGATION – THIN (matches About/Partnerships)
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -269,7 +253,7 @@
     </nav>
 
     <!-- ============================================
-         PAGE HEADER - PINK BANNER
+         PAGE HEADER
          ============================================ -->
     <div class="page-header">
         <div class="container">
@@ -283,7 +267,6 @@
          ============================================ -->
     <div class="container mt-4">
 
-        <!-- Row 1: Send a Message (left) + Follow Us (right) -->
         <div class="row">
 
             <!-- LEFT: Send a Message Card -->
@@ -330,7 +313,6 @@
                         <h4 style="color: #c25328; font-weight: 700;">Follow Us</h4>
                         <hr>
 
-                        <!-- Contact details with pink icons -->
                         <div class="contact-item">
                             <div class="contact-icon"><i class="ti ti-mail"></i></div>
                             <div class="info">
@@ -355,10 +337,8 @@
 
                         <hr>
 
-                        <!-- Connect with us -->
                         <h5 style="color: #c25328; font-weight: 600;">Connect with us</h5>
 
-                        <!-- Facebook: Blue icon, "Facebook" in ORANGE, "Kahel na Langit" in BLACK -->
                         <div class="social-item">
                             <div class="social-icon facebook"><i class="ti ti-brand-facebook"></i></div>
                             <div>
@@ -369,7 +349,6 @@
                             </div>
                         </div>
 
-                        <!-- Instagram: Pink icon, "Instagram" in ORANGE, "int.kahelnalangit" in BLACK -->
                         <div class="social-item">
                             <div class="social-icon instagram"><i class="ti ti-brand-instagram"></i></div>
                             <div>
@@ -384,9 +363,8 @@
                 </div>
             </div>
 
-        </div> <!-- end row 1 -->
+        </div>
 
-        <!-- Row 2: Find Us (full width map) -->
         <div class="row">
             <div class="col-12">
                 <div class="card shadow-sm">
@@ -408,11 +386,11 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- end row 2 -->
+        </div>
 
-    </div> <!-- end container -->
+    </div>
 
-</div> <!-- end wrapper -->
+</div>
 
 <!-- ============================================
      FOOTER

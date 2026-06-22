@@ -18,11 +18,11 @@
         }
 
         /* ============================================
-           NAVBAR - exactly as About page
+           NAVBAR - THIN version (matches About/Partnerships)
            ============================================ */
         .navbar {
             background: #c25328 !important;
-            padding: 12px 0;  /* kept consistent */
+            padding: 12px 0;
         }
 
         .navbar-brand,
@@ -400,7 +400,6 @@
             border-radius: 12px;
         }
 
-        /* ---- Simple controls (no dark bg) ---- */
         .damayan-carousel-modal .carousel-control-prev,
         .damayan-carousel-modal .carousel-control-next {
             width: 5%;
@@ -437,7 +436,6 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c25328'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
         }
 
-        /* ---- Carousel Indicators (10 circles) placed BELOW the images ---- */
         .damayan-carousel-modal .carousel-indicators {
             position: relative;
             bottom: auto;
@@ -701,8 +699,8 @@
 <body>
 
     <!-- ============================================
-    NAVIGATION - exactly as About page
-    ============================================ -->
+         NAVIGATION – THIN (matches About/Partnerships)
+         ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
@@ -726,8 +724,8 @@
     </nav>
 
     <!-- ============================================
-    HERO SECTION — with cache‑busting logo
-    ============================================ -->
+         HERO SECTION
+         ============================================ -->
     <section class="hero-video-wrapper">
         <video autoplay muted loop playsinline>
             <source src="{{ asset('public/images/hero-video.mp4') }}" type="video/mp4">
@@ -752,8 +750,8 @@
     </section>
 
     <!-- ============================================
-    DAMAYAN MODEL HOUSE CARD — now shows hm1
-    ============================================ -->
+         DAMAYAN MODEL HOUSE CARD
+         ============================================ -->
     <div class="container mt-5">
         <div class="card damayan-card" data-bs-toggle="modal" data-bs-target="#damayanCarouselModal">
             <div class="row g-0">
@@ -785,9 +783,8 @@
     </div>
 
     <!-- ============================================
-    DAMAYAN CAROUSEL MODAL — 10 images, SIMPLE controls,
-    NO black background, 10 ORANGE indicator circles BELOW photos
-    ============================================ -->
+         DAMAYAN CAROUSEL MODAL
+         ============================================ -->
     <div class="modal fade damayan-carousel-modal" id="damayanCarouselModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -797,8 +794,6 @@
                 </div>
                 <div class="modal-body" style="padding-bottom: 8px;">
                     <div id="damayanCarousel" class="carousel slide" data-bs-ride="carousel">
-
-                        <!-- SLIDES -->
                         <div class="carousel-inner" style="border-radius:12px;">
                             @for($i = 1; $i <= 10; $i++)
                                 @php
@@ -820,8 +815,6 @@
                                 </div>
                             @endfor
                         </div>
-
-                        <!-- INDICATORS — placed AFTER the slides (below) -->
                         <div class="carousel-indicators">
                             @for($i = 0; $i < 10; $i++)
                                 <button type="button"
@@ -831,8 +824,6 @@
                                 aria-label="Slide {{ $i + 1 }}"></button>
                             @endfor
                         </div>
-
-                        <!-- SIMPLE Prev / Next — NO black background -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#damayanCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -851,8 +842,8 @@
     </div>
 
     <!-- ============================================
-    UPDATES SECTION - RED CARDS / ORANGE TITLE
-    ============================================ -->
+         UPDATES SECTION
+         ============================================ -->
     @if($updates->count() > 0)
     <div class="container mt-5">
         <h2 class="section-title updates-title text-center">Latest Updates</h2>
@@ -920,7 +911,7 @@ UPDATE MODAL
 </div>
 
 <!-- ============================================
-WISHLIST SECTION - BLUE CARDS / ORANGE TITLE
+WISHLIST SECTION
 ============================================ -->
 @if($wishlist->count() > 0)
 <div class="container mt-5">
@@ -963,7 +954,7 @@ WISHLIST SECTION - BLUE CARDS / ORANGE TITLE
 @endif
 
 <!-- ============================================
-PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
+PARTNERSHIPS SECTION
 ============================================ -->
 @if($partnerships->count() > 0)
 <div class="container mt-5">
@@ -1030,7 +1021,6 @@ FOOTER
 </script>
 
 <script>
-    // Populate modal with data from clicked card
     document.addEventListener('DOMContentLoaded', function() {
         const updateCards = document.querySelectorAll('.update-card');
         updateCards.forEach(card => {
@@ -1056,7 +1046,6 @@ FOOTER
             });
         });
 
-        // Sync indicator dots with carousel slide change
         const carousel = document.getElementById('damayanCarousel');
         if (carousel) {
             carousel.addEventListener('slid.bs.carousel', function(e) {
