@@ -11,6 +11,11 @@
 
         /* BASE */
         body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
+        h2    { font-size: 22px; font-weight: 700; }
+        h3    { font-size: 16px; font-weight: 700; }
+        h4    { font-size: 15px; font-weight: 700; }
+        h5    { font-size: 13px; font-weight: 700; }
+        p     { font-size: 13px; color: #555; line-height: 1.8; margin: 0; }
 
         /* NAVBAR */
         .navbar           { background: #c25328 !important; }
