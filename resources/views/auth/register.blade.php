@@ -19,9 +19,9 @@
             margin: 0;
         }
         .register-card {
-            max-width: 400px;
+            max-width: 480px;  /* wider */
             width: 100%;
-            padding: 35px 30px;
+            padding: 40px 35px;
             background: #faf7e5;
             border-radius: 18px;
             box-shadow: 0 0 0 4px #658107, 0 8px 30px rgba(0,0,0,0.15);
@@ -33,7 +33,7 @@
             margin: 0 auto 20px;
         }
         .register-card h2 {
-            color: #658107;   /* green heading */
+            color: #658107;
             text-align: center;
             font-weight: 700;
             margin-bottom: 25px;
@@ -90,13 +90,18 @@
             padding-left: 18px;
             margin-bottom: 0;
         }
+        @media (max-width: 576px) {
+            .register-card {
+                max-width: 100%;
+                margin: 0 15px;
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="register-card">
-        <!-- Logo image – upload your logo.png to public/images/ -->
         <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="logo">
-
         <h2>Create Account</h2>
 
         @if ($errors->any())
