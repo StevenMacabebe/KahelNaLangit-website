@@ -28,7 +28,7 @@
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* SECTION LABELS */
-        .sec-eye          { font-size: 11px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .sec-eye          { font-size: 14px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
         .sec-divider      { border: none; border-top: 2px dashed rgba(54,95,169,.2); margin: 8px 0 28px; }
 
         /* ICON BADGE */
