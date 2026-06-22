@@ -51,10 +51,10 @@
         /* BANKS */
         .bank-card      { background: #faf7e5; border: 2px solid #d4a017; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
         .bank-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 3px #d4a017, 0 10px 20px rgba(0,0,0,.12); }
-        .bank-icon      { width: 56px; height: 56px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .bank-icon      { width: 100px; height: 100px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .bank-icon i    { font-size: 32px; color: #d4a017; }
         .bank-info h5   { color: #c25328; margin-bottom: 4px; }
-        .bank-row       { font-size: 12px; color: #555; margin-bottom: 2px; }
+        .bank-row       { font-size: 14px; color: #555; margin-bottom: 2px; }
         .bank-row strong { color: #365fa9; }
         .qr-center      { text-align: center; margin-top: 14px; padding: 16px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; }
         .qr-ph          { width: 180px; height: 180px; background: #fff; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
@@ -92,8 +92,8 @@
         footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p { color: #faf7e5; font-size: 13px; }
 
-        .form-link        { display: inline-block; margin-top: 8px; font-size: 11px; color: #c25328; font-weight: 700; text-decoration: none; background: #fef9e7; border: 1.5px solid #d4a017; border-radius: 8px; padding: 5px 12px; }
-        .form-link:hover  { background: #d4a017; color: #faf7e5; }
+        .form-link        { display: inline-block !important; margin-top: 8px !important; font-size: 11px !important; color: #c25328 !important; font-weight: 700 !important; text-decoration: none !important; background: #fef9e7 !important; border: 1.5px solid #d4a017 !important; border-radius: 8px !important; padding: 5px 12px !important; width: auto !important; }
+        .form-link:hover  { background: #d4a017 !important; color: #faf7e5 !important; }
 
     </style>
 
