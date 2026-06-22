@@ -48,6 +48,20 @@
         .way-card h5      { color: #c25328; margin-bottom: 3px; }
         .way-num          { width: 30px; height: 30px; background: #d4a017; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #faf7e5; flex-shrink: 0; }
 
+        /* BANKS */
+        .bank-card      { background: #faf7e5; border: 2px solid #d4a017; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
+        .bank-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 3px #d4a017, 0 10px 20px rgba(0,0,0,.12); }
+        .bank-icon      { width: 44px; height: 44px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .bank-icon i    { font-size: 22px; color: #d4a017; }
+        .bank-info h5   { color: #c25328; margin-bottom: 4px; }
+        .bank-row       { font-size: 12px; color: #555; margin-bottom: 2px; }
+        .bank-row strong { color: #365fa9; }
+        .qr-center      { text-align: center; margin-top: 14px; padding: 16px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; }
+        .qr-ph          { width: 180px; height: 180px; background: #fff; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+        .qr-ph i        { font-size: 72px; color: #d4a017; }
+        .qr-center p    { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 2px; }
+        .qr-center span { font-size: 11px; color: #aaa; }
+
         /* GUIDELINES */
         .guide-step       { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
         .guide-num        { width: 26px; height: 26px; background: #d4a017; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #faf7e5; flex-shrink: 0; }
@@ -172,87 +186,103 @@
 
         <hr class="sec-divider">
 
-        {{-- Guidelines --}}
-        <span class="sec-eye">Donation Guidelines</span>
-        <div class="card mb-4">
-            <div class="card-body p-4">
-                <h4>How Your Donation Works</h4>
-                <div class="guide-step">
-                <div class="guide-num">1</div>
-                    <div style="display:flex; flex-direction:column; gap:6px;">
-                        <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" 
-                        target="_blank" class="form-link">
-                            <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
-                        </a>
-                    </div>
-                </div>
-                <div class="guide-step">
-                    <div class="guide-num">2</div>
-                    <p>Upload a photo or screenshot of your receipt through the form.</p>
-                </div>
-                <div class="guide-step" style="margin-bottom:0;">
-                    <div class="guide-num">3</div>
-                    <p>Check your email within 24–72 hours for your acknowledgment letter.</p>
-                </div>
-                @if($donation && $donation->guidelines)
-                    <div class="admin-note">
-                        {!! nl2br(e($donation->guidelines)) !!}
-                    </div>
-                @endif
-            </div>
-        </div>
-
-        <hr class="sec-divider">
-
-        {{-- Donation Channel --}}
+        {{-- Banks horizontal on top --}}
         <span class="sec-eye">Donation Channel</span>
         <h2 class="mb-3" style="color:#c25328;">How to Donate</h2>
+
         @if($donation)
-            @if($donation->bank1_name)
-            <div class="card mb-3">
-                <div class="card-body p-4">
-                    <h4><i class="ti ti-building-bank" aria-hidden="true" style="color:#d4a017;"></i> {{ $donation->bank1_name }}</h4>
-                    <div class="ch-row"><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</div>
-                    <div class="ch-row"><strong>Account Number:</strong> {{ $donation->bank1_account_number }}</div>
-                </div>
-            </div>
-            @endif
-
-            @if($donation->bank2_name)
-            <div class="card mb-3">
-                <div class="card-body p-4">
-                    <h4><i class="ti ti-building-bank" aria-hidden="true" style="color:#d4a017;"></i> {{ $donation->bank2_name }}</h4>
-                    <div class="ch-row"><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</div>
-                    <div class="ch-row"><strong>Account Number:</strong> {{ $donation->bank2_account_number }}</div>
-                </div>
-            </div>
-            @endif
-
-            @if($donation->gcash_name || $donation->gcash_number)
-            <div class="card mb-4">
-                <div class="card-body p-4">
-                    <h4><i class="ti ti-device-mobile" aria-hidden="true" style="color:#d4a017;"></i> GCash</h4>
-                    @if($donation->gcash_name)
-                        <div class="ch-row"><strong>Account Name:</strong> {{ $donation->gcash_name }}</div>
-                    @endif
-                    @if($donation->gcash_number)
-                        <div class="ch-row"><strong>GCash Number:</strong> {{ $donation->gcash_number }}</div>
-                    @endif
-                    @if($donation->gcash_qr)
-                        <div class="qr-box">
-                            <div class="qr-text">
-                                <p>Scan to donate via GCash</p>
-                                <span>Use your GCash app to scan</span>
-                            </div>
-                            <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}"
-                                 alt="GCash QR Code"
-                                 class="qr-image">
+            @if($donation->bank1_name || $donation->bank2_name)
+            <div class="row g-3 mb-3">
+                @if($donation->bank1_name)
+                <div class="col-md-6">
+                    <div class="bank-card">
+                        <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
+                        <div class="bank-info">
+                            <h5>{{ $donation->bank1_name }}</h5>
+                            <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</div>
+                            <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank1_account_number }}</div>
                         </div>
+                    </div>
+                </div>
+                @endif
+                @if($donation->bank2_name)
+                <div class="col-md-6">
+                    <div class="bank-card">
+                        <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
+                        <div class="bank-info">
+                            <h5>{{ $donation->bank2_name }}</h5>
+                            <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</div>
+                            <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank2_account_number }}</div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            </div>
+            @endif
+
+            {{-- Guidelines + GCash 2 col --}}
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h4>How Your Donation Works</h4>
+                            <div class="guide-step">
+                                <div class="guide-num">1</div>
+                                <div style="display:flex; flex-direction:column; gap:6px;">
+                                    <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform"
+                                    target="_blank" class="form-link">
+                                        <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="guide-step">
+                                <div class="guide-num">2</div>
+                                <p>Upload a photo or screenshot of your receipt through the form.</p>
+                            </div>
+                            <div class="guide-step" style="margin-bottom:0;">
+                                <div class="guide-num">3</div>
+                                <p>Check your email within 24–72 hours for your acknowledgment letter.</p>
+                            </div>
+                            @if($donation && $donation->guidelines)
+                                <div class="admin-note">
+                                    {!! nl2br(e($donation->guidelines)) !!}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    @if($donation->gcash_name || $donation->gcash_number)
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h4><i class="ti ti-device-mobile" aria-hidden="true" style="color:#d4a017;"></i> GCash</h4>
+                            @if($donation->gcash_name)
+                                <div class="ch-row"><strong>Account Name:</strong> {{ $donation->gcash_name }}</div>
+                            @endif
+                            @if($donation->gcash_number)
+                                <div class="ch-row"><strong>GCash Number:</strong> {{ $donation->gcash_number }}</div>
+                            @endif
+                            @if($donation->gcash_qr)
+                                <div class="qr-center">
+                                    <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}"
+                                        alt="GCash QR Code"
+                                        style="width:180px; height:180px; border-radius:10px; border:2px solid #d4a017; display:block; margin:0 auto 10px;">
+                                    <p>Scan to donate via GCash</p>
+                                    <span>Use your GCash app to scan</span>
+                                </div>
+                            @else
+                                <div class="qr-center">
+                                    <div class="qr-ph"><i class="ti ti-qrcode" aria-hidden="true"></i></div>
+                                    <p>Scan to donate via GCash</p>
+                                    <span>QR code coming soon</span>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                     @endif
                 </div>
             </div>
-            @endif
         @else
             <div class="alert mb-4" style="background:#fef9e7; border:1.5px solid #d4a017; color:#555;">
                 Donation details coming soon!
