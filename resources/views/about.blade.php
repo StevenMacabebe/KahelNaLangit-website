@@ -174,58 +174,58 @@
 
         <hr class="sec-divider">
 
-<span class="sec-eye">The Community</span>
-<div class="card mb-5">
-    <div class="row g-0">
-        <div class="col-md-5" style="min-height:260px; overflow:hidden;">
-            <img src="{{ asset('public/images/community.jpg') }}"
-                 alt="Damayan Community"
-                 class="damayan-photo"
-                 style="border-radius:12px 0 0 12px;">
-        </div>
-        <div class="col-md-7" style="border-left: 2px solid #365fa9;">
-            <div class="card-body p-4">
-                <div class="location-tag">Floodway, Taytay, Rizal</div>
-                <div class="icon-badge mb-3">
-                    <i class="ti ti-building-community" aria-hidden="true"></i>
+        <span class="sec-eye">The Community</span>
+        <div class="card mb-5">
+            <div class="row g-0">
+                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
+                    <img src="{{ asset('public/images/community.jpg') }}"
+                        alt="Damayan Community"
+                        class="damayan-photo"
+                        style="border-radius:12px 0 0 12px;">
                 </div>
-                <h3>The Damayan Community</h3>
-                <p class="mt-2 mb-4">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
+                <div class="col-md-7" style="border-left: 2px solid #365fa9;">
+                    <div class="card-body p-4">
+                        <div class="location-tag">Floodway, Taytay, Rizal</div>
+                        <div class="icon-badge mb-3">
+                            <i class="ti ti-building-community" aria-hidden="true"></i>
+                        </div>
+                        <h3>The Damayan Community</h3>
+                        <p class="mt-2 mb-4">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
 
-                {{-- Tabs moved here --}}
-                <div class="tab-row">
-                    <button class="tab-btn active" onclick="switchTab('gf', this)">Ground Floor</button>
-                    <button class="tab-btn" onclick="switchTab('sf', this)">Second Floor</button>
-                </div>
-                <div class="tab-panel active" id="tab-gf">
-                    <div class="ba-grid">
-                        <div class="ba-photo">
-                            <img src="{{ asset('public/images/gf-existing.jpg') }}" alt="Ground Floor Existing">
-                            <span class="ba-tag">Existing</span>
+                        {{-- Tabs moved here --}}
+                        <div class="tab-row">
+                            <button class="tab-btn active" onclick="switchTab('gf', this)">Ground Floor</button>
+                            <button class="tab-btn" onclick="switchTab('sf', this)">Second Floor</button>
                         </div>
-                        <div class="ba-photo">
-                            <img src="{{ asset('public/images/gf-proposed.jpg') }}" alt="Ground Floor Proposed">
-                            <span class="ba-tag">Proposed</span>
+                        <div class="tab-panel active" id="tab-gf">
+                            <div class="ba-grid">
+                                <div class="ba-photo">
+                                    <img src="{{ asset('public/images/gf-existing.png') }}" alt="Ground Floor Existing">
+                                    <span class="ba-tag">Existing</span>
+                                </div>
+                                <div class="ba-photo">
+                                    <img src="{{ asset('public/images/gf-proposed.png') }}" alt="Ground Floor Proposed">
+                                    <span class="ba-tag">Proposed</span>
+                                </div>
+                            </div>
                         </div>
+                        <div class="tab-panel" id="tab-sf">
+                            <div class="ba-grid">
+                                <div class="ba-photo">
+                                    <img src="{{ asset('public/images/sf-existing.png') }}" alt="Second Floor Existing">
+                                    <span class="ba-tag">Existing</span>
+                                </div>
+                                <div class="ba-photo">
+                                    <img src="{{ asset('public/images/sf-proposed.png') }}" alt="Second Floor Proposed">
+                                    <span class="ba-tag">Proposed</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="tab-panel" id="tab-sf">
-                    <div class="ba-grid">
-                        <div class="ba-photo">
-                            <img src="{{ asset('public/images/sf-existing.jpg') }}" alt="Second Floor Existing">
-                            <span class="ba-tag">Existing</span>
-                        </div>
-                        <div class="ba-photo">
-                            <img src="{{ asset('public/images/sf-proposed.jpg') }}" alt="Second Floor Proposed">
-                            <span class="ba-tag">Proposed</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
-</div>
 
         </div>
 
