@@ -62,6 +62,15 @@
         .sdg-popup p      { color:#555; font-size:13px; line-height:1.7; margin:0; }
         .sdg-close        { position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#888; cursor:pointer; }
 
+        /* DAMAYAN COMMUNITY */
+        .damayan-photo    { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
+        .ba-strip         { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .ba-strip-label   { font-size: 12px; font-weight: 700; color: #faf7e5; background: #365fa9; padding: 6px 16px; display: block; border-top: 2px solid #365fa9; }
+        .ba-photo         { height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+        .ba-photo img     { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ba-existing      { background: #e8e0d4; }
+        .ba-proposed      { background: #dce8fc; }
+
         /* TEAM */
         .team-card        { transition: transform 0.3s; }
         .team-card:hover  { transform: translateY(-5px); }
@@ -159,14 +168,48 @@
 
         <span class="sec-eye">The Community</span>
         <div class="card mb-5">
-            <div class="card-body">
-                <div class="icon-badge"><i class="ti ti-building-community" aria-hidden="true"></i></div>
-                <h3>The Damayan Community</h3>
-                <p>We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
-            </div>
-        </div>
 
-        <hr class="sec-divider">
+            {{-- Top: photo left + text right --}}
+            <div class="row g-0" style="border-bottom: 2px solid #365fa9;">
+                <div class="col-md-5">
+                    <img src="{{ asset('public/images/community.jpg') }}"
+                        alt="Damayan Community"
+                        class="damayan-photo"
+                        style="border-radius: 12px 0 0 0;">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
+                        <div class="icon-badge mb-3">
+                            <i class="ti ti-building-community" aria-hidden="true"></i>
+                        </div>
+                        <h3>The Damayan Community</h3>
+                        <p>We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Bottom: before & after strip --}}
+            <span class="ba-strip-label">Before &amp; After — Ground Floor</span>
+            <div class="ba-strip">
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/gf-existing.png') }}" alt="Ground Floor Existing">
+                </div>
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/gf-proposed.png') }}" alt="Ground Floor Proposed">
+                </div>
+            </div>
+
+            <span class="ba-strip-label">Before &amp; After — Second Floor</span>
+            <div class="ba-strip">
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/sf-existing.png') }}" alt="Second Floor Existing">
+                </div>
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/sf-proposed.png') }}" alt="Second Floor Proposed">
+                </div>
+            </div>
+
+        </div>
 
         <span class="sec-eye text-center d-block">Global Commitments</span>
         <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
