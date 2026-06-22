@@ -18,14 +18,11 @@
         }
 
         /* ============================================
-           NAVBAR
+           NAVBAR - exactly as About page
            ============================================ */
         .navbar {
             background: #c25328 !important;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 12px 0;  /* kept consistent */
         }
 
         .navbar-brand,
@@ -43,36 +40,18 @@
             opacity: 0.8;
         }
 
-        .nav-link.btn-login {
+        .btn-login {
             background: #faf7e5;
             color: #c25328 !important;
             border-radius: 20px;
-            padding: 6px 18px !important;
+            padding: 4px 14px !important;
             font-weight: 700;
             border: none;
         }
 
-        .nav-link.btn-login:hover {
+        .btn-login:hover {
             background: #e8e0d0;
             opacity: 1;
-        }
-
-        .btn-logout-nav {
-            background: transparent;
-            color: #faf7e5 !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-logout-nav:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.7);
         }
 
         .navbar-toggler {
@@ -94,13 +73,9 @@
                 padding-top: 10px;
                 border-top: 1px solid rgba(255, 255, 255, 0.15);
             }
-            .nav-link.btn-login {
+            .btn-login {
                 text-align: center;
                 width: 100%;
-            }
-            .btn-logout-nav {
-                width: 100%;
-                text-align: center;
             }
         }
 
@@ -141,8 +116,8 @@
         }
 
         .hero-video-wrapper .hero-content .hero-logo {
-            max-width: 80%;          /* limits width to 80% of container */
-            max-height: 55vh;        /* prevents logo from exceeding viewport height */
+            max-width: 80%;
+            max-height: 55vh;
             width: auto;
             height: auto;
             display: inline-block;
@@ -726,7 +701,7 @@
 <body>
 
     <!-- ============================================
-    NAVIGATION
+    NAVIGATION - exactly as About page
     ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -744,18 +719,7 @@
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
-
-                    @auth
-                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                    <li class="nav-item">
-                        <form method="POST" action="/logout" class="d-inline">
-                            @csrf
-                            <button type="submit" class="btn-logout-nav">Logout</button>
-                        </form>
-                    </li>
-                    @else
                     <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
-                    @endauth
                 </ul>
             </div>
         </div>
@@ -771,7 +735,6 @@
         </video>
         <div class="hero-content">
             <div class="container">
-                <!-- Cache‑busting: append file modification time to force fresh load -->
                 @php
                     $logoPath = public_path('images/logo.png');
                     $logoVersion = file_exists($logoPath) ? filemtime($logoPath) : time();
@@ -1031,7 +994,7 @@ PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
 @endif
 
 <!-- ============================================
-FOOTER — updated tagline color
+FOOTER
 ============================================ -->
 <footer>
     <div class="container">
