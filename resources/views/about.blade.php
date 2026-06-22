@@ -231,8 +231,6 @@
             </div>
         </div>
 
-        </div>
-
         <hr class="sec-divider">
         <span class="sec-eye text-center d-block">Global Commitments</span>
         <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
