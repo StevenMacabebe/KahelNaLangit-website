@@ -29,7 +29,7 @@
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* SECTION */
-        .sec-eye          { font-size: 10px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .sec-eye          { font-size: 14px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
         .sec-divider      { border: none; border-top: 2px dashed rgba(212,160,23,.3); margin: 8px 0 20px; }
 
         /* HOPE STRIP */
@@ -78,6 +78,8 @@
         /* FOOTER */
         footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p { color: #faf7e5; font-size: 13px; }
+
+        .form-link { display: inline-block; margin-top: 8px; font-size: 11px; color: #c25328; font-weight: 700; text-decoration: none; background: #fef9e7; border: 1.5px solid #d4a017; border-radius: 8px; padding: 5px 12px; }
 
     </style>
 
@@ -139,12 +141,15 @@
         <div class="row g-3 mb-4">
             <div class="col-md-6">
                 <div class="way-card">
-                    <div class="way-num">1</div>
-                    <div><h5>Donation Form</h5><p>Fill up our donation form to ensure your contribution is properly acknowledged.</p></div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" target="_blank"
-                        style="display:inline-block; margin-top:8px; font-size:11px; color:#c25328; font-weight:700; text-decoration:none; background:#fef9e7; border:1.5px solid #d4a017; border-radius:8px; padding:5px 12px;">
-                             <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
-                    </a>
+                <div class="way-num">1</div>
+                    <div>
+                    <h5>Donation Form</h5>
+                        <p>Fill up our donation form to ensure your contribution is properly acknowledged.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" 
+                        target="_blank" class="form-link">
+                            <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -175,12 +180,14 @@
             <div class="card-body p-4">
                 <h4>How Your Donation Works</h4>
                 <div class="guide-step">
-                    <div class="guide-num">1</div>
-                    <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" target="_blank"
-                        style="display:inline-block; margin-top:8px; font-size:11px; color:#c25328; font-weight:700; text-decoration:none; background:#fef9e7; border:1.5px solid #d4a017; border-radius:8px; padding:5px 12px;">
-                             <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
-                    </a>
+                <div class="guide-num">1</div>
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" 
+                        target="_blank" class="form-link">
+                            <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
+                        </a>
+                    </div>
                 </div>
                 <div class="guide-step">
                     <div class="guide-num">2</div>
