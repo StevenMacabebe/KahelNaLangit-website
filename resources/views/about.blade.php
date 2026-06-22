@@ -179,12 +179,7 @@
         <span class="sec-eye">The Community</span>
         <div class="card mb-5">
             <div class="row g-0">
-                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
-                    <img src="{{ asset('public/images/community.jpg') }}"
-                        alt="Damayan Community"
-                        class="damayan-photo"
-                        style="border-radius:12px 0 0 12px;">
-                </div>
+
                 <div class="col-md-7" style="border-left: 2px solid #365fa9;">
                     <div class="card-body p-4">
                         <div class="location-tag">Floodway, Taytay, Rizal</div>
@@ -192,10 +187,10 @@
                         <p class="mt-2 mb-4">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
 
                         {{-- Damayan Model House --}}
-                        <div class="icon-badge mb-3">
-                            <i class="ti ti-building-community" aria-hidden="true"></i>
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+                            <h3>The Damayan Model House</h3>
                         </div>
-                        <h3>The Damayan Model House</h3>
                         <div class="tab-row">
                             <button class="tab-btn active" onclick="switchTab('gf', this)">Ground Floor</button>
                             <button class="tab-btn" onclick="switchTab('sf', this)">Second Floor</button>
@@ -227,6 +222,14 @@
 
                     </div>
                 </div>
+
+                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
+                    <img src="{{ asset('public/images/community.jpg') }}"
+                        alt="Damayan Community"
+                        class="damayan-photo"
+                        style="border-radius:12px 0 0 12px;">
+                </div>
+
             </div>
         </div>
 
