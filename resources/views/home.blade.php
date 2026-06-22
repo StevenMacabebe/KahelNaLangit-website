@@ -266,17 +266,20 @@
         }
 
         /* ============================================
-           SECTION TITLES - NO LINES
+           SECTION TITLES
            ============================================ */
         .section-title {
             margin-bottom: 30px;
             font-weight: 700;
-            position: relative;
         }
 
         /* ============================================
-           UPDATE CARDS - SQUARE IMAGES
+           UPDATES - #ac1a1a
            ============================================ */
+        .updates-title {
+            color: #ac1a1a;
+        }
+
         .update-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -316,7 +319,7 @@
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: #333;
+            color: #c25328;
         }
 
         .update-card .card-text {
@@ -396,7 +399,7 @@
         }
 
         /* ============================================
-           WISHLIST CARDS - SQUARE IMAGES
+           WISHLIST - #365fa9
            ============================================ */
         .wishlist-title {
             color: #365fa9;
@@ -453,17 +456,17 @@
         }
 
         /* ============================================
-           PARTNERS - #658107
+           PARTNERS - #c25328 (ORANGE)
            ============================================ */
         .partners-title {
-            color: #658107;
+            color: #c25328;
         }
 
         .partner-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #658107, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
@@ -474,18 +477,18 @@
         }
 
         .partner-card .partner-name {
-            color: #658107;
+            color: #c25328;
             font-weight: 700;
         }
 
         .partner-card .partner-desc {
-            color: #4a5e05;
+            color: #7a3a1a;
             font-weight: 500;
         }
 
         .partner-card .btn-outline-partner {
-            border: 2px solid #658107 !important;
-            color: #658107 !important;
+            border: 2px solid #c25328 !important;
+            color: #c25328 !important;
             background: transparent;
             padding: 6px 18px;
             border-radius: 20px;
@@ -497,7 +500,7 @@
         }
 
         .partner-card .btn-outline-partner:hover {
-            background: #658107 !important;
+            background: #c25328 !important;
             color: white !important;
             transform: translateY(-2px);
         }
@@ -708,7 +711,7 @@
     </div>
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9 CARDS - SQUARE IMAGES
+         WISHLIST SECTION - #365fa9 CARDS
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
@@ -751,7 +754,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - #658107 CARDS
+         PARTNERSHIPS SECTION - #c25328 (ORANGE)
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
@@ -764,7 +767,7 @@
                                 @if($partner->logo)
                                     <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
                                          alt="{{ $partner->name }}" 
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #658107; padding: 3px;">
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
