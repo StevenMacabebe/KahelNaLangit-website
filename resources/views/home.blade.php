@@ -136,15 +136,17 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 10px 20px 40px;  /* reduced top padding to shift everything up */
+            padding: 10px 20px 40px;
             text-align: center;
         }
 
         .hero-video-wrapper .hero-content .hero-logo {
-            max-width: 90%;            /* made larger */
+            max-width: 80%;          /* limits width to 80% of container */
+            max-height: 55vh;        /* prevents logo from exceeding viewport height */
+            width: auto;
             height: auto;
-            margin-bottom: 8px;
             display: inline-block;
+            margin-bottom: 8px;
         }
 
         .hero-video-wrapper .hero-content .tagline {
@@ -173,7 +175,8 @@
                 padding: 8px 15px 30px;
             }
             .hero-video-wrapper .hero-content .hero-logo {
-                max-width: 92%;
+                max-width: 85%;
+                max-height: 45vh;
             }
         }
 
@@ -189,7 +192,8 @@
                 font-size: 1rem;
             }
             .hero-video-wrapper .hero-content .hero-logo {
-                max-width: 95%;
+                max-width: 90%;
+                max-height: 40vh;
             }
         }
 
@@ -758,7 +762,7 @@
     </nav>
 
     <!-- ============================================
-    HERO SECTION - RESPONSIVE with LOGO (larger & shifted up)
+    HERO SECTION — with cache‑busting logo
     ============================================ -->
     <section class="hero-video-wrapper">
         <video autoplay muted loop playsinline>
@@ -767,7 +771,14 @@
         </video>
         <div class="hero-content">
             <div class="container">
-                <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="hero-logo">
+                <!-- Cache‑busting: append file modification time to force fresh load -->
+                @php
+                    $logoPath = public_path('images/logo.png');
+                    $logoVersion = file_exists($logoPath) ? filemtime($logoPath) : time();
+                @endphp
+                <img src="{{ asset('public/images/logo.png?v=' . $logoVersion) }}"
+                     alt="Kahel na Langit Logo"
+                     class="hero-logo">
                 <p class="tagline">A space of Resiliency, Hope, and Community.</p>
                 <div class="btn-group">
                     <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
