@@ -6,6 +6,7 @@
     <title>Contact - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
 
     <style>
         /* ============================================
@@ -111,11 +112,9 @@
         }
 
         /* ============================================
-           PAGE HEADER - #d771ab
+           PAGE HEADER
            ============================================ */
         .page-header {
-            background: #d771ab;
-            color: #faf7e5;
             padding: 40px 0 32px;
             margin-bottom: 24px;
         }
@@ -123,15 +122,16 @@
         .page-header h1 {
             font-weight: 700;
             font-size: 2.5rem;
+            color: #c25328;
         }
 
         .page-header .lead {
-            opacity: 0.85;
             font-size: 15px;
+            color: #6c757d;
         }
 
         /* ============================================
-           CARDS - OUTLINE #d771ab
+           CARDS
            ============================================ */
         .card {
             background: #f8f4ed !important;
@@ -158,24 +158,88 @@
             color: white !important;
         }
 
-        .btn-primary {
-            background: #c25328 !important;
-            border: none !important;
-            color: white !important;
+        /* ============================================
+           CONTACT INFO ICONS
+           ============================================ */
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #d771ab;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 20px;
         }
 
-        .btn-primary:hover {
-            background: #9e3d18 !important;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
-        .btn-secondary {
-            background: #6c757d !important;
-            border: none !important;
-            color: white !important;
+        .contact-item .info {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-item .info strong {
+            display: block;
+            font-weight: 600;
+            color: #c25328;
         }
 
         /* ============================================
-           FOOTER - MATCHES ABOUT PAGE
+           SOCIAL BUTTONS
+           ============================================ */
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white !important;
+            transition: transform 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-btn.facebook {
+            background: #1877f2;
+        }
+        .social-btn.instagram {
+            background: #e4405f;
+        }
+        .social-btn.twitter {
+            background: #000000;
+        }
+
+        /* ============================================
+           MAP
+           ============================================ */
+        .map-container {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 4px #d771ab;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 280px;
+            display: block;
+            border: 0;
+        }
+
+        /* ============================================
+           FOOTER
            ============================================ */
         footer {
             background: #c25328;
@@ -234,7 +298,7 @@
         </nav>
 
         <!-- ============================================
-             PAGE HEADER - #d771ab
+             PAGE HEADER
              ============================================ -->
         <div class="page-header">
             <div class="container">
@@ -248,10 +312,12 @@
              ============================================ -->
         <div class="container mt-4">
             <div class="row">
+
+                <!-- LEFT: Contact Form -->
                 <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h4>Send Us a Message</h4>
+                            <h4 style="color: #c25328; font-weight: 700;">Send Us a Message</h4>
                             <hr>
                             @auth
                                 @if(session('success'))
@@ -277,37 +343,89 @@
                                 <div class="alert alert-info">
                                     <strong>Please login or register to send a message.</strong>
                                 </div>
-                                <a href="/login" class="btn btn-primary">Login</a>
+                                <a href="/login" class="btn btn-warning text-white">Login</a>
                                 <a href="/register" class="btn btn-secondary">Register</a>
                             @endauth
                         </div>
                     </div>
                 </div>
+
+                <!-- RIGHT: Contact Info + Map -->
                 <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h4>Contact Information</h4>
+
+                            <!-- Contact Details -->
+                            <h4 style="color: #c25328; font-weight: 700;">Contact Information</h4>
                             <hr>
-                            <p><strong>Email:</strong> info@kahelnalangit.org</p>
-                            <p><strong>Phone:</strong> +63 912 345 6789</p>
-                            <p><strong>Address:</strong> Floodway, Taytay, Rizal, Philippines</p>
+
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="ti ti-mail"></i>
+                                </div>
+                                <div class="info">
+                                    <strong>Email</strong>
+                                    info@kahelnalangit.org
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="ti ti-phone"></i>
+                                </div>
+                                <div class="info">
+                                    <strong>Phone</strong>
+                                    +63 912 345 6789
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="ti ti-map-pin"></i>
+                                </div>
+                                <div class="info">
+                                    <strong>Address</strong>
+                                    Damayan, Blk 64, Floodway,<br>Taytay, Rizal, Philippines, 1920
+                                </div>
+                            </div>
+
                             <hr>
-                            <h5>Follow Us</h5>
-                            <p>
-                                <a href="#" class="btn btn-primary btn-sm">Facebook</a>
-                                <a href="#" class="btn btn-info btn-sm text-white">Instagram</a>
-                                <a href="#" class="btn btn-dark btn-sm">Twitter</a>
-                            </p>
+
+                            <!-- Follow Us -->
+                            <h5 style="color: #c25328; font-weight: 600;">Follow Us</h5>
+                            <div class="d-flex gap-2 mt-2">
+                                <a href="#" class="social-btn facebook"><i class="ti ti-brand-facebook"></i></a>
+                                <a href="#" class="social-btn instagram"><i class="ti ti-brand-instagram"></i></a>
+                                <a href="#" class="social-btn twitter"><i class="ti ti-brand-x"></i></a>
+                            </div>
+
+                            <hr>
+
+                            <!-- Google Maps -->
+                            <h5 style="color: #c25328; font-weight: 600;">Find Us</h5>
+                            <div class="map-container mt-2">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.820448639135!2d121.14098901483925!3d14.5535443898139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7f6e4a2d72b%3A0x8e8d8d8d8d8d8d8d!2sDamayan%2C%20Blk%2064%2C%20Floodway%2C%20Taytay%2C%20Rizal!5e0!3m2!1sen!2sph!4v1700000000000"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
     </div>
 
     <!-- ============================================
-         FOOTER - MATCHES ABOUT PAGE
+         FOOTER
          ============================================ -->
     <footer>
         <div class="container">
