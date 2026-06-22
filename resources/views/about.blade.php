@@ -231,6 +231,71 @@
 
         <hr class="sec-divider">
 
+            <span class="sec-eye text-center d-block">Global Commitments</span>
+            <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg1.png') }}','Goal 1 — No Poverty','KNL helps the Damayan Community overcome economic instability through fundraising, livelihood programs, and sustainable housing support.')">
+                        <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
+                        <h5>Goal 1</h5>
+                        <p>No Poverty</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg9.png') }}','Goal 9 — Industry, Innovation &amp; Infrastructure','The Damayan Model House demonstrates innovative, flood-resilient construction that brings lasting infrastructure to vulnerable communities.')">
+                        <img src="{{ asset('public/images/sdg9.png') }}" alt="Goal 9">
+                        <h5>Goal 9</h5>
+                        <p>Industry, Innovation &amp; Infrastructure</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg10.png') }}','Goal 10 — Reduced Inequalities','We work to bridge gaps in access to resources, opportunities, and safety for marginalized communities in Floodway, Taytay, Rizal.')">
+                        <img src="{{ asset('public/images/sdg10.png') }}" alt="Goal 10">
+                        <h5>Goal 10</h5>
+                        <p>Reduced Inequalities</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg11.png') }}','Goal 11 — Sustainable Cities &amp; Communities','Our community engagement programs help build safer, more inclusive, and resilient settlements for flood-prone urban communities.')">
+                        <img src="{{ asset('public/images/sdg11.png') }}" alt="Goal 11">
+                        <h5>Goal 11</h5>
+                        <p>Sustainable Cities &amp; Communities</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg13.png') }}','Goal 13 — Climate Action','By transforming flood-prone areas into stable environments, KNL directly addresses the impact of climate change on vulnerable communities.')">
+                        <img src="{{ asset('public/images/sdg13.png') }}" alt="Goal 13">
+                        <h5>Goal 13</h5>
+                        <p>Climate Action</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card text-center h-100 sdg-badge"
+                        onclick="openSdg('{{ asset('public/images/sdg17.png') }}','Goal 17 — Partnerships for the Goals','KNL collaborates with organizations, donors, and volunteers to amplify impact and create lasting change for the Damayan Community.')">
+                        <img src="{{ asset('public/images/sdg17.png') }}" alt="Goal 17">
+                        <h5>Goal 17</h5>
+                        <p>Partnerships for the Goals</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- SDG Modal --}}
+            <div class="sdg-overlay" id="sdgOverlay">
+                <div class="sdg-popup">
+                    <button class="sdg-close" onclick="closeSdg()">✕</button>
+                    <img id="sdgImg" src="" alt="">
+                    <h5 id="sdgTitle"></h5>
+                    <p id="sdgDesc"></p>
+                </div>
+            </div>
+
+        <hr class="sec-divider">
+
         <span class="sec-eye text-center d-block">The People</span>
         <h2 class="text-center mb-4" style="color:#365fa9;">Meet Our Team</h2>
         <div class="row mb-5">
