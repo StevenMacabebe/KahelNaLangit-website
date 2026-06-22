@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
     <style>
 
         /* BASE */
@@ -22,19 +24,59 @@
         .page-header h1 { font-weight: 700; font-size: 2.5rem; }
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
+        /* SECTION */
+        .sec-eye          { font-size: 10px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .sec-divider      { border: none; border-top: 2px dashed rgba(212,160,23,.3); margin: 8px 0 20px; }
+
+        /* HOPE STRIP */
+        .hope-strip       { background: #d4a017; border-radius: 14px; padding: 22px 26px; text-align: center; margin-bottom: 20px; }
+        .hope-strip h2    { color: #faf7e5; margin-bottom: 6px; }
+        .hope-strip p     { color: rgba(250,247,229,.88); max-width: 500px; margin: 0 auto; }
+
         /* CARDS */
         .card             { background: #faf7e5 !important; border: 2px solid #d4a017 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
         .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,0.18) !important; }
         .card h3          { color: #c25328; margin-bottom: 8px; }
+        .card h4          { color: #c25328; margin-bottom: 10px; }
+
+        /* WAYS */
+        .way-card         { background: #faf7e5; border: 2px solid #d4a017; border-radius: 14px; padding: 16px; display: flex; align-items: flex-start; gap: 10px; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
+        .way-card:hover   { transform: translateY(-5px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,.15); }
+        .way-card h5      { color: #c25328; margin-bottom: 3px; }
+        .way-num          { width: 30px; height: 30px; background: #d4a017; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #faf7e5; flex-shrink: 0; }
+
+        /* GUIDELINES */
+        .guide-step       { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+        .guide-num        { width: 26px; height: 26px; background: #d4a017; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #faf7e5; flex-shrink: 0; }
+        .admin-note       { background: #fef9e7; border-left: 4px solid #d4a017; padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: 12px; color: #555; line-height: 1.75; font-style: italic; }
+
+        /* CHANNELS */
+        .ch-row           { font-size: 12px; color: #555; margin-bottom: 5px; }
+        .ch-row strong    { color: #c25328; }
+        .qr-box           { text-align: left; margin-top: 12px; padding: 14px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .qr-text p        { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 3px; }
+        .qr-text span     { font-size: 11px; color: #aaa; }
+        .qr-ph            { width: 90px; height: 90px; background: #fff; border: 2px solid #d4a017; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .qr-ph i          { font-size: 34px; color: #d4a017; }
+        .qr-image         { max-width: 90px; max-height: 90px; border-radius: 8px; border: 2px solid #d4a017; }
+
+        /* PROCEEDS */
+        .proc-card        { background: #faf7e5; border: 2px solid #d4a017; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
+        .proc-card:hover  { transform: translateY(-5px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,.15); }
+        .proc-card i      { font-size: 22px; color: #d4a017; margin-bottom: 6px; display: block; }
+        .proc-card p      { font-size: 11px; color: #555; font-weight: 600; }
+
+        /* THANK YOU */
+        .thank-banner     { background: #c25328; border-radius: 14px; padding: 20px 24px; text-align: center; }
+        .thank-banner h3  { color: #faf7e5; margin-bottom: 4px; }
+        .thank-banner p   { color: rgba(250,247,229,.85); }
 
         /* FOOTER */
         footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p { color: #faf7e5; font-size: 13px; }
 
-        .qr-image { max-width: 200px; }
-
-
     </style>
+
 </head>
 <body>
     <!-- Navigation -->
@@ -79,80 +121,153 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="row">
+    <div class="container py-4">
+
+        {{-- Hope Strip --}}
+        <div class="hope-strip">
+            <h2>Help Us Bring Hope to Life</h2>
+            <p>Every contribution — big or small — can inspire change and make a lasting impact on the lives of the people we aim to serve.</p>
+        </div>
+
+        {{-- Ways to Give --}}
+        <span class="sec-eye">Ways to Give</span>
+        <h2 class="mb-3" style="color:#c25328;">Ways to Extend Your Support</h2>
+        <div class="row g-3 mb-4">
             <div class="col-md-6">
-                @if($donation)
-                    <!-- Bank 1 -->
-                    @if($donation->bank1_name)
-                        <div class="card mb-3 shadow-sm">
-                            <div class="card-body">
-                                <h4>🏦 {{ $donation->bank1_name }}</h4>
-                                <p><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</p>
-                                <p><strong>Account Number:</strong> {{ $donation->bank1_account_number }}</p>
-                            </div>
-                        </div>
-                    @endif
-
-                    <!-- Bank 2 -->
-                    @if($donation->bank2_name)
-                        <div class="card mb-3 shadow-sm">
-                            <div class="card-body">
-                                <h4>🏦 {{ $donation->bank2_name }}</h4>
-                                <p><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</p>
-                                <p><strong>Account Number:</strong> {{ $donation->bank2_account_number }}</p>
-                            </div>
-                        </div>
-                    @endif
-
-                    <!-- GCash -->
-                    @if($donation->gcash_name || $donation->gcash_number)
-                        <div class="card mb-3 shadow-sm">
-                            <div class="card-body">
-                                <h4>📱 GCash</h4>
-                                @if($donation->gcash_name)
-                                    <p><strong>Account Name:</strong> {{ $donation->gcash_name }}</p>
-                                @endif
-                                @if($donation->gcash_number)
-                                    <p><strong>GCash Number:</strong> {{ $donation->gcash_number }}</p>
-                                @endif
-                                @if($donation->gcash_qr)
-                                    <div class="text-center mt-2">
-                                        <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}" 
-                                             alt="GCash QR Code" 
-                                             class="qr-image img-fluid">
-                                        <p class="text-muted small">Scan to donate via GCash</p>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    @endif
-                @else
-                    <div class="alert alert-info">Donation details coming soon!</div>
-                @endif
+                <div class="way-card">
+                    <div class="way-num">1</div>
+                    <div><h5>Donation Form</h5><p>Fill up our donation form to ensure your contribution is properly acknowledged.</p></div>
+                </div>
             </div>
-
-            <!-- Guidelines -->
             <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4>📋 Donation Guidelines</h4>
-                        <hr>
-                        {!! nl2br(e($donation->guidelines ?? 'Please check back for donation guidelines.')) !!}
-                        <div class="alert alert-success mt-3">
-                            <h5>💚 Thank You!</h5>
-                            <p>Your generosity helps us continue our mission of empowering communities.</p>
-                        </div>
-                    </div>
+                <div class="way-card">
+                    <div class="way-num">2</div>
+                    <div><h5>Wishlist Donations</h5><p>Check our wishlist for specific items the community needs most.</p></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="way-card">
+                    <div class="way-num">3</div>
+                    <div><h5>In-Kind Donations</h5><p>Donate food, snacks, drinks, or essentials for our volunteers. Contact Anthony Madrigal at 09186390850.</p></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="way-card">
+                    <div class="way-num">4</div>
+                    <div><h5>Fundraising Support</h5><p>Help us raise funds by sharing our cause within your network.</p></div>
                 </div>
             </div>
         </div>
+
+        <hr class="sec-divider">
+
+        {{-- Guidelines --}}
+        <span class="sec-eye">Donation Guidelines</span>
+        <div class="card mb-4">
+            <div class="card-body p-4">
+                <h4>How Your Donation Works</h4>
+                <div class="guide-step">
+                    <div class="guide-num">1</div>
+                    <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
+                </div>
+                <div class="guide-step">
+                    <div class="guide-num">2</div>
+                    <p>Upload a photo or screenshot of your receipt through the form.</p>
+                </div>
+                <div class="guide-step" style="margin-bottom:0;">
+                    <div class="guide-num">3</div>
+                    <p>Check your email within 24–72 hours for your acknowledgment letter.</p>
+                </div>
+                @if($donation && $donation->guidelines)
+                    <div class="admin-note">
+                        {!! nl2br(e($donation->guidelines)) !!}
+                    </div>
+                @endif
+            </div>
+        </div>
+
+        <hr class="sec-divider">
+
+        {{-- Donation Channel --}}
+        <span class="sec-eye">Donation Channel</span>
+        <h2 class="mb-3" style="color:#c25328;">How to Donate</h2>
+        @if($donation)
+            @if($donation->bank1_name)
+            <div class="card mb-3">
+                <div class="card-body p-4">
+                    <h4><i class="ti ti-building-bank" aria-hidden="true" style="color:#d4a017;"></i> {{ $donation->bank1_name }}</h4>
+                    <div class="ch-row"><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</div>
+                    <div class="ch-row"><strong>Account Number:</strong> {{ $donation->bank1_account_number }}</div>
+                </div>
+            </div>
+            @endif
+
+            @if($donation->bank2_name)
+            <div class="card mb-3">
+                <div class="card-body p-4">
+                    <h4><i class="ti ti-building-bank" aria-hidden="true" style="color:#d4a017;"></i> {{ $donation->bank2_name }}</h4>
+                    <div class="ch-row"><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</div>
+                    <div class="ch-row"><strong>Account Number:</strong> {{ $donation->bank2_account_number }}</div>
+                </div>
+            </div>
+            @endif
+
+            @if($donation->gcash_name || $donation->gcash_number)
+            <div class="card mb-4">
+                <div class="card-body p-4">
+                    <h4><i class="ti ti-device-mobile" aria-hidden="true" style="color:#d4a017;"></i> GCash</h4>
+                    @if($donation->gcash_name)
+                        <div class="ch-row"><strong>Account Name:</strong> {{ $donation->gcash_name }}</div>
+                    @endif
+                    @if($donation->gcash_number)
+                        <div class="ch-row"><strong>GCash Number:</strong> {{ $donation->gcash_number }}</div>
+                    @endif
+                    @if($donation->gcash_qr)
+                        <div class="qr-box">
+                            <div class="qr-text">
+                                <p>Scan to donate via GCash</p>
+                                <span>Use your GCash app to scan</span>
+                            </div>
+                            <img src="{{ asset('public/images/uploads/donations/' . $donation->gcash_qr) }}"
+                                 alt="GCash QR Code"
+                                 class="qr-image">
+                        </div>
+                    @endif
+                </div>
+            </div>
+            @endif
+        @else
+            <div class="alert mb-4" style="background:#fef9e7; border:1.5px solid #d4a017; color:#555;">
+                Donation details coming soon!
+            </div>
+        @endif
+
+        <hr class="sec-divider">
+
+        {{-- Proceeds --}}
+        <span class="sec-eye">Together for a Greater Cause</span>
+        <h2 class="mb-2" style="color:#c25328;">Your Donation Goes Toward</h2>
+        <p class="mb-3">With construction of the Damayan Community space underway, your support will help turn this vision into reality.</p>
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-paint" aria-hidden="true"></i><p>Interior Finishes</p></div></div>
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-tools" aria-hidden="true"></i><p>Necessary Equipment</p></div></div>
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-armchair" aria-hidden="true"></i><p>Furniture &amp; Fixtures</p></div></div>
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-users" aria-hidden="true"></i><p>Volunteer Assistance</p></div></div>
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-hammer" aria-hidden="true"></i><p>Construction &amp; Labor</p></div></div>
+            <div class="col-6 col-md-4"><div class="proc-card"><i class="ti ti-heart" aria-hidden="true"></i><p>Community Programs</p></div></div>
+        </div>
+
+        {{-- Thank You --}}
+        <div class="thank-banner mb-4">
+            <h3>Thank You for Your Generosity</h3>
+            <p>Your donation, no matter how big or small, helps support their programs, livelihoods, and future spaces filled with hope and opportunity.</p>
+        </div>
+
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Kahel na Langit. All rights reserved.</p>
+            <p class="mb-0">© 2026 Kahel na Langit. All rights reserved.</p>
         </div>
     </footer>
 
