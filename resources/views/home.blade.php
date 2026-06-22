@@ -105,15 +105,15 @@
         }
 
         /* ============================================
-           HERO SECTION - VIDEO ONLY (NO OVERLAY)
+           HERO SECTION - FULLY RESPONSIVE
            ============================================ */
         .hero-video-wrapper {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 800px;
-            max-height: 100vh;
-            min-height: 500px;
+            height: 80vh;
+            max-height: 800px;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -136,37 +136,54 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 60px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .hero-video-wrapper .hero-content h1 {
-            font-size: 48px;
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-video-wrapper .hero-content h1 .brand-name {
+            margin-bottom: 10px;
+            color: #c25328;
             font-family: 'Schoolbell', cursive;
-            color: #ffa003;
-            font-weight: 400;
-            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 10px rgba(0,0,0,0.5);
-            opacity: 1 !important;
+            text-shadow: none;
         }
 
-        .hero-video-wrapper .hero-content .lead {
-            font-size: 22px;
+        .hero-video-wrapper .hero-content .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.8rem);
+            font-weight: 600;
+            color: #c25328;
             margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            text-shadow: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
         }
 
-        .hero-video-wrapper .hero-content p {
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            font-size: 18px;
+        .hero-video-wrapper .hero-content .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-video-wrapper {
+                height: 60vh;
+                min-height: 350px;
+            }
+            .hero-video-wrapper .hero-content {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-video-wrapper {
+                height: 50vh;
+                min-height: 300px;
+            }
+            .hero-video-wrapper .hero-content .tagline {
+                font-size: 1rem;
+            }
         }
 
         /* ============================================
@@ -182,6 +199,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            font-size: 1rem;
         }
 
         .btn-primary:hover {
@@ -190,22 +208,24 @@
             box-shadow: 0 8px 25px rgba(194, 83, 40, 0.4);
         }
 
-        .btn-outline-light {
-            border: 2px solid white !important;
+        .btn-outline-orange {
+            border: 2px solid #c25328 !important;
             padding: 12px 35px;
             font-weight: 600;
             border-radius: 8px;
-            color: white !important;
+            color: #c25328 !important;
             background: transparent;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            font-size: 1rem;
         }
 
-        .btn-outline-light:hover {
-            background: white !important;
-            color: #c25328 !important;
+        .btn-outline-orange:hover {
+            background: #c25328 !important;
+            color: white !important;
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(194, 83, 40, 0.3);
         }
 
         /* ============================================
@@ -246,7 +266,7 @@
         }
 
         /* ============================================
-           SECTION TITLES
+           SECTION TITLES - NO LINES
            ============================================ */
         .section-title {
             margin-bottom: 30px;
@@ -254,42 +274,9 @@
             position: relative;
         }
 
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
         /* ============================================
-           FEATURES CARDS
+           UPDATE CARDS - SQUARE IMAGES
            ============================================ */
-        .feature-card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
-            overflow: hidden;
-            transition: all .3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
-        }
-
-        /* ============================================
-           UPDATES - #ac1a1a
-           ============================================ */
-        .updates-title {
-            color: #ac1a1a;
-        }
-        .updates-title:after {
-            background: #ac1a1a;
-        }
-
         .update-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -297,6 +284,7 @@
             box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
+            cursor: pointer;
         }
 
         .update-card:hover {
@@ -304,21 +292,114 @@
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
-        .update-image {
+        .update-image-wrapper {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .update-image-wrapper .update-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
+        }
+
+        .update-card .card-body {
+            padding: 16px;
+        }
+
+        .update-card .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .update-card .card-text {
+            font-size: 0.95rem;
+            color: #555;
         }
 
         /* ============================================
-           WISHLIST - #365fa9
+           MODAL STYLES
+           ============================================ */
+        .modal-content {
+            border-radius: 18px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 4px #c25328;
+            background: #faf7e5;
+        }
+
+        .modal-header {
+            border-bottom: 2px solid #c25328;
+            padding: 16px 24px;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-body .modal-image-wrapper {
+            padding-right: 20px;
+        }
+
+        .modal-body .modal-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .modal-body .modal-category {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            background: #ac1a1a;
+            color: white;
+        }
+
+        .modal-body .modal-title {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #c25328;
+            margin-bottom: 12px;
+        }
+
+        .modal-body .modal-content-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .modal-body .modal-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body .modal-image {
+                height: 100%;
+                min-height: 300px;
+            }
+        }
+
+        /* ============================================
+           WISHLIST CARDS - SQUARE IMAGES
            ============================================ */
         .wishlist-title {
             color: #365fa9;
-        }
-        .wishlist-title:after {
-            background: #365fa9;
         }
 
         .wishlist-card {
@@ -335,23 +416,36 @@
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
-        .wishlist-image {
+        .wishlist-image-wrapper {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishlist-image-wrapper .wishlist-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
         }
 
         .wishlist-placeholder {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
             background: linear-gradient(135deg, #365fa9, #1a3a6b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .wishlist-placeholder .placeholder-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: white;
             font-size: 48px;
-            border-radius: 10px 10px 0 0;
         }
 
         .wishlist-progress .progress-bar {
@@ -363,9 +457,6 @@
            ============================================ */
         .partners-title {
             color: #658107;
-        }
-        .partners-title:after {
-            background: #658107;
         }
 
         .partner-card {
@@ -461,45 +552,6 @@
         footer hr {
             border-color: rgba(255,255,255,0.15);
         }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 768px) {
-            .hero-video-wrapper {
-                height: 600px;
-                min-height: 400px;
-            }
-            .hero-video-wrapper .hero-content h1 {
-                font-size: 32px;
-            }
-            .hero-video-wrapper .hero-content .lead {
-                font-size: 18px;
-            }
-            .hero-video-wrapper .hero-content {
-                padding: 40px 0;
-            }
-            .btn-primary, .btn-outline-light {
-                padding: 10px 25px;
-                font-size: 14px;
-            }
-            .damayan-card .damayan-image {
-                min-height: 200px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-video-wrapper {
-                height: 500px;
-                min-height: 350px;
-            }
-            .hero-video-wrapper .hero-content h1 {
-                font-size: 26px;
-            }
-            .hero-video-wrapper .hero-content .lead {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -541,7 +593,7 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - VIDEO ONLY (NO OVERLAY)
+         HERO SECTION - RESPONSIVE
          ============================================ -->
     <section class="hero-video-wrapper">
         <!-- Video Background -->
@@ -553,19 +605,18 @@
         <!-- Content -->
         <div class="hero-content">
             <div class="container">
-                <h1><span class="brand-name">Kahel na Langit</span></h1>
-                <p class="lead">Empowering Communities, Building Hope</p>
-                <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
-                <div class="mt-4">
+                <h1>Kahel na Langit</h1>
+                <p class="tagline">A space of Resiliency, Hope, and Community.</p>
+                <div class="btn-group">
                     <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
-                    <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
+                    <a href="/about" class="btn-outline-orange btn-lg">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-         DAMAYAN MODEL HOUSE CARD SECTION
+         DAMAYAN MODEL HOUSE CARD
          ============================================ -->
     <div class="container mt-5">
         <div class="card damayan-card">
@@ -577,7 +628,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
-                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
+                        <h3 class="damayan-title">The Damayan Model House</h3>
                         <p class="damayan-text">
                             We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
                         </p>
@@ -588,42 +639,7 @@
     </div>
 
     <!-- ============================================
-         FEATURES SECTION - ORANGE CARDS
-         ============================================ -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🏠</h2>
-                        <h5>Community Development</h5>
-                        <p class="text-muted">Supporting housing and infrastructure initiatives for vulnerable communities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🤝</h2>
-                        <h5>Fundraising</h5>
-                        <p class="text-muted">Community-based fundraising campaigns to support sustainable programs.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🌱</h2>
-                        <h5>Community Engagement</h5>
-                        <p class="text-muted">Awareness campaigns promoting resilience and social responsibility.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================
-         UPDATES SECTION - #ac1a1a CARDS
+         UPDATES SECTION - #ac1a1a CARDS WITH MODAL
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
@@ -631,18 +647,27 @@
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm update-card">
-                            @if($update->image)
-                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
-                                     alt="{{ $update->title }}" 
-                                     class="update-image">
-                            @endif
+                        <div class="card h-100 shadow-sm update-card" 
+                             data-bs-toggle="modal" 
+                             data-bs-target="#updateModal"
+                             data-title="{{ $update->title }}"
+                             data-content="{{ $update->content }}"
+                             data-image="{{ $update->image ? asset('public/images/uploads/updates/' . $update->image) : '' }}"
+                             data-category="{{ ucfirst(str_replace('_', ' ', $update->category)) }}"
+                             data-date="{{ $update->created_at->format('M d, Y') }}">
+                            <div class="update-image-wrapper">
+                                @if($update->image)
+                                    <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
+                                         alt="{{ $update->title }}" 
+                                         class="update-image">
+                                @endif
+                            </div>
                             <div class="card-body">
                                 <span class="badge bg-warning mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
                                 </span>
-                                <h5>{{ $update->title }}</h5>
-                                <p class="text-muted">{{ Str::limit($update->content, 100) }}</p>
+                                <h5 class="card-title">{{ $update->title }}</h5>
+                                <p class="card-text">{{ Str::limit($update->content, 80) }}</p>
                                 <small class="text-muted">{{ $update->created_at->format('M d, Y') }}</small>
                             </div>
                         </div>
@@ -653,23 +678,57 @@
     @endif
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9 CARDS
+         UPDATE MODAL
+         ============================================ -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalImage" src="" alt="Update Image" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <span id="modalCategory" class="modal-category"></span>
+                            <h2 id="modalTitle" class="modal-title"></h2>
+                            <p id="modalContent" class="modal-content-text"></p>
+                            <p id="modalDate" class="modal-date"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         WISHLIST SECTION - #365fa9 CARDS - SQUARE IMAGES
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm wishlist-card">
-                            @if($item->image)
-                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
-                                     alt="{{ $item->item_name }}" 
-                                     class="wishlist-image">
-                            @else
-                                <div class="wishlist-placeholder">📦</div>
-                            @endif
+                            <div class="wishlist-image-wrapper">
+                                @if($item->image)
+                                    <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
+                                         alt="{{ $item->item_name }}" 
+                                         class="wishlist-image">
+                                @else
+                                    <div class="wishlist-placeholder">
+                                        <span class="placeholder-icon">📦</span>
+                                    </div>
+                                @endif
+                            </div>
                             <div class="card-body">
                                 <h5>{{ $item->item_name }}</h5>
                                 <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
@@ -756,5 +815,36 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Populate modal with data from clicked card
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateCards = document.querySelectorAll('.update-card');
+            const modal = document.getElementById('updateModal');
+            
+            updateCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.dataset.title;
+                    const content = this.dataset.content;
+                    const image = this.dataset.image;
+                    const category = this.dataset.category;
+                    const date = this.dataset.date;
+
+                    document.getElementById('modalTitle').textContent = title;
+                    document.getElementById('modalContent').textContent = content;
+                    document.getElementById('modalCategory').textContent = category;
+                    document.getElementById('modalDate').textContent = date;
+
+                    const modalImage = document.getElementById('modalImage');
+                    if (image) {
+                        modalImage.src = image;
+                        modalImage.style.display = 'block';
+                    } else {
+                        modalImage.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
