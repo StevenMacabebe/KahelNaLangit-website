@@ -105,15 +105,15 @@
         }
 
         /* ============================================
-           HERO SECTION - VIDEO ONLY (NO OVERLAY)
+           HERO SECTION - FULLY RESPONSIVE
            ============================================ */
         .hero-video-wrapper {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 800px;
-            max-height: 100vh;
-            min-height: 500px;
+            height: 80vh;
+            max-height: 800px;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -136,12 +136,12 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 60px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .hero-video-wrapper .hero-content h1 {
-            font-size: 48px;
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 700;
             margin-bottom: 10px;
             color: #c25328;
@@ -150,7 +150,7 @@
         }
 
         .hero-video-wrapper .hero-content .tagline {
-            font-size: 28px;
+            font-size: clamp(1rem, 2.5vw, 1.8rem);
             font-weight: 600;
             color: #c25328;
             margin-bottom: 15px;
@@ -159,10 +159,31 @@
             letter-spacing: 1px;
         }
 
-        .hero-video-wrapper .hero-content p {
-            color: #fff;
-            text-shadow: none;
-            font-size: 18px;
+        .hero-video-wrapper .hero-content .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-video-wrapper {
+                height: 60vh;
+                min-height: 350px;
+            }
+            .hero-video-wrapper .hero-content {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-video-wrapper {
+                height: 50vh;
+                min-height: 300px;
+            }
+            .hero-video-wrapper .hero-content .tagline {
+                font-size: 1rem;
+            }
         }
 
         /* ============================================
@@ -178,6 +199,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            font-size: 1rem;
         }
 
         .btn-primary:hover {
@@ -196,6 +218,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            font-size: 1rem;
         }
 
         .btn-outline-orange:hover {
@@ -261,15 +284,8 @@
         }
 
         /* ============================================
-           UPDATES - #ac1a1a
+           UPDATE CARDS
            ============================================ */
-        .updates-title {
-            color: #ac1a1a;
-        }
-        .updates-title:after {
-            background: #ac1a1a;
-        }
-
         .update-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
@@ -277,6 +293,7 @@
             box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
+            cursor: pointer;
         }
 
         .update-card:hover {
@@ -289,6 +306,98 @@
             height: 200px;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
+        }
+
+        .update-card .card-body {
+            padding: 16px;
+        }
+
+        .update-card .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .update-card .card-text {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* ============================================
+           MODAL STYLES
+           ============================================ */
+        .modal-content {
+            border-radius: 18px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 4px #c25328;
+            background: #faf7e5;
+        }
+
+        .modal-header {
+            border-bottom: 2px solid #c25328;
+            padding: 16px 24px;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-body .modal-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .modal-body .modal-category {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            background: #ac1a1a;
+            color: white;
+        }
+
+        .modal-body .modal-title {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #c25328;
+            margin-bottom: 12px;
+        }
+
+        .modal-body .modal-content-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .modal-body .modal-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body .row {
+                display: flex;
+                align-items: stretch;
+            }
+            .modal-body .modal-image-wrapper {
+                padding-right: 20px;
+            }
+            .modal-body .modal-image {
+                height: 100%;
+                min-height: 300px;
+                margin-bottom: 0;
+            }
         }
 
         /* ============================================
@@ -441,45 +550,6 @@
         footer hr {
             border-color: rgba(255,255,255,0.15);
         }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 768px) {
-            .hero-video-wrapper {
-                height: 600px;
-                min-height: 400px;
-            }
-            .hero-video-wrapper .hero-content h1 {
-                font-size: 32px;
-            }
-            .hero-video-wrapper .hero-content .tagline {
-                font-size: 20px;
-            }
-            .hero-video-wrapper .hero-content {
-                padding: 40px 0;
-            }
-            .btn-primary, .btn-outline-orange {
-                padding: 10px 25px;
-                font-size: 14px;
-            }
-            .damayan-card .damayan-image {
-                min-height: 200px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-video-wrapper {
-                height: 500px;
-                min-height: 350px;
-            }
-            .hero-video-wrapper .hero-content h1 {
-                font-size: 26px;
-            }
-            .hero-video-wrapper .hero-content .tagline {
-                font-size: 17px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -521,7 +591,7 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - SCHOOLBELL TITLE + NEW TAGLINE
+         HERO SECTION - RESPONSIVE
          ============================================ -->
     <section class="hero-video-wrapper">
         <!-- Video Background -->
@@ -535,16 +605,16 @@
             <div class="container">
                 <h1>Kahel na Langit</h1>
                 <p class="tagline">A space of Resiliency, Hope, and Community.</p>
-                <div class="mt-4">
+                <div class="btn-group">
                     <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
-                    <a href="/about" class="btn-outline-orange btn-lg ms-2">Learn More</a>
+                    <a href="/about" class="btn-outline-orange btn-lg">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-         DAMAYAN MODEL HOUSE CARD SECTION
+         DAMAYAN MODEL HOUSE CARD
          ============================================ -->
     <div class="container mt-5">
         <div class="card damayan-card">
@@ -556,7 +626,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
-                        <h3 class="damayan-title">The Damayan Model House</h3>
+                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
                         <p class="damayan-text">
                             We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
                         </p>
@@ -567,15 +637,22 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - #ac1a1a CARDS
+         UPDATES SECTION - #ac1a1a CARDS WITH MODAL
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm update-card">
+                        <div class="card h-100 shadow-sm update-card" 
+                             data-bs-toggle="modal" 
+                             data-bs-target="#updateModal"
+                             data-title="{{ $update->title }}"
+                             data-content="{{ $update->content }}"
+                             data-image="{{ $update->image ? asset('public/images/uploads/updates/' . $update->image) : '' }}"
+                             data-category="{{ ucfirst(str_replace('_', ' ', $update->category)) }}"
+                             data-date="{{ $update->created_at->format('M d, Y') }}">
                             @if($update->image)
                                 <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
                                      alt="{{ $update->title }}" 
@@ -585,8 +662,8 @@
                                 <span class="badge bg-warning mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
                                 </span>
-                                <h5>{{ $update->title }}</h5>
-                                <p class="text-muted">{{ Str::limit($update->content, 100) }}</p>
+                                <h5 class="card-title">{{ $update->title }}</h5>
+                                <p class="card-text">{{ Str::limit($update->content, 80) }}</p>
                                 <small class="text-muted">{{ $update->created_at->format('M d, Y') }}</small>
                             </div>
                         </div>
@@ -597,11 +674,41 @@
     @endif
 
     <!-- ============================================
+         UPDATE MODAL
+         ============================================ -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 modal-image-wrapper">
+                            <img id="modalImage" src="" alt="Update Image" class="modal-image">
+                        </div>
+                        <div class="col-md-6">
+                            <span id="modalCategory" class="modal-category"></span>
+                            <h2 id="modalTitle" class="modal-title"></h2>
+                            <p id="modalContent" class="modal-content-text"></p>
+                            <p id="modalDate" class="modal-date"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
          WISHLIST SECTION - #365fa9 CARDS
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
@@ -640,7 +747,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">Our Partners</h2>
+            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -673,7 +780,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Kahel na Langit</h5>
+                    <h5>🌅 Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
@@ -700,5 +807,41 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Populate modal with data from clicked card
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateCards = document.querySelectorAll('.update-card');
+            const modal = document.getElementById('updateModal');
+            
+            updateCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.dataset.title;
+                    const content = this.dataset.content;
+                    const image = this.dataset.image;
+                    const category = this.dataset.category;
+                    const date = this.dataset.date;
+
+                    document.getElementById('modalTitle').textContent = title;
+                    document.getElementById('modalContent').textContent = content;
+                    document.getElementById('modalCategory').textContent = category;
+                    document.getElementById('modalDate').textContent = date;
+
+                    const modalImage = document.getElementById('modalImage');
+                    if (image) {
+                        modalImage.src = image;
+                        modalImage.style.display = 'block';
+                    } else {
+                        modalImage.style.display = 'none';
+                    }
+                });
+            });
+
+            // Reset modal on close (optional)
+            modal.addEventListener('hidden.bs.modal', function () {
+                // You can add cleanup if needed
+            });
+        });
+    </script>
 </body>
 </html>
