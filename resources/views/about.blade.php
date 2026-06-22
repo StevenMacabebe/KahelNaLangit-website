@@ -42,7 +42,7 @@
 
         /* SDG */
         .sdg-badge        { text-align: center; padding: 16px 10px; cursor: pointer; }
-        .sdg-badge img    { width: 52px; height: 52px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
+        .sdg-badge img    { width: 80px; height: 80px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
         .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; font-size: 12px; }
         .sdg-badge p      { font-size: 11px; color: #555; }
 
@@ -158,6 +158,7 @@
         <hr class="sec-divider">
 
         <span class="sec-eye">The Concept</span>
+        <h2 class="mb-4" style="color:#365fa9;">The Story Behind the Name</h2>
         <div class="card mb-5">
             <div class="row g-0">
                 <div class="col-md-5">
@@ -167,9 +168,10 @@
                     <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
                         <div class="mv-icon-row">
                             <div class="icon-badge"><i class="ti ti-sun" aria-hidden="true"></i></div>
-                            <h3>The Story Behind the Name</h3>
+                            <h3>More Than Just Colors in the Sky</h3>
                         </div>
-                        <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
+                        <p>"Kahel na Langit" serves as a visual and poetic metaphor for the Damayan Community. An orange sky is transitional — the breathtaking aftermath of a heavy storm, the gentle dusk after a long day of labor, and the breaking dawn that signals a fresh start.</p>
+                        <p>This community renovation project is deeply rooted in the concept of community resilience and renewal, honoring the collective strength of the Damayan Community in Taytay. The community house is envisioned not just as a structure, but as a sanctuary where community members gather to rebuild, connect, and thrive.</p>
                     </div>
                 </div>
             </div>
@@ -178,6 +180,7 @@
         <hr class="sec-divider">
 
         <span class="sec-eye">The Community</span>
+        <h2 class="mb-4" style="color:#365fa9;">About the Damayan Community</h2>
         <div class="card mb-5">
             <div class="row g-0">
                 <div class="col-md-5" style="min-height:260px; overflow:hidden;">
@@ -189,8 +192,10 @@
                 <div class="col-md-7" style="border-left: 2px solid #365fa9;">
                     <div class="card-body p-4">
                         <div class="location-tag">Floodway, Taytay, Rizal</div>
-                        <h3>The Damayan Community</h3>
-                        <p class="mt-2 mb-4">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
+                        <h3>People-Led. Resilience-Rooted.</h3>
+                        <p class="mt-2 mb-4">The Damayan Community in Taytay, Rizal is a people-led community rooted in resilience, hope, and community. What began as a small group of determined individuals has grown into a movement that uplifts seamstresses, vendors, and families, creating sustainable livelihoods and renewed hope for the future.</p>
+                        <p class="mt-2 mb-4">Through collective effort and perseverance, the community built their Model House from the ground up — a powerful symbol of their journey. With the guidance of dedicated professionals, their once flood-prone environment has been transformed into a safe and stable space.</p>
+
 
                         {{-- Damayan Model House --}}
                         <div class="mv-icon-row">
@@ -284,16 +289,6 @@
                 </div>
             </div>
         </div>
-
-            {{-- SDG Modal --}}
-            <div class="sdg-overlay" id="sdgOverlay">
-                <div class="sdg-popup">
-                    <button class="sdg-close" onclick="closeSdg()">✕</button>
-                    <img id="sdgImg" src="" alt="">
-                    <h5 id="sdgTitle"></h5>
-                    <p id="sdgDesc"></p>
-                </div>
-            </div>
 
         <hr class="sec-divider">
 
