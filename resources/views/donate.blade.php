@@ -51,8 +51,8 @@
         /* BANKS */
         .bank-card      { background: #faf7e5; border: 2px solid #d4a017; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
         .bank-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 3px #d4a017, 0 10px 20px rgba(0,0,0,.12); }
-        .bank-icon      { width: 44px; height: 44px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .bank-icon i    { font-size: 22px; color: #d4a017; }
+        .bank-icon      { width: 56px; height: 56px; background: #fef9e7; border: 2px solid #d4a017; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .bank-icon i    { font-size: 32px; color: #d4a017; }
         .bank-info h5   { color: #c25328; margin-bottom: 4px; }
         .bank-row       { font-size: 12px; color: #555; margin-bottom: 2px; }
         .bank-row strong { color: #365fa9; }
@@ -92,7 +92,7 @@
         footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p { color: #faf7e5; font-size: 13px; }
 
-        .form-link { display: inline-block; margin-top: 5px; font-size: 11px; color: #c25328; font-weight: 700; text-decoration: none; background: #fef9e7; border: 1.5px solid #d4a017; border-radius: 8px; padding: 5px 12px; }
+        .form-link { display: inline-block; }
 
     </style>
 
@@ -186,39 +186,9 @@
 
         <hr class="sec-divider">
 
-        {{-- Banks horizontal on top --}}
-        <span class="sec-eye">Donation Channel</span>
-        <h2 class="mb-3" style="color:#c25328;">How to Donate</h2>
-
-        @if($donation)
-            @if($donation->bank1_name || $donation->bank2_name)
-            <div class="row g-3 mb-3">
-                @if($donation->bank1_name)
-                <div class="col-md-6">
-                    <div class="bank-card">
-                        <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
-                        <div class="bank-info">
-                            <h5>{{ $donation->bank1_name }}</h5>
-                            <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</div>
-                            <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank1_account_number }}</div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @if($donation->bank2_name)
-                <div class="col-md-6">
-                    <div class="bank-card">
-                        <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
-                        <div class="bank-info">
-                            <h5>{{ $donation->bank2_name }}</h5>
-                            <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</div>
-                            <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank2_account_number }}</div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-            </div>
-            @endif
+            {{-- Banks horizontal on top --}}
+            <span class="sec-eye">Donation Channel</span>
+            <h2 class="mb-3" style="color:#c25328;">How to Donate</h2>
 
             {{-- Guidelines + GCash 2 col --}}
             <div class="row g-3 mb-4">
@@ -283,6 +253,37 @@
                     @endif
                 </div>
             </div>
+                @if($donation)
+                @if($donation->bank1_name || $donation->bank2_name)
+                <div class="row g-3 mb-3">
+                    @if($donation->bank1_name)
+                    <div class="col-md-6">
+                        <div class="bank-card">
+                            <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
+                            <div class="bank-info">
+                                <h5>{{ $donation->bank1_name }}</h5>
+                                <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank1_account_name }}</div>
+                                <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank1_account_number }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @if($donation->bank2_name)
+                    <div class="col-md-6">
+                        <div class="bank-card">
+                            <div class="bank-icon"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
+                            <div class="bank-info">
+                                <h5>{{ $donation->bank2_name }}</h5>
+                                <div class="bank-row"><strong>Account Name:</strong> {{ $donation->bank2_account_name }}</div>
+                                <div class="bank-row"><strong>Account No:</strong> {{ $donation->bank2_account_number }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                @endif
+
+            
         @else
             <div class="alert mb-4" style="background:#fef9e7; border:1.5px solid #d4a017; color:#555;">
                 Donation details coming soon!
