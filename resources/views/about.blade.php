@@ -3,302 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Kahel na Langit</title>
+    <title>About - Kahel na Langit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
 
     <style>
-        /* ============================================
-           BASE STYLES
-           ============================================ */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #faf7e5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        /* BASE */
+        body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
+        h2    { font-size: 26px; font-weight: 700; }
+        h3    { font-size: 18px; font-weight: 700; }
+        h5    { font-size: 15px; font-weight: 700; }  
 
-        .wrapper {
-            flex: 1;
-        }
-
-        /* ============================================
-           NAVBAR
-           ============================================ */
-        .navbar {
-            background: #c25328 !important;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
+        /* NAVBAR */
+        .navbar           { background: #c25328 !important; }
         .navbar-brand,
-        .nav-link {
-            color: #faf7e5 !important;
-            font-weight: 500;
-        }
+        .nav-link         { color: #faf7e5 !important; font-weight: 500; }
+        .nav-link:hover   { opacity: 0.8; }
+        .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
 
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 20px;
-        }
+        /* HEADER */
+        .page-header      { background: #365fa9; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; }
+        .page-header h1 { font-weight: 700; font-size: 2.5rem; }
+        .page-header .lead { opacity: 0.85; font-size: 15px; }
 
-        .nav-link:hover {
-            opacity: 0.8;
-        }
+        /* SECTION LABELS */
+        .sec-eye          { font-size: 14px; font-weight: 700; color: #c25328; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .sec-divider      { border: none; border-top: 2px dashed rgba(54,95,169,.2); margin: 8px 0 28px; }
 
-        .nav-link.btn-login {
-            background: #faf7e5;
-            color: #c25328 !important;
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 700;
-            border: none;
-        }
+        /* ICON BADGE */
+        .icon-badge       { width: 42px; height: 42px; background: #dce8fc; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+        .icon-badge i     { font-size: 20px; color: #365fa9; }
 
-        .nav-link.btn-login:hover {
-            background: #e8e0d0;
-            opacity: 1;
-        }
+        /* CARDS */
+        .card             { background: #faf7e5 !important; border: 2px solid #365fa9 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #365fa9, 0 14px 28px rgba(0,0,0,0.18) !important; }
+        .card h3          { color: #c25328; margin-bottom: 8px; }
 
-        .btn-logout-nav {
-            background: transparent;
-            color: #faf7e5 !important;
-            border: 1.5px solid rgba(255,255,255,0.4);
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Poppins', sans-serif;
-        }
+        /* SDG */
+        .sdg-badge        { text-align: center; padding: 20px; }
+        .sdg-badge img    { width: 56px; height: 56px; object-fit: contain; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
+        .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; }
 
-        .btn-logout-nav:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.7);
-        }
+        /* MISSION & VISION (MV) CARDS */
+        .mv-photo         { width: 100%; height: 340px; object-fit: cover; display: block; }
+        .mv-icon-row      { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .icon-badge       { width: 42px; height: 42px; background: #dce8fc; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .icon-badge i     { font-size: 20px; color: #365fa9; }
+        .card-body h3     { color: #c25328; margin-bottom: 6px; }
+        .card-body p      { color: #555 !important; }
 
-        .navbar-toggler {
-            border: 2px solid rgba(255,255,255,0.8);
-            padding: 4px 10px;
-        }
+        /* SDG MODAL */
+        .sdg-overlay      { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:999; align-items:center; justify-content:center; }
+        .sdg-overlay.show { display:flex; }
+        .sdg-popup        { background:#faf7e5; border:2px solid #365fa9; border-radius:14px; padding:28px; max-width:380px; width:90%; text-align:center; position:relative; }
+        .sdg-popup img    { width:64px; height:64px; object-fit:contain; margin-bottom:12px; }
+        .sdg-popup h5     { color:#365fa9; font-size:16px; font-weight:700; margin-bottom:8px; }
+        .sdg-popup p      { color:#555; font-size:13px; line-height:1.7; margin:0; }
+        .sdg-close        { position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#888; cursor:pointer; }
 
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
+        /* DAMAYAN COMMUNITY */
+        .damayan-photo    { width: 100%; height: 280px; object-fit: cover; object-position: top; display: block; }
+        .ba-strip         { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .ba-strip-label   { font-size: 12px; font-weight: 700; color: #faf7e5; background: #365fa9; padding: 6px 16px; display: block; border-top: 2px solid #365fa9; }
+        .ba-photo         { height: 160px; overflow: hidden; }
+        .ba-photo img     { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ba-existing      { background: #e8e0d4; }
+        .ba-proposed      { background: #dce8fc; }
 
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
+        /* TEAM */
+        .team-card        { transition: transform 0.3s; }
+        .team-card:hover  { transform: translateY(-5px); }
+        .team-avatar      { font-size: 48px; }
+        .team-card h5     { color: #365fa9; margin-bottom: 4px; }
+        .role-pill        { font-size: 11px; font-weight: 700; background: #dce8fc; color: #185fa5; border-radius: 20px; padding: 2px 10px; display: inline-block; }
 
-        @media (max-width: 991px) {
-            .navbar-nav {
-                margin-top: 10px;
-                padding-top: 10px;
-                border-top: 1px solid rgba(255,255,255,0.15);
-            }
-            .nav-link.btn-login {
-                text-align: center;
-                width: 100%;
-            }
-            .btn-logout-nav {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* ============================================
-           PAGE HEADER - #89479a (SAME SIZE AS ABOUT)
-           ============================================ */
-        .page-header {
-            background: #89479a;
-            color: #faf7e5;
-            padding: 40px 0 32px;
-            margin-bottom: 24px;
-        }
-
-        .page-header h1 {
-            font-weight: 700;
-            font-size: 2.5rem;
-        }
-
-        .page-header .lead {
-            opacity: 0.85;
-            font-size: 15px;
-        }
-
-        /* ============================================
-           CARDS
-           ============================================ */
-        .card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
-            overflow: hidden;
-            transition: all .3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
-        }
-
-        .btn-warning {
-            background: #c25328 !important;
-            border: none !important;
-            color: white !important;
-        }
-
-        .btn-warning:hover {
-            background: #9e3d18 !important;
-            color: white !important;
-        }
-
-        .btn-primary {
-            background: #c25328 !important;
-            border: none !important;
-            color: white !important;
-        }
-
-        .btn-primary:hover {
-            background: #9e3d18 !important;
-        }
-
-        .btn-secondary {
-            background: #6c757d !important;
-            border: none !important;
-            color: white !important;
-        }
-
-        /* ============================================
-           FOOTER - MATCHES ABOUT PAGE
-           ============================================ */
-        footer {
-            background: #c25328;
-            color: #faf7e5;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 13px;
-        }
-
-        footer p {
-            color: #faf7e5;
-            font-size: 13px;
-            margin: 0;
-        }
+        /* FOOTER */
+        footer            { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
+        footer p          { color: #faf7e5; font-size: 13px; }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
+                Kahel na Langit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <!-- ============================================
-             NAVIGATION
-             ============================================ -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="/">
-                    <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
-                    Kahel na Langit
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navMenu">
-                    <ul class="navbar-nav ms-auto align-items-center gap-1">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/contact">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>About Kahel na Langit</h1>
+            <p class="lead">Empowering Communities, Building Hope</p>
+        </div>
+    </div>
 
-                        @auth
-                            <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                            <li class="nav-item">
-                                <form method="POST" action="/logout" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn-logout-nav">Logout</button>
-                                </form>
-                            </li>
-                        @else
-                            <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
-                        @endauth
-                    </ul>
+    <div class="container">
+
+        <span class="sec-eye">Who We Are</span>
+        <h2 class="mb-4" style="color:#365fa9;">Our Mission &amp; Vision</h2>
+        <div class="row mb-5 justify-content-center" style="max-width:100%; margin:0 auto;">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="card h-100">
+                    <img src="{{ asset('public/images/mission1.png') }}" alt="Our Mission" class="mv-photo">
+                    <div class="card-body">
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-target" aria-hidden="true"></i></div>
+                            <h3>Our Mission</h3>
+                        </div>
+                        <p>Kahel na Langit is a community-driven initiative dedicated to empowering and uplifting vulnerable communities through sustainable development programs, fundraising activities, and community engagement efforts.</p>
+                    </div>
                 </div>
             </div>
-        </nav>
-
-        <!-- ============================================
-             PAGE HEADER - MATCHES ABOUT PAGE SIZE
-             ============================================ -->
-        <div class="page-header">
-            <div class="container">
-                <h1>Contact Us</h1>
-                <p class="lead">We'd love to hear from you</p>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img src="{{ asset('public/images/vision1.png') }}" alt="Our Vision" class="mv-photo">
+                    <div class="card-body">
+                        <div class="mv-icon-row">
+                            <div class="icon-badge"><i class="ti ti-eye" aria-hidden="true"></i></div>
+                            <h3>Our Vision</h3>
+                        </div>
+                        <p>To create a world where communities thrive through collective action and shared responsibility, fostering a culture of hope, cooperation, and long-term sustainability.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- ============================================
-             CONTENT
-             ============================================ -->
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h4>Send Us a Message</h4>
-                            <hr>
-                            @auth
-                                @if(session('success'))
-                                    <div class="alert alert-success">{{ session('success') }}</div>
-                                @endif
-                                <form method="POST" action="{{ route('contact.submit') }}">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label class="form-label">Subject</label>
-                                        <input type="text" class="form-control" name="subject" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Contact Number (optional)</label>
-                                        <input type="text" class="form-control" name="contact_number">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Message</label>
-                                        <textarea class="form-control" name="message" rows="5" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-warning text-white w-100">Send Message</button>
-                                </form>
-                            @else
-                                <div class="alert alert-info">
-                                    <strong>Please login or register to send a message.</strong>
-                                </div>
-                                <a href="/login" class="btn btn-primary">Login</a>
-                                <a href="/register" class="btn btn-secondary">Register</a>
-                            @endauth
-                        </div>
+        <hr class="sec-divider">
+
+        <span class="sec-eye">The Concept</span>
+        <div class="card mb-5">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="{{ asset('public/images/concept1.png') }}" alt="The Concept" class="img-fluid h-100" style="object-fit:cover;">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body h-100 d-flex flex-column justify-content-center p-4">
+                        <div class="icon-badge mb-3"><i class="ti ti-sun" aria-hidden="true"></i></div>
+                        <h3>The Story Behind the Name</h3>
+                        <p>"Kahel na Langit" symbolizes renewal, resilience, and new beginnings, much like the orange sky that appears after a storm or before the start of a new day. This name reflects our commitment to helping communities rise above challenges and build a brighter future.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h4>Contact Information</h4>
-                            <hr>
-                            <p><strong>Email:</strong> info@kahelnalangit.org</p>
-                            <p><strong>Phone:</strong> +63 912 345 6789</p>
-                            <p><strong>Address:</strong> Floodway, Taytay, Rizal, Philippines</p>
-                            <hr>
-                            <h5>Follow Us</h5>
-                            <p>
-                                <a href="#" class="btn btn-primary btn-sm">Facebook</a>
-                                <a href="#" class="btn btn-info btn-sm text-white">Instagram</a>
-                                <a href="#" class="btn btn-dark btn-sm">Twitter</a>
-                            </p>
+            </div>
+        </div>
+
+        <hr class="sec-divider">
+
+        <span class="sec-eye">The Community</span>
+        <div class="card mb-5">
+
+            {{-- Top: photo left + text right --}}
+            <div class="row g-0" style="border-bottom: 2px solid #365fa9;">
+                        <div class="col-md-5" style="max-height:280px; overflow:hidden;">
+                            <img src="{{ asset('public/images/community.jpg') }}"
+                                alt="Damayan Community"
+                                class="damayan-photo"
+                                style="border-radius: 12px 0 0 0;">
                         </div>
+                        <div class="col-md-7">
+                            <div class="card-body d-flex flex-column justify-content-center p-4" style="min-height:280px;">
+                        <div class="icon-badge mb-3">
+                            <i class="ti ti-building-community" aria-hidden="true"></i>
+                        </div>
+                        <h3>The Damayan Community</h3>
+                        <p>We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Bottom: before & after strip --}}
+            <span class="ba-strip-label">Before &amp; After — Ground Floor</span>
+            <div class="ba-strip">
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/gf-existing.png') }}" alt="Ground Floor Existing">
+                </div>
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/gf-proposed.png') }}" alt="Ground Floor Proposed">
+                </div>
+            </div>
+
+            <span class="ba-strip-label">Before &amp; After — Second Floor</span>
+            <div class="ba-strip">
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/sf-existing.png') }}" alt="Second Floor Existing">
+                </div>
+                <div class="ba-photo">
+                    <img src="{{ asset('public/images/sf-proposed.png') }}" alt="Second Floor Proposed">
+                </div>
+            </div>
+
+        </div>
+
+        <span class="sec-eye text-center d-block">Global Commitments</span>
+        <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg1.png') }}','Goal 1 — No Poverty','KNL helps the Damayan Community overcome economic instability through fundraising, livelihood programs, and sustainable housing support.')">
+                    <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
+                    <h5>Goal 1</h5>
+                    <p>No Poverty</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg9.png') }}','Goal 9 — Industry, Innovation &amp; Infrastructure','The Damayan Model House demonstrates innovative, flood-resilient construction that brings lasting infrastructure to vulnerable communities.')">
+                    <img src="{{ asset('public/images/sdg9.png') }}" alt="Goal 9">
+                    <h5>Goal 9</h5>
+                    <p>Industry, Innovation &amp; Infrastructure</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg10.png') }}','Goal 10 — Reduced Inequalities','We work to bridge gaps in access to resources, opportunities, and safety for marginalized communities in Floodway, Taytay, Rizal.')">
+                    <img src="{{ asset('public/images/sdg10.png') }}" alt="Goal 10">
+                    <h5>Goal 10</h5>
+                    <p>Reduced Inequalities</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg11.png') }}','Goal 11 — Sustainable Cities &amp; Communities','Our community engagement programs help build safer, more inclusive, and resilient settlements for flood-prone urban communities.')">
+                    <img src="{{ asset('public/images/sdg11.png') }}" alt="Goal 11">
+                    <h5>Goal 11</h5>
+                    <p>Sustainable Cities &amp; Communities</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg13.png') }}','Goal 13 — Climate Action','By transforming flood-prone areas into stable environments, KNL directly addresses the impact of climate change on vulnerable communities.')">
+                    <img src="{{ asset('public/images/sdg13.png') }}" alt="Goal 13">
+                    <h5>Goal 13</h5>
+                    <p>Climate Action</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
+                    onclick="openSdg('{{ asset('public/images/sdg17.png') }}','Goal 17 — Partnerships for the Goals','KNL collaborates with organizations, donors, and volunteers to amplify impact and create lasting change for the Damayan Community.')">
+                    <img src="{{ asset('public/images/sdg17.png') }}" alt="Goal 17">
+                    <h5>Goal 17</h5>
+                    <p>Partnerships for the Goals</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="sec-divider">
+
+        <span class="sec-eye text-center d-block">The People</span>
+        <h2 class="text-center mb-4" style="color:#365fa9;">Meet Our Team</h2>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👩</div>
+                        <h5>Marian Nicole Acosta</h5>
+                        <span class="role-pill">Project Lead</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👩</div>
+                        <h5>Darlene Avenir</h5>
+                        <span class="role-pill">UI/UX Designer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👨</div>
+                        <h5>Jose Luis Garcia</h5>
+                        <span class="role-pill">Backend Developer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👨</div>
+                        <h5>Steven John Macabebe</h5>
+                        <span class="role-pill">Full Stack Developer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👨</div>
+                        <h5>Mark Benedict Manundo</h5>
+                        <span class="role-pill">Database Administrator</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center team-card">
+                    <div class="card-body">
+                        <div class="team-avatar">👩</div>
+                        <h5>Rosalie Joy Vicente</h5>
+                        <span class="role-pill">Quality Assurance</span>
                     </div>
                 </div>
             </div>
@@ -306,9 +328,15 @@
 
     </div>
 
-    <!-- ============================================
-         FOOTER - MATCHES ABOUT PAGE
-         ============================================ -->
+    <div class="sdg-overlay" id="sdgOverlay">
+    <div class="sdg-popup">
+        <button class="sdg-close" onclick="closeSdg()">✕</button>
+        <img id="sdgImg" src="" alt="">
+        <h5 id="sdgTitle"></h5>
+        <p id="sdgDesc"></p>
+    </div>
+    </div>
+
     <footer>
         <div class="container">
             <p class="mb-0">© 2026 Kahel na Langit. All rights reserved.</p>
@@ -316,5 +344,21 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openSdg(img, title, desc) {
+            document.getElementById('sdgImg').src = img;
+            document.getElementById('sdgTitle').innerHTML = title;
+            document.getElementById('sdgDesc').innerHTML = desc;
+            document.getElementById('sdgOverlay').classList.add('show');
+        }
+        function closeSdg() {
+            document.getElementById('sdgOverlay').classList.remove('show');
+        }
+        document.getElementById('sdgOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeSdg();
+        });
+    </script> 
+
 </body>
 </html>
