@@ -174,29 +174,25 @@
 
         <hr class="sec-divider">
 
-        <span class="sec-eye">The Community</span>
-        <div class="card mb-5">
-
-            <div class="row g-0" style="border-bottom: 2px solid #365fa9;">
-                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
-                    <img src="{{ asset('public/images/community.jpg') }}"
-                        alt="Damayan Community"
-                        class="damayan-photo"
-                        style="border-radius:12px 0 0 0;">
+<span class="sec-eye">The Community</span>
+<div class="card mb-5">
+    <div class="row g-0">
+        <div class="col-md-5" style="min-height:260px; overflow:hidden;">
+            <img src="{{ asset('public/images/community.jpg') }}"
+                 alt="Damayan Community"
+                 class="damayan-photo"
+                 style="border-radius:12px 0 0 12px;">
+        </div>
+        <div class="col-md-7" style="border-left: 2px solid #365fa9;">
+            <div class="card-body p-4">
+                <div class="location-tag">Floodway, Taytay, Rizal</div>
+                <div class="icon-badge mb-3">
+                    <i class="ti ti-building-community" aria-hidden="true"></i>
                 </div>
-                <div class="col-md-7">
-                    <div class="card-body d-flex flex-column justify-content-center p-4" style="min-height:260px;">
-                        <div class="location-tag">Floodway, Taytay, Rizal</div>
-                        <div class="icon-badge mb-3">
-                            <i class="ti ti-building-community" aria-hidden="true"></i>
-                        </div>
-                        <h3>The Damayan Community</h3>
-                        <p class="mt-2">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
-                    </div>
-                </div>
-            </div>
+                <h3>The Damayan Community</h3>
+                <p class="mt-2 mb-4">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
 
-            <div class="tabs-inner">
+                {{-- Tabs moved here --}}
                 <div class="tab-row">
                     <button class="tab-btn active" onclick="switchTab('gf', this)">Ground Floor</button>
                     <button class="tab-btn" onclick="switchTab('sf', this)">Second Floor</button>
@@ -225,7 +221,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
+    </div>
+</div>
 
         </div>
 
@@ -322,6 +322,13 @@
         document.getElementById('sdgOverlay').addEventListener('click', function(e) {
             if (e.target === this) closeSdg();
         });
+
+        function switchTab(floor, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('tab-' + floor).classList.add('active');
+            btn.classList.add('active');
+        }
     </script> 
 
 </body>
