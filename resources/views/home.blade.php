@@ -414,13 +414,11 @@
             border-radius: 12px;
         }
 
-        /* ---- REMOVED dark background, made simple ---- */
+        /* ---- Simple controls (no dark bg) ---- */
         .damayan-carousel-modal .carousel-control-prev,
         .damayan-carousel-modal .carousel-control-next {
             width: 5%;
-            /* slim */
             background: transparent !important;
-            /* NO black background */
             border: none;
             opacity: 0.7;
             transition: opacity 0.25s ease;
@@ -453,10 +451,9 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c25328'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
         }
 
-        /* ---- Carousel Indicators (10 circles below) ---- */
+        /* ---- Carousel Indicators (10 circles) placed BELOW the images ---- */
         .damayan-carousel-modal .carousel-indicators {
             position: relative;
-            /* not absolute */
             bottom: auto;
             margin-top: 18px;
             margin-bottom: 0;
@@ -487,7 +484,6 @@
 
         .damayan-carousel-modal .carousel-indicators button.active {
             background: #c25328;
-            /* ORANGE active */
             opacity: 1;
             border-color: #c25328;
             transform: scale(1.15);
@@ -665,6 +661,10 @@
             border-color: rgba(255, 255, 255, 0.15);
         }
 
+        footer .footer-tagline {
+            color: #faf7e5;  /* same as other footer text */
+        }
+
         /* ============================================
            RESPONSIVE
            ============================================ */
@@ -805,7 +805,7 @@
 
     <!-- ============================================
     DAMAYAN CAROUSEL MODAL — 10 images, SIMPLE controls,
-    NO black background, 10 ORANGE indicator circles
+    NO black background, 10 ORANGE indicator circles BELOW photos
     ============================================ -->
     <div class="modal fade damayan-carousel-modal" id="damayanCarouselModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -816,17 +816,6 @@
                 </div>
                 <div class="modal-body" style="padding-bottom: 8px;">
                     <div id="damayanCarousel" class="carousel slide" data-bs-ride="carousel">
-
-                        <!-- INDICATORS — 10 circles, orange active -->
-                        <div class="carousel-indicators" style="position:relative; bottom:auto; margin-top:0; margin-bottom:12px;">
-                            @for($i = 0; $i < 10; $i++)
-                                <button type="button"
-                                data-bs-target="#damayanCarousel"
-                                data-bs-slide-to="{{ $i }}"
-                                class="{{ $i == 0 ? 'active' : '' }}"
-                                aria-label="Slide {{ $i + 1 }}"></button>
-                            @endfor
-                        </div>
 
                         <!-- SLIDES -->
                         <div class="carousel-inner" style="border-radius:12px;">
@@ -848,6 +837,17 @@
                                         </div>
                                     @endif
                                 </div>
+                            @endfor
+                        </div>
+
+                        <!-- INDICATORS — placed AFTER the slides (below) -->
+                        <div class="carousel-indicators">
+                            @for($i = 0; $i < 10; $i++)
+                                <button type="button"
+                                data-bs-target="#damayanCarousel"
+                                data-bs-slide-to="{{ $i }}"
+                                class="{{ $i == 0 ? 'active' : '' }}"
+                                aria-label="Slide {{ $i + 1 }}"></button>
                             @endfor
                         </div>
 
@@ -1013,7 +1013,7 @@ PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
 @endif
 
 <!-- ============================================
-FOOTER
+FOOTER — updated tagline color
 ============================================ -->
 <footer>
     <div class="container">
@@ -1039,7 +1039,8 @@ FOOTER
                     <li><a href="/admin/login">🔑 Admin Login</a></li>
                 </ul>
                 <hr class="border-light">
-                <p class="text-muted small">A space of Resiliency, Hope, and Community</p>
+                <!-- Tagline now uses the same color as other footer text -->
+                <p class="small footer-tagline">A space of Resiliency, Hope, and Community</p>
             </div>
         </div>
     </div>
