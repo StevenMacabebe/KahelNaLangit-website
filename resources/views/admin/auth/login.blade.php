@@ -7,53 +7,116 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #ffb437, #ffa003, #ff6c27, #d88531);
+            background-image: url('{{ asset("public/images/authbg.png") }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
         .login-card {
-            max-width: 400px;
+            max-width: 480px;
             width: 100%;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 40px 35px;
+            background: #faf7e5;
+            border-radius: 18px;
+            box-shadow: 0 0 0 4px #2c3e50, 0 8px 30px rgba(0,0,0,0.15);
+            border: 3px solid #ffffff;
+        }
+        .login-card .logo {
+            display: block;
+            max-width: 160px;
+            margin: 0 auto 15px;
         }
         .login-card h2 {
-            color: #e67e22;
+            color: #2c3e50;
             text-align: center;
-            margin-bottom: 30px;
-        }
-        .btn-primary {
-            background: #e67e22;
-            border: none;
-            width: 100%;
-            padding: 10px;
-        }
-        .btn-primary:hover {
-            background: #d35400;
-        }
-        .logo-text {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #e67e22;
+            font-weight: 700;
             margin-bottom: 5px;
+            font-size: 1.8rem;
         }
-        .logo-sub {
+        .login-card .logo-sub {
             text-align: center;
             color: #7f8c8d;
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        .form-label {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        .form-control {
+            border-radius: 8px;
+            border: 2px solid #e0d6c8;
+            background: #fff;
+            padding: 10px 14px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.25);
+        }
+        .btn-primary {
+            background: #2c3e50 !important;
+            border: none !important;
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #1a252f !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.4);
+        }
+        a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            color: #1a252f;
+            text-decoration: underline;
+        }
+        .alert-danger {
+            background: #fde8e8;
+            border-color: #f5c6cb;
+            color: #721c24;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+        }
+        .demo-note {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            border-top: 1px solid #e0d6c8;
+            padding-top: 15px;
+        }
+        .demo-note small {
+            color: #6c757d;
+        }
+        @media (max-width: 576px) {
+            .login-card {
+                max-width: 100%;
+                margin: 0 15px;
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="login-card">
-        <div class="logo-text">🌅 Kahel na Langit</div>
-        <div class="logo-sub">Admin Login</div>
+        <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="logo">
+        <h2>Admin Access</h2>
+        <div class="logo-sub">Secure administrator login</div>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -75,7 +138,9 @@
         </form>
 
         <div class="mt-3 text-center">
-            <small class="text-muted">Default: admin@kahel.com / password123</small>
+            <div class="demo-note">
+                <small>Default: admin@kahel.com / password123</small>
+            </div>
         </div>
     </div>
 </body>
