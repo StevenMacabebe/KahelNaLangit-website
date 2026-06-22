@@ -18,13 +18,13 @@
         .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
 
         /* HEADER */
-        .page-header      { background: #eab000; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; }
+        .page-header      { background: #d4a017; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; }
         .page-header h1 { font-weight: 700; font-size: 2.5rem; }
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* CARDS */
-        .card             { background: #faf7e5 !important; border: 2px solid #eab000 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
-        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #eab000, 0 14px 28px rgba(0,0,0,0.18) !important; }
+        .card             { background: #faf7e5 !important; border: 2px solid #d4a017 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,0.18) !important; }
         .card h3          { color: #c25328; margin-bottom: 8px; }
 
         /* FOOTER */
