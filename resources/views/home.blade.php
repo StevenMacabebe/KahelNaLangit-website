@@ -274,10 +274,10 @@
         }
 
         /* ============================================
-           UPDATES - #ac1a1a (RED)
+           UPDATES - #ac1a1a (RED CARDS) / ORANGE TITLES
            ============================================ */
         .updates-title {
-            color: #ac1a1a;
+            color: #c25328;
         }
 
         .update-card {
@@ -324,7 +324,7 @@
 
         .update-card .card-text {
             font-size: 0.95rem;
-            color: #c25328;
+            color: #1a1a1a;
         }
 
         /* ============================================
@@ -382,7 +382,7 @@
         .modal-body .modal-content-text {
             font-size: 1rem;
             line-height: 1.8;
-            color: #333;
+            color: #1a1a1a;
         }
 
         .modal-body .modal-date {
@@ -399,10 +399,10 @@
         }
 
         /* ============================================
-           WISHLIST - #365fa9 (BLUE)
+           WISHLIST - #365fa9 (BLUE CARDS) / ORANGE TITLES
            ============================================ */
         .wishlist-title {
-            color: #365fa9;
+            color: #c25328;
         }
 
         .wishlist-card {
@@ -451,15 +451,24 @@
             font-size: 48px;
         }
 
+        .wishlist-card .card-body h5 {
+            color: #c25328;
+            font-weight: 600;
+        }
+
+        .wishlist-card .card-body .text-muted {
+            color: #1a1a1a !important;
+        }
+
         .wishlist-progress .progress-bar {
             background: #365fa9 !important;
         }
 
         /* ============================================
-           PARTNERS - #658107 (GREEN) + ORANGE TEXT
+           PARTNERS - #658107 (GREEN CARDS) / ORANGE TITLES
            ============================================ */
         .partners-title {
-            color: #658107;
+            color: #c25328;
         }
 
         .partner-card {
@@ -477,13 +486,13 @@
         }
 
         .partner-card .partner-name {
-            color: #658107;
+            color: #c25328;
             font-weight: 700;
         }
 
         .partner-card .partner-desc {
-            color: #c25328;
-            font-weight: 500;
+            color: #1a1a1a;
+            font-weight: 400;
         }
 
         .partner-card .btn-outline-partner {
@@ -657,7 +666,7 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - #ac1a1a (RED) WITH MODAL
+         UPDATES SECTION - RED CARDS / ORANGE TITLE
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
@@ -726,7 +735,7 @@
     </div>
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9 (BLUE)
+         WISHLIST SECTION - BLUE CARDS / ORANGE TITLE
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
@@ -769,7 +778,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - #658107 (GREEN) + ORANGE TEXT
+         PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
@@ -826,7 +835,7 @@
                         <li><a href="/admin/login">🔑 Admin Login</a></li>
                     </ul>
                     <hr class="border-light">
-                    <p class="text-muted small">Built with ❤️ for the Damayan Community</p>
+                    <p class="text-muted small">A space of Resiliency, Hope, and Community</p>
                 </div>
             </div>
         </div>
