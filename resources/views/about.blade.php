@@ -42,7 +42,7 @@
 
         /* SDG */
         .sdg-badge        { text-align: center; padding: 20px 12px; cursor: pointer; }
-        .sdg-badge img    { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 10px; display: block; }
+        .sdg-badge img    { width: 90px; height: 90px; object-fit: contain; margin: 0 auto 10px; display: block; }
         .sdg-badge h5     { color: #365fa9; margin-bottom: 4px; font-size: 13px; }
         .sdg-badge p      { font-size: 12px; color: #555; }
 
@@ -193,9 +193,7 @@
                     <div class="card-body p-4">
                         <div class="location-tag">Floodway, Taytay, Rizal</div>
                         <h3>People-Led. Resilience-Rooted.</h3>
-                        <p class="mt-2 mb-4">The Damayan Community in Taytay, Rizal is a people-led community rooted in resilience, hope, and community. What began as a small group of determined individuals has grown into a movement that uplifts seamstresses, vendors, and families, creating sustainable livelihoods and renewed hope for the future.</p>
-                        <p class="mt-2 mb-4">Through collective effort, they are building their Model House from the ground up — a powerful symbol of their journey. With the guidance of dedicated professionals, their flood-prone environment is being transformed into a safe and stable space for their community.</p>
-
+                        <p class="mt-2 mb-4">The Damayan Community in Floodway, Taytay, Rizal is a people-led community rooted in resilience and hope. Through collective effort, they are building their Model House from the ground up — transforming a flood-prone environment into a safe and stable space for their community.</p>
 
                         {{-- Damayan Model House --}}
                         <div class="mv-icon-row">
