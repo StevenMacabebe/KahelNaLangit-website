@@ -143,29 +143,25 @@
         .hero-video-wrapper .hero-content h1 {
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-video-wrapper .hero-content h1 .brand-name {
+            margin-bottom: 10px;
+            color: #c25328;
             font-family: 'Schoolbell', cursive;
-            color: #ffa003;
-            font-weight: 400;
-            text-shadow: 0 0 20px rgba(255, 160, 3, 0.3), 2px 2px 10px rgba(0,0,0,0.5);
-            opacity: 1 !important;
+            text-shadow: none;
         }
 
-        .hero-video-wrapper .hero-content .lead {
-            font-size: 22px;
+        .hero-video-wrapper .hero-content .tagline {
+            font-size: 28px;
+            font-weight: 600;
+            color: #c25328;
             margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            text-shadow: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
         }
 
         .hero-video-wrapper .hero-content p {
             color: #fff;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            text-shadow: none;
             font-size: 18px;
         }
 
@@ -190,22 +186,23 @@
             box-shadow: 0 8px 25px rgba(194, 83, 40, 0.4);
         }
 
-        .btn-outline-light {
-            border: 2px solid white !important;
+        .btn-outline-orange {
+            border: 2px solid #c25328 !important;
             padding: 12px 35px;
             font-weight: 600;
             border-radius: 8px;
-            color: white !important;
+            color: #c25328 !important;
             background: transparent;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-outline-light:hover {
-            background: white !important;
-            color: #c25328 !important;
+        .btn-outline-orange:hover {
+            background: #c25328 !important;
+            color: white !important;
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(194, 83, 40, 0.3);
         }
 
         /* ============================================
@@ -261,23 +258,6 @@
             height: 4px;
             margin: 10px auto 0;
             border-radius: 2px;
-        }
-
-        /* ============================================
-           FEATURES CARDS
-           ============================================ */
-        .feature-card {
-            background: #f8f4ed !important;
-            border: 3px solid #ffffff !important;
-            border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
-            overflow: hidden;
-            transition: all .3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
         /* ============================================
@@ -473,13 +453,13 @@
             .hero-video-wrapper .hero-content h1 {
                 font-size: 32px;
             }
-            .hero-video-wrapper .hero-content .lead {
-                font-size: 18px;
+            .hero-video-wrapper .hero-content .tagline {
+                font-size: 20px;
             }
             .hero-video-wrapper .hero-content {
                 padding: 40px 0;
             }
-            .btn-primary, .btn-outline-light {
+            .btn-primary, .btn-outline-orange {
                 padding: 10px 25px;
                 font-size: 14px;
             }
@@ -496,8 +476,8 @@
             .hero-video-wrapper .hero-content h1 {
                 font-size: 26px;
             }
-            .hero-video-wrapper .hero-content .lead {
-                font-size: 16px;
+            .hero-video-wrapper .hero-content .tagline {
+                font-size: 17px;
             }
         }
     </style>
@@ -541,7 +521,7 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - VIDEO ONLY (NO OVERLAY)
+         HERO SECTION - SCHOOLBELL TITLE + NEW TAGLINE
          ============================================ -->
     <section class="hero-video-wrapper">
         <!-- Video Background -->
@@ -553,12 +533,11 @@
         <!-- Content -->
         <div class="hero-content">
             <div class="container">
-                <h1><span class="brand-name">Kahel na Langit</span></h1>
-                <p class="lead">Empowering Communities, Building Hope</p>
-                <p>A community-driven initiative dedicated to uplifting vulnerable communities.</p>
+                <h1>Kahel na Langit</h1>
+                <p class="tagline">A space of Resiliency, Hope, and Community.</p>
                 <div class="mt-4">
                     <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
-                    <a href="/about" class="btn-outline-light btn-lg ms-2">Learn More</a>
+                    <a href="/about" class="btn-outline-orange btn-lg ms-2">Learn More</a>
                 </div>
             </div>
         </div>
@@ -577,45 +556,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
-                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
+                        <h3 class="damayan-title">The Damayan Model House</h3>
                         <p class="damayan-text">
                             We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================
-         FEATURES SECTION - ORANGE CARDS
-         ============================================ -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🏠</h2>
-                        <h5>Community Development</h5>
-                        <p class="text-muted">Supporting housing and infrastructure initiatives for vulnerable communities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🤝</h2>
-                        <h5>Fundraising</h5>
-                        <p class="text-muted">Community-based fundraising campaigns to support sustainable programs.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center shadow-sm feature-card">
-                    <div class="card-body">
-                        <h2 style="font-size: 48px;">🌱</h2>
-                        <h5>Community Engagement</h5>
-                        <p class="text-muted">Awareness campaigns promoting resilience and social responsibility.</p>
                     </div>
                 </div>
             </div>
@@ -657,7 +601,7 @@
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
