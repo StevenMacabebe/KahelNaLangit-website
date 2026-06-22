@@ -23,8 +23,8 @@
         .page-header .lead { opacity: 0.85; font-size: 15px; }
 
         /* CARDS */
-        .card             { background: #faf7e5 !important; border: 2px solid #365fa9 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
-        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #365fa9, 0 14px 28px rgba(0,0,0,0.18) !important; }
+        .card             { background: #faf7e5 !important; border: 2px solid #eab000 !important; border-radius: 14px !important; box-shadow: 0 3px 10px rgba(0,0,0,0.10) !important; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+        .card:hover       { transform: translateY(-6px); box-shadow: 0 0 0 3px #eab000, 0 14px 28px rgba(0,0,0,0.18) !important; }
         .card h3          { color: #c25328; margin-bottom: 8px; }
 
         /* FOOTER */
