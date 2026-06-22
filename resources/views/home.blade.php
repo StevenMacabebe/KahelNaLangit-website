@@ -140,13 +140,12 @@
             text-align: center;
         }
 
-        .hero-video-wrapper .hero-content h1 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 700;
+        .hero-video-wrapper .hero-content .hero-logo {
+            max-width: 80%;
+            height: auto;
             margin-bottom: 10px;
-            color: #c25328;
-            font-family: 'Schoolbell', cursive;
-            text-shadow: none;
+            display: inline-block;
+            /* ensure it's centered inline */
         }
 
         .hero-video-wrapper .hero-content .tagline {
@@ -174,6 +173,9 @@
             .hero-video-wrapper .hero-content {
                 padding: 20px 15px;
             }
+            .hero-video-wrapper .hero-content .hero-logo {
+                max-width: 90%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -183,6 +185,9 @@
             }
             .hero-video-wrapper .hero-content .tagline {
                 font-size: 1rem;
+            }
+            .hero-video-wrapper .hero-content .hero-logo {
+                max-width: 95%;
             }
         }
 
@@ -662,7 +667,7 @@
         }
 
         footer .footer-tagline {
-            color: #faf7e5;  /* same as other footer text */
+            color: #faf7e5;
         }
 
         /* ============================================
@@ -751,7 +756,7 @@
     </nav>
 
     <!-- ============================================
-    HERO SECTION - RESPONSIVE
+    HERO SECTION - RESPONSIVE with LOGO
     ============================================ -->
     <section class="hero-video-wrapper">
         <video autoplay muted loop playsinline>
@@ -760,7 +765,8 @@
         </video>
         <div class="hero-content">
             <div class="container">
-                <h1>Kahel na Langit</h1>
+                <!-- Logo image instead of text -->
+                <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="hero-logo">
                 <p class="tagline">A space of Resiliency, Hope, and Community.</p>
                 <div class="btn-group">
                     <a href="/donate" class="btn-primary btn-lg">Donate Now</a>
@@ -1039,7 +1045,6 @@ FOOTER — updated tagline color
                     <li><a href="/admin/login">🔑 Admin Login</a></li>
                 </ul>
                 <hr class="border-light">
-                <!-- Tagline now uses the same color as other footer text -->
                 <p class="small footer-tagline">A space of Resiliency, Hope, and Community</p>
             </div>
         </div>
