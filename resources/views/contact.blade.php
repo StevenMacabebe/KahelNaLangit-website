@@ -111,10 +111,10 @@
         }
 
         /* ============================================
-           PAGE HEADER - NOW #ac1a1a (RED)
+           PAGE HEADER - #d771ab
            ============================================ */
         .page-header {
-            background: #ac1a1a;
+            background: #d771ab;
             color: #faf7e5;
             padding: 40px 0 32px;
             margin-bottom: 24px;
@@ -131,13 +131,13 @@
         }
 
         /* ============================================
-           CARDS
+           CARDS - OUTLINE #d771ab
            ============================================ */
         .card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #d97706, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #d771ab, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
@@ -234,7 +234,7 @@
         </nav>
 
         <!-- ============================================
-             PAGE HEADER - NOW RED (#ac1a1a)
+             PAGE HEADER - #d771ab
              ============================================ -->
         <div class="page-header">
             <div class="container">
