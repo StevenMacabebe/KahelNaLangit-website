@@ -86,6 +86,45 @@
         .team-card h5     { color: #365fa9; margin-bottom: 4px; }
         .role-pill        { font-size: 11px; font-weight: 700; background: #dce8fc; color: #185fa5; border-radius: 20px; padding: 2px 10px; display: inline-block; }
 
+        /* COMMITTEE DEPT TAGS */
+        .dept-tag          { font-size: 10px; font-weight: 700; color: #faf7e5; letter-spacing: 1.2px; text-transform: uppercase; padding: 5px 14px; border-radius: 6px; margin-bottom: 12px; display: inline-block; }
+        .dept-exec         { background: #365fa9; }
+        .dept-secret       { background: #c25328; }
+        .dept-creative     { background: #eab000; }
+        .dept-construct    { background: #658107; }
+        .dept-sponsor      { background: #6b4fa9; }
+
+        /* COMMITTEE CARDS */
+        .ccard             { border-radius: 14px; padding: 18px 12px; text-align: center; border-width: 2px; border-style: solid; height: 100%; }
+        .ccard i           { font-size: 32px; margin-bottom: 10px; display: block; }
+        .ccard h5          { font-size: 12px; font-weight: 700; margin-bottom: 5px; line-height: 1.4; }
+        .ccard span        { font-size: 10px; font-weight: 700; }
+
+        .ccard.exec        { background: #e8f0fc; border-color: #365fa9; }
+        .ccard.exec i      { color: #365fa9; }
+        .ccard.exec h5     { color: #365fa9; }
+        .ccard.exec span   { color: #1a3d6e; }
+
+        .ccard.secret      { background: #fde8df; border-color: #c25328; }
+        .ccard.secret i    { color: #c25328; }
+        .ccard.secret h5   { color: #c25328; }
+        .ccard.secret span { color: #8a3010; }
+
+        .ccard.creative    { background: #fdf3d5; border-color: #eab000; }
+        .ccard.creative i  { color: #eab000; }
+        .ccard.creative h5 { color: #8a6600; }
+        .ccard.creative span { color: #c49a00; }
+
+        .ccard.construct   { background: #e4f0dc; border-color: #658107; }
+        .ccard.construct i { color: #658107; }
+        .ccard.construct h5 { color: #658107; }
+        .ccard.construct span { color: #3d4f04; }
+
+        .ccard.sponsor     { background: #ede8fc; border-color: #6b4fa9; }
+        .ccard.sponsor i   { color: #6b4fa9; }
+        .ccard.sponsor h5  { color: #6b4fa9; }
+        .ccard.sponsor span { color: #3d2a7a; }
+
         /* FOOTER */
         footer            { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p          { color: #faf7e5; font-size: 13px; }
@@ -314,149 +353,128 @@
         </div>
 
         {{-- Executive --}}
-        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Executive &amp; Project Management</p>
+        <span class="dept-tag dept-exec">Executive &amp; Project Management</span>
         <div class="row mb-4">
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Ralph Tuazon</h5><span class="role-pill">Exhibit Class Manager</span></div>
+                <div class="ccard exec">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Ralph Tuazon</h5>
+                    <span>Exhibit Class Manager</span>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Anthony Madrigal</h5><span class="role-pill">Asst. Exhibit Class Lead</span></div>
+                <div class="ccard exec">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Anthony Madrigal</h5>
+                    <span>Asst. Exhibit Class Lead</span>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Ana Pillas &amp; Krystelle Pisigan</h5><span class="role-pill">Finance Directors</span></div>
+                <div class="ccard exec">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Ana Pillas &amp; Krystelle Pisigan</h5>
+                    <span>Finance Directors</span>
                 </div>
             </div>
         </div>
 
         {{-- Secretariat --}}
-        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Secretariat Committee</p>
+        <span class="dept-tag dept-secret">Secretariat Committee</span>
         <div class="row mb-4">
             <div class="col-md-6 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Zia Lambatin</h5><span class="role-pill">Secretariat Lead</span></div>
+                <div class="ccard secret">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Zia Lambatin</h5>
+                    <span>Secretariat Lead</span>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Krystelle Pisigan</h5><span class="role-pill">Secretariat Co-Lead</span></div>
+                <div class="ccard secret">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Krystelle Pisigan</h5>
+                    <span>Secretariat Co-Lead</span>
                 </div>
             </div>
         </div>
 
         {{-- Creatives --}}
-        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Creatives &amp; Design</p>
+        <span class="dept-tag dept-creative">Creatives &amp; Design</span>
         <div class="row mb-4">
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Berna Alvaran</h5><span class="role-pill">Creatives Team Lead</span></div>
+                <div class="ccard creative">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Berna Alvaran</h5>
+                    <span>Creatives Team Lead</span>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Juliana Oane</h5><span class="role-pill">Creatives Co-Head</span></div>
+                <div class="ccard creative">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Juliana Oane</h5>
+                    <span>Creatives Co-Head</span>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Czarina Pascual</h5><span class="role-pill">Creatives Co-Head</span></div>
+                <div class="ccard creative">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Czarina Pascual</h5>
+                    <span>Creatives Co-Head</span>
                 </div>
             </div>
         </div>
 
         {{-- Construction --}}
-        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Construction &amp; Operations</p>
+        <span class="dept-tag dept-construct">Construction &amp; Operations</span>
         <div class="row mb-4">
             <div class="col-md-6 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Anthony Madrigal</h5><span class="role-pill">Construction Manager</span></div>
+                <div class="ccard construct">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Anthony Madrigal</h5>
+                    <span>Construction Manager</span>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Juliana Rosauro</h5><span class="role-pill">Logistics Officer</span></div>
+                <div class="ccard construct">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Juliana Rosauro</h5>
+                    <span>Logistics Officer</span>
                 </div>
             </div>
         </div>
 
         {{-- Sponsorship --}}
-        <p class="sec-eye mb-2" style="border-left:3px solid #365fa9; padding-left:6px;">Sponsorship &amp; Marketing</p>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px;">
-            <div class="card text-center team-card">
-                <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                <div class="team-info"><h5>Kian Angeles &amp; Francia Cabiling</h5><span class="role-pill">Sponsorship &amp; Partnership</span></div>
-            </div>
-            <div class="card text-center team-card">
-                <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                <div class="team-info"><h5>Berna Alvaran</h5><span class="role-pill">Marketing Manager</span></div>
-            </div>
-            <div class="card text-center team-card">
-                <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                <div class="team-info"><h5>Juliana Oane</h5><span class="role-pill">Social Media</span></div>
-            </div>
-            <div class="card text-center team-card">
-                <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                <div class="team-info"><h5>Czarina Pasual &amp; Juliana Oane</h5><span class="role-pill">Documentation Lead</span></div>
-            </div>
-        </div>
-
-        <hr class="sec-divider">
-
-        {{-- Dev Team --}}
-        <span class="sec-eye text-center d-block">Web Development Team</span>
-        <h2 class="text-center mb-4" style="color:#365fa9;">Meet Our Dev Team</h2>
+        <span class="dept-tag dept-sponsor">Sponsorship &amp; Marketing</span>
         <div class="row mb-5">
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Steven John Macabebe</h5><span class="role-pill">Full Stack Developer</span></div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="ccard sponsor">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Kian Angeles &amp; Francia Cabiling</h5>
+                    <span>Sponsorship &amp; Partnership</span>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Darlene Avenir</h5><span class="role-pill">UI/UX Designer</span></div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="ccard sponsor">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Berna Alvaran</h5>
+                    <span>Marketing Manager</span>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Jose Luis Garcia</h5><span class="role-pill">Backend Developer</span></div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="ccard sponsor">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Juliana Oane</h5>
+                    <span>Social Media</span>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Marian Nicole Acosta</h5><span class="role-pill">Project Lead</span></div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Mark Benedict Manundo</h5><span class="role-pill">Database Administrator</span></div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center team-card">
-                    <div class="team-photo alt"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-                    <div class="team-info"><h5>Rosalie Joy Vicente</h5><span class="role-pill">Quality Assurance</span></div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="ccard sponsor">
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
+                    <h5>Czarina Pasual &amp; Juliana Oane</h5>
+                    <span>Documentation Lead</span>
                 </div>
             </div>
         </div>
+
         
     </div>   
 
