@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-           
             background-image: url('{{ asset("public/images/authbg.png") }}');
             background-size: cover;
             background-position: center;
@@ -20,9 +19,9 @@
             margin: 0;
         }
         .login-card {
-            max-width: 400px;
+            max-width: 480px;  /* wider */
             width: 100%;
-            padding: 35px 30px;
+            padding: 40px 35px;  /* slightly more padding */
             background: #faf7e5;
             border-radius: 18px;
             box-shadow: 0 0 0 4px #365fa9, 0 8px 30px rgba(0,0,0,0.15);
@@ -97,13 +96,18 @@
         .demo-note small {
             color: #6c757d;
         }
+        @media (max-width: 576px) {
+            .login-card {
+                max-width: 100%;
+                margin: 0 15px;
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="login-card">
-        <!-- Logo image – upload your logo.png to public/images/ -->
         <img src="{{ asset('public/images/logo.png') }}" alt="Kahel na Langit Logo" class="logo">
-
         <h2>Welcome Back!</h2>
 
         @if ($errors->any())
