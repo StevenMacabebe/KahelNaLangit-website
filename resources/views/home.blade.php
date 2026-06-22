@@ -274,7 +274,7 @@
         }
 
         /* ============================================
-           UPDATES - #ac1a1a
+           UPDATES - #ac1a1a (RED)
            ============================================ */
         .updates-title {
             color: #ac1a1a;
@@ -324,7 +324,7 @@
 
         .update-card .card-text {
             font-size: 0.95rem;
-            color: #555;
+            color: #c25328;
         }
 
         /* ============================================
@@ -399,7 +399,7 @@
         }
 
         /* ============================================
-           WISHLIST - #365fa9
+           WISHLIST - #365fa9 (BLUE)
            ============================================ */
         .wishlist-title {
             color: #365fa9;
@@ -456,17 +456,17 @@
         }
 
         /* ============================================
-           PARTNERS - #c25328 (ORANGE)
+           PARTNERS - #658107 (GREEN) + ORANGE TEXT
            ============================================ */
         .partners-title {
-            color: #c25328;
+            color: #658107;
         }
 
         .partner-card {
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #658107, 0 8px 20px rgba(0,0,0,0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
@@ -477,18 +477,18 @@
         }
 
         .partner-card .partner-name {
-            color: #c25328;
+            color: #658107;
             font-weight: 700;
         }
 
         .partner-card .partner-desc {
-            color: #7a3a1a;
+            color: #c25328;
             font-weight: 500;
         }
 
         .partner-card .btn-outline-partner {
-            border: 2px solid #c25328 !important;
-            color: #c25328 !important;
+            border: 2px solid #658107 !important;
+            color: #658107 !important;
             background: transparent;
             padding: 6px 18px;
             border-radius: 20px;
@@ -500,7 +500,7 @@
         }
 
         .partner-card .btn-outline-partner:hover {
-            background: #c25328 !important;
+            background: #658107 !important;
             color: white !important;
             transform: translateY(-2px);
         }
@@ -554,6 +554,21 @@
 
         footer hr {
             border-color: rgba(255,255,255,0.15);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .damayan-card .damayan-image {
+                min-height: 200px;
+            }
+            .update-card .card-title {
+                font-size: 1rem;
+            }
+            .update-card .card-text {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -642,7 +657,7 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - #ac1a1a CARDS WITH MODAL
+         UPDATES SECTION - #ac1a1a (RED) WITH MODAL
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
@@ -711,7 +726,7 @@
     </div>
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9 CARDS
+         WISHLIST SECTION - #365fa9 (BLUE)
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
@@ -754,7 +769,7 @@
     @endif
 
     <!-- ============================================
-         PARTNERSHIPS SECTION - #c25328 (ORANGE)
+         PARTNERSHIPS SECTION - #658107 (GREEN) + ORANGE TEXT
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
@@ -767,7 +782,7 @@
                                 @if($partner->logo)
                                     <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
                                          alt="{{ $partner->name }}" 
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #c25328; padding: 3px;">
+                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #658107; padding: 3px;">
                                 @else
                                     <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
                                 @endif
