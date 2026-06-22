@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Kahel na Langit</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <style>
         /* ============================================
@@ -60,7 +60,7 @@
         .btn-logout-nav {
             background: transparent;
             color: #faf7e5 !important;
-            border: 1.5px solid rgba(255,255,255,0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
             border-radius: 20px;
             padding: 6px 18px !important;
             font-weight: 500;
@@ -71,12 +71,12 @@
         }
 
         .btn-logout-nav:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.7);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.7);
         }
 
         .navbar-toggler {
-            border: 2px solid rgba(255,255,255,0.8);
+            border: 2px solid rgba(255, 255, 255, 0.8);
             padding: 4px 10px;
         }
 
@@ -92,7 +92,7 @@
             .navbar-nav {
                 margin-top: 10px;
                 padding-top: 10px;
-                border-top: 1px solid rgba(255,255,255,0.15);
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
             }
             .nav-link.btn-login {
                 text-align: center;
@@ -235,7 +235,7 @@
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #c25328, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
             cursor: pointer;
@@ -243,7 +243,7 @@
 
         .damayan-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0, 0, 0, .25) !important;
         }
 
         .damayan-card .damayan-image {
@@ -285,7 +285,7 @@
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #ac1a1a, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
             cursor: pointer;
@@ -293,7 +293,7 @@
 
         .update-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0, 0, 0, .25) !important;
         }
 
         .update-image-wrapper {
@@ -405,17 +405,97 @@
         .damayan-carousel-modal .modal-dialog {
             max-width: 900px;
         }
+
         .damayan-carousel-modal .carousel-item img {
             width: 100%;
             height: 500px;
             object-fit: contain;
             background: #faf7e5;
+            border-radius: 12px;
         }
+
+        /* ---- REMOVED dark background, made simple ---- */
         .damayan-carousel-modal .carousel-control-prev,
         .damayan-carousel-modal .carousel-control-next {
-            width: 10%;
-            background: rgba(0,0,0,0.3);
+            width: 5%;
+            /* slim */
+            background: transparent !important;
+            /* NO black background */
+            border: none;
+            opacity: 0.7;
+            transition: opacity 0.25s ease;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .damayan-carousel-modal .carousel-control-prev:hover,
+        .damayan-carousel-modal .carousel-control-next:hover {
+            opacity: 1;
+        }
+
+        .damayan-carousel-modal .carousel-control-prev-icon,
+        .damayan-carousel-modal .carousel-control-next-icon {
+            width: 32px;
+            height: 32px;
+            background-size: 100% 100%;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .damayan-carousel-modal .carousel-control-prev-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c25328'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") !important;
+        }
+
+        .damayan-carousel-modal .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c25328'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
+        }
+
+        /* ---- Carousel Indicators (10 circles below) ---- */
+        .damayan-carousel-modal .carousel-indicators {
+            position: relative;
+            /* not absolute */
+            bottom: auto;
+            margin-top: 18px;
+            margin-bottom: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+            background: transparent;
+            transform: none;
+        }
+
+        .damayan-carousel-modal .carousel-indicators button {
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
+            border: 2px solid #c25328;
+            background: transparent;
+            opacity: 0.5;
+            transition: all 0.25s ease;
+            padding: 0;
+            margin: 0;
+            text-indent: -9999px;
+            cursor: pointer;
+            flex: 0 0 auto;
+            box-shadow: none;
+        }
+
+        .damayan-carousel-modal .carousel-indicators button.active {
+            background: #c25328;
+            /* ORANGE active */
+            opacity: 1;
+            border-color: #c25328;
+            transform: scale(1.15);
+            box-shadow: 0 0 0 2px rgba(194, 83, 40, 0.3);
+        }
+
+        .damayan-carousel-modal .carousel-indicators button:hover {
+            opacity: 0.8;
         }
 
         /* ============================================
@@ -429,14 +509,14 @@
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #365fa9, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
 
         .wishlist-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0, 0, 0, .25) !important;
         }
 
         .wishlist-image-wrapper {
@@ -495,14 +575,14 @@
             background: #f8f4ed !important;
             border: 3px solid #ffffff !important;
             border-radius: 18px !important;
-            box-shadow: 0 0 0 4px #658107, 0 8px 20px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 0 0 4px #658107, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
             overflow: hidden;
             transition: all .3s ease;
         }
 
         .partner-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
+            box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0, 0, 0, .25) !important;
         }
 
         .partner-card .partner-name {
@@ -582,7 +662,7 @@
         }
 
         footer hr {
-            border-color: rgba(255,255,255,0.15);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         /* ============================================
@@ -592,9 +672,28 @@
             .damayan-card .damayan-image {
                 min-height: 200px;
             }
+
             .damayan-carousel-modal .carousel-item img {
                 height: 300px;
             }
+
+            .damayan-carousel-modal .carousel-control-prev,
+            .damayan-carousel-modal .carousel-control-next {
+                width: 8%;
+            }
+
+            .damayan-carousel-modal .carousel-control-prev-icon,
+            .damayan-carousel-modal .carousel-control-next-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .damayan-carousel-modal .carousel-indicators button {
+                width: 14px;
+                height: 14px;
+                gap: 8px;
+            }
+
             .update-card .card-title {
                 font-size: 1rem;
             }
@@ -602,13 +701,22 @@
                 font-size: 0.85rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .damayan-carousel-modal .carousel-indicators button {
+                width: 12px;
+                height: 12px;
+                gap: 6px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- ============================================
-         NAVIGATION
-         ============================================ -->
+    NAVIGATION
+    ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
@@ -627,15 +735,15 @@
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
 
                     @auth
-                        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                        <li class="nav-item">
-                            <form method="POST" action="/logout" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn-logout-nav">Logout</button>
-                            </form>
-                        </li>
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                    <li class="nav-item">
+                        <form method="POST" action="/logout" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn-logout-nav">Logout</button>
+                        </form>
+                    </li>
                     @else
-                        <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
+                    <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                     @endauth
                 </ul>
             </div>
@@ -643,16 +751,13 @@
     </nav>
 
     <!-- ============================================
-         HERO SECTION - RESPONSIVE
-         ============================================ -->
+    HERO SECTION - RESPONSIVE
+    ============================================ -->
     <section class="hero-video-wrapper">
-        <!-- Video Background -->
         <video autoplay muted loop playsinline>
             <source src="{{ asset('public/images/hero-video.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
-        <!-- Content -->
         <div class="hero-content">
             <div class="container">
                 <h1>Kahel na Langit</h1>
@@ -666,16 +771,22 @@
     </section>
 
     <!-- ============================================
-         DAMAYAN MODEL HOUSE CARD (CLICKABLE IMAGE)
-         ============================================ -->
+    DAMAYAN MODEL HOUSE CARD — now shows hm1
+    ============================================ -->
     <div class="container mt-5">
         <div class="card damayan-card" data-bs-toggle="modal" data-bs-target="#damayanCarouselModal">
             <div class="row g-0">
                 <div class="col-md-6">
-                    <img src="{{ asset('public/images/damayan-house.jpg') }}" 
-                         alt="Damayan Model House" 
-                         class="damayan-image" 
-                         style="cursor: pointer;">
+                    @php
+                        $hm1Jpg = public_path('images/hm1.jpg');
+                        $hm1Png = public_path('images/hm1.png');
+                        $hm1Exists = file_exists($hm1Jpg) || file_exists($hm1Png);
+                        $hm1Src = file_exists($hm1Jpg) ? 'public/images/hm1.jpg' : (file_exists($hm1Png) ? 'public/images/hm1.png' : '');
+                    @endphp
+                    <img src="{{ $hm1Exists ? asset($hm1Src) : asset('public/images/damayan-house.jpg') }}"
+                    alt="Damayan Model House"
+                    class="damayan-image"
+                    style="cursor: pointer;">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
@@ -693,8 +804,9 @@
     </div>
 
     <!-- ============================================
-         DAMAYAN CAROUSEL MODAL - 10 IMAGES, SIMPLE CONTROLS
-         ============================================ -->
+    DAMAYAN CAROUSEL MODAL — 10 images, SIMPLE controls,
+    NO black background, 10 ORANGE indicator circles
+    ============================================ -->
     <div class="modal fade damayan-carousel-modal" id="damayanCarouselModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -702,21 +814,34 @@
                     <h5 class="modal-title" style="color: #c25328; font-weight: 700;">Damayan Model House Gallery</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding-bottom: 8px;">
                     <div id="damayanCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Slides (only 10 images) -->
-                        <div class="carousel-inner">
+
+                        <!-- INDICATORS — 10 circles, orange active -->
+                        <div class="carousel-indicators" style="position:relative; bottom:auto; margin-top:0; margin-bottom:12px;">
+                            @for($i = 0; $i < 10; $i++)
+                                <button type="button"
+                                data-bs-target="#damayanCarousel"
+                                data-bs-slide-to="{{ $i }}"
+                                class="{{ $i == 0 ? 'active' : '' }}"
+                                aria-label="Slide {{ $i + 1 }}"></button>
+                            @endfor
+                        </div>
+
+                        <!-- SLIDES -->
+                        <div class="carousel-inner" style="border-radius:12px;">
                             @for($i = 1; $i <= 10; $i++)
                                 @php
                                     $jpgPath = "public/images/hm{$i}.jpg";
                                     $pngPath = "public/images/hm{$i}.png";
                                     $imageExists = file_exists(public_path("images/hm{$i}.jpg")) || file_exists(public_path("images/hm{$i}.png"));
+                                    $src = file_exists(public_path("images/hm{$i}.jpg")) ? $jpgPath : (file_exists(public_path("images/hm{$i}.png")) ? $pngPath : '');
                                 @endphp
                                 <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
-                                    @if($imageExists)
-                                        <img src="{{ asset(file_exists(public_path("images/hm{$i}.jpg")) ? $jpgPath : $pngPath) }}" 
-                                             class="d-block w-100" 
-                                             alt="Damayan House {{ $i }}">
+                                    @if($imageExists && $src)
+                                        <img src="{{ asset($src) }}"
+                                        class="d-block w-100"
+                                        alt="Damayan House {{ $i }}">
                                     @else
                                         <div class="d-flex align-items-center justify-content-center" style="height:400px; background:#e9ecef; color:#6c757d; font-size:1.2rem; border-radius:12px;">
                                             📷 Image hm{{ $i }} not available
@@ -726,7 +851,7 @@
                             @endfor
                         </div>
 
-                        <!-- Simple Prev / Next buttons (no indicators) -->
+                        <!-- SIMPLE Prev / Next — NO black background -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#damayanCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -745,212 +870,224 @@
     </div>
 
     <!-- ============================================
-         UPDATES SECTION - RED CARDS / ORANGE TITLE
-         ============================================ -->
+    UPDATES SECTION - RED CARDS / ORANGE TITLE
+    ============================================ -->
     @if($updates->count() > 0)
-        <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">Latest Updates</h2>
-            <div class="row">
-                @foreach($updates as $update)
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm update-card" 
-                             data-bs-toggle="modal" 
-                             data-bs-target="#updateModal"
-                             data-title="{{ $update->title }}"
-                             data-content="{{ $update->content }}"
-                             data-image="{{ $update->image ? asset('public/images/uploads/updates/' . $update->image) : '' }}"
-                             data-category="{{ ucfirst(str_replace('_', ' ', $update->category)) }}"
-                             data-date="{{ $update->created_at->format('M d, Y') }}">
-                            <div class="update-image-wrapper">
-                                @if($update->image)
-                                    <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
-                                         alt="{{ $update->title }}" 
-                                         class="update-image">
-                                @endif
-                            </div>
-                            <div class="card-body">
-                                <span class="badge bg-warning mb-2">
-                                    {{ ucfirst(str_replace('_', ' ', $update->category)) }}
-                                </span>
-                                <h5 class="card-title">{{ $update->title }}</h5>
-                                <p class="card-text">{{ Str::limit($update->content, 80) }}</p>
-                                <small class="text-muted">{{ $update->created_at->format('M d, Y') }}</small>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+    <div class="container mt-5">
+        <h2 class="section-title updates-title text-center">Latest Updates</h2>
+        <div class="row">
+            @foreach($updates as $update)
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm update-card"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                data-title="{{ $update->title }}"
+                data-content="{{ $update->content }}"
+                data-image="{{ $update->image ? asset('public/images/uploads/updates/' . $update->image) : '' }}"
+                data-category="{{ ucfirst(str_replace('_', ' ', $update->category)) }}"
+                data-date="{{ $update->created_at->format('M d, Y') }}">
+                <div class="update-image-wrapper">
+                    @if($update->image)
+                    <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}"
+                    alt="{{ $update->title }}"
+                    class="update-image">
+                    @endif
+                </div>
+                <div class="card-body">
+                    <span class="badge bg-warning mb-2">
+                        {{ ucfirst(str_replace('_', ' ', $update->category)) }}
+                    </span>
+                    <h5 class="card-title">{{ $update->title }}</h5>
+                    <p class="card-text">{{ Str::limit($update->content, 80) }}</p>
+                    <small class="text-muted">{{ $update->created_at->format('M d, Y') }}</small>
+                </div>
             </div>
         </div>
-    @endif
+        @endforeach
+    </div>
+</div>
+@endif
 
-    <!-- ============================================
-         UPDATE MODAL
-         ============================================ -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateModalLabel">Update Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img id="modalImage" src="" alt="Update Image" class="modal-image">
-                        </div>
-                        <div class="col-md-6">
-                            <span id="modalCategory" class="modal-category"></span>
-                            <h2 id="modalTitle" class="modal-title"></h2>
-                            <p id="modalContent" class="modal-content-text"></p>
-                            <p id="modalDate" class="modal-date"></p>
-                        </div>
+<!-- ============================================
+UPDATE MODAL
+============================================ -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="modalImage" src="" alt="Update Image" class="modal-image">
+                    </div>
+                    <div class="col-md-6">
+                        <span id="modalCategory" class="modal-category"></span>
+                        <h2 id="modalTitle" class="modal-title"></h2>
+                        <p id="modalContent" class="modal-content-text"></p>
+                        <p id="modalDate" class="modal-date"></p>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ============================================
-         WISHLIST SECTION - BLUE CARDS / ORANGE TITLE
-         ============================================ -->
-    @if($wishlist->count() > 0)
-        <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
-            <p class="text-center text-muted">Items needed for our community projects</p>
-            <div class="row">
-                @foreach($wishlist as $item)
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm wishlist-card">
-                            <div class="wishlist-image-wrapper">
-                                @if($item->image)
-                                    <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
-                                         alt="{{ $item->item_name }}" 
-                                         class="wishlist-image">
-                                @else
-                                    <div class="wishlist-placeholder">
-                                        <span class="placeholder-icon">📦</span>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="card-body">
-                                <h5>{{ $item->item_name }}</h5>
-                                <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
-                                <div class="progress wishlist-progress">
-                                    <div class="progress-bar" style="width: {{ $item->quantity_needed > 0 ? ($item->quantity_received / $item->quantity_needed) * 100 : 0 }}%">
-                                        {{ $item->quantity_received }}/{{ $item->quantity_needed }}
-                                    </div>
-                                </div>
-                                <small class="text-muted">
-                                    Status: <span class="badge bg-{{ $item->status === 'complete' ? 'success' : 'warning' }}">
-                                        {{ ucfirst($item->status) }}
-                                    </span>
-                                </small>
-                            </div>
+<!-- ============================================
+WISHLIST SECTION - BLUE CARDS / ORANGE TITLE
+============================================ -->
+@if($wishlist->count() > 0)
+<div class="container mt-5">
+    <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
+    <p class="text-center text-muted">Items needed for our community projects</p>
+    <div class="row">
+        @foreach($wishlist as $item)
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm wishlist-card">
+                <div class="wishlist-image-wrapper">
+                    @if($item->image)
+                    <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
+                    alt="{{ $item->item_name }}"
+                    class="wishlist-image">
+                    @else
+                    <div class="wishlist-placeholder">
+                        <span class="placeholder-icon">📦</span>
+                    </div>
+                    @endif
+                </div>
+                <div class="card-body">
+                    <h5>{{ $item->item_name }}</h5>
+                    <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
+                    <div class="progress wishlist-progress">
+                        <div class="progress-bar" style="width: {{ $item->quantity_needed > 0 ? ($item->quantity_received / $item->quantity_needed) * 100 : 0 }}%">
+                            {{ $item->quantity_received }}/{{ $item->quantity_needed }}
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    @endif
-
-    <!-- ============================================
-         PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
-         ============================================ -->
-    @if($partnerships->count() > 0)
-        <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">Our Partners</h2>
-            <div class="row">
-                @foreach($partnerships as $partner)
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 text-center shadow-sm partner-card">
-                            <div class="card-body">
-                                @if($partner->logo)
-                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}" 
-                                         alt="{{ $partner->name }}" 
-                                         style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #658107; padding: 3px;">
-                                @else
-                                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
-                                @endif
-                                <h5 class="partner-name">{{ $partner->name }}</h5>
-                                <p class="partner-desc">{{ Str::limit($partner->description, 80) }}</p>
-                                @if($partner->website)
-                                    <a href="{{ $partner->website }}" target="_blank" class="btn btn-outline-partner">Visit Website</a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    @endif
-
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Kahel na Langit</h5>
-                    <p>Empowering Communities, Building Hope</p>
-                    <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/partnerships">Partnerships</a></li>
-                        <li><a href="/donate">Donate</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Admin Access</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/admin/login">🔑 Admin Login</a></li>
-                    </ul>
-                    <hr class="border-light">
-                    <p class="text-muted small">A space of Resiliency, Hope, and Community</p>
+                    <small class="text-muted">
+                        Status: <span class="badge bg-{{ $item->status === 'complete' ? 'success' : 'warning' }}">
+                            {{ ucfirst($item->status) }}
+                        </span>
+                    </small>
                 </div>
             </div>
         </div>
-    </footer>
+        @endforeach
+    </div>
+</div>
+@endif
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ============================================
+PARTNERSHIPS SECTION - GREEN CARDS / ORANGE TITLE
+============================================ -->
+@if($partnerships->count() > 0)
+<div class="container mt-5">
+    <h2 class="section-title partners-title text-center">Our Partners</h2>
+    <div class="row">
+        @foreach($partnerships as $partner)
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center shadow-sm partner-card">
+                <div class="card-body">
+                    @if($partner->logo)
+                    <img src="{{ asset('public/images/uploads/partnerships/' . $partner->logo) }}"
+                    alt="{{ $partner->name }}"
+                    style="max-width: 100px; max-height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 3px solid #658107; padding: 3px;">
+                    @else
+                    <div style="font-size: 48px; margin-bottom: 15px;">🤝</div>
+                    @endif
+                    <h5 class="partner-name">{{ $partner->name }}</h5>
+                    <p class="partner-desc">{{ Str::limit($partner->description, 80) }}</p>
+                    @if($partner->website)
+                    <a href="{{ $partner->website }}" target="_blank" class="btn btn-outline-partner">Visit Website</a>
+                    @endif
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+@endif
 
-    <script>
-        // Populate modal with data from clicked card
-        document.addEventListener('DOMContentLoaded', function() {
-            const updateCards = document.querySelectorAll('.update-card');
-            const modal = document.getElementById('updateModal');
-            
-            updateCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const title = this.dataset.title;
-                    const content = this.dataset.content;
-                    const image = this.dataset.image;
-                    const category = this.dataset.category;
-                    const date = this.dataset.date;
+<!-- ============================================
+FOOTER
+============================================ -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Kahel na Langit</h5>
+                <p>Empowering Communities, Building Hope</p>
+                <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/partnerships">Partnerships</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Admin Access</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/admin/login">🔑 Admin Login</a></li>
+                </ul>
+                <hr class="border-light">
+                <p class="text-muted small">A space of Resiliency, Hope, and Community</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-                    document.getElementById('modalTitle').textContent = title;
-                    document.getElementById('modalContent').textContent = content;
-                    document.getElementById('modalCategory').textContent = category;
-                    document.getElementById('modalDate').textContent = date;
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
 
-                    const modalImage = document.getElementById('modalImage');
-                    if (image) {
-                        modalImage.src = image;
-                        modalImage.style.display = 'block';
-                    } else {
-                        modalImage.style.display = 'none';
-                    }
-                });
+<script>
+    // Populate modal with data from clicked card
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCards = document.querySelectorAll('.update-card');
+        updateCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.dataset.title;
+                const content = this.dataset.content;
+                const image = this.dataset.image;
+                const category = this.dataset.category;
+                const date = this.dataset.date;
+
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalContent').textContent = content;
+                document.getElementById('modalCategory').textContent = category;
+                document.getElementById('modalDate').textContent = date;
+
+                const modalImage = document.getElementById('modalImage');
+                if (image) {
+                    modalImage.src = image;
+                    modalImage.style.display = 'block';
+                } else {
+                    modalImage.style.display = 'none';
+                }
             });
         });
-    </script>
+
+        // Sync indicator dots with carousel slide change
+        const carousel = document.getElementById('damayanCarousel');
+        if (carousel) {
+            carousel.addEventListener('slid.bs.carousel', function(e) {
+                const index = e.to;
+                const buttons = this.querySelectorAll('.carousel-indicators button');
+                buttons.forEach((btn, i) => {
+                    btn.classList.toggle('active', i === index);
+                });
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
