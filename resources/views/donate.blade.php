@@ -84,7 +84,7 @@
 </head>
 <body>
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
                 <span style="width:18px;height:18px;background:#faf7e5;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:6px;"></span>
@@ -141,6 +141,10 @@
                 <div class="way-card">
                     <div class="way-num">1</div>
                     <div><h5>Donation Form</h5><p>Fill up our donation form to ensure your contribution is properly acknowledged.</p></div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" target="_blank"
+                        style="display:inline-block; margin-top:8px; font-size:11px; color:#c25328; font-weight:700; text-decoration:none; background:#fef9e7; border:1.5px solid #d4a017; border-radius:8px; padding:5px 12px;">
+                             <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
+                    </a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -173,6 +177,10 @@
                 <div class="guide-step">
                     <div class="guide-num">1</div>
                     <p>Complete the donation form to ensure your contribution is properly acknowledged.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK8dU0U8O7Qr3BFL5Kg2j10iwnBpJ7SbrK0EmMyD8KWsCoeA/viewform" target="_blank"
+                        style="display:inline-block; margin-top:8px; font-size:11px; color:#c25328; font-weight:700; text-decoration:none; background:#fef9e7; border:1.5px solid #d4a017; border-radius:8px; padding:5px 12px;">
+                             <i class="ti ti-external-link" aria-hidden="true"></i> Open Donation Form
+                    </a>
                 </div>
                 <div class="guide-step">
                     <div class="guide-num">2</div>
