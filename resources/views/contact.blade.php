@@ -22,7 +22,7 @@
         }
         .wrapper { flex: 1; }
 
-        /* ----- NAVBAR ----- */
+        /* ----- NAVBAR - identical to About page ----- */
         .navbar {
             background: #c25328 !important;
             padding: 12px 0;
@@ -35,35 +35,22 @@
             color: #faf7e5 !important;
             font-weight: 500;
         }
-        .navbar-brand { font-weight: 700; font-size: 20px; }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 20px;
+        }
         .nav-link:hover { opacity: 0.8; }
-        .nav-link.btn-login {
+        .btn-login {
             background: #faf7e5;
             color: #c25328 !important;
             border-radius: 20px;
-            padding: 6px 18px !important;
+            padding: 4px 14px !important;
             font-weight: 700;
             border: none;
         }
-        .nav-link.btn-login:hover {
+        .btn-login:hover {
             background: #e8e0d0;
             opacity: 1;
-        }
-        .btn-logout-nav {
-            background: transparent;
-            color: #faf7e5 !important;
-            border: 1.5px solid rgba(255,255,255,0.4);
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Poppins', sans-serif;
-        }
-        .btn-logout-nav:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.7);
         }
         .navbar-toggler {
             border: 2px solid rgba(255,255,255,0.8);
@@ -80,13 +67,9 @@
                 padding-top: 10px;
                 border-top: 1px solid rgba(255,255,255,0.15);
             }
-            .nav-link.btn-login {
+            .btn-login {
                 text-align: center;
                 width: 100%;
-            }
-            .btn-logout-nav {
-                width: 100%;
-                text-align: center;
             }
         }
 
@@ -184,22 +167,18 @@
             color: white;
             font-size: 20px;
         }
-        /* Facebook Icon - BLUE */
         .social-icon.facebook {
             background: #1877f2;
         }
-        /* Instagram Icon - PINK/RED */
         .social-icon.instagram {
             background: #e4405f;
         }
-        /* Social Label - ORANGE */
         .social-label {
             font-weight: 600;
             color: #c25328;
             font-size: 14px;
             display: block;
         }
-        /* Social Handle - BLACK */
         .social-handle {
             font-size: 14px;
             color: #1a1a1a;
@@ -265,7 +244,7 @@
 <div class="wrapper">
 
     <!-- ============================================
-         NAVIGATION
+         NAVIGATION - identical to About page
          ============================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -283,18 +262,7 @@
                     <li class="nav-item"><a class="nav-link" href="/partnerships">Partnerships</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/donate">Donate</a></li>
-
-                    @auth
-                        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                        <li class="nav-item">
-                            <form method="POST" action="/logout" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn-logout-nav">Logout</button>
-                            </form>
-                        </li>
-                    @else
-                        <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
-                    @endauth
+                    <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                 </ul>
             </div>
         </div>
