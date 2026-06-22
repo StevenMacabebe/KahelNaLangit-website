@@ -90,7 +90,7 @@
             }
         }
 
-        /* ----- PAGE HEADER (without background color) ----- */
+        /* ----- PAGE HEADER ----- */
         .page-header {
             padding: 40px 0 32px;
             margin-bottom: 24px;
@@ -192,7 +192,7 @@
         }
         .map-container iframe {
             width: 100%;
-            height: 280px;
+            height: 350px;
             display: block;
             border: 0;
         }
@@ -215,7 +215,7 @@
         /* ----- Responsive tweaks ----- */
         @media (max-width: 768px) {
             .page-header h1 { font-size: 2rem; }
-            .map-container iframe { height: 200px; }
+            .map-container iframe { height: 250px; }
         }
     </style>
 </head>
@@ -274,9 +274,11 @@
          ============================================ -->
     <div class="container mt-4">
 
-        <!-- Row 1: Send a Message (full width) -->
+        <!-- Row 1: Send a Message (left) + Follow Us (right) -->
         <div class="row">
-            <div class="col-12">
+
+            <!-- LEFT: Send a Message Card -->
+            <div class="col-md-6 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h4 style="color: #c25328; font-weight: 700;">Send Us a Message</h4>
@@ -311,12 +313,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Row 2: Follow Us + Map (side by side) -->
-        <div class="row mt-4">
-
-            <!-- Left: Follow Us Card -->
+            <!-- RIGHT: Follow Us Card -->
             <div class="col-md-6 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
@@ -348,35 +346,50 @@
 
                         <hr>
 
-                        <!-- Social Media (Facebook & Instagram) -->
+                        <!-- Social Media: Facebook & Instagram with correct links -->
                         <h5 style="color: #c25328; font-weight: 600;">Connect with us</h5>
                         <div class="d-flex gap-2 mt-2">
-                            <a href="#" class="social-btn facebook"><i class="ti ti-brand-facebook"></i></a>
-                            <a href="#" class="social-btn instagram"><i class="ti ti-brand-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61563689687892" target="_blank" class="social-btn facebook" title="Kahel na Langit on Facebook">
+                                <i class="ti ti-brand-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/int.kahelnalangit/" target="_blank" class="social-btn instagram" title="int.kahelnalangit on Instagram">
+                                <i class="ti ti-brand-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Facebook: Kahel na Langit</small><br>
+                            <small class="text-muted">Instagram: int.kahelnalangit</small>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right: Map Card -->
-            <div class="col-md-6 mb-4">
+        </div> <!-- end row 1 -->
+
+        <!-- Row 2: Find Us (full width map) -->
+        <div class="row">
+            <div class="col-12">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 style="color: #c25328; font-weight: 600;">Find Us</h5>
+                        <h4 style="color: #c25328; font-weight: 700;">Find Us</h4>
                         <hr>
                         <div class="map-container mt-2">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.820448639135!2d121.14098901483925!3d14.5535443898139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7f6e4a2d72b%3A0x8e8d8d8d8d8d8d8d!2sDamayan%2C%20Blk%2064%2C%20Floodway%2C%20Taytay%2C%20Rizal!5e0!3m2!1sen!2sph!4v1700000000000"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.820448639135!2d121.1273643!3d14.5357814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c6f7b72da001%3A0xd5c2c6c4dd9c9d15!2sDamayan%20Block%2064!5e0!3m2!1sen!2sph!4v1700000000000"
                                 allowfullscreen=""
                                 loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
+                        <p class="text-muted mt-2 mb-0 small">
+                            <i class="ti ti-map-pin me-1"></i>
+                            Damayan Block 64, San Juan, Taytay, 1920 Rizal, Philippines
+                        </p>
                     </div>
                 </div>
             </div>
-
         </div> <!-- end row 2 -->
+
     </div> <!-- end container -->
 
 </div> <!-- end wrapper -->
