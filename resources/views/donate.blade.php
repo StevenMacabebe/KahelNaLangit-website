@@ -131,8 +131,9 @@
 
         {{-- Hope Strip --}}
         <div class="hope-strip">
-            <h2>Help Us Bring Hope to Life</h2>
-            <p>Every contribution — big or small — can inspire change and make a lasting impact on the lives of the people we aim to serve.</p>
+            <img src="{{ asset('public/images/hope-banner.png') }}"
+            alt="Help us bring Hope to Life"
+            style="width:100%; border-radius:14px; display:block; margin-bottom:20px;">
         </div>
 
         {{-- Ways to Give --}}
