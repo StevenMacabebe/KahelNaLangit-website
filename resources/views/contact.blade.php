@@ -22,7 +22,7 @@
         }
         .wrapper { flex: 1; }
 
-        /* ----- NAVBAR (matches home page) ----- */
+        /* ----- NAVBAR ----- */
         .navbar {
             background: #c25328 !important;
             padding: 12px 0;
@@ -90,19 +90,22 @@
             }
         }
 
-        /* ----- PAGE HEADER ----- */
+        /* ----- PAGE HEADER - PINK BANNER ----- */
         .page-header {
+            background: #d771ab;
+            color: #faf7e5;
             padding: 40px 0 32px;
             margin-bottom: 24px;
         }
         .page-header h1 {
             font-weight: 700;
             font-size: 2.5rem;
-            color: #c25328;
+            color: #faf7e5;
         }
         .page-header .lead {
+            opacity: 0.85;
             font-size: 15px;
-            color: #6c757d;
+            color: #faf7e5;
         }
 
         /* ----- CARDS (pink outline) ----- */
@@ -163,25 +166,63 @@
             color: #c25328;
         }
 
-        /* ----- SOCIAL BUTTONS (pink theme) ----- */
-        .social-btn {
-            width: 44px;
-            height: 44px;
+        /* ----- SOCIAL MEDIA - ICONS + LABELS ----- */
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+            color: white;
             font-size: 20px;
-            color: white !important;
-            transition: transform 0.3s;
+        }
+        /* Facebook Icon - BLUE */
+        .social-icon.facebook {
+            background: #1877f2;
+        }
+        /* Instagram Icon - PINK/RED */
+        .social-icon.instagram {
+            background: #e4405f;
+        }
+        /* Social Label - ORANGE */
+        .social-label {
+            font-weight: 600;
+            color: #c25328;
+            font-size: 14px;
+            display: block;
+        }
+        /* Social Handle - BLACK */
+        .social-handle {
+            font-size: 14px;
+            color: #1a1a1a;
+            display: block;
+        }
+        .social-handle a {
+            color: #1a1a1a;
             text-decoration: none;
         }
-        .social-btn:hover {
-            transform: translateY(-3px);
-            color: white !important;
+        .social-handle a:hover {
+            color: #c25328;
         }
-        .social-btn.facebook { background: #1877f2; }
-        .social-btn.instagram { background: #e4405f; }
+
+        /* ----- LOGIN/REGISTER ALERT - POWDER PINK ----- */
+        .alert-pink {
+            background: #fce4ec;
+            color: #7a3a5a;
+            border: 2px solid #d771ab;
+            border-radius: 12px;
+        }
+        .alert-pink strong {
+            color: #5a2a3a;
+        }
 
         /* ----- MAP CONTAINER ----- */
         .map-container {
@@ -197,7 +238,7 @@
             border: 0;
         }
 
-        /* ----- FOOTER (matches home page) ----- */
+        /* ----- FOOTER ----- */
         footer {
             background: #c25328;
             color: #faf7e5;
@@ -212,7 +253,7 @@
             margin: 0;
         }
 
-        /* ----- Responsive tweaks ----- */
+        /* ----- Responsive ----- */
         @media (max-width: 768px) {
             .page-header h1 { font-size: 2rem; }
             .map-container iframe { height: 250px; }
@@ -260,7 +301,7 @@
     </nav>
 
     <!-- ============================================
-         PAGE HEADER
+         PAGE HEADER - PINK BANNER
          ============================================ -->
     <div class="page-header">
         <div class="container">
@@ -270,7 +311,7 @@
     </div>
 
     <!-- ============================================
-         CONTENT: CARD LAYOUT
+         CONTENT
          ============================================ -->
     <div class="container mt-4">
 
@@ -304,7 +345,7 @@
                                 <button type="submit" class="btn btn-warning text-white w-100">Send Message</button>
                             </form>
                         @else
-                            <div class="alert alert-info">
+                            <div class="alert alert-pink">
                                 <strong>Please login or register to send a message.</strong>
                             </div>
                             <a href="/login" class="btn btn-warning text-white">Login</a>
@@ -346,20 +387,31 @@
 
                         <hr>
 
-                        <!-- Social Media: Facebook & Instagram with correct links -->
+                        <!-- Connect with us -->
                         <h5 style="color: #c25328; font-weight: 600;">Connect with us</h5>
-                        <div class="d-flex gap-2 mt-2">
-                            <a href="https://www.facebook.com/profile.php?id=61563689687892" target="_blank" class="social-btn facebook" title="Kahel na Langit on Facebook">
-                                <i class="ti ti-brand-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/int.kahelnalangit/" target="_blank" class="social-btn instagram" title="int.kahelnalangit on Instagram">
-                                <i class="ti ti-brand-instagram"></i>
-                            </a>
+
+                        <!-- Facebook: Blue icon, "Facebook" in ORANGE, "Kahel na Langit" in BLACK -->
+                        <div class="social-item">
+                            <div class="social-icon facebook"><i class="ti ti-brand-facebook"></i></div>
+                            <div>
+                                <span class="social-label">Facebook</span>
+                                <span class="social-handle">
+                                    <a href="https://www.facebook.com/profile.php?id=61563689687892" target="_blank">Kahel na Langit</a>
+                                </span>
+                            </div>
                         </div>
-                        <div class="mt-2">
-                            <small class="text-muted">Facebook: Kahel na Langit</small><br>
-                            <small class="text-muted">Instagram: int.kahelnalangit</small>
+
+                        <!-- Instagram: Pink icon, "Instagram" in ORANGE, "int.kahelnalangit" in BLACK -->
+                        <div class="social-item">
+                            <div class="social-icon instagram"><i class="ti ti-brand-instagram"></i></div>
+                            <div>
+                                <span class="social-label">Instagram</span>
+                                <span class="social-handle">
+                                    <a href="https://www.instagram.com/int.kahelnalangit/" target="_blank">int.kahelnalangit</a>
+                                </span>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
