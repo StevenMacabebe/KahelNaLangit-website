@@ -266,7 +266,7 @@
         }
 
         /* ============================================
-           SECTION TITLES
+           SECTION TITLES - NO LINES
            ============================================ */
         .section-title {
             margin-bottom: 30px;
@@ -274,17 +274,8 @@
             position: relative;
         }
 
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
         /* ============================================
-           UPDATE CARDS
+           UPDATE CARDS - SQUARE IMAGES
            ============================================ */
         .update-card {
             background: #f8f4ed !important;
@@ -301,11 +292,20 @@
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
-        .update-image {
+        .update-image-wrapper {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .update-image-wrapper .update-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
         }
 
         .update-card .card-body {
@@ -347,12 +347,15 @@
             padding: 24px;
         }
 
+        .modal-body .modal-image-wrapper {
+            padding-right: 20px;
+        }
+
         .modal-body .modal-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 16px;
         }
 
         .modal-body .modal-category {
@@ -386,28 +389,17 @@
         }
 
         @media (min-width: 768px) {
-            .modal-body .row {
-                display: flex;
-                align-items: stretch;
-            }
-            .modal-body .modal-image-wrapper {
-                padding-right: 20px;
-            }
             .modal-body .modal-image {
                 height: 100%;
                 min-height: 300px;
-                margin-bottom: 0;
             }
         }
 
         /* ============================================
-           WISHLIST - #365fa9
+           WISHLIST CARDS - SQUARE IMAGES
            ============================================ */
         .wishlist-title {
             color: #365fa9;
-        }
-        .wishlist-title:after {
-            background: #365fa9;
         }
 
         .wishlist-card {
@@ -424,23 +416,36 @@
             box-shadow: 0 0 0 5px #ffffff, 0 12px 25px rgba(0,0,0,.25) !important;
         }
 
-        .wishlist-image {
+        .wishlist-image-wrapper {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishlist-image-wrapper .wishlist-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
         }
 
         .wishlist-placeholder {
             width: 100%;
-            height: 200px;
+            padding-top: 100%;
+            position: relative;
             background: linear-gradient(135deg, #365fa9, #1a3a6b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .wishlist-placeholder .placeholder-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: white;
             font-size: 48px;
-            border-radius: 10px 10px 0 0;
         }
 
         .wishlist-progress .progress-bar {
@@ -452,9 +457,6 @@
            ============================================ */
         .partners-title {
             color: #658107;
-        }
-        .partners-title:after {
-            background: #658107;
         }
 
         .partner-card {
@@ -626,7 +628,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-4">
-                        <h3 class="damayan-title">🏘️ The Damayan Model House</h3>
+                        <h3 class="damayan-title">The Damayan Model House</h3>
                         <p class="damayan-text">
                             We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.
                         </p>
@@ -641,7 +643,7 @@
          ============================================ -->
     @if($updates->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title updates-title text-center">📢 Latest Updates</h2>
+            <h2 class="section-title updates-title text-center">Latest Updates</h2>
             <div class="row">
                 @foreach($updates as $update)
                     <div class="col-md-4 mb-4">
@@ -653,11 +655,13 @@
                              data-image="{{ $update->image ? asset('public/images/uploads/updates/' . $update->image) : '' }}"
                              data-category="{{ ucfirst(str_replace('_', ' ', $update->category)) }}"
                              data-date="{{ $update->created_at->format('M d, Y') }}">
-                            @if($update->image)
-                                <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
-                                     alt="{{ $update->title }}" 
-                                     class="update-image">
-                            @endif
+                            <div class="update-image-wrapper">
+                                @if($update->image)
+                                    <img src="{{ asset('public/images/uploads/updates/' . $update->image) }}" 
+                                         alt="{{ $update->title }}" 
+                                         class="update-image">
+                                @endif
+                            </div>
                             <div class="card-body">
                                 <span class="badge bg-warning mb-2">
                                     {{ ucfirst(str_replace('_', ' ', $update->category)) }}
@@ -685,7 +689,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6 modal-image-wrapper">
+                        <div class="col-md-6">
                             <img id="modalImage" src="" alt="Update Image" class="modal-image">
                         </div>
                         <div class="col-md-6">
@@ -704,23 +708,27 @@
     </div>
 
     <!-- ============================================
-         WISHLIST SECTION - #365fa9 CARDS
+         WISHLIST SECTION - #365fa9 CARDS - SQUARE IMAGES
          ============================================ -->
     @if($wishlist->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title wishlist-title text-center">📋 Community Wishlist</h2>
+            <h2 class="section-title wishlist-title text-center">Community Wishlist</h2>
             <p class="text-center text-muted">Items needed for our community projects</p>
             <div class="row">
                 @foreach($wishlist as $item)
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-sm wishlist-card">
-                            @if($item->image)
-                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
-                                     alt="{{ $item->item_name }}" 
-                                     class="wishlist-image">
-                            @else
-                                <div class="wishlist-placeholder">📦</div>
-                            @endif
+                            <div class="wishlist-image-wrapper">
+                                @if($item->image)
+                                    <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}" 
+                                         alt="{{ $item->item_name }}" 
+                                         class="wishlist-image">
+                                @else
+                                    <div class="wishlist-placeholder">
+                                        <span class="placeholder-icon">📦</span>
+                                    </div>
+                                @endif
+                            </div>
                             <div class="card-body">
                                 <h5>{{ $item->item_name }}</h5>
                                 <p class="text-muted">{{ Str::limit($item->description, 80) }}</p>
@@ -747,7 +755,7 @@
          ============================================ -->
     @if($partnerships->count() > 0)
         <div class="container mt-5">
-            <h2 class="section-title partners-title text-center">🤝 Our Partners</h2>
+            <h2 class="section-title partners-title text-center">Our Partners</h2>
             <div class="row">
                 @foreach($partnerships as $partner)
                     <div class="col-md-4 mb-4">
@@ -780,7 +788,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>🌅 Kahel na Langit</h5>
+                    <h5>Kahel na Langit</h5>
                     <p>Empowering Communities, Building Hope</p>
                     <p><small>© 2026 Kahel na Langit. All rights reserved.</small></p>
                 </div>
@@ -835,11 +843,6 @@
                         modalImage.style.display = 'none';
                     }
                 });
-            });
-
-            // Reset modal on close (optional)
-            modal.addEventListener('hidden.bs.modal', function () {
-                // You can add cleanup if needed
             });
         });
     </script>
