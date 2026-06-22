@@ -79,7 +79,7 @@
         footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
         footer p { color: #faf7e5; font-size: 13px; }
 
-        .form-link { display: inline-block; margin-top: 8px; font-size: 11px; color: #c25328; font-weight: 700; text-decoration: none; background: #fef9e7; border: 1.5px solid #d4a017; border-radius: 8px; padding: 5px 12px; }
+        .form-link { display: inline-block; margin-top: 5px; font-size: 11px; color: #c25328; font-weight: 700; text-decoration: none; background: #fef9e7; border: 1.5px solid #d4a017; border-radius: 8px; padding: 5px 12px; }
 
     </style>
 
@@ -131,7 +131,7 @@
 
         {{-- Hope Strip --}}
         <div class="hope-strip">
-            <img src="{{ asset('public/images/hope-banner.png') }}"
+            <img src="{{ asset('public/images/hope.png') }}"
             alt="Help us bring Hope to Life"
             style="width:100%; border-radius:14px; display:block; margin-bottom:20px;">
         </div>
