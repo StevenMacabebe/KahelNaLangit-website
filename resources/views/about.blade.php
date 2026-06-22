@@ -63,13 +63,20 @@
         .sdg-close        { position:absolute; top:12px; right:14px; background:none; border:none; font-size:18px; color:#888; cursor:pointer; }
 
         /* DAMAYAN COMMUNITY */
-        .damayan-photo    { width: 100%; height: 280px; object-fit: cover; object-position: top; display: block; }
-        .ba-strip         { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-        .ba-strip-label   { font-size: 12px; font-weight: 700; color: #faf7e5; background: #365fa9; padding: 6px 16px; display: block; border-top: 2px solid #365fa9; }
-        .ba-photo         { height: 160px; overflow: hidden; }
+        .damayan-photo    { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 260px; }
+        .location-tag     { font-size: 11px; font-weight: 700; color: #365fa9; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* BEFORE & AFTER TABS */
+        .tabs-inner       { border-top: 2px solid #365fa9; padding: 14px; }
+        .tab-row          { display: flex; gap: 8px; }
+        .tab-btn          { flex: 1; padding: 9px; border: 2px solid #365fa9; background: #faf7e5; color: #365fa9; font-size: 12px; font-weight: 700; border-radius: 10px 10px 0 0; border-bottom: none; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background .2s; }
+        .tab-btn.active   { background: #365fa9; color: #faf7e5; }
+        .tab-panel        { display: none; border: 2px solid #365fa9; border-radius: 0 0 10px 10px; overflow: hidden; }
+        .tab-panel.active { display: block; }
+        .ba-grid          { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .ba-photo         { height: 180px; position: relative; overflow: hidden; }
         .ba-photo img     { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .ba-existing      { background: #e8e0d4; }
-        .ba-proposed      { background: #dce8fc; }
+        .ba-tag           { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,.45); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 12px; border-radius: 20px; white-space: nowrap; }
 
         /* TEAM */
         .team-card        { transition: transform 0.3s; }
@@ -169,99 +176,56 @@
         <span class="sec-eye">The Community</span>
         <div class="card mb-5">
 
-            {{-- Top: photo left + text right --}}
             <div class="row g-0" style="border-bottom: 2px solid #365fa9;">
-                        <div class="col-md-5" style="max-height:280px; overflow:hidden;">
-                            <img src="{{ asset('public/images/community.jpg') }}"
-                                alt="Damayan Community"
-                                class="damayan-photo"
-                                style="border-radius: 12px 0 0 0;">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body d-flex flex-column justify-content-center p-4" style="min-height:280px;">
+                <div class="col-md-5" style="min-height:260px; overflow:hidden;">
+                    <img src="{{ asset('public/images/community.jpg') }}"
+                        alt="Damayan Community"
+                        class="damayan-photo"
+                        style="border-radius:12px 0 0 0;">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body d-flex flex-column justify-content-center p-4" style="min-height:260px;">
+                        <div class="location-tag">Floodway, Taytay, Rizal</div>
                         <div class="icon-badge mb-3">
                             <i class="ti ti-building-community" aria-hidden="true"></i>
                         </div>
                         <h3>The Damayan Community</h3>
-                        <p>We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
+                        <p class="mt-2">We work closely with the Damayan Community in Floodway, Taytay, Rizal, a community that has demonstrated remarkable resilience despite facing challenges such as flooding, economic instability, and limited access to resources. Through the development of the Damayan Model House, we have helped transform a flood-prone environment into a safer and more stable space.</p>
                     </div>
                 </div>
             </div>
 
-            {{-- Bottom: before & after strip --}}
-            <span class="ba-strip-label">Before &amp; After — Ground Floor</span>
-            <div class="ba-strip">
-                <div class="ba-photo">
-                    <img src="{{ asset('public/images/gf-existing.png') }}" alt="Ground Floor Existing">
+            <div class="tabs-inner">
+                <div class="tab-row">
+                    <button class="tab-btn active" onclick="switchTab('gf', this)">Ground Floor</button>
+                    <button class="tab-btn" onclick="switchTab('sf', this)">Second Floor</button>
                 </div>
-                <div class="ba-photo">
-                    <img src="{{ asset('public/images/gf-proposed.png') }}" alt="Ground Floor Proposed">
+                <div class="tab-panel active" id="tab-gf">
+                    <div class="ba-grid">
+                        <div class="ba-photo">
+                            <img src="{{ asset('public/images/gf-existing.jpg') }}" alt="Ground Floor Existing">
+                            <span class="ba-tag">Existing</span>
+                        </div>
+                        <div class="ba-photo">
+                            <img src="{{ asset('public/images/gf-proposed.jpg') }}" alt="Ground Floor Proposed">
+                            <span class="ba-tag">Proposed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-sf">
+                    <div class="ba-grid">
+                        <div class="ba-photo">
+                            <img src="{{ asset('public/images/sf-existing.jpg') }}" alt="Second Floor Existing">
+                            <span class="ba-tag">Existing</span>
+                        </div>
+                        <div class="ba-photo">
+                            <img src="{{ asset('public/images/sf-proposed.jpg') }}" alt="Second Floor Proposed">
+                            <span class="ba-tag">Proposed</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <span class="ba-strip-label">Before &amp; After — Second Floor</span>
-            <div class="ba-strip">
-                <div class="ba-photo">
-                    <img src="{{ asset('public/images/sf-existing.png') }}" alt="Second Floor Existing">
-                </div>
-                <div class="ba-photo">
-                    <img src="{{ asset('public/images/sf-proposed.png') }}" alt="Second Floor Proposed">
-                </div>
-            </div>
-
-        </div>
-
-        <span class="sec-eye text-center d-block">Global Commitments</span>
-        <h2 class="text-center mb-4" style="color:#365fa9;">UN Sustainable Development Goals We Support</h2>
-        <div class="row mb-5">
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg1.png') }}','Goal 1 — No Poverty','KNL helps the Damayan Community overcome economic instability through fundraising, livelihood programs, and sustainable housing support.')">
-                    <img src="{{ asset('public/images/sdg1.png') }}" alt="Goal 1">
-                    <h5>Goal 1</h5>
-                    <p>No Poverty</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg9.png') }}','Goal 9 — Industry, Innovation &amp; Infrastructure','The Damayan Model House demonstrates innovative, flood-resilient construction that brings lasting infrastructure to vulnerable communities.')">
-                    <img src="{{ asset('public/images/sdg9.png') }}" alt="Goal 9">
-                    <h5>Goal 9</h5>
-                    <p>Industry, Innovation &amp; Infrastructure</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg10.png') }}','Goal 10 — Reduced Inequalities','We work to bridge gaps in access to resources, opportunities, and safety for marginalized communities in Floodway, Taytay, Rizal.')">
-                    <img src="{{ asset('public/images/sdg10.png') }}" alt="Goal 10">
-                    <h5>Goal 10</h5>
-                    <p>Reduced Inequalities</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg11.png') }}','Goal 11 — Sustainable Cities &amp; Communities','Our community engagement programs help build safer, more inclusive, and resilient settlements for flood-prone urban communities.')">
-                    <img src="{{ asset('public/images/sdg11.png') }}" alt="Goal 11">
-                    <h5>Goal 11</h5>
-                    <p>Sustainable Cities &amp; Communities</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg13.png') }}','Goal 13 — Climate Action','By transforming flood-prone areas into stable environments, KNL directly addresses the impact of climate change on vulnerable communities.')">
-                    <img src="{{ asset('public/images/sdg13.png') }}" alt="Goal 13">
-                    <h5>Goal 13</h5>
-                    <p>Climate Action</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center h-100 sdg-badge" style="cursor:pointer;"
-                    onclick="openSdg('{{ asset('public/images/sdg17.png') }}','Goal 17 — Partnerships for the Goals','KNL collaborates with organizations, donors, and volunteers to amplify impact and create lasting change for the Damayan Community.')">
-                    <img src="{{ asset('public/images/sdg17.png') }}" alt="Goal 17">
-                    <h5>Goal 17</h5>
-                    <p>Partnerships for the Goals</p>
-                </div>
-            </div>
         </div>
 
         <hr class="sec-divider">
