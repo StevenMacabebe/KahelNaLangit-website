@@ -80,7 +80,7 @@
         /* PROCEEDS */
         .proc-card        { background: #faf7e5; border: 2px solid #d4a017; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; height: 100%; }
         .proc-card:hover  { transform: translateY(-5px); box-shadow: 0 0 0 3px #d4a017, 0 14px 28px rgba(0,0,0,.15); }
-        .proc-card i      { font-size: 22px; color: #d4a017; margin-bottom: 6px; display: block; }
+        .proc-card i      { font-size: 40px; color: #d4a017; margin-bottom: 6px; display: block; }
         .proc-card p      { font-size: 11px; color: #555; font-weight: 600; }
 
         /* THANK YOU */
