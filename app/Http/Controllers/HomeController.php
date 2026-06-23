@@ -19,6 +19,6 @@ class HomeController extends Controller
         // Get current partnerships
         $partnerships = Partnership::where('status', 'current')->get();
 
-        return view('login', compact('updates', 'wishlist', 'partnerships'));
+        return view('home', compact('updates', 'wishlist', 'partnerships'));
     }
 }
