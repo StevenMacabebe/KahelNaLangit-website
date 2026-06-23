@@ -175,7 +175,7 @@
                         <li class="nav-item">
                             <form method="POST" action="/logout" class="d-inline">
                                 @csrf
-                                <button type="submit" class="btn-logout-nav">Logout</button>
+                                <button type="submit" class="nav-link btn-login" style="border:none; cursor:pointer;">Logout</button>
                             </form>
                         </li>
                     @else
