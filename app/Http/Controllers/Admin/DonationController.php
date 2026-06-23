@@ -17,45 +17,78 @@ class DonationController extends Controller
 
     public function update(Request $request)
     {
+        // Validation – only GCash, BDO, Maya, and guidelines
         $request->validate([
             'guidelines' => 'nullable|string',
-            'bank1_name' => 'nullable|string|max:255',
-            'bank1_account_name' => 'nullable|string|max:255',
-            'bank1_account_number' => 'nullable|string|max:255',
-            'bank2_name' => 'nullable|string|max:255',
-            'bank2_account_name' => 'nullable|string|max:255',
-            'bank2_account_number' => 'nullable|string|max:255',
+
+            // GCash
             'gcash_name' => 'nullable|string|max:255',
             'gcash_number' => 'nullable|string|max:255',
             'gcash_qr' => 'nullable|image|max:2048',
+
+            // BDO
+            'bdo_bank_name' => 'nullable|string|max:255',
+            'bdo_account_name' => 'nullable|string|max:255',
+            'bdo_account_number' => 'nullable|string|max:255',
+            'bdo_qr' => 'nullable|image|max:2048',
+
+            // Maya
+            'maya_bank_name' => 'nullable|string|max:255',
+            'maya_account_name' => 'nullable|string|max:255',
+            'maya_account_number' => 'nullable|string|max:255',
+            'maya_qr' => 'nullable|image|max:2048',
         ]);
 
         $donation = DonationChannel::first();
-        $data = $request->except('gcash_qr');
 
-        if ($request->hasFile('gcash_qr')) {
-            // Delete old image if exists
-            if ($donation && $donation->gcash_qr) {
-                $oldPath = public_path('images/uploads/donations/' . $donation->gcash_qr);
+        // Only take the fields we want (exclude all QR file inputs)
+        $data = $request->only([
+            'guidelines',
+            'gcash_name',
+            'gcash_number',
+            'bdo_bank_name',
+            'bdo_account_name',
+            'bdo_account_number',
+            'maya_bank_name',
+            'maya_account_name',
+            'maya_account_number',
+        ]);
+
+        // Helper to upload a QR file and return new filename (or keep old)
+        $uploadQR = function ($file, $existingFilename) {
+            if (!$file) {
+                return $existingFilename; // keep existing if no new file
+            }
+
+            // Delete old file if it exists
+            if ($existingFilename) {
+                $oldPath = public_path('images/uploads/donations/' . $existingFilename);
                 if (File::exists($oldPath)) {
                     File::delete($oldPath);
                 }
             }
 
-            // Upload new image
-            $file = $request->file('gcash_qr');
+            // Store new file
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('images/uploads/donations'), $filename);
-            $data['gcash_qr'] = $filename;
-        }
+            return $filename;
+        };
+
+        // Process each QR image
+        $data['gcash_qr'] = $uploadQR($request->file('gcash_qr'), $donation?->gcash_qr);
+        $data['bdo_qr']    = $uploadQR($request->file('bdo_qr'), $donation?->bdo_qr);
+        $data['maya_qr']   = $uploadQR($request->file('maya_qr'), $donation?->maya_qr);
+
+        // Set the admin who updated this record
+        $data['updated_by'] = auth()->guard('admin')->id();
 
         if ($donation) {
             $donation->update($data);
         } else {
-            $data['updated_by'] = auth()->guard('admin')->id();
             DonationChannel::create($data);
         }
 
-        return redirect()->route('admin.donations.edit')->with('success', 'Donation details updated successfully! QR code saved.');
+        return redirect()->route('admin.donations.edit')
+                         ->with('success', 'Donation details updated successfully!');
     }
 }
