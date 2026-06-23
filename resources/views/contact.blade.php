@@ -25,6 +25,11 @@
             .page-header      { background: #d771ab; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; margin-bottom: 24px}
             .page-header h1 { font-weight: 700; font-size: 2.5rem; color: #faf7e5;}
             .page-header .lead { opacity: 0.85; font-size: 15px; color: #faf7e5; }
+                    
+            /* VOICE STRIP */
+            .voice-banner { width: 100%; border-radius: 14px; display: block; margin-bottom: 20px; border: none !important; transition: transform .25s, box-shadow .25s; cursor: pointer; }
+            .voice-banner:hover { transform: translateY(-4px); box-shadow: 0 0 0 3px #d771ab, 0 14px 28px rgba(0,0,0,.15); border-radius: 14px; }
+
 
             /* ── ANIMATIONS ── */
             @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
@@ -171,6 +176,11 @@
         </div>
 
         <div class="container mt-2">
+                    
+            {{-- Voice Banner Image --}}
+            <img src="{{ asset('public/images/voice.png') }}"
+             alt="Help us bring Voice to Life"
+             class="voice-banner">
 
             {{-- Info Cards --}}
             <div class="row g-3 mb-4">
