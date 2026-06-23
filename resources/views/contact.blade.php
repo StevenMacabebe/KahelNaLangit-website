@@ -276,8 +276,7 @@
                                     <span class="faq-q-text"><i class="ti ti-circle-check" aria-hidden="true"></i>How can I become a partner?</span>
                                     <span class="faq-arrow">▾</span>
                                 </button>
-                                <div class="faq-answer">Visit our Partnerships page or send us a message and our team will reach out to discuss opportunities.</div>
-                            </div>
+                                <div class="faq-answer">Simply send us a message using the form on this page! Just put <strong>"Partnership Inquiry"</strong> as your subject and tell us a bit about yourself or your organization. Our team will reach out to discuss collaboration opportunities with you.</div>
                             <div class="faq-item">
                                 <button class="faq-btn" onclick="toggleFaq(this)">
                                     <span class="faq-q-text"><i class="ti ti-circle-check" aria-hidden="true"></i>How long before I get a reply?</span>
