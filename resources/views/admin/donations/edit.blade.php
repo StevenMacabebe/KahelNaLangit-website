@@ -83,7 +83,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h2>💰 Manage Donation Channels</h2>
-                        <p class="text-muted">Update bank details, GCash information, and donation guidelines.</p>
+                        <p class="text-muted">Update GCash, BDO, Maya details, and donation guidelines.</p>
 
                         @if(session('success'))
                             <div class="alert alert-success alert-dismissible fade show">
@@ -114,48 +114,6 @@
                             @csrf
                             @method('PUT')
 
-                            <!-- Bank 1 -->
-                            <h4 class="mt-3 border-bottom pb-2">🏦 Bank 1</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="bank1_name" class="form-label">Bank Name</label>
-                                        <input type="text" class="form-control" id="bank1_name" name="bank1_name" value="{{ $donation->bank1_name ?? '' }}" placeholder="e.g., BDO Unibank">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="bank1_account_name" class="form-label">Account Name</label>
-                                        <input type="text" class="form-control" id="bank1_account_name" name="bank1_account_name" value="{{ $donation->bank1_account_name ?? '' }}" placeholder="e.g., Kahel na Langit Foundation">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="bank1_account_number" class="form-label">Account Number</label>
-                                <input type="text" class="form-control" id="bank1_account_number" name="bank1_account_number" value="{{ $donation->bank1_account_number ?? '' }}" placeholder="e.g., 1234-5678-9012">
-                            </div>
-
-                            <!-- Bank 2 -->
-                            <h4 class="mt-3 border-bottom pb-2">🏦 Bank 2</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="bank2_name" class="form-label">Bank Name</label>
-                                        <input type="text" class="form-control" id="bank2_name" name="bank2_name" value="{{ $donation->bank2_name ?? '' }}" placeholder="e.g., BPI">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="bank2_account_name" class="form-label">Account Name</label>
-                                        <input type="text" class="form-control" id="bank2_account_name" name="bank2_account_name" value="{{ $donation->bank2_account_name ?? '' }}" placeholder="e.g., Kahel na Langit Foundation">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="bank2_account_number" class="form-label">Account Number</label>
-                                <input type="text" class="form-control" id="bank2_account_number" name="bank2_account_number" value="{{ $donation->bank2_account_number ?? '' }}" placeholder="e.g., 9876-5432-1098">
-                            </div>
-
                             <!-- GCash -->
                             <h4 class="mt-3 border-bottom pb-2">📱 GCash</h4>
                             <div class="row">
@@ -173,11 +131,9 @@
                                 </div>
                             </div>
 
-                            <!-- QR Code Upload -->
-                            <h4 class="mt-3 border-bottom pb-2">📸 GCash QR Code</h4>
+                            <!-- GCash QR -->
+                            <h5>📸 GCash QR Code</h5>
                             <div class="mb-3">
-                                <label for="gcash_qr" class="form-label">Upload QR Code</label>
-                                
                                 @if(isset($donation) && $donation->gcash_qr)
                                     <div class="mb-2">
                                         <p class="current-image-label">✅ Current QR Code:</p>
@@ -189,8 +145,85 @@
                                 @else
                                     <p class="text-muted">📷 No QR code uploaded yet.</p>
                                 @endif
-                                
                                 <input type="file" class="form-control" id="gcash_qr" name="gcash_qr" accept="image/*" onchange="previewImage(event)">
+                                <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
+                            </div>
+
+                            <!-- BDO -->
+                            <h4 class="mt-3 border-bottom pb-2">🏦 BDO</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bdo_bank_name" class="form-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="bdo_bank_name" name="bdo_bank_name" value="{{ $donation->bdo_bank_name ?? '' }}" placeholder="BDO Unibank">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bdo_account_name" class="form-label">Account Name</label>
+                                        <input type="text" class="form-control" id="bdo_account_name" name="bdo_account_name" value="{{ $donation->bdo_account_name ?? '' }}" placeholder="e.g., Kahel na Langit Foundation">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="bdo_account_number" class="form-label">Account Number</label>
+                                <input type="text" class="form-control" id="bdo_account_number" name="bdo_account_number" value="{{ $donation->bdo_account_number ?? '' }}" placeholder="e.g., 1234-5678-9012">
+                            </div>
+
+                            <!-- BDO QR -->
+                            <h5>📸 BDO QR Code</h5>
+                            <div class="mb-3">
+                                @if(isset($donation) && $donation->bdo_qr)
+                                    <div class="mb-2">
+                                        <p class="current-image-label">✅ Current QR Code:</p>
+                                        <img src="{{ asset('public/images/uploads/donations/' . $donation->bdo_qr) }}" 
+                                             alt="BDO QR" 
+                                             class="preview-image">
+                                        <p class="upload-hint">Upload a new image to replace the current QR code.</p>
+                                    </div>
+                                @else
+                                    <p class="text-muted">📷 No QR code uploaded yet.</p>
+                                @endif
+                                <input type="file" class="form-control" id="bdo_qr" name="bdo_qr" accept="image/*" onchange="previewImage(event)">
+                                <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
+                            </div>
+
+                            <!-- Maya -->
+                            <h4 class="mt-3 border-bottom pb-2">💳 Maya</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="maya_bank_name" class="form-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="maya_bank_name" name="maya_bank_name" value="{{ $donation->maya_bank_name ?? '' }}" placeholder="Maya Bank">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="maya_account_name" class="form-label">Account Name</label>
+                                        <input type="text" class="form-control" id="maya_account_name" name="maya_account_name" value="{{ $donation->maya_account_name ?? '' }}" placeholder="e.g., Kahel na Langit Foundation">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="maya_account_number" class="form-label">Account Number</label>
+                                <input type="text" class="form-control" id="maya_account_number" name="maya_account_number" value="{{ $donation->maya_account_number ?? '' }}" placeholder="e.g., 9876-5432-1098">
+                            </div>
+
+                            <!-- Maya QR -->
+                            <h5>📸 Maya QR Code</h5>
+                            <div class="mb-3">
+                                @if(isset($donation) && $donation->maya_qr)
+                                    <div class="mb-2">
+                                        <p class="current-image-label">✅ Current QR Code:</p>
+                                        <img src="{{ asset('public/images/uploads/donations/' . $donation->maya_qr) }}" 
+                                             alt="Maya QR" 
+                                             class="preview-image">
+                                        <p class="upload-hint">Upload a new image to replace the current QR code.</p>
+                                    </div>
+                                @else
+                                    <p class="text-muted">📷 No QR code uploaded yet.</p>
+                                @endif
+                                <input type="file" class="form-control" id="maya_qr" name="maya_qr" accept="image/*" onchange="previewImage(event)">
                                 <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
                             </div>
 
