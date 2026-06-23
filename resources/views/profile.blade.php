@@ -20,76 +20,13 @@
         }
         .wrapper { flex: 1; }
 
-        /* ============================================
-           NAVBAR - MATCHES CONTACT PAGE
-           ============================================ */
-        .navbar {
-            background: #c25328 !important;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
+        /* NAVBAR */
+        .navbar           { background: #c25328 !important; }
         .navbar-brand,
-        .nav-link {
-            color: #faf7e5 !important;
-            font-weight: 500;
-        }
+        .nav-link         { color: #faf7e5 !important; font-weight: 500; }
+        .nav-link:hover   { opacity: 0.8; }
+        .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
 
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .nav-link:hover {
-            opacity: 0.8;
-        }
-
-        .nav-link.btn-login {
-            background: #faf7e5;
-            color: #c25328 !important;
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 700;
-            border: none;
-        }
-
-        .nav-link.btn-login:hover {
-            background: #e8e0d0;
-            opacity: 1;
-        }
-
-        .btn-logout-nav {
-            background: transparent;
-            color: #faf7e5 !important;
-            border: 1.5px solid rgba(255,255,255,0.4);
-            border-radius: 20px;
-            padding: 6px 18px !important;
-            font-weight: 500;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-logout-nav:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.7);
-        }
-
-        .navbar-toggler {
-            border: 2px solid rgba(255,255,255,0.8);
-            padding: 4px 10px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
 
         @media (max-width: 991px) {
             .navbar-nav {
