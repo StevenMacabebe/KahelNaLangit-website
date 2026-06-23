@@ -11,7 +11,39 @@
     <style>
         body {
             background-color: #faf7e5;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Headings */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .dashboard-title,
+        .sidebar h4,
+        .card h5 {
+            font-family: 'Aggrandir', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Body Text */
+        p,
+        span,
+        div,
+        label,
+        input,
+        textarea,
+        select,
+        button,
+        .btn,
+        .sidebar a,
+        table,
+        td,
+        th,
+        small {
+            font-family: 'Poppins', sans-serif;
         }
 
         .sidebar {
