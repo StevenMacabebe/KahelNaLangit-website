@@ -10,23 +10,23 @@
 
     <style>
 
-        /* BASE */
-        body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
-=       .wrapper { flex: 1; }
+            /* BASE */
+            body  { font-family: 'Poppins', sans-serif; background: #faf7e5; min-height: 100vh; }
+            .wrapper { flex: 1; }
 
-        /* NAVBAR */
-        .navbar           { background: #c25328 !important; }
-        .navbar-brand,
-        .nav-link         { color: #faf7e5 !important; font-weight: 500; }
-        .nav-link:hover   { opacity: 0.8; }
-        .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
+            /* NAVBAR */
+            .navbar           { background: #c25328 !important; }
+            .navbar-brand,
+            .nav-link         { color: #faf7e5 !important; font-weight: 500; }
+            .nav-link:hover   { opacity: 0.8; }
+            .btn-login        { background: #faf7e5; color: #c25328 !important; border-radius: 20px; padding: 4px 14px !important; font-weight: 700; }
 
-        /* HEADER */
-        .page-header      { background: #d771ab; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; margin-bottom: 24px}
-        .page-header h1 { font-weight: 700; font-size: 2.5rem; color: #faf7e5;}
-        .page-header .lead { opacity: 0.85; font-size: 15px; color: #faf7e5; }
+            /* HEADER */
+            .page-header      { background: #d771ab; color: #faf7e5; padding: 40px 0 32px; margin-bottom: 24px; margin-bottom: 24px}
+            .page-header h1 { font-weight: 700; font-size: 2.5rem; color: #faf7e5;}
+            .page-header .lead { opacity: 0.85; font-size: 15px; color: #faf7e5; }
 
-        /* ── ANIMATIONS ── */
+            /* ── ANIMATIONS ── */
             @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
             @keyframes slideUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
             @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
@@ -118,8 +118,13 @@
                 .next-step { display: flex; align-items: center; gap: 12px; text-align: left; }
                 .next-num { margin: 0; flex-shrink: 0; }
             }
+
+            /* FOOTER */
+            footer { background: #c25328; color: #faf7e5; padding: 20px 0; text-align: center; margin-top: 40px; }
+            footer p { color: #faf7e5; font-size: 13px; }
         </style>
-    </head>
+</head>
+
     <body>
     <div class="wrapper">
 
