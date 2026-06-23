@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Manage Wishlist')
+@section('title', 'Wishlist')
 
 @section('content')
 
