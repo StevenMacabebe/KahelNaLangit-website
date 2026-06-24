@@ -47,20 +47,6 @@
         box-shadow: 0 1rem 2.1875rem rgba(0,0,0,.12);
     }
 
-    .stat-card::after {
-        content: '';
-
-        position: absolute;
-        top: -1.5625rem;
-        right: -1.5625rem;
-
-        width: 6.875rem;
-        height: 6.875rem;
-
-        border-radius: 50%;
-        background: rgba(255,255,255,.12);
-    }
-
     .stat-card h5 {
         margin-bottom: 0.5rem;
 
