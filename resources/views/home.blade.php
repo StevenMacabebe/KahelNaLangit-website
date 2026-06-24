@@ -685,7 +685,7 @@
                                 </form>
                             </li>
                         @else
-                            <li class="nav-item"><a class="nav-link btn-login" href="/auth/login">Login/Register</a></li>
+                            <li class="nav-item"><a class="nav-link btn-login" href="/login">Login/Register</a></li>
                         @endauth
                     </ul>
                 </div>
