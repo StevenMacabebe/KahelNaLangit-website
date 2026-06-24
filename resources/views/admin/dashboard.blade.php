@@ -11,12 +11,16 @@
 @push('styles')
 <style>
 
+    /* =========================
+    DASHBOARD GRID
+    ========================= */
+
     .dashboard-grid {
         margin-bottom: 2rem;
     }
 
     /* =========================
-       STAT CARDS
+    STAT CARDS
     ========================= */
 
     .stat-card {
@@ -24,9 +28,9 @@
         overflow: hidden;
 
         padding: 1.5rem;
-        border-radius: 20px;
+        border-radius: 1.25rem;
 
-        min-height: 140px;
+        min-height: 8.75rem;
 
         color: white;
 
@@ -34,33 +38,33 @@
         flex-direction: column;
         justify-content: center;
 
-        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        box-shadow: 0 0.625rem 1.5625rem rgba(0,0,0,.08);
         transition: all .25s ease;
     }
 
     .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 16px 35px rgba(0,0,0,.12);
+        transform: translateY(-0.3125rem);
+        box-shadow: 0 1rem 2.1875rem rgba(0,0,0,.12);
     }
 
     .stat-card::after {
         content: '';
 
         position: absolute;
-        top: -25px;
-        right: -25px;
+        top: -1.5625rem;
+        right: -1.5625rem;
 
-        width: 110px;
-        height: 110px;
+        width: 6.875rem;
+        height: 6.875rem;
 
         border-radius: 50%;
         background: rgba(255,255,255,.12);
     }
 
     .stat-card h5 {
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
 
-        font-size: .95rem;
+        font-size: 0.95rem;
         font-weight: 600;
 
         opacity: .95;
@@ -73,29 +77,34 @@
         font-weight: 700;
     }
 
-    /* KEEPING YOUR COLORS */
+    /* =========================
+    CARDS
+    ========================= */
 
     .updates-card {
         background: linear-gradient(
             135deg,
-            #930000,
-            #bb2323
+            #930000 0%,
+            #a61a1a 45%,
+            #bb2323 100%
         );
     }
 
     .partnership-card {
         background: linear-gradient(
             135deg,
-            #658107,
-            #87ab12
+            #658107 0%,
+            #7a9910 45%,
+            #87ab12 100%
         );
     }
 
     .wishlist-card {
         background: linear-gradient(
             135deg,
-            #eab000,
-            #ffc928
+            #eab000 0%,
+            #f2bf1a 45%,
+            #ffc928 100%
         );
 
         color: #3f3000;
@@ -109,22 +118,23 @@
     .inquiries-card {
         background: linear-gradient(
             135deg,
-            #89479a,
-            #a55cbc
+            #89479a 0%,
+            #9754a8 45%,
+            #a55cbc 100%
         );
     }
 
     /* =========================
-       CONTENT CARDS
+    CONTENT CARDS
     ========================= */
 
     .dashboard-card {
         border: none;
-        border-radius: 20px;
+        border-radius: 1.25rem;
 
         background: #fff;
 
-        box-shadow: 0 8px 24px rgba(0,0,0,.06);
+        box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.06);
     }
 
     .dashboard-card .card-body {
@@ -141,27 +151,27 @@
     }
 
     /* =========================
-       QUICK ACTIONS
+    QUICK ACTIONS
     ========================= */
 
     .quick-action-btn {
-        padding: .9rem 1rem;
-        border-radius: 14px;
+        padding: 0.9rem 1rem;
+        border-radius: 0.875rem;
         font-weight: 600;
     }
 
     /* =========================
-       RECENT UPDATES
+    RECENT UPDATES
     ========================= */
 
     .list-group {
-        border-radius: 14px;
+        border-radius: 0.875rem;
         overflow: hidden;
     }
 
     .list-group-item {
         border: none;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 0.0625rem solid #f0f0f0;
 
         padding: 1rem 1.25rem;
 
@@ -176,11 +186,11 @@
         background: rgba(255,108,39,.12);
         color: var(--orange-dark);
 
-        padding: .45rem .85rem;
+        padding: 0.45rem 0.85rem;
 
-        border-radius: 999px;
+        border-radius: 62.4375rem;
 
-        font-size: .8rem;
+        font-size: 0.8rem;
         font-weight: 600;
     }
 
@@ -189,16 +199,19 @@
         color: #8d8d8d;
     }
 
-    @media (max-width: 768px) {
+    /* =========================
+    MOBILE
+    ========================= */
+
+    @media (max-width: 48rem) {
 
         .stat-card {
-            min-height: 120px;
+            min-height: 7.5rem;
         }
 
         .stat-card h3 {
             font-size: 2rem;
         }
-
     }
 
 </style>
