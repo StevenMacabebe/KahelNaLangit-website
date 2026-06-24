@@ -3,7 +3,7 @@
 ========================= */
 
 :root {
-    --sidebar-width: 280px;
+    --sidebar-width: 17.5rem;
 
     --primary: #c25328;
     --primary-dark: #9e3d18;
@@ -31,24 +31,24 @@ body {
     padding: 0;
 }
 
-h1 {
-    font-size: 40px;
-    font-weight: 700;
-}
+/* TYPOGRAPHY SCALE */
 
 h2 {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 h3 {
-    font-size: 34px;
+    font-size: 2.125rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 h5 {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 /* =========================
@@ -60,25 +60,24 @@ h5 {
     top: 0;
     z-index: 1000;
 
-    margin-left: 280px;
-    min-height: 80px;
+    margin-left: 17.5rem;
+    min-height: 5rem;
     padding: 0.9rem 1.75rem;
 
     background:
         linear-gradient(
             135deg,
             #c25328 0%,
+            #d86634 35%,
+            #e07a3f 70%,
             #d86634 100%
         );
 
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 
-    box-shadow:
-        0 4px 20px rgba(0,0,0,.08);
+    box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.08);
 
-    transition:
-        margin-left .3s ease;
+    transition: margin-left .3s ease;
 }
 
 .navbar.expanded {
