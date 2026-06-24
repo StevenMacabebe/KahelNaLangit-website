@@ -32,17 +32,22 @@ body {
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 36px;
     font-weight: 700;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 700;
 }
 
 h5 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
 }
 
