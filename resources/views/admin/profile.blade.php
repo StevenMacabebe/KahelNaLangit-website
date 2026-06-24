@@ -98,7 +98,7 @@
 
             <a href="{{ route('admin.dashboard') }}"
                  class="btn btn-secondary">
-                ← Back to Dashboard
+                Back to Dashboard
             </a>
 
         </form>
