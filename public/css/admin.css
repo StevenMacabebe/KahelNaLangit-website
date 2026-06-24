@@ -37,12 +37,12 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
 }
 
 h5 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -443,7 +443,7 @@ h5 {
     border-radius: 12px;
 
     color: white;
-    font-size: 18px;
+    font-size: 24px;
 
     cursor: pointer;
 
