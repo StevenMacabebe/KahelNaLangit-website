@@ -51,9 +51,8 @@
             style="display:inline;">
             @csrf
 
-            <a href="{{ route('admin.profile') }}"
-            onclick="event.preventDefault(); this.closest('form').submit();"
-            class="{{ request()->routeIs('admin.profile') ? 'active' : '' }}">
+            <a href="#"
+            onclick="event.preventDefault(); this.closest('form').submit();">
                 Logout
             </a>
         </form>
