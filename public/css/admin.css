@@ -808,7 +808,7 @@ h5 {
 
 .table-responsive {
     border-radius: 1.25rem;
-    overflow-x: auto;
+    overflow: auto;
 }
 
 .table {
