@@ -27,6 +27,7 @@
 <div class="card">
     <div class="card-body">
 
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -37,6 +38,7 @@
                     <th>Status</th>
                     <th width="180">Actions</th>
                 </tr>
+    </div>
             </thead>
 
             <tbody>

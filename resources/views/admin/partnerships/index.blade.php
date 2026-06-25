@@ -26,86 +26,86 @@
 
 <div class="card">
     <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
 
-        <table class="table table-bordered align-middle">
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Banner</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th width="180">Actions</th>
+                        </tr>
+                    </thead>
 
-            <thead>
-                <tr>
-                    <th>Logo</th>
-                    <th>Banner</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th width="180">Actions</th>
-                </tr>
-            </thead>
+                <tbody>
 
-            <tbody>
+                    @foreach($partnerships as $partnership)
+                        <tr>
 
-                @foreach($partnerships as $partnership)
-                    <tr>
+                            <td>
+                                @if($partnership->logo)
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}"
+                                        alt="{{ $partnership->name }}"
+                                        class="logo-thumb">
+                                @else
+                                    <span class="text-muted">
+                                        No logo
+                                    </span>
+                                @endif
+                            </td>
 
-                        <td>
-                            @if($partnership->logo)
-                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->logo) }}"
-                                     alt="{{ $partnership->name }}"
-                                     class="logo-thumb">
-                            @else
-                                <span class="text-muted">
-                                    No logo
+                            <td>
+                                @if($partnership->banner_image)
+                                    <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}"
+                                        alt="{{ $partnership->name }}"
+                                        class="banner-thumb">
+                                @else
+                                    <span class="text-muted">
+                                        No banner
+                                    </span>
+                                @endif
+                            </td>
+
+                            <td>
+                                {{ $partnership->name }}
+                            </td>
+
+                            <td>
+                                <span class="badge bg-{{ $partnership->status === 'current' ? 'success' : 'secondary' }}">
+                                    {{ ucfirst($partnership->status) }}
                                 </span>
-                            @endif
-                        </td>
+                            </td>
 
-                        <td>
-                            @if($partnership->banner_image)
-                                <img src="{{ asset('public/images/uploads/partnerships/' . $partnership->banner_image) }}"
-                                     alt="{{ $partnership->name }}"
-                                     class="banner-thumb">
-                            @else
-                                <span class="text-muted">
-                                    No banner
-                                </span>
-                            @endif
-                        </td>
+                            <td>
+                                <a href="{{ route('admin.partnerships.edit', $partnership->id) }}"
+                                class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
 
-                        <td>
-                            {{ $partnership->name }}
-                        </td>
+                                <form method="POST"
+                                    action="{{ route('admin.partnerships.destroy', $partnership->id) }}"
+                                    class="d-inline">
 
-                        <td>
-                            <span class="badge bg-{{ $partnership->status === 'current' ? 'success' : 'secondary' }}">
-                                {{ ucfirst($partnership->status) }}
-                            </span>
-                        </td>
+                                    @csrf
+                                    @method('DELETE')
 
-                        <td>
-                            <a href="{{ route('admin.partnerships.edit', $partnership->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Edit
-                            </a>
+                                    <button type="submit"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Delete this partnership?')">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
 
-                            <form method="POST"
-                                  action="{{ route('admin.partnerships.destroy', $partnership->id) }}"
-                                  class="d-inline">
+                        </tr>
+                    @endforeach
 
-                                @csrf
-                                @method('DELETE')
+                </tbody>
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Delete this partnership?')">
-                                    Delete
-                                </button>
-                            </form>
-                        </td>
-
-                    </tr>
-                @endforeach
-
-            </tbody>
-
-        </table>
-
+            </table>
+        </div>
     </div>
 </div>
 

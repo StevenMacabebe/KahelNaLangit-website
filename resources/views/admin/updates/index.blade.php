@@ -26,18 +26,19 @@
 
 <div class="card">
     <div class="card-body">
-
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Event Date</th>
-                    <th width="180">Actions</th>
-                </tr>
-            </thead>
-
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Event Date</th>
+                        <th width="180">Actions</th>
+                    </tr>
+                </thead>
+        </div>
+        
             <tbody>
                 @forelse($updates as $update)
                     <tr>
