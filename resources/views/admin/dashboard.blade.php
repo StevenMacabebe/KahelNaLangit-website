@@ -92,8 +92,6 @@
             #f2bf1a 45%,
             #ffc928 100%
         );
-
-        color: #3f3000;
     }
 
     .wishlist-card h5,
