@@ -807,14 +807,18 @@ h5 {
 ========================= */
 
 .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
     border-radius: 1.25rem;
-    overflow: auto;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 .table {
     min-width: 62.5rem;
 }
-
 /* Updates */
 
 .update-thumb {
