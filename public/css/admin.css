@@ -28,6 +28,8 @@ body {
     background: #faf7e5;
     
     min-height: 100vh;
+    min-width: 75rem;
+    overflow-x: auto;
 
     margin: 0;
     padding: 0;
@@ -808,11 +810,6 @@ h5 {
 
 .table-responsive {
     border-radius: 1.25rem;
-    overflow-x: auto;
-}
-
-.table {
-    min-width: 62.5rem; 
 }
 
 /* Updates */
