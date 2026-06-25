@@ -32,8 +32,6 @@
 
         min-height: 8.75rem;
 
-        color: white;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
