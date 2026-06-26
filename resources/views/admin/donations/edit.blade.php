@@ -177,10 +177,11 @@
             </div>
 
             <!-- Buttons -->
-            <div class="mt-4">
+            <div class="btn-group-admin">
                 <button type="submit" class="btn btn-primary btn-lg">
                     Save Donation Details
                 </button>
+
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary btn-lg">
                     Back to Dashboard
                 </a>

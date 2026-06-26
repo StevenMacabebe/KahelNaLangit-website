@@ -80,25 +80,30 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('admin.wishlist.edit', $item->id) }}"
-                                   class="btn btn-warning btn-sm">
-                                    Edit
-                                </a>
 
-                                <form method="POST"
-                                      action="{{ route('admin.wishlist.destroy', $item->id) }}"
-                                      class="d-inline">
+                                <div class="table-actions">
 
-                                    @csrf
-                                    @method('DELETE')
+                                    <a href="{{ route('admin.wishlist.edit', $item->id) }}"
+                                    class="btn btn-warning btn-sm">
+                                        Edit
+                                    </a>
 
-                                    <button type="submit"
-                                            class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Delete this item?')">
-                                        Delete
-                                    </button>
+                                    <form method="POST"
+                                        action="{{ route('admin.wishlist.destroy', $item->id) }}">
 
-                                </form>
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Delete this item?')">
+                                            Delete
+                                        </button>
+
+                                    </form>
+
+                                </div>
+
                             </td>
 
                         </tr>

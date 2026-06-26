@@ -8,6 +8,8 @@
     Edit Update
 @endsection
 
+@section('content')
+
 <div class="card">
     <div class="card-body">
 
@@ -137,15 +139,19 @@
                      class="preview-image">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Update
-            </button>
+            <div class="btn-group-admin">
 
-            <a href="{{ route('admin.updates.index') }}"
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Update
+                </button>
+
+                <a href="{{ route('admin.updates.index') }}"
                 class="btn btn-secondary">
-                Cancel
-            </a>
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 

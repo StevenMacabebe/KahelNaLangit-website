@@ -79,24 +79,30 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('admin.partnerships.edit', $partnership->id) }}"
-                                class="btn btn-warning btn-sm">
-                                    Edit
-                                </a>
 
-                                <form method="POST"
-                                    action="{{ route('admin.partnerships.destroy', $partnership->id) }}"
-                                    class="d-inline">
+                                <div class="table-actions">
 
-                                    @csrf
-                                    @method('DELETE')
+                                    <a href="{{ route('admin.partnerships.edit', $partnership->id) }}"
+                                    class="btn btn-warning btn-sm">
+                                        Edit
+                                    </a>
 
-                                    <button type="submit"
-                                            class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Delete this partnership?')">
-                                        Delete
-                                    </button>
-                                </form>
+                                    <form method="POST"
+                                        action="{{ route('admin.partnerships.destroy', $partnership->id) }}">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Delete this partnership?')">
+                                            Delete
+                                        </button>
+
+                                    </form>
+
+                                </div>
+
                             </td>
 
                         </tr>

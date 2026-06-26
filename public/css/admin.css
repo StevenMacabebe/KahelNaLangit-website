@@ -664,6 +664,36 @@ h5 {
     border-radius: 0.75rem;
 }
 
+/* BUTTON GROUPS */
+
+.btn-group-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin-top: 1.5rem;
+}
+
+.btn-group-admin .btn,
+.btn-group-admin a {
+    flex: 0 0 auto;
+}
+
+/* MOBILE */
+
+@media (max-width: 48rem) {
+
+    .btn-group-admin {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-group-admin .btn,
+    .btn-group-admin a {
+        width: 100%;
+    }
+}
+
 /* DISABLED */
 
 .btn:disabled,
@@ -762,6 +792,39 @@ h5 {
 
 .table {
     min-width: 62.5rem;
+}
+
+/* TABLE ACTIONS */
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.table-actions form {
+    margin: 0;
+}
+
+/* FORM ACTIONS */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    margin-top: 1.5rem;
+}
+
+.form-actions form {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    margin: 0;
 }
 
 /* Updates */

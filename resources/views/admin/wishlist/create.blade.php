@@ -110,15 +110,19 @@
                      class="preview-image">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Save Item
-            </button>
+            <div class="btn-group-admin">
 
-            <a href="{{ route('admin.wishlist.index') }}"
-               class="btn btn-secondary">
-                Cancel
-            </a>
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Save Item
+                </button>
+
+                <a href="{{ route('admin.wishlist.index') }}"
+                class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 

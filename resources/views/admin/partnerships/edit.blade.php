@@ -181,15 +181,19 @@
                      class="preview-banner">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Update Partnership
-            </button>
+            <div class="btn-group-admin">
 
-            <a href="{{ route('admin.partnerships.index') }}"
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Update Partnership
+                </button>
+
+                <a href="{{ route('admin.partnerships.index') }}"
                 class="btn btn-secondary">
-                Cancel
-            </a>
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 

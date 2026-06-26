@@ -62,46 +62,47 @@
 
         <hr>
 
-        <form method="POST"
-              action="{{ route('admin.inquiries.update', $inquiry->id) }}"
-              class="d-inline">
+            <div class="form-actions">
 
-            @csrf
-            @method('PUT')
+                <form method="POST"
+                    action="{{ route('admin.inquiries.update', $inquiry->id) }}">
 
-            <select name="status"
-                    class="form-select d-inline w-auto">
+                    @csrf
+                    @method('PUT')
 
-                <option value="pending"
-                    {{ $inquiry->status === 'pending' ? 'selected' : '' }}>
-                    Pending
-                </option>
+                        <select name="status"
+                                class="form-select d-inline w-auto">
 
-                <option value="resolved"
-                    {{ $inquiry->status === 'resolved' ? 'selected' : '' }}>
-                    Resolved
-                </option>
+                            <option value="pending"
+                                {{ $inquiry->status === 'pending' ? 'selected' : '' }}>
+                                Pending
+                            </option>
 
-                <option value="archived"
-                    {{ $inquiry->status === 'archived' ? 'selected' : '' }}>
-                    Archived
-                </option>
+                            <option value="resolved"
+                                {{ $inquiry->status === 'resolved' ? 'selected' : '' }}>
+                                Resolved
+                            </option>
 
-            </select>
+                            <option value="archived"
+                                {{ $inquiry->status === 'archived' ? 'selected' : '' }}>
+                                Archived
+                            </option>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Update Status
-            </button>
+                        </select>
 
-        </form>
+                        <button type="submit"
+                            class="btn btn-primary-action">
+                        Update Status
+                    </button>
 
-        <a href="{{ route('admin.inquiries.index') }}"
-           class="btn btn-secondary">
-            Back
-        </a>
+                </form>
 
-    </div>
+                <a href="{{ route('admin.inquiries.index') }}"
+                class="btn btn-secondary">
+                    Back
+                </a>
+
+            </div>
 </div>
 
 @endsection

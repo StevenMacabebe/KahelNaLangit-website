@@ -54,24 +54,28 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('admin.inquiries.show', $inquiry->id) }}"
-                                class="btn btn-primary-action btn-sm">
-                                    View
-                                </a>
+                                <div class="table-actions">
 
-                                <form method="POST"
-                                    action="{{ route('admin.inquiries.destroy', $inquiry->id) }}"
-                                    class="d-inline">
+                                    <a href="{{ route('admin.inquiries.show', $inquiry->id) }}"
+                                    class="btn btn-primary-action btn-sm">
+                                        View
+                                    </a>
 
-                                    @csrf
-                                    @method('DELETE')
+                                    <form method="POST"
+                                        action="{{ route('admin.inquiries.destroy', $inquiry->id) }}">
 
-                                    <button type="submit"
-                                            class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Delete this inquiry?')">
-                                        Delete
-                                    </button>
-                                </form>
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Delete this inquiry?')">
+                                            Delete
+                                        </button>
+
+                                    </form>
+
+                                </div>
                             </td>
                         </tr>
                     @empty

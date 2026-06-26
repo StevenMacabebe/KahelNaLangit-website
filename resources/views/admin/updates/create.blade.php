@@ -115,15 +115,19 @@
                      class="preview-image">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Save Update
-            </button>
+            <div class="btn-group-admin">
 
-            <a href="{{ route('admin.updates.index') }}"
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Save Update
+                </button>
+
+                <a href="{{ route('admin.updates.index') }}"
                 class="btn btn-secondary">
-                Cancel
-            </a>
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 

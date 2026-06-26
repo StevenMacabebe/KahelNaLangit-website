@@ -24,21 +24,23 @@
         @endif
 
         <form method="POST"
-              action="{{ route('admin.wishlist.store') }}"
-              enctype="multipart/form-data">
+            action="{{ route('admin.wishlist.update', $item->id) }}"
+            enctype="multipart/form-data">
 
             @csrf
+            @method('PUT')
 
             <div class="mb-3">
                 <label for="item_name" class="form-label">
                     Item Name
                 </label>
 
-                <input type="text"
-                       class="form-control"
-                       id="item_name"
-                       name="item_name"
-                       required>
+            <input type="text"
+                class="form-control"
+                id="item_name"
+                name="item_name"
+                value="{{ $item->item_name }}"
+                required>
             </div>
 
             <div class="mb-3">
@@ -46,10 +48,10 @@
                     Description
                 </label>
 
-                <textarea class="form-control"
-                          id="description"
-                          name="description"
-                          rows="3"></textarea>
+            <textarea class="form-control"
+                id="description"
+                name="description"
+                rows="3">{{ $item->description }}</textarea>
             </div>
 
             <div class="mb-3">
@@ -58,11 +60,12 @@
                 </label>
 
                 <input type="number"
-                       class="form-control"
-                       id="quantity_needed"
-                       name="quantity_needed"
-                       required
-                       min="1">
+                    class="form-control"
+                    id="quantity_needed"
+                    name="quantity_needed"
+                    value="{{ $item->quantity_needed }}"
+                    required
+                    min="1">
             </div>
 
             <div class="mb-3">
@@ -71,11 +74,11 @@
                 </label>
 
                 <input type="number"
-                       class="form-control"
-                       id="quantity_received"
-                       name="quantity_received"
-                       min="0"
-                       value="0">
+                    class="form-control"
+                    id="quantity_received"
+                    name="quantity_received"
+                    value="{{ $item->quantity_received }}"
+                    min="0">
             </div>
 
             <div class="mb-3">
@@ -83,16 +86,28 @@
                     Item Image (Square)
                 </label>
 
+                @if($item->image)
+                    <div class="mb-2">
+                        <p class="current-image-label">
+                            Current Image:
+                        </p>
+
+                        <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
+                            alt="{{ $item->item_name }}"
+                            class="preview-image">
+                    </div>
+                @endif
+
                 <input type="file"
-                       class="form-control"
-                       id="image"
-                       name="image"
-                       accept="image/*"
-                       onchange="previewImage(event)">
+                    class="form-control"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                    onchange="previewImage(event)">
 
                 <small class="upload-hint">
-                    Accepted formats: JPG, PNG. Max size: 2MB.
-                    Square image recommended.
+                    Upload a new image to replace the current one.
+                    Max 2MB. Square image recommended.
                 </small>
             </div>
 
@@ -101,7 +116,7 @@
                  class="mb-3">
 
                 <p class="current-image-label">
-                    Image Preview:
+                    New Image Preview:
                 </p>
 
                 <img id="image-preview-img"
@@ -110,15 +125,19 @@
                      class="preview-image">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Save Item
-            </button>
+            <div class="btn-group-admin">
 
-            <a href="{{ route('admin.wishlist.index') }}"
-               class="btn btn-secondary">
-                Cancel
-            </a>
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Update Item
+                </button>
+
+                <a href="{{ route('admin.wishlist.index') }}"
+                class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
 

@@ -91,15 +91,17 @@
                        placeholder="Confirm new password">
             </div>
 
-            <button type="submit"
-                    class="btn btn-primary-action">
-                Update Profile
-            </button>
+            <div class="btn-group-admin">
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Update Profile
+                </button>
 
-            <a href="{{ route('admin.dashboard') }}"
-                 class="btn btn-secondary">
-                Back to Dashboard
-            </a>
+                <a href="{{ route('admin.dashboard') }}"
+                class="btn btn-secondary">
+                    Back to Dashboard
+                </a>
+            </div>
 
         </form>
 
