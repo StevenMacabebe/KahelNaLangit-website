@@ -17,18 +17,6 @@
 
         </div>
 
-        <!-- MIDDLE -->
-        <div class="navbar-middle">
-
-            <span class="admin-user">
-                Welcome!
-                <strong>
-                    {{ Auth::guard('admin')->user()->full_name }}
-                </strong>
-            </span>
-
-        </div>
-
         <!-- RIGHT -->
         <div class="navbar-right">
 

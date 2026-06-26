@@ -95,12 +95,11 @@ h5 {
 
 .navbar-grid {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 1.5rem;
 }
 
-/* LEFT */
 .navbar-left {
     display: flex;
     align-items: center;
@@ -108,15 +107,6 @@ h5 {
     min-width: 0;
 }
 
-/* MIDDLE */
-.navbar-middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
-}
-
-/* RIGHT */
 .navbar-right {
     display: flex;
     align-items: center;
@@ -163,21 +153,6 @@ h5 {
 
 .nav-link:hover {
     opacity: .85;
-}
-
-/* ADMIN INFO */
-
-.admin-user {
-    color: #faf7e5;
-
-    font-size: 0.95rem;
-    font-weight: 500;
-
-    margin-right: 0.75rem;
-}
-
-.admin-user strong {
-    font-weight: 700;
 }
 
 /* PROFILE BUTTON */
@@ -275,48 +250,15 @@ h5 {
         padding: 0.75rem 1rem;
     }
 
-    .admin-user {
-        font-size: 0.85rem;
-        margin-right: 0.5rem;
-    }
-
-    .admin-user strong {
-        font-size: 0.95rem;
-    }
-
-    .btn-profile,
-    .btn-logout {
-        padding: 0.55rem 0.8rem;
-        font-size: 0.85rem;
-    }
-
-}
-
-@media (max-width: 61.9375rem) {
-
-    .navbar {
-        margin-left: 0;
-        padding: 0.75rem 1rem;
-    }
-
     .navbar-grid {
         grid-template-columns: 1fr;
         row-gap: 0.75rem;
     }
 
     .navbar-left,
-    .navbar-middle,
     .navbar-right {
         justify-content: center;
         text-align: center;
-    }
-
-    .admin-user {
-        font-size: 0.85rem;
-    }
-
-    .admin-user strong {
-        font-size: 0.95rem;
     }
 
     .btn-profile,
@@ -324,6 +266,7 @@ h5 {
         padding: 0.55rem 0.8rem;
         font-size: 0.85rem;
     }
+
 }
 
 /* SIDEBAR */
@@ -613,6 +556,21 @@ h5 {
         #3f6ab6 45%,
         #4f79c3 100%
     );
+}
+
+/* ADMIN INFO */
+
+.admin-user {
+    color: #faf7e5;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    margin-right: 0.75rem;
+}
+
+.admin-user strong {
+    font-weight: 700;
 }
 
 /* MOBILE */
