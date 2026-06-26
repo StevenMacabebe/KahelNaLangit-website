@@ -89,6 +89,10 @@ h5 {
     margin-left: 0;
 }
 
+.container-fluid {
+    width: 100%;
+}
+
 .navbar-grid {
     display: grid;
     grid-template-columns: auto 1fr auto;
