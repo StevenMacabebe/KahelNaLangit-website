@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg">
 
-    <div class="container-fluid">
+    <div class="container-fluid navbar-grid">
 
+        <!-- LEFT -->
         <div class="navbar-left">
 
             <button id="navbarToggleBtn"
@@ -16,7 +17,8 @@
 
         </div>
 
-        <div class="navbar-right">
+        <!-- MIDDLE -->
+        <div class="navbar-middle">
 
             <span class="admin-user">
                 Welcome!
@@ -24,6 +26,11 @@
                     {{ Auth::guard('admin')->user()->full_name }}
                 </strong>
             </span>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="navbar-right">
 
             <a href="{{ route('admin.profile') }}"
                class="btn-profile">
@@ -38,6 +45,7 @@
                         class="btn-logout">
                     Logout
                 </button>
+
             </form>
 
         </div>
