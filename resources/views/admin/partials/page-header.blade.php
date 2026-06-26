@@ -34,7 +34,7 @@
             {{-- RIGHT SIDE --}}
             <div class="text-end">
                 <span class="admin-user">
-                    Welcome!
+                    <span class="welcome-text">Welcome!</span>
                     <strong>
                         {{ Auth::guard('admin')->user()->full_name }}
                     </strong>
