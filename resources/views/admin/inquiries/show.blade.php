@@ -91,7 +91,7 @@
                 </select>
 
                 <button type="submit"
-                        class="btn btn-primary-action">
+                        class="btn btn-primary">
                     Update Status
                 </button>
 

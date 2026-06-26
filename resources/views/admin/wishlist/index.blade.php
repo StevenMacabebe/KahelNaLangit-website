@@ -13,7 +13,7 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
 
     <a href="{{ route('admin.wishlist.create') }}"
-       class="btn btn-primary-action">
+       class="btn btn-primary">
         Add Item
     </a>
 

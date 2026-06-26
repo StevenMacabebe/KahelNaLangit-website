@@ -118,7 +118,7 @@
             <div class="btn-group-admin">
 
                 <button type="submit"
-                        class="btn btn-primary-action">
+                        class="btn btn-primary">
                     Save Update
                 </button>
 
