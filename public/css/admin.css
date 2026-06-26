@@ -1,6 +1,4 @@
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 :root {
     --sidebar-width: 17.5rem;
@@ -60,9 +58,7 @@ h5 {
     text-shadow: 0 0.125rem 0.5rem rgba(0,0,0,.35);
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 .navbar {
     position: sticky;
@@ -93,9 +89,7 @@ h5 {
     margin-left: 0;
 }
 
-/* =========================
-   BRAND
-========================= */
+/* BRAND */
 
 .navbar-brand {
     color: #faf7e5 !important;
@@ -119,9 +113,7 @@ h5 {
     margin-top: 0.125rem;
 }
 
-/* =========================
-   LINKS
-========================= */
+/* LINKS */
 
 .nav-link {
     color: #faf7e5 !important;
@@ -133,9 +125,7 @@ h5 {
     opacity: .85;
 }
 
-/* =========================
-   ADMIN INFO
-========================= */
+/* ADMIN INFO */
 
 .admin-user {
     color: #faf7e5;
@@ -150,9 +140,7 @@ h5 {
     font-weight: 700;
 }
 
-/* =========================
-   PROFILE BUTTON
-========================= */
+/* PROFILE BUTTON */
 
 .btn-profile {
     display: inline-flex;
@@ -183,9 +171,7 @@ h5 {
     transform: translateY(-0.125rem);
 }
 
-/* =========================
-   LOGOUT BUTTON
-========================= */
+/* LOGOUT BUTTON */
 
 .btn-logout {
     display: inline-flex;
@@ -216,9 +202,7 @@ h5 {
     box-shadow: 0 0.5rem 1.125rem rgba(0,0,0,.12);
 }
 
-/* =========================
-   MENU BUTTON
-========================= */
+/* MENU BUTTON */
 
 .menu-btn {
     width: 2.625rem;
@@ -242,9 +226,7 @@ h5 {
     transform: translateY(-0.125rem);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 61.9375rem) {
 
@@ -269,9 +251,7 @@ h5 {
     }
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 
 .sidebar {
     position: fixed;
@@ -302,9 +282,7 @@ h5 {
     left: -17.5rem;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .sidebar-header {
     padding: 1.75rem;
@@ -321,9 +299,7 @@ h5 {
     margin: 0;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 .sidebar-nav {
     padding: 1rem;
@@ -387,9 +363,7 @@ h5 {
     background: #ffffff;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
+/* SCROLLBAR */
 
 .sidebar::-webkit-scrollbar {
     width: 0.375rem;
@@ -404,9 +378,7 @@ h5 {
     background: transparent;
 }
 
-/* =========================
-   TOGGLE BUTTON
-========================= */
+/* TOGGLE BUTTON */
 
 .menu-btn {
     background: rgba(255,255,255,.15);
@@ -432,9 +404,7 @@ h5 {
     transform: translateY(-0.125rem);
 }
 
-/* =========================
-   CLOSE BUTTON
-========================= */
+/* CLOSE BUTTON */
 
 .sidebar-close-btn {
     background: rgba(255,255,255,.15);
@@ -460,9 +430,7 @@ h5 {
     transform: translateY(-0.125rem);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 61.9375rem) {
     .sidebar {
@@ -470,9 +438,7 @@ h5 {
     }
 }
 
-/* =========================
-   PAGE HEADER
-========================= */
+/* PAGE HEADER */
 
 .page-header {
     position: relative;
@@ -523,9 +489,7 @@ h5 {
     z-index: 2;
 }
 
-/* =========================
-   HEADER COLORS
-========================= */
+/* HEADER COLORS */
 
 .header-partnerships {
     background: linear-gradient(
@@ -576,9 +540,7 @@ h5 {
     );
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 48rem) {
 
@@ -591,9 +553,7 @@ h5 {
     }
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .btn-primary {
     background: #c25328 !important;
@@ -623,9 +583,7 @@ h5 {
     box-shadow: 0 0.5rem 1.25rem rgba(194,83,40,.25);
 }
 
-/* =========================
-   OUTLINE BUTTON
-========================= */
+/* OUTLINE BUTTON */
 
 .btn-outline-orange {
     background: transparent;
@@ -656,9 +614,7 @@ h5 {
     box-shadow: 0 0.5rem 1.25rem rgba(194,83,40,.20);
 }
 
-/* =========================
-   ADMIN ACTION BUTTONS
-========================= */
+/* ADMIN ACTION BUTTONS */
 
 .btn-primary-action {
     background: linear-gradient(135deg, #365fa9, #4f79c3);
@@ -679,9 +635,7 @@ h5 {
     box-shadow: 0 0.5rem 1.25rem rgba(54,95,169,.25);
 }
 
-/* =========================
-   SECONDARY BUTTON
-========================= */
+/* SECONDARY BUTTON */
 
 .btn-secondary {
     background: #6b7280 !important;
@@ -704,17 +658,13 @@ h5 {
     box-shadow: 0 0.5rem 1.25rem rgba(107,114,128,.25);
 }
 
-/* =========================
-   SMALL BUTTONS
-========================= */
+/* SMALL BUTTONS */
 
 .btn-sm {
     border-radius: 0.75rem;
 }
 
-/* =========================
-   DISABLED
-========================= */
+/* DISABLED */
 
 .btn:disabled,
 .btn.disabled {
@@ -723,9 +673,7 @@ h5 {
     box-shadow: none !important;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .card {
     border: none;
@@ -766,9 +714,7 @@ h5 {
     color: var(--orange-dark);
 }
 
-/* =========================
-   IMAGE PREVIEWS
-========================= */
+/* IMAGE PREVIEWS */
 
 .preview-image {
     max-width: 9.375rem;
@@ -802,9 +748,7 @@ h5 {
     font-size: 0.75rem;
 }
 
-/* =========================
-   TABLE THUMBNAILS
-========================= */
+/* TABLE THUMBNAILS */
 
 .table-responsive {
     width: 100%;
@@ -819,6 +763,7 @@ h5 {
 .table {
     min-width: 62.5rem;
 }
+
 /* Updates */
 
 .update-thumb {
@@ -881,9 +826,7 @@ h5 {
     background: #fff;
 }
 
-/* =========================
-   CONTENT
-========================= */
+/* CONTENT */
 
 .content-area {
     margin-left: 17.5rem;
@@ -920,9 +863,7 @@ h5 {
     }
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .admin-footer {
     margin-left: 17.5rem;
@@ -959,9 +900,7 @@ h5 {
     justify-content: center;
 }
 
-/* =========================
-   BRAND
-========================= */
+/* BRAND */
 
 .footer-title {
     color: #faf7e5;
@@ -984,16 +923,14 @@ h5 {
     font-size: 0.8rem;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 61.9375rem) {
 
     .admin-footer {
         margin-left: 0;
     }
-
+    
     .footer-container {
         padding: 1.5rem 1rem;
     }

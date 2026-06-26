@@ -16,6 +16,7 @@
        class="btn btn-primary-action">
         Add Item
     </a>
+
 </div>
 
 @if(session('success'))
@@ -27,86 +28,96 @@
 <div class="card">
     <div class="card-body">
 
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Item</th>
-                    <th>Needed</th>
-                    <th>Received</th>
-                    <th>Status</th>
-                    <th width="180">Actions</th>
-                </tr>
-    </div>
-            </thead>
+        <div class="table-responsive">
 
-            <tbody>
-                @forelse($wishlist as $item)
+            <table class="table table-bordered align-middle">
+
+                <thead>
                     <tr>
+                        <th>Image</th>
+                        <th>Item</th>
+                        <th>Needed</th>
+                        <th>Received</th>
+                        <th>Status</th>
+                        <th width="180">Actions</th>
+                    </tr>
+                </thead>
 
-                        <td>
-                            @if($item->image)
-                                <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
-                                     alt="{{ $item->item_name }}"
-                                     class="item-thumb">
-                            @else
-                                <span class="text-muted">
-                                    No image
+                <tbody>
+
+                    @forelse($wishlist as $item)
+
+                        <tr>
+
+                            <td>
+                                @if($item->image)
+                                    <img src="{{ asset('public/images/uploads/wishlist/' . $item->image) }}"
+                                         alt="{{ $item->item_name }}"
+                                         class="item-thumb">
+                                @else
+                                    <span class="text-muted">
+                                        No image
+                                    </span>
+                                @endif
+                            </td>
+
+                            <td>
+                                {{ $item->item_name }}
+                            </td>
+
+                            <td>
+                                {{ $item->quantity_needed }}
+                            </td>
+
+                            <td>
+                                {{ $item->quantity_received }}
+                            </td>
+
+                            <td>
+                                <span class="badge bg-{{ $item->status === 'complete' ? 'success' : ($item->status === 'incomplete' ? 'warning' : 'secondary') }}">
+                                    {{ ucfirst($item->status) }}
                                 </span>
-                            @endif
-                        </td>
+                            </td>
 
-                        <td>
-                            {{ $item->item_name }}
-                        </td>
+                            <td>
+                                <a href="{{ route('admin.wishlist.edit', $item->id) }}"
+                                   class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
 
-                        <td>
-                            {{ $item->quantity_needed }}
-                        </td>
+                                <form method="POST"
+                                      action="{{ route('admin.wishlist.destroy', $item->id) }}"
+                                      class="d-inline">
 
-                        <td>
-                            {{ $item->quantity_received }}
-                        </td>
+                                    @csrf
+                                    @method('DELETE')
 
-                        <td>
-                            <span class="badge bg-{{ $item->status === 'complete' ? 'success' : ($item->status === 'incomplete' ? 'warning' : 'secondary') }}">
-                                {{ ucfirst($item->status) }}
-                            </span>
-                        </td>
+                                    <button type="submit"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Delete this item?')">
+                                        Delete
+                                    </button>
 
-                        <td>
-                            <a href="{{ route('admin.wishlist.edit', $item->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Edit
-                            </a>
+                                </form>
+                            </td>
 
-                            <form method="POST"
-                                  action="{{ route('admin.wishlist.destroy', $item->id) }}"
-                                  class="d-inline">
+                        </tr>
 
-                                @csrf
-                                @method('DELETE')
+                    @empty
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Delete this item?')">
-                                    Delete
-                                </button>
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">
+                                No wishlist items found.
+                            </td>
+                        </tr>
 
-                            </form>
-                        </td>
+                    @endforelse
 
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="6" class="text-center">
-                            No wishlist items found.
-                        </td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 </div>
