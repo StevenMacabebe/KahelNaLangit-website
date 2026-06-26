@@ -641,12 +641,19 @@ h5 {
     background: #6b7280 !important;
     border: none !important;
 
-    color: white !important;
     padding: 0.85rem 1.5rem;
+
     border-radius: 0.875rem;
+
+    color: white !important;
 
     font-size: 0.95rem;
     font-weight: 600;
+
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     transition: all .25s ease;
 }
