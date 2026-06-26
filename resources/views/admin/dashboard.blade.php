@@ -189,14 +189,44 @@
 
     @media (max-width: 48rem) {
 
+        .dashboard-grid {
+            margin-bottom: 1.25rem;
+        }
+
         .stat-card {
-            min-height: 7.5rem;
+            min-height: unset;
+            padding: 1.1rem;
+            text-align: centre;
+        }
+
+        .stat-card h5 {
+            font-size: 0.85rem;
+            margin-bottom: 0.35rem;
         }
 
         .stat-card h3 {
-            font-size: 2rem;
+            font-size: 1.75rem;
+        }
+        
+        .quick-action-btn {
+            padding: 0.75rem 0.9rem;
+            font-size: 0.9rem;
+            border-radius: 0.75rem;
+        }
+
+        .list-group-item {
+            padding: 0.9rem 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .category-badge {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.7rem;
         }
     }
+
 
 </style>
 @endpush
@@ -205,28 +235,28 @@
 
 <div class="row dashboard-grid g-4">
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-6 col-lg-3">
         <div class="stat-card updates-card">
             <h5>Updates</h5>
             <h3>{{ $updatesCount ?? 0 }}</h3>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-6 col-lg-3">
         <div class="stat-card partnership-card">
             <h5>Partnerships</h5>
             <h3>{{ $partnershipsCount ?? 0 }}</h3>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-6 col-lg-3">
         <div class="stat-card wishlist-card">
             <h5>Wishlist</h5>
             <h3>{{ $wishlistCount ?? 0 }}</h3>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-6 col-lg-3">
         <div class="stat-card inquiries-card">
             <h5>Pending Inquiries</h5>
             <h3>{{ $inquiriesCount ?? 0 }}</h3>
@@ -245,28 +275,28 @@
 
         <div class="row g-3">
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-6 col-lg-3">
                 <a href="{{ route('admin.updates.create') }}"
                    class="btn btn-primary-action quick-action-btn w-100">
                     New Update
                 </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-6 col-lg-3">
                 <a href="{{ route('admin.partnerships.create') }}"
                    class="btn btn-primary-action quick-action-btn w-100">
                     New Partnership
                 </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-6 col-lg-3">
                 <a href="{{ route('admin.wishlist.create') }}"
                    class="btn btn-primary-action quick-action-btn w-100">
                     New Wishlist
                 </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-6 col-lg-3">
                 <a href="{{ route('admin.inquiries.index') }}"
                    class="btn btn-primary-action quick-action-btn w-100">
                     View Inquiries
