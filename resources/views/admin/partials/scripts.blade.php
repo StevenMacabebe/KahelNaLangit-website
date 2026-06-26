@@ -1,6 +1,49 @@
 <script>
-     function toggleSidebar() {
+     function isIndexPage() {
+          const path = window.location.pathname.split('/').filter(Boolean);
 
+          const adminIndexStructure = path.length === 2 && path[0] === 'admin';
+
+          return adminIndexStructure;
+     }
+
+     function applySidebarState() {
+          const sidebar = document.getElementById('sidebar');
+          const content = document.querySelector('.content-area');
+          const navbar = document.querySelector('.navbar');
+          const footer = document.querySelector('.admin-footer');
+          const toggleBtn = document.getElementById('navbarToggleBtn');
+
+          const shouldExpand = isIndexPage();
+
+          if (shouldExpand) {
+               sidebar.classList.remove('collapsed');
+               content.classList.remove('expanded');
+               navbar.classList.remove('expanded');
+
+               if (footer) {
+                    footer.classList.remove('expanded');
+               }
+
+               if (toggleBtn) {
+                    toggleBtn.classList.add('d-none');
+               }
+          } else {
+               sidebar.classList.add('collapsed');
+               content.classList.add('expanded');
+               navbar.classList.add('expanded');
+
+               if (footer) {
+                    footer.classList.add('expanded');
+               }
+
+               if (toggleBtn) {
+                    toggleBtn.classList.remove('d-none');
+               }
+          }
+     }
+
+     function toggleSidebar() {
           const sidebar =
                document.getElementById('sidebar');
 
@@ -30,6 +73,6 @@
                toggleBtn.classList.add('d-none');
           }
      }
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     document.addEventListener('DOMContentLoaded', applySidebarState);
+</script>
