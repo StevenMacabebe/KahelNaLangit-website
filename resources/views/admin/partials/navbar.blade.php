@@ -16,35 +16,31 @@
 
         </div>
 
-            <div class="navbar-right">
+        <div class="navbar-right">
 
-                <span class="admin-user">
-                    Welcome!
-                    <strong>
-                        {{ Auth::guard('admin')->user()->full_name }}
-                    </strong>
-                </span>
+            <span class="admin-user">
+                Welcome!
+                <strong>
+                    {{ Auth::guard('admin')->user()->full_name }}
+                </strong>
+            </span>
 
-                <a href="{{ route('admin.profile') }}"
-                class="btn-icon btn-profile-icon"
-                title="My Profile"
-                aria-label="My Profile">
-                    👤
-                </a>
+            <a href="{{ route('admin.profile') }}"
+               class="btn-profile">
+                My Profile
+            </a>
 
-                <form method="POST"
-                    action="{{ route('admin.logout') }}">
-                    @csrf
+            <form method="POST"
+                  action="{{ route('admin.logout') }}">
+                @csrf
 
-                    <button type="submit"
-                            class="btn-icon btn-logout-icon"
-                            title="Logout"
-                            aria-label="Logout">
-                        ⎋
-                    </button>
-                </form>
+                <button type="submit"
+                        class="btn-logout">
+                    Logout
+                </button>
+            </form>
 
-            </div>
+        </div>
 
     </div>
 

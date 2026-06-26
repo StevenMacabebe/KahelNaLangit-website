@@ -254,53 +254,6 @@ h5 {
     transform: translateY(-0.125rem);
 }
 
-/* ICON BUTTON */
-
-.btn-icon {
-    width: 2.625rem;
-    height: 2.625rem;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 0.75rem;
-
-    font-size: 1.1rem;
-    text-decoration: none;
-
-    transition: all .25s ease;
-    cursor: pointer;
-}
-
-/* PROFILE ICON */
-
-.btn-profile-icon {
-    background: rgba(255,255,255,.12);
-    border: 0.0625rem solid rgba(255,255,255,.15);
-    color: #faf7e5;
-}
-
-.btn-profile-icon:hover {
-    background: rgba(255,255,255,.20);
-    transform: translateY(-0.125rem);
-}
-
-/* LOGOUT ICON */
-
-.btn-logout-icon {
-    background: #faf7e5;
-    border: none;
-    color: #c25328;
-}
-
-.btn-logout-icon:hover {
-    background: white;
-    color: #b8440e;
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.5rem 1.125rem rgba(0,0,0,.12);
-}
-
 /* MOBILE */
 
 @media (max-width: 61.9375rem) {
