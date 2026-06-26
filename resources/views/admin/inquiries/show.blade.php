@@ -50,29 +50,25 @@
             {{ $inquiry->created_at->format('F d, Y h:i A') }}
         </p>
 
-    <hr class="my-4">
+    <hr>
 
-        <h6 class="fw-bold mb-3">
-            Message
-        </h6>
+    <h6 class="fw-bold mb-3">
+        Message
+    </h6>
 
-        <p class="mb-0">
-            {{ $inquiry->message }}
-        </p>
+    <p class="mb-0">
+        {{ $inquiry->message }}
+    </p>
 
-    <hr class="my-4">
+        <hr>
 
-            <div class="btn-group-admin">
+            <div class="form-actions">
 
                 <form method="POST"
-                    action="{{ route('admin.inquiries.update', $inquiry->id) }}"
-                    class="d-flex align-items-center gap-2">
+                    action="{{ route('admin.inquiries.update', $inquiry->id) }}">
 
                     @csrf
                     @method('PUT')
-
-                    <select name="status"
-                            class="form-select w-auto">
 
                         <select name="status"
                                 class="form-select d-inline w-auto">
@@ -94,17 +90,17 @@
 
                         </select>
 
-                <button type="submit"
-                        class="btn btn-primary-action">
-                    Update Status
-                </button>
+                        <button type="submit"
+                            class="btn btn-primary-action">
+                        Update Status
+                    </button>
 
-            </form>
+                </form>
 
-            <a href="{{ route('admin.inquiries.index') }}"
-            class="btn btn-secondary">
-                Back
-            </a>
+                <a href="{{ route('admin.inquiries.index') }}"
+                class="btn btn-secondary">
+                    Back
+                </a>
 
             </div>
 </div>
