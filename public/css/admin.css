@@ -664,32 +664,6 @@ h5 {
     border-radius: 0.75rem;
 }
 
-/* Info Button */
-.btn-info-action {
-    background: linear-gradient(135deg, #365fa9, #4f79c3);
-
-    border: none;
-    color: #fff !important;
-
-    border-radius: 0.75rem;
-
-    padding: 0.45rem 0.85rem;
-
-    font-weight: 600;
-
-    transition: all .25s ease;
-}
-
-.btn-info-action:hover {
-    background: linear-gradient(135deg, #2b4f92, #4069b2);
-
-    color: #fff !important;
-
-    transform: translateY(-0.125rem);
-
-    box-shadow: 0 0.4rem 1rem rgba(54,95,169,.25);
-}
-
 /* BUTTON GROUPS */
 
 .btn-group-admin {

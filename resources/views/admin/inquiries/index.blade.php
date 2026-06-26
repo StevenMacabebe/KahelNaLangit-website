@@ -57,7 +57,7 @@
                                 <div class="table-actions">
 
                                     <a href="{{ route('admin.inquiries.show', $inquiry->id) }}"
-                                    class="btn btn-info-action btn-sm">
+                                    class="btn btn-info btn-sm">
                                         View
                                     </a>
 
