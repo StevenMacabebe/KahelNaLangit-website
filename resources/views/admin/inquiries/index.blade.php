@@ -62,7 +62,8 @@
                                     </a>
 
                                     <form method="POST"
-                                        action="{{ route('admin.inquiries.destroy', $inquiry->id) }}">
+                                        action="{{ route('admin.inquiries.destroy', $inquiry->id) }}"
+                                        class="d-inline">
 
                                         @csrf
                                         @method('DELETE')

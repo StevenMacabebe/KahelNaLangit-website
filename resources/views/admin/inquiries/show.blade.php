@@ -13,8 +13,6 @@
 <div class="card">
     <div class="card-body">
 
-        <hr>
-
         <p>
             <strong>From:</strong>
             {{ $inquiry->full_name }}
@@ -52,23 +50,29 @@
             {{ $inquiry->created_at->format('F d, Y h:i A') }}
         </p>
 
-        <hr>
+    <hr class="my-4">
 
-        <h5>Message</h5>
+        <h6 class="fw-bold mb-3">
+            Message
+        </h6>
 
-        <p>
+        <p class="mb-0">
             {{ $inquiry->message }}
         </p>
 
-        <hr>
+    <hr class="my-4">
 
-            <div class="form-actions">
+            <div class="btn-group-admin">
 
                 <form method="POST"
-                    action="{{ route('admin.inquiries.update', $inquiry->id) }}">
+                    action="{{ route('admin.inquiries.update', $inquiry->id) }}"
+                    class="d-flex align-items-center gap-2">
 
                     @csrf
                     @method('PUT')
+
+                    <select name="status"
+                            class="form-select w-auto">
 
                         <select name="status"
                                 class="form-select d-inline w-auto">
@@ -90,17 +94,17 @@
 
                         </select>
 
-                        <button type="submit"
-                            class="btn btn-primary-action">
-                        Update Status
-                    </button>
+                <button type="submit"
+                        class="btn btn-primary-action">
+                    Update Status
+                </button>
 
-                </form>
+            </form>
 
-                <a href="{{ route('admin.inquiries.index') }}"
-                class="btn btn-secondary">
-                    Back
-                </a>
+            <a href="{{ route('admin.inquiries.index') }}"
+            class="btn btn-secondary">
+                Back
+            </a>
 
             </div>
 </div>
