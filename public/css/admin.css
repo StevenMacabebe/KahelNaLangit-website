@@ -654,22 +654,28 @@ h5 {
 /* ADMIN ACTION BUTTONS */
 
 .btn-primary-action {
-    background: linear-gradient(135deg, #365fa9, #4f79c3);
+    background: linear-gradient(135deg, #c25328, #e06a3a);
 
     border: none;
     color: white !important;
     border-radius: 0.875rem;
     padding: 0.85rem 1.25rem;
     font-weight: 600;
+
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     transition: all .25s ease;
 }
 
 .btn-primary-action:hover {
-    background: linear-gradient(135deg, #2b4f92, #4069b2);
+    background: linear-gradient(135deg, #b8440e, #d45a2f);
 
     color: white !important;
     transform: translateY(-0.125rem);
-    box-shadow: 0 0.5rem 1.25rem rgba(54,95,169,.25);
+    box-shadow: 0 0.5rem 1.25rem rgba(194, 83, 40, .25);
 }
 
 /* SECONDARY BUTTON */
