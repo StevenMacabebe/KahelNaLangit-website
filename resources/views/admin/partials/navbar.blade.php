@@ -2,7 +2,7 @@
 
     <div class="container-fluid">
 
-        <div class="d-flex align-items-center">
+        <div class="navbar-left">
 
             <button id="navbarToggleBtn"
                     class="menu-btn d-none"
@@ -10,37 +10,41 @@
                 ☰
             </button>
 
-            <div>
-                <div class="navbar-brand mb-0">
-                    Kahel Na Langit
-                </div>
+            <div class="navbar-brand mb-0">
+                Kahel Na Langit
             </div>
 
         </div>
 
-        <div class="d-flex align-items-center gap-3">
-            <span class="admin-user">
-                Welcome!
-                <strong>
-                    {{ Auth::guard('admin')->user()->full_name }}
-                </strong>
-            </span>
+            <div class="navbar-right">
 
-            <a href="{{ route('admin.profile') }}"
-            class="btn-profile">
-                My Profile
-            </a>
-            <form method="POST"
-                action="{{ route('admin.logout') }}">
-                @csrf
+                <span class="admin-user">
+                    Welcome!
+                    <strong>
+                        {{ Auth::guard('admin')->user()->full_name }}
+                    </strong>
+                </span>
 
-                <button type="submit"
-                        class="btn-logout border-0">
-                    Logout
-                </button>
-            </form>
+                <a href="{{ route('admin.profile') }}"
+                class="btn-icon btn-profile-icon"
+                title="My Profile"
+                aria-label="My Profile">
+                    👤
+                </a>
 
-        </div>
+                <form method="POST"
+                    action="{{ route('admin.logout') }}">
+                    @csrf
+
+                    <button type="submit"
+                            class="btn-icon btn-logout-icon"
+                            title="Logout"
+                            aria-label="Logout">
+                        ⎋
+                    </button>
+                </form>
+
+            </div>
 
     </div>
 
