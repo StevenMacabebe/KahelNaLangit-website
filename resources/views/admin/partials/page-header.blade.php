@@ -32,9 +32,9 @@
             </div>
 
             {{-- RIGHT SIDE --}}
-            <div class="text-end">
+            <div class="text-end d-none d-md-block">
                 <span class="admin-user">
-                    <span class="welcome-text">Welcome!</span>
+                    Welcome!
                     <strong>
                         {{ Auth::guard('admin')->user()->full_name }}
                     </strong>
