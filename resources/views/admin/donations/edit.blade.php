@@ -13,7 +13,7 @@
 <div class="card">
     <div class="card-body">
         <p class="text-muted">
-            Update GCash, BDO, Maya details, and donation guidelines.
+            Update GCash, BPI, Maya details, and donation guidelines.
         </p>
 
         @if(session('success'))
@@ -83,8 +83,8 @@
                 <small class="upload-hint">Accepted formats: JPG, PNG, GIF, WebP. Max size: 2MB.</small>
             </div>
 
-            <!-- BDO -->
-            <h4 class="mt-3 border-bottom pb-2">BDO</h4>
+            <!-- BPI -->
+            <h4 class="mt-3 border-bottom pb-2">BPI</h4>
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">

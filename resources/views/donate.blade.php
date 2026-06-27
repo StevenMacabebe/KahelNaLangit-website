@@ -304,10 +304,10 @@
             </div>
         </div>
 
-        {{-- BDO and Maya (full-width below, in 2 columns) --}}
+        {{-- BPI and Maya (full-width below, in 2 columns) --}}
         @if($donation && ($donation->bdo_bank_name || $donation->maya_bank_name))
         <div class="row g-4 mb-4">
-            {{-- BDO --}}
+            {{-- BPI --}}
             @if($donation->bdo_bank_name)
             <div class="col-md-6">
                 <div class="channel-card">
@@ -321,7 +321,7 @@
                         @else
                             <div class="qr-placeholder"><i class="ti ti-qrcode" aria-hidden="true"></i></div>
                         @endif
-                        <p>Scan to donate via BDO</p>
+                        <p>Scan to donate via BPI</p>
                         <span>Use your banking app to scan</span>
                     </div>
                 </div>
